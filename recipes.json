@@ -1,0 +1,2460 @@
+[
+  {
+    "id": "RCP_PHOTOSYNTHESIS",
+    "name": {
+      "ru": "Фотосинтез",
+      "en": "Photosynthesis",
+      "de": "Photosynthese"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011",
+      "CONSTRC040"
+    ],
+    "requiresEnergy": false,
+    "inputs": [
+      {
+        "resourceId": "RES_SOLAR_RAD",
+        "perMinute": 1
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_ELECTRICITY",
+        "perMinute": 2500,
+        "scaleWithBuildingEnergyProduction": true
+      }
+    ],
+    "specialists": {
+      "engineers": 0.2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(30, 110, 200, 0.18)",
+      "rgba(60, 60, 60, 0.28)"
+    ],
+    "backgroundImage": "assets/textures/icons/recipe_bg_photosynthesis.png"
+  },
+  {
+    "id": "RCP_BASE_REPAIR",
+    "name": {
+      "ru": "Ремонт базы",
+      "en": "Base Repair",
+      "de": "Basenreparatur"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011"
+    ],
+    "requiresEnergy": false,
+    "inputs": [
+      {
+        "resourceId": "RES_REPAIR_KIT",
+        "perMinute": 0.15
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_STRUCT_REPAIR",
+        "perMinute": 15,
+        "isEffect": true,
+        "effectId": "EFF_REPAIR_STRUCTURE",
+        "effectValuePerMinute": 15
+      }
+    ],
+    "specialists": {
+      "engineers": 0.2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(180, 90, 30, 0.18)",
+      "rgba(70, 50, 40, 0.3)"
+    ],
+    "backgroundImage": "assets/textures/icons/recipe_bg_repair.png"
+  },
+  {
+    "id": "RCP_FREEZE_DISTILL",
+    "name": {
+      "ru": "Вымораживание",
+      "en": "Freeze Distillation",
+      "de": "Gefrierdestillation"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "resourceId": "RES_ICE",
+        "perMinute": 0.272
+      },
+      {
+        "resourceId": "RES_EMPTY_CANISTER",
+        "perMinute": 0.0136
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_PACKED_WATER",
+        "perMinute": 0.272
+      }
+    ],
+    "specialists": {
+      "engineers": 0,
+      "agronomists": 0.5,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(100, 210, 255, 0.18)",
+      "rgba(50, 70, 90, 0.3)"
+    ],
+    "backgroundImage": "assets/textures/icons/recipe_bg_freeze.png",
+    "notes": "Баланс ×27.2: лёд 0.272/мин, канистры 0.0136/мин, вода 0.272/мин; специалисты без изменений"
+  },
+  {
+    "id": "RCP_GROW_LETTUCE",
+    "name": {
+      "ru": "Выращивание листьев салата",
+      "en": "Growing Lettuce Leaves",
+      "de": "Salatblätter anbauen"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "resourceId": "RES_SAND",
+        "perMinute": 0.000547
+      },
+      {
+        "resourceId": "RES_WATER",
+        "alternatives": [
+          "RES_PACKED_WATER"
+        ],
+        "perMinute": 0.001094
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_LETTUCE",
+        "perMinute": 0.000875
+      }
+    ],
+    "specialists": {
+      "engineers": 0,
+      "agronomists": 0.5,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(60, 140, 50, 0.2)",
+      "rgba(50, 70, 40, 0.3)"
+    ],
+    "backgroundImage": "assets/textures/icons/recipe_bg_lettuce.png"
+  },
+  {
+    "id": "RCP_SCIENTIFIC_DISCOVERIES",
+    "name": {
+      "ru": "Научные открытия",
+      "en": "Scientific Discoveries",
+      "de": "Wissenschaftliche Entdeckungen"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011",
+      "CONSTRC080"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "resourceId": "RES_INFO_INSIGHT",
+        "perMinute": 1
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_TECH_OUTPUT",
+        "perMinute": 1
+      }
+    ],
+    "specialists": {
+      "engineers": 0,
+      "agronomists": 0,
+      "scientists": 1
+    },
+    "gradient": [
+      "rgba(30, 90, 210, 0.22)",
+      "rgba(15, 35, 95, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/icons/specialist_scientist.png",
+    "buildingOutputScale": {
+      "CONSTRC001": 1,
+      "CONSTRC0011": 1,
+      "CONSTRC080": 0.25
+    }
+  },
+  {
+    "id": "RCP_SUBSTATION_MAINTENANCE",
+    "name": {
+      "ru": "Обслуживание подстанции",
+      "en": "Substation Maintenance",
+      "de": "Unterstationswartung"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011",
+      "CONSTRC047"
+    ],
+    "requiresEnergy": true,
+    "inputs": [],
+    "outputs": [
+      {
+        "resourceId": "RES_ENERGY_CAPACITY",
+        "perMinute": 1,
+        "scaleWithBuildingMaxEnergyCapacity": true,
+        "isCapacity": true
+      }
+    ],
+    "specialists": {
+      "engineers": 0.2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(220, 120, 40, 0.22)",
+      "rgba(90, 50, 25, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Energy/small battery substation.png",
+    "notes": "Макс. энергоёмкость здания = perMinute × MaxEnergyCapacity[level] × мощность × эффективность × count"
+  },
+  {
+    "id": "RCP_WAREHOUSE_MAINTENANCE",
+    "name": {
+      "ru": "Обслуживание склада",
+      "en": "Warehouse Maintenance",
+      "de": "Lagerwartung"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011",
+      "CONSTRC090",
+      "CONSTRC091",
+      "CONSTRC092"
+    ],
+    "requiresEnergy": true,
+    "inputs": [],
+    "outputs": [
+      {
+        "resourceId": "RES_STORAGE_CAPACITY",
+        "perMinute": 1,
+        "scaleWithBuildingResourceStorageCapacity": true,
+        "isCapacity": true
+      }
+    ],
+    "specialists": {
+      "engineers": 0.2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(140, 140, 145, 0.22)",
+      "rgba(55, 55, 60, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/warehouse_solid.png",
+    "notes": "Бонус к складской вместимости поверх базовой ResourceStorageCapacity. bonusMult = perMinute × ResourceStorageCapacity[level] × мощность × eff × count"
+  },
+  {
+    "id": "RCP_HOUSING_MAINTENANCE",
+    "name": {
+      "ru": "Обслуживание жилплощади",
+      "en": "Housing Maintenance",
+      "de": "Wohnraumwartung"
+    },
+    "buildingIds": [
+      "CONSTRC001",
+      "CONSTRC0011",
+      "CONSTRC002",
+      "CONSTRC0021",
+      "CONSTRC003",
+      "CONSTRC004",
+      "CONSTRC005"
+    ],
+    "requiresEnergy": true,
+    "inputs": [],
+    "outputs": [
+      {
+        "resourceId": "RES_POPULATION_CAPACITY",
+        "perMinute": 1,
+        "scaleWithBuildingPopulationCapacity": true,
+        "isCapacity": true
+      }
+    ],
+    "specialists": {
+      "engineers": 0.2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(180, 120, 160, 0.20)",
+      "rgba(70, 45, 65, 0.34)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Infrastructure/camp.png",
+    "notes": "Бонус к вместимости населения поверх PopulationCapacity. Лагерь Выживальщиков — более высокий PopulationCapacity → сильнее бонус."
+  },
+  {
+    "id": "RCP_EXTRACT_WATER",
+    "name": {
+      "ru": "Экстракция воды",
+      "en": "Water Extraction",
+      "de": "Wasserextraktion"
+    },
+    "buildingIds": [
+      "CONSTRC021"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_WATER",
+        "perMinute": 12
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_WATER",
+        "perMinute": 12,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(60, 140, 210, 0.22)",
+      "rgba(30, 55, 90, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/water intake station.png",
+    "notes": "1:1 гео→склад (кг). ExtractionBonus здания. GEO_WATER в тоннах на теле."
+  },
+  {
+    "id": "RCP_EXTRACT_IRON_ORE",
+    "name": {
+      "ru": "Экстракция железоносной породы",
+      "en": "Iron-bearing rock extraction",
+      "de": "Extraktion eisenhaltigen Gesteins"
+    },
+    "buildingIds": [
+      "CONSTRC022"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_IRON_ROCK",
+        "perMinute": 8
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_ORE",
+        "perMinute": 8,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(120, 80, 50, 0.22)",
+      "rgba(50, 35, 25, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/quarry.png",
+    "notes": "1:1 GEO_IRON_ROCK→RES_IRON_ORE. linkedGeoResourceId на ресурсе."
+  },
+  {
+    "id": "RCP_PROCESS_IRON_ORE",
+    "name": {
+      "ru": "Очищенная железная руда",
+      "en": "Processed iron ore",
+      "de": "Aufbereitetes Eisenerz"
+    },
+    "buildingIds": [
+      "CONSTRC061"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.5,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_ORE",
+        "perMinute": 4
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_ORE_CLEAN",
+        "perMinute": 4
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(150, 110, 70, 0.22)",
+      "rgba(60, 45, 30, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/crusher.png",
+    "notes": "processingEfficiency 0.5: на 4 кг/мин породы → 2 кг/мин очищенной. ≤50% добычи карьера (8 кг/мин база)."
+  },
+  {
+    "id": "RCP_SMELT_IRON_INGOT",
+    "name": {
+      "ru": "Выплавка железного слитка",
+      "en": "Iron ingot smelting",
+      "de": "Eisenbarren-Schmelzen"
+    },
+    "buildingIds": [
+      "CONSTRC062"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_ORE_CLEAN",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_INGOT",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(200, 90, 40, 0.24)",
+      "rgba(70, 35, 20, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/foundry.png",
+    "notes": "processingEfficiency 0.75 (25% потерь). 2 кг/мин очищенной руды → 1.5 кг/мин слитков при 100%."
+  },
+  {
+    "id": "RCP_IRON_SHEET",
+    "name": {
+      "ru": "Железный лист",
+      "en": "Iron sheet",
+      "de": "Eisenblech"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_INGOT",
+        "perMinute": 0.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_SHEET",
+        "perMinute": 0.5
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(130, 145, 160, 0.22)",
+      "rgba(45, 50, 58, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "processingEfficiency 0.8. 0.5 кг/мин слитка → 0.4 кг/мин листа при 100%."
+  },
+  {
+    "id": "RCP_IRON_RODS",
+    "name": {
+      "ru": "Железные прутья",
+      "en": "Iron rods",
+      "de": "Eisenstangen"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_INGOT",
+        "perMinute": 0.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_RODS",
+        "perMinute": 0.5
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(130, 145, 160, 0.22)",
+      "rgba(45, 50, 58, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "processingEfficiency 0.8. 0.5 кг/мин слитка → 0.4 кг/мин прутьев при 100%."
+  },
+  {
+    "id": "RCP_SCREWS_AND_NUTS",
+    "name": {
+      "ru": "Набор из шурупов и гаек",
+      "en": "Screws and nuts set",
+      "de": "Schrauben- und Mutterssatz"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_RODS",
+        "perMinute": 0.4
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.4
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(130, 145, 160, 0.22)",
+      "rgba(45, 50, 58, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "Из прутьев. processingEfficiency 0.8. Т4."
+  },
+  {
+    "id": "RCP_EXTRACT_SAND",
+    "name": {
+      "ru": "Экстракция песка",
+      "en": "Sand extraction",
+      "de": "Sand-Extraktion"
+    },
+    "buildingIds": [
+      "CONSTRC022"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_SAND",
+        "perMinute": 10
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SAND",
+        "perMinute": 10,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(190, 160, 100, 0.22)",
+      "rgba(70, 55, 35, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/quarry.png",
+    "notes": "1:1 GEO_SAND→RES_SAND (Песок) с ExtractionBonus карьера."
+  },
+  {
+    "id": "RCP_GROW_LETTUCE_FARM",
+    "name": {
+      "ru": "Выращивание листьев салата",
+      "en": "Growing Lettuce Leaves",
+      "de": "Salatblätter anbauen"
+    },
+    "buildingIds": [
+      "CONSTRC020"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "resourceId": "RES_SAND",
+        "perMinute": 0.00547
+      },
+      {
+        "resourceId": "RES_WATER",
+        "alternatives": [
+          "RES_PACKED_WATER"
+        ],
+        "perMinute": 0.01094
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_LETTUCE",
+        "perMinute": 0.00875
+      }
+    ],
+    "specialists": {
+      "agronomists": 1,
+      "engineers": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(60, 140, 50, 0.22)",
+      "rgba(40, 70, 35, 0.34)"
+    ],
+    "backgroundImage": "assets/textures/icons/recipe_bg_lettuce.png",
+    "notes": "Ферма: ×10 к выходу базы. Салат базы 0.000875 кг/мин ≈ 50% еды на 5 чел."
+  },
+  {
+    "id": "RCP_IRON_WIRE",
+    "name": {
+      "ru": "Железная проволока",
+      "en": "Iron Wire",
+      "de": "Eisendraht"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_RODS",
+        "perMinute": 0.4
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_WIRE",
+        "perMinute": 0.4
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "#2a3540",
+      "#1a2830"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "Прутья → проволока. processingEfficiency 0.8. Т4."
+  },
+  {
+    "id": "RCP_IRON_GRATE",
+    "name": {
+      "ru": "Железная решётка",
+      "en": "Iron Grate",
+      "de": "Eisengitter"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_WIRE",
+        "perMinute": 0.3
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_GRATE",
+        "perMinute": 0.3
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "#243038",
+      "#152028"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "Проволока → решётка. processingEfficiency 0.8. Т5."
+  },
+  {
+    "id": "RCP_REINFORCED_IRON_PLATE",
+    "name": {
+      "ru": "Усиленная железная пластина",
+      "en": "Reinforced iron plate",
+      "de": "Verstärkte Eisenplatte"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_SHEET",
+        "perMinute": 0.3
+      },
+      {
+        "resourceId": "RES_IRON_GRATE",
+        "perMinute": 0.2
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.15
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_REINFORCED_IRON_PLATE",
+        "perMinute": 0.25
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(90, 110, 130, 0.25)",
+      "rgba(30, 36, 45, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T6. Лист + решётка + крепёж → усиленная пластина. processingEfficiency 0.75."
+  },
+  {
+    "id": "RCP_IRON_FRAME",
+    "name": {
+      "ru": "Железный каркас",
+      "en": "Iron frame",
+      "de": "Eisenrahmen"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_RODS",
+        "perMinute": 0.4
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_IRON_FRAME",
+        "perMinute": 0.3
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(80, 100, 120, 0.25)",
+      "rgba(28, 34, 42, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T6. Прутья + крепёж → каркас. processingEfficiency 0.75."
+  },
+  {
+    "id": "RCP_EXTRACT_COPPER_ORE",
+    "name": {
+      "ru": "Экстракция меденосной породы",
+      "en": "Copper-bearing rock extraction",
+      "de": "Extraktion kupferhaltigen Gesteins"
+    },
+    "buildingIds": [
+      "CONSTRC022"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_COPPER_ROCK",
+        "perMinute": 6
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_COPPER_ORE",
+        "perMinute": 6,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(180, 110, 50, 0.22)",
+      "rgba(70, 40, 20, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/quarry.png",
+    "notes": "Карьер. Гео GEO_COPPER_ROCK → склад."
+  },
+  {
+    "id": "RCP_PROCESS_COPPER_ORE",
+    "name": {
+      "ru": "Очищенная медная руда",
+      "en": "Processed copper ore",
+      "de": "Aufbereitetes Kupfererz"
+    },
+    "buildingIds": [
+      "CONSTRC061"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.5,
+    "inputs": [
+      {
+        "resourceId": "RES_COPPER_ORE",
+        "perMinute": 3
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_COPPER_ORE_CLEAN",
+        "perMinute": 3
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(190, 120, 60, 0.22)",
+      "rgba(75, 45, 25, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/crusher.png",
+    "notes": "processingEfficiency 0.5. Дробилка."
+  },
+  {
+    "id": "RCP_SMELT_COPPER_INGOT",
+    "name": {
+      "ru": "Выплавка медного слитка",
+      "en": "Copper ingot smelting",
+      "de": "Kupferbarren-Schmelzen"
+    },
+    "buildingIds": [
+      "CONSTRC062"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_COPPER_ORE_CLEAN",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_COPPER_INGOT",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(210, 130, 50, 0.24)",
+      "rgba(80, 45, 20, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/foundry.png",
+    "notes": "processingEfficiency 0.75. Литейная."
+  },
+  {
+    "id": "RCP_COPPER_SHEET",
+    "name": {
+      "ru": "Медный лист",
+      "en": "Copper sheet",
+      "de": "Kupferblech"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_COPPER_INGOT",
+        "perMinute": 0.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_COPPER_SHEET",
+        "perMinute": 0.5
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(200, 130, 70, 0.22)",
+      "rgba(60, 40, 25, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "processingEfficiency 0.8. Базовые компоненты."
+  },
+  {
+    "id": "RCP_COPPER_RODS",
+    "name": {
+      "ru": "Медные прутья",
+      "en": "Copper rods",
+      "de": "Kupferstäbe"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_COPPER_INGOT",
+        "perMinute": 0.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_COPPER_RODS",
+        "perMinute": 0.5
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(195, 125, 65, 0.22)",
+      "rgba(55, 38, 22, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "processingEfficiency 0.8."
+  },
+  {
+    "id": "RCP_COPPER_WIRE",
+    "name": {
+      "ru": "Медная проволока",
+      "en": "Copper wire",
+      "de": "Kupferdraht"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_COPPER_RODS",
+        "perMinute": 0.4
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_COPPER_WIRE",
+        "perMinute": 0.4
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(210, 140, 60, 0.22)",
+      "rgba(65, 42, 22, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_plant.png",
+    "notes": "Прутья → проволока. T4."
+  },
+  {
+    "id": "RCP_STATOR",
+    "name": {
+      "ru": "Статор",
+      "en": "Stator",
+      "de": "Stator"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_SHEET",
+        "perMinute": 0.25
+      },
+      {
+        "resourceId": "RES_COPPER_WIRE",
+        "perMinute": 0.35
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.12
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_STATOR",
+        "perMinute": 0.2
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(90, 140, 160, 0.25)",
+      "rgba(30, 45, 55, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T6. Лист + медная проволока + крепёж. Стандартные компоненты."
+  },
+  {
+    "id": "RCP_ROTOR",
+    "name": {
+      "ru": "Ротор",
+      "en": "Rotor",
+      "de": "Rotor"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_RODS",
+        "perMinute": 0.3
+      },
+      {
+        "resourceId": "RES_IRON_SHEET",
+        "perMinute": 0.2
+      },
+      {
+        "resourceId": "RES_COPPER_WIRE",
+        "perMinute": 0.3
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_ROTOR",
+        "perMinute": 0.2
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(100, 130, 150, 0.25)",
+      "rgba(32, 42, 52, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T6. Прутья + лист + медная проволока."
+  },
+  {
+    "id": "RCP_EXTRACT_CARBON_ROCK",
+    "name": {
+      "ru": "Экстракция углеродоносной породы",
+      "en": "Carbon-bearing rock extraction",
+      "de": "Extraktion kohlenstoffhaltigen Gesteins"
+    },
+    "buildingIds": [
+      "CONSTRC022"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_CARBON_ROCK",
+        "perMinute": 7
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_CARBON_ROCK",
+        "perMinute": 7,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(40, 40, 40, 0.28)",
+      "rgba(20, 20, 22, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/quarry.png",
+    "notes": "Карьер. GEO_CARBON_ROCK → склад."
+  },
+  {
+    "id": "RCP_PROCESS_ROUGH_COAL",
+    "name": {
+      "ru": "Грубый уголь",
+      "en": "Rough coal",
+      "de": "Rohkohle"
+    },
+    "buildingIds": [
+      "CONSTRC061"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.78,
+    "inputs": [
+      {
+        "resourceId": "RES_CARBON_ROCK",
+        "perMinute": 5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_ROUGH_COAL",
+        "perMinute": 5
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(55, 50, 45, 0.28)",
+      "rgba(25, 22, 20, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/crusher.png",
+    "notes": "processingEfficiency 0.78. Дробилка: порода → грубый уголь."
+  },
+  {
+    "id": "RCP_COAL_POWER",
+    "name": {
+      "ru": "Электричество из грубого угля",
+      "en": "Electricity from rough coal",
+      "de": "Strom aus Rohkohle"
+    },
+    "buildingIds": [
+      "CONSTRC041"
+    ],
+    "requiresEnergy": false,
+    "processingEfficiency": 0.5,
+    "inputs": [
+      {
+        "resourceId": "RES_ROUGH_COAL",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_ELECTRICITY",
+        "perMinute": 2500,
+        "scaleWithBuildingEnergyProduction": true
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(90, 70, 40, 0.28)",
+      "rgba(40, 30, 18, 0.42)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Energy/coal-fired power plant.png",
+    "notes": "КПД 50% (processingEfficiency 0.5). Угольная электростанция."
+  },
+  {
+    "id": "RCP_EXTRACT_WOOD",
+    "name": {
+      "ru": "Экстракция древесины",
+      "en": "Wood extraction",
+      "de": "Holzgewinnung"
+    },
+    "buildingIds": [
+      "CONSTRC023"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_WOOD",
+        "perMinute": 10
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_WOOD_LOG",
+        "perMinute": 10,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(50, 100, 60, 0.24)",
+      "rgba(25, 45, 30, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/sawmill.png",
+    "notes": "Лесопилка. GEO_WOOD → брёвна."
+  },
+  {
+    "id": "RCP_MAKE_TIMBER",
+    "name": {
+      "ru": "Изготовление бруса",
+      "en": "Timber production",
+      "de": "Kantholzherstellung"
+    },
+    "buildingIds": [
+      "CONSTRC060"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.85,
+    "inputs": [
+      {
+        "resourceId": "RES_WOOD_LOG",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_TIMBER",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(120, 90, 50, 0.22)",
+      "rgba(50, 35, 20, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/lumber factory.png",
+    "notes": "processingEfficiency 0.85. Бревно → брус."
+  },
+  {
+    "id": "RCP_MAKE_PLANKS",
+    "name": {
+      "ru": "Изготовление досок",
+      "en": "Plank production",
+      "de": "Bretterherstellung"
+    },
+    "buildingIds": [
+      "CONSTRC060"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.85,
+    "inputs": [
+      {
+        "resourceId": "RES_WOOD_LOG",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_PLANKS",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(130, 95, 55, 0.22)",
+      "rgba(55, 38, 22, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/lumber factory.png",
+    "notes": "processingEfficiency 0.85. Бревно → доски."
+  },
+  {
+    "id": "RCP_MAKE_WOODEN_HANDLES",
+    "name": {
+      "ru": "Изготовление деревянных рукояток",
+      "en": "Wooden tool handles",
+      "de": "Holzgriffe für Werkzeuge"
+    },
+    "buildingIds": [
+      "CONSTRC060"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_PLANKS",
+        "perMinute": 1
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_WOODEN_TOOL_HANDLES",
+        "perMinute": 1
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(140, 100, 60, 0.22)",
+      "rgba(60, 40, 25, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/lumber factory.png",
+    "notes": "processingEfficiency 0.8. Доски → рукоятки."
+  },
+  {
+    "id": "RCP_EXTRACT_CRUDE_OIL",
+    "name": {
+      "ru": "Экстракция каустобиолита",
+      "en": "Caustobiolith extraction",
+      "de": "Kaustobiolith-Extraktion"
+    },
+    "buildingIds": [
+      "CONSTRC024"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_OIL",
+        "perMinute": 5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_CRUDE_OIL",
+        "perMinute": 5,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(30, 30, 35, 0.3)",
+      "rgba(15, 15, 18, 0.45)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/oil_platform.png",
+    "notes": "Надводная платформа MC4. GEO_OIL → сырой каустобиолит."
+  },
+  {
+    "id": "RCP_HEALTH_SUPPORT",
+    "name": {
+      "ru": "Поддержка здоровья",
+      "en": "Health Support",
+      "de": "Gesundheitsunterstützung"
+    },
+    "buildingIds": [
+      "CONSTRC007",
+      "CONSTRC006"
+    ],
+    "requiresEnergy": true,
+    "inputs": [],
+    "outputs": [],
+    "birthRateBonus": 0.008,
+    "buildingBirthBonusScale": {
+      "CONSTRC007": 1.0,
+      "CONSTRC006": 0.4
+    },
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 2
+    },
+    "gradient": [
+      "rgba(70, 180, 130, 0.22)",
+      "rgba(25, 75, 55, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Infrastructure/perinatal center.png",
+    "notes": "Бонус к рождаемости (доля/год). Перинатальный центр — полный множитель, больница — 40%."
+  },
+  {
+    "id": "RCP_SIMPLE_IRON_TOOLS",
+    "name": {
+      "ru": "Набор из железных инструментов",
+      "en": "Iron tools set",
+      "de": "Eisener Werkzeugsatz"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_WOODEN_TOOL_HANDLES",
+        "perMinute": 0.4
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.2
+      },
+      {
+        "resourceId": "RES_IRON_SHEET",
+        "perMinute": 0.3
+      },
+      {
+        "resourceId": "RES_IRON_RODS",
+        "perMinute": 0.3
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SIMPLE_IRON_TOOLS",
+        "perMinute": 0.25
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(100, 120, 140, 0.24)",
+      "rgba(35, 42, 52, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T8. Стандартные компоненты. Рукоятки + крепёж + лист + прутья → инструменты."
+  },
+  {
+    "id": "RCP_REPAIR_KIT",
+    "name": {
+      "ru": "Рем. комплект",
+      "en": "Repair kit",
+      "de": "Reparaturset"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_FRAME",
+        "perMinute": 0.15
+      },
+      {
+        "resourceId": "RES_IRON_SHEET",
+        "perMinute": 0.3
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.25
+      },
+      {
+        "resourceId": "RES_SIMPLE_IRON_TOOLS",
+        "perMinute": 0.15
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_REPAIR_KIT",
+        "perMinute": 0.2
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(100, 120, 140, 0.24)",
+      "rgba(35, 42, 52, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T8. Средние компоненты. Каркас + лист + крепёж + инструменты → рем. комплект."
+  },
+  {
+    "id": "RCP_EMPTY_CANISTER",
+    "name": {
+      "ru": "Пустая канистра",
+      "en": "Empty canister",
+      "de": "Leerer Kanister"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_FRAME",
+        "perMinute": 0.1
+      },
+      {
+        "resourceId": "RES_IRON_SHEET",
+        "perMinute": 0.25
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_EMPTY_CANISTER",
+        "perMinute": 0.35
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(100, 120, 140, 0.24)",
+      "rgba(35, 42, 52, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T8. Средние компоненты. Каркас + лист + крепёж → канистра."
+  },
+  {
+    "id": "RCP_RECTIFY_ETHYLENE",
+    "name": {
+      "ru": "Ректификация этилена",
+      "en": "Ethylene rectification",
+      "de": "Ethylen-Rektifikation"
+    },
+    "buildingIds": [
+      "CONSTRC065"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.7,
+    "inputs": [
+      {
+        "resourceId": "RES_CRUDE_OIL",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_ETHYLENE",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(90, 140, 180, 0.24)",
+      "rgba(30, 45, 60, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/rectification_column.png",
+    "notes": "T3. Сырой каустобиолит → газ этилен. processingEfficiency 0.7."
+  },
+  {
+    "id": "RCP_MAKE_PLASTICS",
+    "name": {
+      "ru": "Производство пластмасс",
+      "en": "Plastics production",
+      "de": "Kunststoffherstellung"
+    },
+    "buildingIds": [
+      "CONSTRC066"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_ETHYLENE",
+        "perMinute": 1.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_PLASTICS",
+        "perMinute": 1.5
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 1
+    },
+    "gradient": [
+      "rgba(120, 100, 160, 0.24)",
+      "rgba(40, 35, 55, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/chemical_plant.png",
+    "notes": "T4. Газ этилен → пластмассы. processingEfficiency 0.75."
+  },
+  {
+    "id": "RCP_EXTRACT_LIQUID_OXYGEN",
+    "name": {
+      "ru": "Сжижение кислорода",
+      "en": "Oxygen liquefaction",
+      "de": "Sauerstoff-Verflüssigung"
+    },
+    "buildingIds": [
+      "CONSTRC025"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_O2",
+        "perMinute": 8
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_LIQUID_OXYGEN",
+        "perMinute": 8,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(80, 160, 220, 0.24)",
+      "rgba(25, 50, 80, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/atmospheric_evaporator.png",
+    "notes": "GEO_O2 → RES_LIQUID_OXYGEN 1:1. ExtractionBonus."
+  },
+  {
+    "id": "RCP_RECTIFY_KEROSENE",
+    "name": {
+      "ru": "Ректификация керосина",
+      "en": "Kerosene rectification",
+      "de": "Kerosin-Rektifikation"
+    },
+    "buildingIds": [
+      "CONSTRC065"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.7,
+    "inputs": [
+      {
+        "resourceId": "RES_CRUDE_OIL",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_KEROSENE",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(180, 140, 60, 0.24)",
+      "rgba(60, 45, 25, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/rectification_column.png",
+    "notes": "T3. Сырой каустобиолит → керосин. η 0.7."
+  },
+  {
+    "id": "RCP_MAKE_ROCKET_FUEL",
+    "name": {
+      "ru": "Ракетное топливо",
+      "en": "Rocket fuel",
+      "de": "Raketentreibstoff"
+    },
+    "buildingIds": [
+      "CONSTRC066"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_KEROSENE",
+        "perMinute": 1.2
+      },
+      {
+        "resourceId": "RES_LIQUID_OXYGEN",
+        "perMinute": 2.4
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_ROCKET_FUEL",
+        "perMinute": 1.5
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 1
+    },
+    "gradient": [
+      "rgba(200, 90, 50, 0.26)",
+      "rgba(60, 30, 20, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/chemical_plant.png",
+    "notes": "T5. Керосин + ЖК → ракетное топливо. η 0.8."
+  },
+  {
+    "id": "RCP_EXTRACT_SULFUR_ROCK",
+    "name": {
+      "ru": "Экстракция серосодержащей породы",
+      "en": "Sulfur-bearing rock extraction",
+      "de": "Abbau schwefelhaltigen Gesteins"
+    },
+    "buildingIds": [
+      "CONSTRC022"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_SULFUR_ROCK",
+        "perMinute": 6
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SULFUR_ROCK",
+        "perMinute": 6,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(200, 180, 60, 0.22)",
+      "rgba(70, 60, 25, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/quarry.png",
+    "notes": "GEO_SULFUR_ROCK → RES_SULFUR_ROCK 1:1. ExtractionBonus."
+  },
+  {
+    "id": "RCP_PROCESS_SULFUR_POWDER",
+    "name": {
+      "ru": "Серный порошок",
+      "en": "Sulfur powder",
+      "de": "Schwefelpulver"
+    },
+    "buildingIds": [
+      "CONSTRC061"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.78,
+    "inputs": [
+      {
+        "resourceId": "RES_SULFUR_ROCK",
+        "perMinute": 3
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SULFUR_POWDER",
+        "perMinute": 3
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(210, 190, 70, 0.22)",
+      "rgba(70, 60, 30, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/crusher.png",
+    "notes": "T1. Порода → порошок. η 0.78."
+  },
+  {
+    "id": "RCP_MAKE_RUBBER",
+    "name": {
+      "ru": "Резина",
+      "en": "Rubber",
+      "de": "Gummi"
+    },
+    "buildingIds": [
+      "CONSTRC066"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_ETHYLENE",
+        "perMinute": 1.0
+      },
+      {
+        "resourceId": "RES_SULFUR_POWDER",
+        "perMinute": 0.25
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_RUBBER",
+        "perMinute": 1.0
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(60, 60, 60, 0.28)",
+      "rgba(25, 25, 28, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/chemical_plant.png",
+    "notes": "T4. Этилен + серный порошок → резина. η 0.75."
+  },
+  {
+    "id": "RCP_COPPER_POWER_CABLE",
+    "name": {
+      "ru": "Медные силовые кабели",
+      "en": "Copper power cables",
+      "de": "Kupfer-Leistungskabel"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_COPPER_WIRE",
+        "perMinute": 0.5
+      },
+      {
+        "resourceId": "RES_RUBBER",
+        "perMinute": 0.3
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_COPPER_POWER_CABLE",
+        "perMinute": 0.25
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(180, 110, 50, 0.24)",
+      "rgba(50, 35, 20, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_base_plant.png",
+    "notes": "T5. Медная проволока + резина → силовые кабели. η 0.8."
+  },
+  {
+    "id": "RCP_ELECTRIC_MOTOR",
+    "name": {
+      "ru": "Электромотор",
+      "en": "Electric motor",
+      "de": "Elektromotor"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_STATOR",
+        "perMinute": 0.15
+      },
+      {
+        "resourceId": "RES_ROTOR",
+        "perMinute": 0.15
+      },
+      {
+        "resourceId": "RES_COPPER_POWER_CABLE",
+        "perMinute": 0.2
+      },
+      {
+        "resourceId": "RES_REINFORCED_IRON_PLATE",
+        "perMinute": 0.2
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.15
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_ELECTRIC_MOTOR",
+        "perMinute": 0.12
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(70, 120, 180, 0.26)",
+      "rgba(25, 40, 60, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T8. Статор+ротор+кабели+пластина+крепёж → электромотор."
+  },
+  {
+    "id": "RCP_EXTRACT_LIMESTONE",
+    "name": {
+      "ru": "Экстракция известняковой породы",
+      "en": "Limestone extraction",
+      "de": "Kalksteinabbau"
+    },
+    "buildingIds": [
+      "CONSTRC022"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_LIMESTONE",
+        "perMinute": 8
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_LIMESTONE_ROCK",
+        "perMinute": 8,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(200, 195, 170, 0.22)",
+      "rgba(70, 65, 50, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/quarry.png",
+    "notes": "GEO_LIMESTONE → RES_LIMESTONE_ROCK 1:1."
+  },
+  {
+    "id": "RCP_CRUSH_LIMESTONE",
+    "name": {
+      "ru": "Дробление известняка",
+      "en": "Limestone crushing",
+      "de": "Kalksteinbrechen"
+    },
+    "buildingIds": [
+      "CONSTRC061"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.9,
+    "inputs": [
+      {
+        "resourceId": "RES_LIMESTONE_ROCK",
+        "perMinute": 10
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_GRAVEL",
+        "perMinute": 6
+      },
+      {
+        "resourceId": "RES_LIMESTONE_POWDER",
+        "perMinute": 4
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(190, 185, 160, 0.22)",
+      "rgba(60, 55, 40, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/crusher.png",
+    "notes": "10 кг породы → 6 кг гравия (60%) + 4 кг порошка (40%). η 0.9."
+  },
+  {
+    "id": "RCP_CONCRETE_MIX",
+    "name": {
+      "ru": "Бетонная смесь",
+      "en": "Concrete mix",
+      "de": "Betonmischung"
+    },
+    "buildingIds": [
+      "CONSTRC066"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.85,
+    "inputs": [
+      {
+        "resourceId": "RES_LIMESTONE_POWDER",
+        "perMinute": 2
+      },
+      {
+        "resourceId": "RES_GRAVEL",
+        "perMinute": 4
+      },
+      {
+        "resourceId": "RES_WATER",
+        "perMinute": 1.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_CONCRETE_MIX",
+        "perMinute": 6
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(150, 145, 130, 0.24)",
+      "rgba(50, 48, 42, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/chemical_plant.png",
+    "notes": "Порошок + гравий + вода → бетонная смесь."
+  },
+  {
+    "id": "RCP_REINFORCED_CONCRETE",
+    "name": {
+      "ru": "Железобетон",
+      "en": "Reinforced concrete",
+      "de": "Stahlbeton"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_CONCRETE_MIX",
+        "perMinute": 2.0
+      },
+      {
+        "resourceId": "RES_IRON_FRAME",
+        "perMinute": 0.2
+      },
+      {
+        "resourceId": "RES_IRON_GRATE",
+        "perMinute": 0.25
+      },
+      {
+        "resourceId": "RES_SCREWS_AND_NUTS_SET",
+        "perMinute": 0.15
+      },
+      {
+        "resourceId": "RES_WATER",
+        "perMinute": 0.8
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_REINFORCED_CONCRETE",
+        "perMinute": 2.0
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(140, 140, 135, 0.24)",
+      "rgba(50, 50, 48, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T8. Бетон+каркас+решётка+крепёж+вода → железобетон."
+  },
+  {
+    "id": "RCP_GLASS_SHEET",
+    "name": {
+      "ru": "Стеклянный лист",
+      "en": "Glass sheet",
+      "de": "Glasplatte"
+    },
+    "buildingIds": [
+      "CONSTRC062"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_SAND",
+        "perMinute": 2.0
+      },
+      {
+        "resourceId": "RES_LIMESTONE_POWDER",
+        "perMinute": 0.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_GLASS_SHEET",
+        "perMinute": 1.5
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(140, 190, 210, 0.22)",
+      "rgba(40, 60, 75, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/foundry.jpg",
+    "notes": "Песок + известняковый порошок → стекло."
+  },
+  {
+    "id": "RCP_GLASS_PANEL",
+    "name": {
+      "ru": "Стеклянная панель",
+      "en": "Glass panel",
+      "de": "Glaspanel"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_IRON_FRAME",
+        "perMinute": 0.15
+      },
+      {
+        "resourceId": "RES_GLASS_SHEET",
+        "perMinute": 0.6
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_GLASS_PANEL",
+        "perMinute": 0.2
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(150, 200, 220, 0.22)",
+      "rgba(40, 55, 70, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "Каркас + стеклянные листы → панель."
+  },
+  {
+    "id": "RCP_EXTRACT_SILICON_ROCK",
+    "name": {
+      "ru": "Экстракция кремненосной породы",
+      "en": "Silicon-bearing rock extraction",
+      "de": "Abbau siliciumhaltigen Gesteins"
+    },
+    "buildingIds": [
+      "CONSTRC022"
+    ],
+    "requiresEnergy": true,
+    "inputs": [
+      {
+        "geoResourceId": "GEO_SILICON_ROCK",
+        "perMinute": 6
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SILICON_ROCK",
+        "perMinute": 6,
+        "scaleWithBuildingExtractionBonus": true
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(160, 170, 190, 0.22)",
+      "rgba(50, 55, 70, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Extraction/quarry.png",
+    "notes": "GEO_SILICON_ROCK → RES_SILICON_ROCK 1:1."
+  },
+  {
+    "id": "RCP_PROCESS_SILICON_ORE",
+    "name": {
+      "ru": "Очищенная кремниевая руда",
+      "en": "Processed silicon ore",
+      "de": "Aufbereitetes Siliciumerz"
+    },
+    "buildingIds": [
+      "CONSTRC061"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.78,
+    "inputs": [
+      {
+        "resourceId": "RES_SILICON_ROCK",
+        "perMinute": 3
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SILICON_ORE_CLEAN",
+        "perMinute": 3
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(150, 160, 185, 0.22)",
+      "rgba(45, 50, 65, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/crusher.png",
+    "notes": "Порода → очищенная руда. η 0.78."
+  },
+  {
+    "id": "RCP_PROCESS_SILICON_POWDER",
+    "name": {
+      "ru": "Кремниевый порошок",
+      "en": "Silicon powder",
+      "de": "Siliciumpulver"
+    },
+    "buildingIds": [
+      "CONSTRC061"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_SILICON_ORE_CLEAN",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SILICON_POWDER",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(145, 155, 180, 0.22)",
+      "rgba(40, 45, 60, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/crusher.png",
+    "notes": "Очищенная руда → порошок. η 0.8."
+  },
+  {
+    "id": "RCP_SMELT_SILICON_INGOT",
+    "name": {
+      "ru": "Кремниевый слиток",
+      "en": "Silicon ingot",
+      "de": "Siliciumbarren"
+    },
+    "buildingIds": [
+      "CONSTRC062"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_SILICON_ORE_CLEAN",
+        "perMinute": 2
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SILICON_INGOT",
+        "perMinute": 2
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(130, 150, 190, 0.24)",
+      "rgba(35, 45, 65, 0.38)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/foundry.jpg",
+    "notes": "Очищенная руда → слиток. η 0.75."
+  },
+  {
+    "id": "RCP_SILICON_SHEET",
+    "name": {
+      "ru": "Кремниевый лист",
+      "en": "Silicon sheet",
+      "de": "Siliciumblech"
+    },
+    "buildingIds": [
+      "CONSTRC063"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.8,
+    "inputs": [
+      {
+        "resourceId": "RES_SILICON_INGOT",
+        "perMinute": 0.5
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_SILICON_SHEET",
+        "perMinute": 0.5
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 0
+    },
+    "gradient": [
+      "rgba(120, 145, 185, 0.22)",
+      "rgba(35, 45, 65, 0.36)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_base_plant.png",
+    "notes": "Слиток → лист. η 0.8."
+  },
+  {
+    "id": "RCP_PHOTOVOLTAIC_PANEL",
+    "name": {
+      "ru": "Панель фотоэлементов",
+      "en": "Photovoltaic panel",
+      "de": "Photovoltaikmodul"
+    },
+    "buildingIds": [
+      "CONSTRC064"
+    ],
+    "requiresEnergy": true,
+    "processingEfficiency": 0.75,
+    "inputs": [
+      {
+        "resourceId": "RES_SILICON_SHEET",
+        "perMinute": 0.3
+      },
+      {
+        "resourceId": "RES_COPPER_WIRE",
+        "perMinute": 0.25
+      },
+      {
+        "resourceId": "RES_GLASS_PANEL",
+        "perMinute": 0.15
+      },
+      {
+        "resourceId": "RES_COPPER_POWER_CABLE",
+        "perMinute": 0.15
+      }
+    ],
+    "outputs": [
+      {
+        "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+        "perMinute": 0.1
+      }
+    ],
+    "specialists": {
+      "engineers": 2,
+      "agronomists": 0,
+      "scientists": 1
+    },
+    "gradient": [
+      "rgba(50, 90, 150, 0.28)",
+      "rgba(20, 35, 55, 0.4)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Industry/components_standard_plant.png",
+    "notes": "T8. Кремниевый лист + Cu-провод + стеклопанель + силовой кабель."
+  },
+  {
+    "id": "RCP_OPTICAL_SCANNING",
+    "name": {
+      "ru": "Оптическое сканирование",
+      "en": "Optical scanning",
+      "de": "Optische Abtastung"
+    },
+    "buildingIds": [
+      "CONSTRC011"
+    ],
+    "requiresEnergy": true,
+    "inputs": [],
+    "outputs": [
+      {
+        "resourceId": null,
+        "isEffect": true,
+        "effectId": "EFF_OPTICAL_SCAN",
+        "a1RadiusKm": 7479893535.0,
+        "a2RadiusKm": 1.25008e+17,
+        "perMinute": 0
+      }
+    ],
+    "specialists": {
+      "engineers": 1,
+      "agronomists": 0,
+      "scientists": 2
+    },
+    "gradient": [
+      "rgba(40, 120, 190, 0.28)",
+      "rgba(12, 28, 48, 0.42)"
+    ],
+    "backgroundImage": "assets/textures/buildings/Infrastructure/observatory.png",
+    "notes": "A1 L0 = радиус Солнечной системы; A2 L0 = 1/4 радиуса Млечного пути. Уровень и количество зданий усиливают радиусы."
+  }
+]

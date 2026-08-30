@@ -1,0 +1,325 @@
+/* ======================================================================
+   specialists.css — окно распределения специалистов
+   Подключается после buildings.css
+   ====================================================================== */
+
+/* ===== Окно специалистов (Управление → Специалисты) ===== */
+#specialists-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 950;
+    display: none;
+    flex-direction: column;
+    width: 720px;
+    max-width: 92vw;
+    max-height: 85vh;
+    font-family: 'Play', sans-serif;
+}
+
+.specialists-panel-header {
+    width: 100%;
+    height: 20px;
+    background: rgba(17, 17, 17, 0.432);
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+    box-sizing: border-box;
+}
+
+.specialists-panel-body {
+    width: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.55),
+        rgba(36, 36, 36, 0.5) 70%
+    );
+    padding: 12px 14px 18px 14px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: white;
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        0 100%
+    );
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: calc(85vh - 20px);
+}
+
+.specialists-summary-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    min-height: 28px;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(40, 40, 40, 0.35));
+    border-radius: 3px;
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+}
+
+.specialists-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.specialists-summary-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.specialists-summary-label {
+    font-size: 13px;
+    background: linear-gradient(to right, rgba(183, 244, 255, 0.9), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 600;
+}
+
+.specialists-summary-value {
+    font-size: 13px;
+    color: #fff;
+    margin-left: 2px;
+}
+
+.specialists-hint {
+    margin: 0 0 10px 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    line-height: 1.45;
+    color: rgba(210, 220, 230, 0.88);
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 3px;
+    border-left: 2px solid rgba(0, 192, 206, 0.45);
+}
+
+.specialists-distribution-title {
+    margin: 4px 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(100, 210, 255, 0.95) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.specialists-roles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.specialist-role-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    min-height: 108px;
+    padding: 6px 6px 6px 14px;
+    box-sizing: border-box;
+    clip-path: polygon(16px 0, 100% 0, 100% 100%, 0 100%, 0 16px);
+    backdrop-filter: blur(4px);
+}
+
+/* Учёные — бирюзовый (стандарт) */
+.specialist-role-row[data-role="scientists"] {
+    background: linear-gradient(to right,
+        rgba(0, 192, 206, 0.14) 0%,
+        rgba(82, 82, 82, 0.22) 100%
+    );
+}
+.specialist-role-row[data-role="scientists"] .specialist-custom-track {
+    background: linear-gradient(to right, rgba(0, 192, 206, 0) 0%, rgba(0, 192, 206, 0.8) 100%);
+}
+.specialist-role-row[data-role="scientists"] .specialist-slider::-webkit-slider-thumb {
+    background: rgba(0, 238, 255, 0.95);
+    box-shadow: 0 0 5px rgba(0, 192, 206, 0.55);
+}
+.specialist-role-row[data-role="scientists"] .specialist-slider::-moz-range-thumb {
+    background: rgba(0, 238, 255, 0.95);
+}
+
+/* Агрономы — салатовый */
+.specialist-role-row[data-role="agronomists"] {
+    background: linear-gradient(to right,
+        rgba(120, 200, 60, 0.16) 0%,
+        rgba(70, 90, 50, 0.28) 100%
+    );
+}
+.specialist-role-row[data-role="agronomists"] .specialist-custom-track {
+    background: linear-gradient(to right, rgba(140, 210, 70, 0) 0%, rgba(140, 210, 70, 0.85) 100%);
+}
+.specialist-role-row[data-role="agronomists"] .specialist-slider::-webkit-slider-thumb {
+    background: rgba(180, 255, 90, 0.95);
+    box-shadow: 0 0 5px rgba(140, 210, 70, 0.55);
+}
+.specialist-role-row[data-role="agronomists"] .specialist-slider::-moz-range-thumb {
+    background: rgba(180, 255, 90, 0.95);
+}
+
+/* Инженеры — жёлтый */
+.specialist-role-row[data-role="engineers"] {
+    background: linear-gradient(to right,
+        rgba(220, 180, 40, 0.16) 0%,
+        rgba(90, 75, 35, 0.28) 100%
+    );
+}
+.specialist-role-row[data-role="engineers"] .specialist-custom-track {
+    background: linear-gradient(to right, rgba(230, 190, 50, 0) 0%, rgba(230, 190, 50, 0.85) 100%);
+}
+.specialist-role-row[data-role="engineers"] .specialist-slider::-webkit-slider-thumb {
+    background: rgba(255, 220, 70, 0.95);
+    box-shadow: 0 0 5px rgba(230, 190, 50, 0.55);
+}
+.specialist-role-row[data-role="engineers"] .specialist-slider::-moz-range-thumb {
+    background: rgba(255, 220, 70, 0.95);
+}
+
+.specialist-role-name {
+    flex: 0 0 110px;
+    align-self: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+}
+
+.specialist-slider-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    height: auto;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+.specialist-custom-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 28px;
+    clip-path: polygon(0 100%, 0 88%, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%);
+    border-radius: 4px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.specialist-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 28px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    cursor: pointer;
+}
+
+.specialist-slider::-webkit-slider-runnable-track {
+    height: 28px;
+    background: transparent;
+}
+
+.specialist-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-top: -2px;
+    clip-path: polygon(6px 0, calc(100% - 2px) 0, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) 100%, 3px 100%, 0 calc(100% - 3px), 0 6px);
+}
+
+.specialist-slider::-moz-range-thumb {
+    width: 12px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.specialist-role-meta {
+    flex: 0 0 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    align-self: center;
+}
+
+.specialist-role-pct {
+    font-size: 14px;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.specialist-role-counts {
+    font-size: 11px;
+    color: rgba(220, 220, 220, 0.85);
+    white-space: nowrap;
+}
+
+/* Портрет ×1.5, вплотную к краям, со скосом в стиле UI */
+.specialist-role-portrait {
+    flex: 0 0 96px;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0;
+    align-self: stretch;
+    max-height: none;
+    /* левый-верхний и правый-нижний скос — как у кнопок/карточек */
+    clip-path: polygon(
+        12px 0,
+        100% 0,
+        100% calc(100% - 12px),
+        calc(100% - 12px) 100%,
+        0 100%,
+        0 12px
+    );
+}
+
+
+/* Экспедиционеры — коричневый градиент */
+.specialist-role-row[data-role="expeditioners"] {
+    background: linear-gradient(to right, rgba(140, 90, 40, 0.28), rgba(70, 50, 30, 0.35));
+}
+.specialist-role-row[data-role="expeditioners"] .specialist-custom-track {
+    background: linear-gradient(to right, rgba(160, 100, 45, 0.55), rgba(90, 60, 30, 0.5));
+}
+.specialist-role-row[data-role="expeditioners"] .specialist-slider::-webkit-slider-thumb {
+    background: repeating-linear-gradient(-45deg, #2a1a0c 0 4px, #c48a3a 4px 8px);
+    border-color: rgba(40, 20, 8, 0.85);
+}
+.specialist-role-row[data-role="expeditioners"] .specialist-slider::-moz-range-thumb {
+    background: repeating-linear-gradient(-45deg, #2a1a0c 0 4px, #c48a3a 4px 8px);
+    border-color: rgba(40, 20, 8, 0.85);
+}

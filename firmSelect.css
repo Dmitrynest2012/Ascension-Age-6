@@ -1,0 +1,115 @@
+/* Фирменный селект (скосы, тёмный) */
+.firm-select {
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+    font-size: 13px;
+    color: #dce4ec;
+    user-select: none;
+}
+.firm-select-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: 1px solid rgba(80, 100, 120, 0.45);
+    background: rgba(12, 14, 18, 0.75);
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+    transition: border-color 0.15s, background 0.15s;
+}
+.firm-select-trigger:hover,
+.firm-select.open .firm-select-trigger {
+    border-color: rgba(0, 190, 200, 0.45);
+    background: rgba(18, 22, 28, 0.9);
+}
+.firm-select-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0.92;
+}
+.firm-select-label.is-placeholder {
+    opacity: 0.45;
+}
+.firm-select-chevron {
+    flex-shrink: 0;
+    font-size: 10px;
+    opacity: 0.7;
+    transition: transform 0.2s;
+}
+.firm-select.open .firm-select-chevron {
+    transform: rotate(180deg);
+}
+.firm-select-dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    z-index: 40;
+    max-height: 220px;
+    overflow: hidden;
+    border: 1px solid rgba(80, 100, 120, 0.4);
+    background: rgba(10, 12, 16, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    display: none;
+}
+.firm-select.open .firm-select-dropdown {
+    display: block;
+}
+.firm-select-list {
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 4px 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(60, 80, 100, 0.7) transparent;
+}
+.firm-select-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: inherit;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+}
+.firm-select-option:hover {
+    background: linear-gradient(90deg, rgba(0, 140, 160, 0.22), transparent);
+}
+.firm-select-option.is-selected {
+    background: linear-gradient(90deg, rgba(0, 160, 180, 0.28), transparent);
+    color: #e8f8ff;
+}
+.firm-select-option.is-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+.firm-select-check {
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgba(100, 130, 150, 0.5);
+    flex-shrink: 0;
+    clip-path: polygon(3px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0 calc(100% - 3px), 0 3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #0cf;
+}
+.firm-select-option.is-selected .firm-select-check {
+    background: rgba(0, 180, 200, 0.25);
+    border-color: rgba(0, 200, 210, 0.55);
+}

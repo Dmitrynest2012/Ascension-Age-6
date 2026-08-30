@@ -1,0 +1,506 @@
+[
+  {
+    "id": "GEO_N2",
+    "category": "volatiles",
+    "name": {
+      "ru": "Азотистый газ",
+      "en": "Nitrogen gas",
+      "de": "Stickstoffgas"
+    },
+    "icon": "assets/textures/icons/res_nitrogen_gas.png",
+    "unit": "t",
+    "symbol": "N₂",
+    "chartColor": "#3ec6ff",
+    "description": {
+      "ru": "Молекулярный азот (N₂) — основа земной атмосферы. На планетах земной группы встречается в свободном виде и в связанном состоянии (нитраты, аммиачные соли). На Марсе доля N₂ в атмосфере мала; на Титане азот доминирует наряду с метаном.",
+      "en": "Molecular nitrogen (N₂) forms the bulk of Earth's atmosphere. On terrestrial worlds it occurs free and bound (nitrates, ammonium salts). Mars has only a minor N₂ fraction; on Titan nitrogen dominates together with methane.",
+      "de": "Molekularer Stickstoff (N₂) bildet den Großteil der Erdatmosphäre. Auf erdähnlichen Körpern tritt er frei und gebunden (Nitrate, Ammoniumsalze) auf. Der Marsanteil ist gering; auf Titan dominiert Stickstoff neben Methan."
+    }
+  },
+  {
+    "id": "GEO_O2",
+    "category": "volatiles",
+    "name": {
+      "ru": "Кислородный газ",
+      "en": "Oxygen gas",
+      "de": "Sauerstoffgas"
+    },
+    "icon": "assets/textures/icons/res_oxygen_gas.png",
+    "unit": "t",
+    "symbol": "O₂",
+    "chartColor": "#36B1FC",
+    "description": {
+      "ru": "Дикислород (O₂) — биогенный продукт фотосинтеза. В недрах фиксируется в оксидах и силикатах. На бескислородных мирах свободный O₂ редок; озон и атомарный кислород возможны в верхних слоях атмосфер с УФ-облучением.",
+      "en": "Dioxygen (O₂) is largely a photosynthetic product. In the crust it is locked in oxides and silicates. Free O₂ is rare on anoxic worlds; ozone and atomic oxygen may form in UV-irradiated upper atmospheres.",
+      "de": "Disauerstoff (O₂) ist vorwiegend ein Produkt der Photosynthese. In der Kruste ist er in Oxiden und Silikaten gebunden. Freier O₂ ist auf anoxischen Welten selten; Ozon und atomarer Sauerstoff können in UV-bestrahlten Hochatmosphären entstehen."
+    }
+  },
+  {
+    "id": "GEO_CO2",
+    "category": "volatiles",
+    "name": {
+      "ru": "Углекислый газ",
+      "en": "Carbon dioxide",
+      "de": "Kohlendioxid"
+    },
+    "icon": "assets/textures/icons/res_carbonic_gas.png",
+    "unit": "t",
+    "symbol": "CO₂",
+    "chartColor": "#90a4ae",
+    "description": {
+      "ru": "Диоксид углерода — ключевой парниковый газ и буфер карбонатно-силикатного цикла. На Венере составляет основную массу атмосферы; на Марсе — сухой лёд в полярных шапках. Связан в известняках, доломитах и магматических флюидах.",
+      "en": "Carbon dioxide is a major greenhouse gas and a buffer of the carbonate–silicate cycle. It dominates Venus’s atmosphere and forms dry-ice polar caps on Mars. Bound forms include limestones, dolomites and magmatic fluids.",
+      "de": "Kohlendioxid ist ein zentrales Treibhausgas und Puffer des Karbonat-Silikat-Zyklus. Es dominiert die Venusatmosphäre und bildet Trockeneis-Polkappen auf dem Mars. Gebunden tritt es in Kalken, Dolomiten und magmatischen Fluiden auf."
+    }
+  },
+  {
+    "id": "GEO_CH4",
+    "category": "volatiles",
+    "name": {
+      "ru": "Метановый газ",
+      "en": "Methane gas",
+      "de": "Methangas"
+    },
+    "icon": "assets/textures/icons/res_methane_gas.png",
+    "unit": "t",
+    "symbol": "CH₄",
+    "chartColor": "#8EA0B4",
+    "description": {
+      "ru": "Метан — простейший углеводород; на Земле биогенный и абиогенный (серпентинизация). На Титане образует озёра и круговорот; на ледяных спутниках может выделяться из клатратов. Чувствительный индикатор возможной биогеохимии.",
+      "en": "Methane is the simplest hydrocarbon—biogenic and abiotic (serpentinization) on Earth. On Titan it forms lakes and a full cycle; icy moons may release it from clathrates. A sensitive tracer of possible biogeochemistry.",
+      "de": "Methan ist der einfachste Kohlenwasserstoff — auf der Erde biogen und abiotisch (Serpentinisierung). Auf Titan bildet es Seen und einen Kreislauf; Eismonde können es aus Clathraten freisetzen. Ein sensibler Indikator möglicher Biogeochemie."
+    }
+  },
+  {
+    "id": "GEO_HE",
+    "category": "volatiles",
+    "name": {
+      "ru": "Гелиевый газ",
+      "en": "Helium gas",
+      "de": "Heliumgas"
+    },
+    "icon": "assets/textures/icons/res_helium_gas.png",
+    "unit": "t",
+    "symbol": "He",
+    "chartColor": "#5AD6EC",
+    "description": {
+      "ru": "Гелий накапливается в земной коре от α-распада U и Th и задерживается в газовых ловушках. ³He в реголите Луны — продукт солнечного ветра. Лёгкий газ быстро ускользает из тонких атмосфер малых тел.",
+      "en": "Helium accumulates in crustal traps from α-decay of U and Th. Lunar regolith ³He is implanted by the solar wind. As a light noble gas it escapes thin atmospheres of small bodies rapidly.",
+      "de": "Helium reichert sich in Krustenfallen durch α-Zerfall von U und Th an. ³He im Mondregolith stammt vom Sonnenwind. Als leichtes Edelgas entweicht es dünnen Atmosphären kleiner Körper rasch."
+    }
+  },
+  {
+    "id": "GEO_NE",
+    "category": "volatiles",
+    "name": {
+      "ru": "Неоновый газ",
+      "en": "Neon gas",
+      "de": "Neongas"
+    },
+    "icon": "assets/textures/icons/res_neon_gas.png",
+    "unit": "t",
+    "symbol": "Ne",
+    "chartColor": "#CFAAD4",
+    "description": {
+      "ru": "Неон — инертный продукт звёздного нуклеосинтеза, в атмосферах планет земной группы крайне рассеян. Изотопные отношения Ne используют для реконструкции degassing и захвата солнечного ветра реголитом.",
+      "en": "Neon is an inert product of stellar nucleosynthesis, highly depleted in terrestrial atmospheres. Ne isotope ratios constrain degassing histories and solar-wind implantation in regolith.",
+      "de": "Neon ist ein inertes Produkt der stellaren Nukleosynthese und in erdähnlichen Atmosphären stark abgereichert. Ne-Isotopenverhältnisse rekonstruieren Entgasung und Sonnenwind-Implantation im Regolith."
+    }
+  },
+  {
+    "id": "GEO_AR",
+    "category": "volatiles",
+    "name": {
+      "ru": "Аргоновый газ",
+      "en": "Argon gas",
+      "de": "Argongas"
+    },
+    "icon": "assets/textures/icons/res_argon_gas.png",
+    "unit": "t",
+    "symbol": "Ar",
+    "chartColor": "#A2C2F8",
+    "description": {
+      "ru": "Аргон на Земле в основном радиогенный ⁴⁰Ar от распада ⁴⁰K. На Марсе ⁴⁰Ar/³⁶Ar — важный параметр эволюции атмосферы. Благородный газ служит трассером вулканического degassing и ударных событий.",
+      "en": "Earth’s argon is largely radiogenic ⁴⁰Ar from ⁴⁰K decay. On Mars the ⁴⁰Ar/³⁶Ar ratio constrains atmospheric evolution. As a noble gas it traces volcanic degassing and impact events.",
+      "de": "Argon auf der Erde ist überwiegend radiogenes ⁴⁰Ar aus dem ⁴⁰K-Zerfall. Auf dem Mars begrenzt das ⁴⁰Ar/³⁶Ar-Verhältnis die Atmosphärenentwicklung. Als Edelgas traceiert es vulkanische Entgasung und Impakte."
+    }
+  },
+  {
+    "id": "GEO_IRON_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Железоносная порода",
+      "en": "Iron-bearing rock",
+      "de": "Eisenhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_iron_mineral.png",
+    "unit": "t",
+    "symbol": "Fe",
+    "chartColor": "#4a2c1a",
+    "description": {
+      "ru": "Железоносные породы: на Земле доминируют гематит (Fe₂O₃), магнетит (Fe₃O₄) и гетит. В полосчатых железистых кварцитах (BIF) — древние океанические осадки. На Марсе типичны оливин-пироксеновые базальты и гематитовые «черничные» конкреции; на астероидах — камасит/тэнит металлического ядра.",
+      "en": "Iron-bearing lithologies: on Earth hematite (Fe₂O₃), magnetite (Fe₃O₄) and goethite dominate; BIFs record early ocean chemistry. Mars hosts olivine–pyroxene basalts and hematite ‘blueberry’ concretions; asteroids may expose kamacite/taenite from metallic cores.",
+      "de": "Eisenhaltige Gesteine: auf der Erde dominieren Hämatit (Fe₂O₃), Magnetit (Fe₃O₄) und Goethit; BIF dokumentieren frühe Ozeanchemie. Der Mars zeigt Olivin-Pyroxen-Basalte und Hämatit-«Blueberries»; Asteroiden können Kamacit/Taenit metallischer Kerne freilegen."
+    }
+  },
+  {
+    "id": "GEO_COPPER_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Меденосная порода",
+      "en": "Copper-bearing rock",
+      "de": "Kupferhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_copper_mineral.png",
+    "unit": "t",
+    "symbol": "Cu",
+    "chartColor": "#2ec4b6",
+    "description": {
+      "ru": "Медь концентрируется в халькопирите (CuFeS₂), борните и малахите. Порфировые Cu-Mo системы — главные земные месторождения. На бескислородных мирах сульфидные ассоциации устойчивее; оксидные вторичные руды (малахит, азурит) требуют окислительной среды.",
+      "en": "Copper concentrates in chalcopyrite (CuFeS₂), bornite and malachite. Porphyry Cu–Mo systems host Earth’s main deposits. On anoxic worlds sulfide assemblages persist; secondary oxides (malachite, azurite) need oxidizing conditions.",
+      "de": "Kupfer reichert sich in Chalkopyrit (CuFeS₂), Bornit und Malachit an. Porphyrische Cu-Mo-Systeme tragen die Hauptlagerstätten der Erde. Auf anoxischen Welten bleiben Sulfide stabil; sekundäre Oxide (Malachit, Azurit) brauchen oxidierende Bedingungen."
+    }
+  },
+  {
+    "id": "GEO_TITANIUM_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Титаноносная порода",
+      "en": "Titanium-bearing rock",
+      "de": "Titanhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_titanium_mineral.png",
+    "unit": "t",
+    "symbol": "Ti",
+    "chartColor": "#8a8e96",
+    "description": {
+      "ru": "Титан в литосфере — в ильмените (FeTiO₃), рутиле (TiO₂) и титаномагнетите. Лунный high-Ti базальт богат ильменитом; земные россыпи — рутил-ильменитовые концентраты. На анортозитовых корах титан рассеян в пироксенах.",
+      "en": "Crustal titanium resides in ilmenite (FeTiO₃), rutile (TiO₂) and titanomagnetite. Lunar high-Ti basalts are ilmenite-rich; terrestrial placers yield rutile–ilmenite concentrates. On anorthositic crusts Ti is dispersed in pyroxenes.",
+      "de": "Titan in der Kruste sitzt in Ilmenit (FeTiO₃), Rutil (TiO₂) und Titanomagnetit. Lunare High-Ti-Basalte sind ilmenitreich; terrestrische Seifen liefern Rutil-Ilmenit-Konzentrate. In anorthositischen Krusten ist Ti in Pyroxenen verteilt."
+    }
+  },
+  {
+    "id": "GEO_TUNGSTEN_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Вольфрамоносная порода",
+      "en": "Tungsten-bearing rock",
+      "de": "Wolframhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_tungsten_mineral.png",
+    "unit": "t",
+    "symbol": "W",
+    "chartColor": "#1a1a1c",
+    "description": {
+      "ru": "Вольфрам концентрируется в шеелите (CaWO₄) и вольфрамите ((Fe,Mn)WO₄) гидротермальных жил и скарнов. Сидерофильный элемент; в металлических ядрах планет возможен сплав с Fe–Ni. На поверхности малых тел — редкая акцессорная фаза.",
+      "en": "Tungsten concentrates in scheelite (CaWO₄) and wolframite ((Fe,Mn)WO₄) of hydrothermal veins and skarns. As a siderophile it may alloy with Fe–Ni in planetary cores; on small-body surfaces it is a rare accessory phase.",
+      "de": "Wolfram reichert sich in Scheelit (CaWO₄) und Wolframit ((Fe,Mn)WO₄) hydrothermaler Gänge und Skarne an. Als Siderophil kann es in planetaren Kernen mit Fe–Ni legieren; auf Oberflächen kleiner Körper ist es eine seltene Akzessorphase."
+    }
+  },
+  {
+    "id": "GEO_ALUMINUM_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Алюминийсодержащая порода",
+      "en": "Aluminum-bearing rock",
+      "de": "Aluminiumhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_aluminum_mineral.png",
+    "unit": "t",
+    "symbol": "Al",
+    "chartColor": "#c5c8cc",
+    "description": {
+      "ru": "Алюминий — основной компонент полевых шпатов и глин. Промышленно — бокситы (гиббсит, бёмит, диаспор). На безводных мирах Al остаётся в анортите и шпинели; каолинит и гиббсит требуют гидротермального или субаэрального выветривания.",
+      "en": "Aluminum dominates feldspars and clays; ore-grade material is bauxite (gibbsite, boehmite, diaspore). On anhydrous worlds Al stays in anorthite and spinel; kaolinite and gibbsite need hydrothermal or subaerial weathering.",
+      "de": "Aluminium dominiert Feldspäte und Tone; wirtschaftlich sind Bauxite (Gibbsit, Böhmit, Diaspor). Auf wasserfreien Welten bleibt Al in Anorthit und Spinell; Kaolinit und Gibbsit brauchen hydrothermale oder subaerische Verwitterung."
+    }
+  },
+  {
+    "id": "GEO_SULFUR_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Серосодержащая порода",
+      "en": "Sulfur-bearing rock",
+      "de": "Schwefelhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_sulfur_mineral.png",
+    "unit": "t",
+    "symbol": "S",
+    "chartColor": "#e8c41a",
+    "description": {
+      "ru": "Сера входит в пирит (FeS₂), пирротин, сульфаты (гипс, ангидрит) и самородную серу фумарол. На Ио — активные серные потоки; на Марсе — ярозит и другие кислые сульфаты как следы прошлой воды.",
+      "en": "Sulfur occurs as pyrite (FeS₂), pyrrhotite, sulfates (gypsum, anhydrite) and native fumarolic sulfur. Io hosts active sulfur flows; Mars preserves jarosite and other acid sulfates as markers of past water.",
+      "de": "Schwefel tritt als Pyrit (FeS₂), Pyrrhotin, Sulfate (Gips, Anhydrit) und elementarer Fumarolen-Schwefel auf. Io zeigt aktive Schwefelströme; der Mars bewahrt Jarosit und andere saure Sulfate als Spuren früheren Wassers."
+    }
+  },
+  {
+    "id": "GEO_LIMESTONE",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Известняковая порода",
+      "en": "Limestone rock",
+      "de": "Kalkstein"
+    },
+    "icon": "assets/textures/icons/res_limestone_mineral.png",
+    "unit": "t",
+    "symbol": "Ca",
+    "chartColor": "#d4c47a",
+    "description": {
+      "ru": "Известняки — в основном кальцит (CaCO₃) и доломит (CaMg(CO₃)₂); на Земле — биогенные и хемогенные осадки. На Марсе карбонаты редки, но обнаружены локально; на мирах с CO₂-атмосферой возможны абиогенные карбонатные корки.",
+      "en": "Limestones are chiefly calcite (CaCO₃) and dolomite (CaMg(CO₃)₂)—biogenic and chemical sediments on Earth. Martian carbonates are scarce but locally present; CO₂-rich worlds may form abiotic carbonate crusts.",
+      "de": "Kalke bestehen vor allem aus Calcit (CaCO₃) und Dolomit (CaMg(CO₃)₂) — auf der Erde biogen und chemisch. Mars-Karbonate sind selten, aber lokal nachgewiesen; CO₂-reiche Welten können abiotische Karbonatkrusten bilden."
+    }
+  },
+  {
+    "id": "GEO_WATER",
+    "category": "exogenous",
+    "name": {
+      "ru": "Гидросферный субстрат (Вода)",
+      "en": "Hydrospheric substrate (Water)",
+      "de": "Hydrosphärisches Substrat (Wasser)"
+    },
+    "icon": "assets/textures/icons/res_water.png",
+    "unit": "t",
+    "symbol": "H₂O",
+    "chartColor": "#3aa0e8",
+    "description": {
+      "ru": "Жидкая вода — океаны, моря, подземные горизонты. На Земле — устойчивая гидросфера; на Европах/Энцеладах — подлёдные океаны. Минералогически связана с гидратированными силикатами (серпентин, смектиты).",
+      "en": "Liquid water forms oceans, seas and aquifers. Earth sustains a stable hydrosphere; Europa and Enceladus host subsurface oceans. Mineralogically linked to hydrated silicates (serpentine, smectites).",
+      "de": "Flüssiges Wasser bildet Ozeane, Meere und Grundwasserleiter. Die Erde hält eine stabile Hydrosphäre; Europa und Enceladus besitzen unterirdische Ozeane. Mineralogisch mit hydratisierten Silikaten (Serpentin, Smektite) verknüpft."
+    }
+  },
+  {
+    "id": "GEO_ICE",
+    "category": "exogenous",
+    "name": {
+      "ru": "Криогенные отложения (Лёд)",
+      "en": "Cryogenic deposits (Ice)",
+      "de": "Kryogene Ablagerungen (Eis)"
+    },
+    "icon": "assets/textures/icons/res_ice.png",
+    "unit": "t",
+    "symbol": "H₂O",
+    "chartColor": "#a8d4f0",
+    "description": {
+      "ru": "Водный лёд полярных шапок, вечной мерзлоты и кометного вещества. На Луне и Меркурии — в постоянно затенённых кратерах. На Марсе — CO₂–H₂O сезонные и остаточные шапки; клатраты метана возможны в криолитозоне.",
+      "en": "Water ice of polar caps, permafrost and cometary material. On the Moon and Mercury it persists in permanently shadowed craters. Mars has CO₂–H₂O seasonal and residual caps; methane clathrates may occupy the cryolithosphere.",
+      "de": "Wassereis in Polkappen, Permafrost und Kometenmaterial. Auf Mond und Merkur bleibt es in permanent beschatteten Kratern. Der Mars hat CO₂-H₂O-Saison- und Restkappen; Methan-Clathrate können die Kryolithosphäre besetzen."
+    }
+  },
+  {
+    "id": "GEO_OIL",
+    "category": "exogenous",
+    "name": {
+      "ru": "Каустобиолиты (Нефть)",
+      "en": "Caustobioliths (Oil)",
+      "de": "Kaustobiolithe (Öl)"
+    },
+    "icon": "assets/textures/icons/res_oil.png",
+    "unit": "t",
+    "symbol": "CₓHᵧ",
+    "chartColor": "#1A1A1E",
+    "description": {
+      "ru": "Нефть и родственные каустобиолиты — продукты захоронения органики в осадочных бассейнах. На мирах без биосферы аналоги возможны через абиогенный синтез Фишера–Тропша в гидротермальных системах (как гипотеза для Титана/Энцелада).",
+      "en": "Petroleum and related caustobioliths form from buried organic matter in sedimentary basins. On abiotic worlds Fischer–Tropsch-type synthesis in hydrothermal systems may yield analogous hydrocarbons (Titan/Enceladus hypotheses).",
+      "de": "Erdöl und verwandte Kaustobiolithe entstehen aus begrabener Organik in Sedimentbecken. Auf abiotischen Welten kann Fischer-Tropsch-Synthese in Hydrothermalsystemen analoge Kohlenwasserstoffe liefern (Titan/Enceladus-Hypothesen)."
+    }
+  },
+  {
+    "id": "GEO_SAND",
+    "category": "exogenous",
+    "name": {
+      "ru": "Песок",
+      "en": "Sand",
+      "de": "Sand"
+    },
+    "icon": "assets/textures/icons/res_soil.png",
+    "unit": "t",
+    "symbol": "SiO₂",
+    "chartColor": "#c2a878",
+    "description": {
+      "ru": "Псаммиты — обломочные отложения фракции песка: кварц, полевые шпаты, литические обломки. На Марсе — базальтовые пески и дюны; на Титане — органические «пески» из толинов. Важный строительный и технологический субстрат.",
+      "en": "Psammites are sand-grade clastic deposits—quartz, feldspar, lithic fragments. Mars has basaltic sands and dunes; Titan hosts organic ‘sands’ of tholins. A key construction and industrial substrate.",
+      "de": "Psammitе sind klastische Sandfraktionen — Quarz, Feldspat, lithische Fragmente. Der Mars hat basaltische Sande und Dünen; Titan trägt organische «Sande» aus Tholinen. Wichtiges Bau- und Industriesubstrat."
+    }
+  },
+  {
+    "id": "GEO_SILICON_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Кремненосная порода",
+      "en": "Silicon-bearing rock",
+      "de": "Siliciumhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_silicon_mineral.png",
+    "unit": "t",
+    "symbol": "Si",
+    "chartColor": "#B0BEC5",
+    "description": {
+      "ru": "Кремний в литосфере доминирует в виде кварца (SiO₂), халцедона и силикатных минералов (полевые шпаты, пироксены). Кварциты и кремнистые сланцы — типичные промышленные источники. На безводных мирах Si остаётся в орто- и клинопироксенах и оливине; вторичный опал и халцедон требуют гидротермальной активности.",
+      "en": "Crustal silicon resides chiefly as quartz (SiO₂), chalcedony and silicate minerals (feldspars, pyroxenes). Quartzites and siliceous shales are the main industrial sources. On anhydrous worlds Si stays in ortho- and clinopyroxenes and olivine; secondary opal and chalcedony need hydrothermal activity.",
+      "de": "Silicium in der Kruste sitzt vor allem in Quarz (SiO₂), Chalzedon und Silikatmineralen (Feldspäte, Pyroxene). Quarzite und kieselige Schiefer sind die wichtigsten industriellen Quellen. Auf wasserfreien Welten bleibt Si in Ortho- und Klinopyroxenen sowie Olivin; sekundärer Opal und Chalzedon brauchen hydrothermale Aktivität."
+    }
+  },
+  {
+    "id": "GEO_COBALT_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Кобальтоносная порода",
+      "en": "Cobalt-bearing rock",
+      "de": "Kobalthaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_cobalt_mineral.png",
+    "unit": "t",
+    "symbol": "Co",
+    "chartColor": "#1565C0",
+    "description": {
+      "ru": "Кобальт концентрируется в кобальтите (CoAsS), линнеите и гетерогените; часто попутный элемент в Cu-Ni сульфидных рудах. На Земле главные месторождения — стратиформные и гидротермальные. На бескислородных мирах устойчивы арсенидные и сульфидные ассоциации; оксидные вторичные минералы требуют окислительной обстановки.",
+      "en": "Cobalt concentrates in cobaltite (CoAsS), linnaeite and heterogenite; it is commonly a by-product of Cu–Ni sulfide ores. Earth’s major deposits are stratiform and hydrothermal. On anoxic worlds arsenide and sulfide assemblages persist; secondary oxides need oxidizing conditions.",
+      "de": "Kobalt reichert sich in Cobaltit (CoAsS), Linneit und Heterogenit an; oft Nebenprodukt von Cu-Ni-Sulfiderzen. Die Hauptlagerstätten der Erde sind stratiform und hydrothermal. Auf anoxischen Welten bleiben Arsenid- und Sulfid-Assoziationen stabil; sekundäre Oxide brauchen oxidierende Bedingungen."
+    }
+  },
+  {
+    "id": "GEO_URANIUM_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Ураноносная порода",
+      "en": "Uranium-bearing rock",
+      "de": "Uranhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_uranium_mineral.png",
+    "unit": "t",
+    "symbol": "U",
+    "chartColor": "#AEEA00",
+    "description": {
+      "ru": "Уран концентрируется в уранините (UO₂), автоуните и торберните; типичны песчаниковые, несогласные и гидротермальные месторождения. На Земле — источник ядерного топлива и радиогенного тепла. На бескислородных мирах преобладают восстановленные оксиды; вторичные уранил-фосфаты и ванадаты образуются при окислении.",
+      "en": "Uranium concentrates in uraninite (UO₂), autunite and torbernite; sandstone, unconformity and hydrothermal deposits predominate. On Earth it is both nuclear fuel and a source of radiogenic heat. On anoxic worlds reduced oxides dominate; secondary uranyl phosphates and vanadates form under oxidizing conditions.",
+      "de": "Uran reichert sich in Uraninit (UO₂), Autunit und Torbernit an; Sandstein-, Diskordanz- und Hydrothermallagerstätten herrschen vor. Auf der Erde ist es Kernbrennstoff und Quelle radiogener Wärme. Auf anoxischen Welten dominieren reduzierte Oxide; sekundäre Uranyl-Phosphate und -Vanadate entstehen bei Oxidation."
+    }
+  },
+  {
+    "id": "GEO_SILVER_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Сереброносная порода",
+      "en": "Silver-bearing rock",
+      "de": "Silberhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_silver_mineral.png",
+    "unit": "t",
+    "symbol": "Ag",
+    "chartColor": "#90A4AE",
+    "description": {
+      "ru": "Серебро встречается самородным, в аргентите (Ag₂S), пираргирите и как примесь в галените. Эпитермальные жилы и скарны — главные земные источники. На бескислородных мирах сульфидные формы устойчивы; хлоридные и йодидные вторичные минералы характерны для аридных окисленных зон.",
+      "en": "Silver occurs native, as argentite (Ag₂S), pyrargyrite and as a solid-solution component in galena. Epithermal veins and skarns host Earth’s principal deposits. On anoxic worlds sulfide species persist; secondary chlorides and iodides typify arid oxidized zones.",
+      "de": "Silber tritt gediegen, als Argentit (Ag₂S), Pyrargyrit und als Mischkristallkomponente in Galenit auf. Epithermale Gänge und Skarne tragen die Hauptlagerstätten der Erde. Auf anoxischen Welten bleiben Sulfide stabil; sekundäre Chloride und Iodide sind typisch für aride Oxidationszonen."
+    }
+  },
+  {
+    "id": "GEO_GOLD_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Золотоносная порода",
+      "en": "Gold-bearing rock",
+      "de": "Goldhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_gold_mineral.png",
+    "unit": "t",
+    "symbol": "Au",
+    "chartColor": "#FFC107",
+    "description": {
+      "ru": "Золото преимущественно самородное или в электруме; концентрируется в орогенных, эпитермальных и россыпных месторождениях. Сидерофильный элемент, частично уходит в металлические ядра. На астероидах и бедных летучими телах золото может оставаться в Fe–Ni сплавах и сульфидных акцессориях.",
+      "en": "Gold occurs chiefly native or as electrum; it concentrates in orogenic, epithermal and placer deposits. As a siderophile it partly partitions into metallic cores. On asteroids and volatile-poor bodies gold may reside in Fe–Ni alloys and accessory sulfides.",
+      "de": "Gold tritt vorwiegend gediegen oder als Elektrum auf; es reichert sich in orogenen, epithermalen und Seifenlagerstätten an. Als Siderophil geht es teilweise in metallische Kerne. Auf Asteroiden und volatilarmen Körpern kann Gold in Fe-Ni-Legierungen und akzessorischen Sulfiden verbleiben."
+    }
+  },
+  {
+    "id": "GEO_LEAD_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Свинцоносная порода",
+      "en": "Lead-bearing rock",
+      "de": "Bleihaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_lead_mineral.png",
+    "unit": "t",
+    "symbol": "Pb",
+    "chartColor": "#455A64",
+    "description": {
+      "ru": "Свинец главным образом в галените (PbS); реже в церуссите и англезите. Стратиформные и Mississippi-Valley-type месторождения доминируют на Земле. Халькофильный элемент; на бескислородных мирах сульфид устойчив, вторичные карбонаты и сульфаты требуют окисления и CO₂/SO₄-активности.",
+      "en": "Lead resides chiefly in galena (PbS); cerussite and anglesite are secondary. Stratiform and Mississippi-Valley-type deposits dominate on Earth. As a chalcophile the sulfide is stable on anoxic worlds; secondary carbonates and sulfates need oxidation plus CO₂/SO₄ activity.",
+      "de": "Blei sitzt vor allem in Galenit (PbS); Cerussit und Anglesit sind sekundär. Stratiforme und Mississippi-Valley-Lagerstätten dominieren auf der Erde. Als Chalkophil bleibt das Sulfid auf anoxischen Welten stabil; sekundäre Karbonate und Sulfate brauchen Oxidation sowie CO₂/SO₄-Aktivität."
+    }
+  },
+  {
+    "id": "GEO_IRIDIUM_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Иридиеносная порода",
+      "en": "Iridium-bearing rock",
+      "de": "Iridiumhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_iridium_mineral.png",
+    "unit": "t",
+    "symbol": "Ir",
+    "chartColor": "#7E57C2",
+    "description": {
+      "ru": "Иридий — ультра-сидерофильный элемент платиновой группы; концентрируется в хромитовых горизонтах расслоенных интрузий и в Fe–Ni ядрах. На Земле крайне рассеян в коре; enrichment в импактных слоях (K/Pg) — маркер внеземного вещества. На астероидах металлического типа — акцессорный сплав с Os, Ru, Pt.",
+      "en": "Iridium is an ultra-siderophile platinum-group element concentrated in chromitite horizons of layered intrusions and in Fe–Ni cores. Extremely depleted in Earth’s crust; enrichment in impact horizons (K/Pg) marks extraterrestrial input. On metallic asteroids it occurs as an accessory alloy with Os, Ru and Pt.",
+      "de": "Iridium ist ein ultra-siderophiles Platingruppenelement und reichert sich in Chromitithorizonten geschichteter Intrusionen sowie in Fe-Ni-Kernen an. In der Erdkruste extrem abgereichert; Anreicherungen in Impakthorizonten (K/Pg) markieren extraterrestrischen Eintrag. Auf metallischen Asteroiden tritt es als akzessorische Legierung mit Os, Ru und Pt auf."
+    }
+  },
+  {
+    "id": "GEO_PLATINUM_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Платиноносная порода",
+      "en": "Platinum-bearing rock",
+      "de": "Platinhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_platinum_mineral.png",
+    "unit": "t",
+    "symbol": "Pt",
+    "chartColor": "#CFD8DC",
+    "description": {
+      "ru": "Платина концентрируется в сперрилите (PtAs₂), самородной платине и изоферроплатине внутри хромититов и сульфидных горизонтов расслоенных комплексов (Бушвельд, Норильск). Сидерофильный элемент; на астероидах M-типа — компонент Fe–Ni–PGE сплавов. В коре Земли крайне редка вне магматических PGE-руд.",
+      "en": "Platinum concentrates as sperrylite (PtAs₂), native platinum and isoferroplatinum within chromitites and sulfide horizons of layered complexes (Bushveld, Norilsk). As a siderophile it forms part of Fe–Ni–PGE alloys on M-type asteroids. In Earth’s crust it is exceedingly rare outside magmatic PGE ores.",
+      "de": "Platin reichert sich als Sperrylit (PtAs₂), gediegenem Platin und Isoferroplatin in Chromititen und Sulfidhorizonten geschichteter Komplexe (Bushveld, Norilsk) an. Als Siderophil ist es Bestandteil von Fe-Ni-PGE-Legierungen auf M-Asteroiden. In der Erdkruste außerhalb magmatischer PGE-Erze äußerst selten."
+    }
+  },
+  {
+    "id": "GEO_CARBON_ROCK",
+    "category": "lithosphere",
+    "name": {
+      "ru": "Углеродоносная порода",
+      "en": "Carbon-bearing rock",
+      "de": "Kohlenstoffhaltiges Gestein"
+    },
+    "icon": "assets/textures/icons/res_carbon_mineral.png",
+    "unit": "t",
+    "symbol": "C",
+    "chartColor": "#2b2b2b",
+    "description": {
+      "ru": "Углеродоносные литологии: каменный и бурый уголь, антрацит, графитовые сланцы, керогенсодержащие аргиллиты. На Земле к 2100 г. значительная часть легкодоступных запасов отработана; остаются глубокие пласты, метаморфизованный антрацит и рассеянный органический углерод в осадочных бассейнах. На бескислородных мирах аналоги — аморфный углерод и толины.",
+      "en": "Carbon-bearing lithologies: hard and brown coal, anthracite, graphitic shales, kerogen-rich mudstones. By 2100 on Earth much of the easy coal endowment is depleted; remaining are deep seams, metamorphosed anthracite and disseminated organic carbon in sedimentary basins. On anoxic worlds analogues include amorphous carbon and tholins.",
+      "de": "Kohlenstoffhaltige Lithologien: Steinkohle, Braunkohle, Anthrazit, graphitische Schiefer, kerogenreiche Tonsteine. Bis 2100 ist auf der Erde ein Großteil der leicht zugänglichen Kohlevorräte abgebaut; übrig bleiben tiefe Flöze, metamorpher Anthrazit und disperser organischer Kohlenstoff. Auf anoxischen Welten sind amorphe Kohlenstoffe und Tholine analog."
+    }
+  },
+  {
+    "id": "GEO_WOOD",
+    "category": "exogenous",
+    "name": {
+      "ru": "Древесина",
+      "en": "Wood biomass",
+      "de": "Holzbiomasse"
+    },
+    "icon": "assets/textures/icons/res_wood_geo.png",
+    "unit": "t",
+    "symbol": "C₆H₁₀O₅",
+    "chartColor": "#3d6b4f",
+    "description": {
+      "ru": "Суммарная живая и сухостойная фитомасса лесов, редколесий и кустарников небесного тела. На Земле к 2100 г. покрытость лесом снижена относительно доиндустриальной эпохи; ресурс отражает доступный стволовый запас и порубочные остатки, пригодные для лесозаготовки.",
+      "en": "Total live and standing dead phytomass of forests, woodlands and shrubs on the body. By 2100 on Earth forest cover is reduced vs the pre-industrial baseline; the deposit tracks accessible stem volume and harvestable residues.",
+      "de": "Gesamte lebende und stehende tote Phytomasse aus Wäldern, Gehölzen und Sträuchern. Bis 2100 ist die Bewaldung der Erde gegenüber der vorindustriellen Zeit reduziert; die Lagerstätte erfasst nutzbares Stammholz und Erntereste."
+    }
+  }
+]

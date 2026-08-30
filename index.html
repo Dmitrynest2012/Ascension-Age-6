@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-doc-title="game.title">Вознесение Эпоха-6</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tooltips.css">
+    <link rel="stylesheet" href="versionHistory.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="technologies.css">
+    <link rel="stylesheet" href="technologiesExtras.css">
+    <link rel="stylesheet" href="technologiesGraph.css">
+    <link rel="stylesheet" href="codex.css">
+    <link rel="stylesheet" href="firmSelect.css">
+    <link rel="stylesheet" href="trendCharts.css">
+    <link rel="stylesheet" href="saveSystem.css">
+    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="buildings.css">
+    <link rel="stylesheet" href="buildingResourceCosts.css">
+    <link rel="stylesheet" href="buildingLevels.css">
+    <link rel="stylesheet" href="buildingPlanInputs.css">
+    <link rel="stylesheet" href="notepad.css">
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="technoport.css">
+    <link rel="stylesheet" href="geodata.css">
+    <link rel="stylesheet" href="geoSurvey.css">
+    <link rel="stylesheet" href="cartography.css">
+    <link rel="stylesheet" href="unitFlight.css">
+    <link rel="stylesheet" href="specialists.css">
+    <link rel="stylesheet" href="productionChains.css">
+    <link rel="stylesheet" href="firmScroll.css">
+    <link rel="stylesheet" href="opticalScan.css">
+    <link rel="stylesheet" href="navigator.css">
+    <link rel="stylesheet" href="recipes.css">
+    <link rel="stylesheet" href="quests.css">
+    <link rel="stylesheet" href="npcDialogue.css">
+</head>
+<body class="main-menu-active">
+    <!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
+    <div id="main-menu" data-ui="true">
+        <div class="main-menu-bg"></div>
+        <div class="main-menu-content">
+            <div class="main-menu-title-block">
+                <div class="main-menu-title-row">
+                    <img class="main-menu-logo" src="assets/textures/ui/logo.png" alt="" draggable="false">
+                    <div class="main-menu-title-text">
+                        <div class="main-menu-title" data-i18n="game.titleMain">ВОЗНЕСЕНИЕ</div>
+                        <div class="main-menu-subtitle" data-i18n="game.titleSub">ЭПОХА-6</div>
+                        <div class="main-menu-version">v0.1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-menu-buttons">
+                <button id="btn-continue" class="main-menu-btn" data-i18n="mainMenu.continue" style="display:none;">Продолжить</button>
+                <button id="btn-new-game" class="main-menu-btn" data-mode="new" data-i18n="mainMenu.newGame">Новая игра</button>
+                <button id="btn-load-game" class="main-menu-btn" data-i18n="mainMenu.loadGame">Загрузить игру</button>
+                <button id="btn-save-game" class="main-menu-btn" data-i18n="mainMenu.saveGame" style="display:none;">Сохранить игру</button>
+                <button id="btn-settings" class="main-menu-btn" data-i18n="mainMenu.settings">Настройки</button>
+                <button id="btn-exit" class="main-menu-btn" data-i18n="mainMenu.exit">Выход</button>
+            </div>
+        </div>
+        <div class="main-menu-footer" data-i18n="game.copyright">© Вознесение Эпоха-6</div>
+        <!-- Панель настроек (внутри главного меню) -->
+        <div id="main-menu-settings" class="main-menu-settings-panel" style="display: none;">
+            <div class="settings-header">
+                <span data-i18n="settings.title">Настройки</span>
+                <button type="button" id="settings-close" class="settings-close-btn">×</button>
+            </div>
+            <div class="settings-tabs">
+                <button type="button" class="settings-tab active" data-tab="game" data-i18n="settings.tab.game">Игра</button>
+                <button type="button" class="settings-tab inactive" data-tab="graphics" data-i18n="settings.tab.graphics">Графика</button>
+                <button type="button" class="settings-tab inactive" data-tab="sound" data-i18n="settings.tab.sound">Звук</button>
+            </div>
+            <div class="settings-body">
+                <!-- Игра -->
+                <div class="settings-tab-panel" data-panel="game" style="display: flex;">
+                    <div class="settings-row">
+                        <label data-i18n="settings.language">Язык</label>
+                        <select id="settings-language"></select>
+                    </div>
+                    <div class="settings-row settings-row-autosave">
+                        <label data-i18n="settings.autosave">Автосохранение</label>
+                        <input type="range" id="settings-autosave" min="0" max="60" step="1" value="0">
+                        <span id="settings-autosave-value">без авто-сохранений</span>
+                    </div>
+                    <div class="settings-row">
+                        <label data-i18n="settings.navigator">Навигатор</label>
+                        <button type="button" id="settings-navigator" class="settings-action-btn" data-on="0">Выкл.</button>
+                    </div>
+                    <div class="settings-row">
+                        <button type="button" id="settings-reset" class="settings-reset-btn" data-i18n="settings.reset">Сбросить настройки</button>
+                    </div>
+                </div>
+                <!-- Графика -->
+                <div class="settings-tab-panel" data-panel="graphics" style="display: none;">
+                    <div class="settings-row">
+                        <label data-i18n="settings.quality">Качество графики</label>
+                        <select id="settings-quality">
+                            <option value="low">Низкое</option>
+                            <option value="medium" selected>Среднее</option>
+                            <option value="high">Высокое</option>
+                        </select>
+                    </div>
+                    <div class="settings-row">
+                        <label data-i18n="settings.fullscreen">Полноэкранный режим</label>
+                        <button type="button" id="settings-fullscreen" class="settings-action-btn">Включить</button>
+                    </div>
+                    <div class="settings-row">
+                        <label data-i18n="settings.buildingVideo">Видео-миниатюры зданий</label>
+                        <button type="button" id="settings-building-video" class="settings-action-btn" data-on="1">Вкл.</button>
+                    </div>
+                </div>
+                <!-- Звук -->
+                <div class="settings-tab-panel" data-panel="sound" style="display: none;">
+                    <div class="settings-row">
+                        <label data-i18n="settings.volume.master">Общая громкость</label>
+                        <input type="range" id="settings-vol-master" min="0" max="100" value="70">
+                        <span id="settings-vol-master-value">70%</span>
+                    </div>
+                    <div class="settings-row">
+                        <label data-i18n="settings.volume.music">Громкость музыки</label>
+                        <input type="range" id="settings-vol-music" min="0" max="100" value="70">
+                        <span id="settings-vol-music-value">70%</span>
+                    </div>
+                    <div class="settings-row">
+                        <label data-i18n="settings.volume.voice">Громкость голоса</label>
+                        <input type="range" id="settings-vol-voice" min="0" max="100" value="70">
+                        <span id="settings-vol-voice-value">70%</span>
+                    </div>
+                    <div class="settings-row">
+                        <label data-i18n="settings.volume.ambient">Громкость окружения</label>
+                        <input type="range" id="settings-vol-ambient" min="0" max="100" value="70">
+                        <span id="settings-vol-ambient-value">70%</span>
+                    </div>
+                    <div class="settings-row">
+                        <label data-i18n="settings.volume.sfx">Громкость уведомлений</label>
+                        <input type="range" id="settings-vol-sfx" min="0" max="100" value="70">
+                        <span id="settings-vol-sfx-value">70%</span>
+                    </div>
+                </div>
+                <p class="settings-hint" data-i18n="settings.hint">Нажмите «Применить», чтобы сохранить настройки.</p>
+                <div class="settings-footer">
+                    <button type="button" id="settings-apply" class="settings-apply-btn" style="display:none;" data-i18n="settings.apply">Применить</button>
+                    <button type="button" id="settings-saved-indicator" class="settings-saved-indicator" style="display:none;" data-i18n="settings.saved">настройки сохранены</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Загрузка сессий (внутри #main-menu) -->
+        <div id="main-menu-load" class="main-menu-settings-panel main-menu-sessions-panel" style="display: none;">
+            <div class="settings-header">
+                <span data-i18n="save.loadTitle">Загрузить игру</span>
+                <button type="button" id="load-close" class="settings-close-btn">×</button>
+            </div>
+            <div class="settings-body sessions-body">
+                <div id="load-session-list" class="session-list"></div>
+            </div>
+        </div>
+        <!-- Сохранение сессий -->
+        <div id="main-menu-save" class="main-menu-settings-panel main-menu-sessions-panel" style="display: none;">
+            <div class="settings-header">
+                <span data-i18n="save.saveTitle">Сохранить игру</span>
+                <button type="button" id="save-close" class="settings-close-btn">×</button>
+            </div>
+            <div class="settings-body sessions-body">
+                <div id="save-session-list" class="session-list"></div>
+            </div>
+            <div id="save-toast" class="save-toast"></div>
+        </div>
+        <!-- Подтверждение удаления -->
+        <div id="session-delete-modal" class="session-mini-modal">
+            <div class="session-mini-panel">
+                <div class="session-mini-text" data-i18n="save.deleteConfirm">Вы действительно хотите удалить игровую сессию?</div>
+                <div class="session-mini-actions">
+                    <button type="button" id="session-delete-no" class="session-name-btn" data-i18n="save.no">Нет</button>
+                    <button type="button" id="session-delete-yes" class="session-name-btn primary" data-i18n="save.yes">Да</button>
+                </div>
+            </div>
+        </div>
+        <!-- Имя нового слота -->
+        <div id="session-save-name-modal" class="session-mini-modal">
+            <div class="session-mini-panel">
+                <div class="session-mini-text" data-i18n="save.namePrompt">Название сохранения</div>
+                <input id="session-save-name-input" class="session-name-input" type="text" maxlength="42">
+                <div class="session-mini-actions">
+                    <button type="button" id="session-save-name-cancel" class="session-name-btn" data-i18n="session.cancel">Отмена</button>
+                    <button type="button" id="session-save-name-ok" class="session-name-btn primary" data-i18n="save.saveBtn">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== КОНЕЦ ГЛАВНОГО МЕНЮ ===== -->
+
+    <div id="header" data-ui="true">
+        <!-- Левый блок: иконка + кнопки Карта / Наука -->
+    <div id="header-left">
+        <div class="header-icon-frame" data-tip="" data-i18n-tip="header.heroTip" title="">
+            <img src="/assets/textures/icons/gender_unknown.png" alt="Logo" class="header-icon">
+        </div>
+        <button id="header-btn-settings" class="header-settings-btn" title="Меню" data-i18n-title="header.menu">⚙</button>
+        <button id="header-btn-map" class="header-nav-btn active" data-i18n="header.map">Карта</button>
+        <button id="header-btn-science" class="header-nav-btn inactive" data-i18n="header.science">Наука</button>
+         <button id="btn-diplomacy" class="header-nav-btn inactive locked header-nav-locked" data-i18n="header.diplomacy" data-i18n-tip="header.diplomacyLocked" aria-disabled="true">Дипломатия</button>
+         <button id="btn-military" class="header-nav-btn inactive locked header-nav-locked" data-i18n="header.military" data-i18n-tip="header.militaryLocked" aria-disabled="true">Военное</button>
+        <button id="header-btn-codex" class="header-nav-btn inactive" data-i18n="header.codex">Кодекс</button>
+    </div>
+
+    <button id="calculator-btn" title="Калькулятор" data-i18n-title="header.calculator"><img class="header-tool-icon" src="assets/textures/icons/ui_calculator.png" alt=""></button>
+    <button id="notepad-btn" title="Блокнот" data-i18n-title="header.notepad"><img class="header-tool-icon" src="assets/textures/icons/ui_notepad.png" alt=""></button>
+    <!-- Кнопка полноэкранного режима (впритык к часам) -->
+    <button id="fullscreen-btn" title="Полноэкранный режим" data-i18n-title="header.fullscreen">⛶</button>
+
+        <div id="time-control">
+            <button id="slow-time">ᐊ</button>
+            <button id="pause-time" data-i18n-tip="time.pause" data-tip="Пауза">⏸</button>
+            <button id="fast-time">ᐅ</button>
+            <span id="speed-value">1.0x</span>
+            <span id="current-time">00:00:00 07:01:2108</span>
+        </div>
+    </div>
+    <div id="resource-bar" data-ui="true">
+
+     <div class="resource-container" data-resource-id="Население">
+      <img src="/assets/textures/icons/population.png" alt="population" class="resource-icon">
+      <div class="resource-info">
+       <span class="resource-value">34.00</span>
+       <span class="resource-unit" data-i18n="unit.people">чел.</span>
+       <span class="trend-slot trend-flat" data-trend aria-hidden="true"></span>
+      </div>
+     </div>
+      <div class="resource-container" data-resource-id="Сырье">
+        <img src="/assets/textures/icons/raw.png" alt="raw" class="resource-icon">
+        <div class="resource-info">
+          <span class="resource-value">50.00</span><span class="resource-unit" data-i18n="unit.tons"> т.</span>
+          <span class="trend-slot trend-flat" data-trend aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="resource-container" data-resource-id="Материалы">
+        <img src="/assets/textures/icons/materials.png" alt="materials" class="resource-icon">
+        <div class="resource-info">
+          <span class="resource-value">10.00</span><span class="resource-unit" data-i18n="unit.tons"> т.</span>
+          <span class="trend-slot trend-flat" data-trend aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="resource-container" data-resource-id="Компоненты">
+        <img src="/assets/textures/icons/components.png" alt="components" class="resource-icon">
+        <div class="resource-info">
+          <span class="resource-value">0</span><span class="resource-unit" data-i18n="unit.tons"> т.</span>
+          <span class="trend-slot trend-flat" data-trend aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="resource-container" data-resource-id="Продукция">
+        <img src="/assets/textures/icons/products.png" alt="products" class="resource-icon">
+        <div class="resource-info">
+          <span class="resource-value">0</span><span class="resource-unit" data-i18n="unit.tons"> т.</span>
+          <span class="trend-slot trend-flat" data-trend aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="resource-container" data-resource-id="Продовольствие">
+        <img src="/assets/textures/icons/food.png" alt="food" class="resource-icon">
+        <div class="resource-info">
+          <span class="resource-value">1.00</span><span class="resource-unit" data-i18n="unit.tons"> т.</span>
+          <span class="trend-slot trend-flat" data-trend aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="resource-container" data-resource-id="Энергия">
+        <img src="/assets/textures/icons/energy.png" alt="energy" class="resource-icon">
+        <span class="resource-value">700</span><span class="resource-unit" data-i18n="unit.watts"> Вт.</span>
+      </div>
+      <div class="resource-container" data-resource-id="Технологии">
+        <img src="/assets/textures/icons/technologies.png" alt="technologies" class="resource-icon">
+        <div class="resource-info">
+          <span class="resource-value">0</span><span class="resource-unit" data-i18n="unit.techPerMin"> тех./мин</span>
+          <span class="trend-slot trend-flat" data-trend aria-hidden="true"></span>
+        </div>
+      </div>
+
+
+      
+    </div>
+    <div id="optical-scan-controls" data-ui="true">
+        <button id="optical-scan-toggle" class="optical-scan-btn" type="button" data-ui="true" title="Оптическое сканирование">🔭</button>
+    </div>
+    <div id="title-bar" data-ui="true">
+        <button id="prev-body" data-ui="true">ᐊ</button>
+        <span id="location-name" data-ui="true"></span>
+        <input id="location-name-input" type="text" maxlength="64" data-ui="true" style="display:none;" autocomplete="off" spellcheck="false" />
+        <button id="next-body" data-ui="true">ᐅ</button>
+    </div>
+    <div id="location-rename-controls" data-ui="true">
+        <button id="location-rename-edit" class="location-rename-btn" type="button" data-ui="true" title="Переименовать">✎</button>
+        <button id="location-rename-confirm" class="location-rename-btn" type="button" data-ui="true" title="Сохранить" style="display:none;">✓</button>
+        <button id="location-rename-reset" class="location-rename-btn location-rename-reset" type="button" data-ui="true" title="Сбросить к локализации" style="display:none;">↻</button>
+    </div>
+    <div id="body-control-menu" data-ui="true">
+        <div class="menu-header" data-ui="true"></div>
+        <div class="menu-body" data-ui="true">
+            <button id="MB1" class="menu-button active" data-ui="true" data-i18n="menu.general">Общее</button>
+            <button id="MB2" class="menu-button inactive" data-ui="true" data-i18n="menu.management">Управление</button>
+            <button id="MB3" class="menu-button inactive" data-ui="true" data-i18n="menu.construction">Строительство</button>
+            <button id="MB4" class="menu-button inactive" data-ui="true" data-i18n="menu.technoport">Технопорт</button>
+        </div>
+    </div>
+    <div id="submenu" data-ui="true">
+        <div class="submenu-header"></div>
+        <div class="submenu-body">
+            <!-- Подменю для MB1 (Общее) -->
+            <button id="MA1" class="submenu-button" data-menu="MB1" style="display: none;" data-i18n="submenu.summary">Общая сводка</button>
+            <button id="MAC" class="submenu-button" data-menu="MB1" style="display: none;" data-i18n="submenu.cartography">Картография</button>
+            <button id="MAG" class="submenu-button" data-menu="MB1" style="display: none;" data-i18n="submenu.geoSurvey">Гео-разведка</button>
+            <button id="MA2" class="submenu-button" data-menu="MB1" style="display: none;" data-i18n="submenu.geodata">Геоданные</button>
+            <!-- Подменю для MB2 (Управление) -->
+             <button id="MB2_1" class="submenu-button" data-menu="MB2" style="display: none;" data-i18n="submenu.specialists">Специалисты</button>
+             <button id="MB2_2" class="submenu-button" data-menu="MB2" style="display: none;" data-i18n="submenu.productionChains">Цепочки производства</button>
+            <!-- Подменю для MB3 (Строительство) -->
+            <button id="MC1" class="submenu-button" data-menu="MB3" style="display: none;" data-i18n="submenu.orbital">Орбитальное</button>
+            <button id="MC2" class="submenu-button" data-menu="MB3" style="display: none;" data-i18n="submenu.aerostat">Аэростатное</button>
+            <button id="MC3" class="submenu-button" data-menu="MB3" style="display: none;" data-i18n="submenu.surface">Наземное</button>
+            <button id="MC4" class="submenu-button" data-menu="MB3" style="display: none;" data-i18n="submenu.surfaceWater">Надводное</button>
+            <button id="MC5" class="submenu-button" data-menu="MB3" style="display: none;" data-i18n="submenu.underground">Подземное</button>
+        </div>
+    </div>
+<!-- Новое окно для информации о небесном теле -->
+    <div id="body-info" style="display: none;">
+        <div class="info-header">
+            <div class="info-tabs">
+                <button type="button" class="info-tab-button active" data-info-tab="main" title="Основное">
+                    <img src="assets/textures/icons/info_main.svg" alt="" class="info-tab-icon">
+                </button>
+                <button type="button" class="info-tab-button inactive" data-info-tab="metrics" title="Метрики">
+                    <img src="assets/textures/icons/info_metrics.svg" alt="" class="info-tab-icon">
+                </button>
+                <button type="button" class="info-tab-button inactive" data-info-tab="climate" title="Климат">
+                    <img src="assets/textures/icons/info_climate.svg" alt="" class="info-tab-icon">
+                </button>
+            </div>
+        </div>
+        <div class="info-body">
+            <!-- Основное -->
+            <div class="info-panel" id="info-panel-main" data-info-panel="main">
+                <div class="info-section">
+                    <h3 class="info-subsection-title" data-i18n="bodyInfo.general">Общее</h3>
+                    <p><strong data-i18n="bodyInfo.name">Имя:</strong> <span id="info-name"></span></p>
+                    <p><strong data-i18n="bodyInfo.type">Тип:</strong> <span id="info-type"></span></p>
+                    <p><strong data-i18n="bodyInfo.age">Возраст:</strong> <span id="info-age"></span></p>
+                    <p><strong data-i18n="bodyInfo.day">Сутки:</strong> <span id="info-day"></span></p>
+                    <p><strong data-i18n="bodyInfo.year">Год:</strong> <span id="info-year"></span></p>
+                    <p><strong data-i18n="bodyInfo.description">Краткое описание:</strong> <span id="info-description" class="info-description-value"></span></p>
+                </div>
+            </div>
+            <!-- Метрики -->
+            <div class="info-panel" id="info-panel-metrics" data-info-panel="metrics" style="display: none;">
+                <div class="info-section" id="info-section-params">
+                    <h3 class="info-subsection-title" data-i18n="bodyInfo.parameters">Параметрия</h3>
+                    <p><strong data-i18n="bodyInfo.radius">Радиус:</strong> <span id="info-radius"></span></p>
+                    <p><strong data-i18n="bodyInfo.diameter">Диаметр:</strong> <span id="info-diameter"></span></p>
+                    <p><strong data-i18n="bodyInfo.surfaceArea">Общая площадь:</strong> <span id="info-surface-area"></span></p>
+                     <p><strong data-i18n="bodyInfo.gravityWell">Радиус ближней орбиты:</strong> <span id="info-gravity-well"></span></p>
+                    <p><strong data-i18n="bodyInfo.orbitalRadius">Орбитальный радиус:</strong> <span id="info-orbital-radius"></span></p>
+                </div>
+                <div class="info-section" id="info-section-surface" style="display: none;">
+                    <h3 class="info-subsection-title" data-i18n="bodyInfo.surface">Поверхность</h3>
+                    <div id="info-surface-breakdown"></div>
+                </div>
+            </div>
+            <!-- Климат -->
+            <div class="info-panel" id="info-panel-climate" data-info-panel="climate" style="display: none;">
+                <div class="info-section">
+                    <h3 class="info-subsection-title" data-i18n="bodyInfo.climate">Климат</h3>
+                    <p><strong data-i18n="bodyInfo.avgTemp">Средняя температура на поверхности:</strong> <span id="info-avg-temp"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Окно специалистов (Управление → Специалисты) -->
+    
+    <!-- Геоданные (залежи) -->
+    
+    <!-- Картография -->
+    <div id="cartography-panel" style="display: none;" data-ui="true">
+        <div class="carto-map-window">
+            <div class="carto-map-header">
+                <span data-i18n="carto.mapTitle">2D-карта</span>
+                <span class="carto-coords" id="carto-coords">0.00° / 0.00°</span>
+                <span class="carto-fog-pct" id="carto-fog-pct">Карта раскрыта на: 0%</span>
+            </div>
+            <div id="carto-map-host">
+                <canvas id="carto-canvas"></canvas>
+                <div id="carto-scale" class="carto-scale" aria-hidden="true">
+                    <div id="carto-scale-bar" class="carto-scale-bar"></div>
+                    <div id="carto-scale-label" class="carto-scale-label">—</div>
+                </div>
+                <div id="carto-altimeter" class="carto-altimeter" aria-hidden="true">
+                    <div class="carto-alt-track">
+                        <div id="carto-alt-fill" class="carto-alt-fill"></div>
+                    </div>
+                    <div id="carto-alt-value" class="carto-alt-value">32.0×</div>
+                    <div class="carto-alt-marks">
+                        <span>32×</span>
+                        <span>8×</span>
+                        <span>1×</span>
+                    </div>
+                </div>
+                <div id="carto-fog-dev" class="carto-fog-dev" style="display:none;">Туман: ВЫКЛ</div>
+            </div>
+        </div>
+        <div class="carto-actions-window">
+            <div class="carto-actions-header" data-i18n="carto.actionsTitle">Местные действия</div>
+            <div class="carto-actions-body">
+                <div id="carto-empty-hint" class="carto-empty-hint" data-i18n="carto.selectHint">Выберите базу или отряд на карте</div>
+                <div id="carto-node-card" class="carto-node-card" style="display:none"></div>
+                <div id="carto-form" class="carto-form" style="display:none">
+                <div class="carto-row"><span class="carto-label" data-i18n="carto.selection">Выбрано</span><span id="carto-selection">—</span></div>
+                <div class="carto-row" id="carto-remain-row" style="display:none"><span class="carto-label" data-i18n="carto.remainTime">Осталось</span><span id="carto-remain-time">—</span></div>
+                <div class="carto-row" id="carto-complete-row" style="display:none"><span class="carto-label" data-i18n="carto.completeAt">Будет выполнено</span><span id="carto-complete-time">—</span></div>
+                <div class="carto-row" id="carto-speed-row" style="display:none"><span class="carto-label" data-i18n="carto.speed">Скорость</span><span id="carto-speed">—</span></div>
+                <div class="carto-row" id="carto-dist-row" style="display:none"><span class="carto-label" data-i18n="carto.remainDist">Осталось пути</span><span id="carto-dist">—</span></div>
+                <div class="carto-row"><span class="carto-label" data-i18n="carto.freeExp">Свободные / всего</span><span id="carto-free-exp">0 / 0</span></div>
+                <div id="carto-assign-block">
+                <div class="carto-divider"></div>
+                <div class="carto-row carto-row-select"><span class="carto-label" data-i18n="carto.expType">Тип экспедиции</span>
+                    <div id="carto-exp-type" class="carto-firm-select"></div>
+                </div>
+                <div class="carto-row"><span class="carto-label" data-i18n="carto.assign">Назначить (чел.)</span>
+                    <input type="number" id="carto-assign-count" min="1" value="1" style="width:64px">
+                </div>
+                <button type="button" class="carto-btn" id="carto-set-coords" data-i18n="carto.setCoords">Задать координаты</button>
+                <div class="carto-row" id="carto-mine-hint-row" style="display:none"><span class="carto-label" data-i18n="carto.mineHint">Нода</span><span id="carto-mine-hint">—</span></div>
+                <div class="carto-row"><span class="carto-label" data-i18n="carto.target">Цель</span><span id="carto-target-coords">—</span></div>
+                <div class="carto-row"><span class="carto-label" data-i18n="carto.travelTime">Время цикла</span><span id="carto-travel-time">—</span></div>
+                <div class="carto-row" id="carto-yield-row" style="display:none"><span class="carto-label" data-i18n="carto.yield">Добыча / цикл</span><span id="carto-yield">—</span></div>
+                <button type="button" class="carto-btn primary" id="carto-start-btn" disabled data-i18n="carto.start">Начать экспедицию</button>
+                </div>
+                <button type="button" class="carto-btn" id="carto-cancel-btn" disabled data-i18n="carto.cancel" style="display:none">Прервать экспедицию</button>
+                </div>
+                <div class="carto-divider" id="carto-exp-divider"></div>
+                <div class="carto-label" id="carto-exp-list-title" data-i18n="carto.activeList">Активные экспедиции</div>
+                <div class="carto-exp-list" id="carto-exp-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Гео-разведка -->
+    <div id="geosurvey-panel" style="display: none;" data-ui="true">
+        <div class="geosurvey-header">
+            <span data-i18n="geoSurvey.title">Гео-разведка</span>
+        </div>
+        <div class="geosurvey-body">
+            <div class="geosurvey-scope-wrap">
+                <span class="geosurvey-scope-label" data-i18n="geoSurvey.scope">SCANNER</span>
+                <canvas id="geosurvey-scope" width="400" height="120"></canvas>
+            </div>
+            <p class="geosurvey-hint" data-i18n="geoSurvey.hint2">WASD — обзор поверхности. Удерживайте Пробел при неподвижной камере, чтобы сканировать. Слушайте сканер.</p>
+            <div class="geosurvey-status-box">
+                <p id="geosurvey-status">—</p>
+            </div>
+            <div class="geosurvey-meta">
+                <span data-i18n="geoSurvey.sites">Области для разведки</span>
+                <span id="geosurvey-count-meta"></span>
+            </div>
+            <button type="button" id="geosurvey-probe-btn" disabled data-i18n="geoSurvey.probe">Спустить зонд</button>
+            <div class="geosurvey-progress-wrap">
+                <div class="geosurvey-progress-label" id="geosurvey-progress-label"></div>
+                <div class="geosurvey-probe-track">
+                    <div id="geosurvey-probe-bar"></div>
+                </div>
+            </div>
+            <div id="geosurvey-complete-badge" data-i18n="geoSurvey.completeBadge">Все месторождения оконтурены. Зонды больше не требуются.</div>
+        </div>
+    </div>
+
+
+    <!-- Окно цепочек производства (Управление → Цепочки) -->
+    <div id="production-chains-panel" style="display: none;" data-ui="true">
+        <div class="pc-panel-header"></div>
+        <div class="pc-panel-body">
+            <div class="pc-top">
+                <div class="pc-title" data-i18n="pc.title">Цепочки производства</div>
+                <div class="pc-spacer"></div>
+                <button type="button" class="pc-close" aria-label="close">×</button>
+            </div>
+            <div class="pc-main">
+                <div class="pc-sidebar">
+                    <button type="button" class="pc-nav-item active" data-section="details" data-i18n="pc.section.details">Детали</button>
+                    <button type="button" class="pc-nav-item" data-section="products" data-i18n="pc.section.products">Продукты</button>
+                </div>
+                <div class="pc-tree-viewport">
+                    <div class="pc-tree-canvas"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="geodata-panel" style="display: none;" data-ui="true">
+        <div class="geo-header">
+            <div class="geo-tabs">
+                <button type="button" class="geo-tab-button active" data-geo-tab="lithosphere" title="Литосферные породы">
+                    <img src="assets/textures/icons/info_metrics.svg" alt="" class="geo-tab-icon">
+                </button>
+                <button type="button" class="geo-tab-button inactive" data-geo-tab="volatiles" title="Летучие компоненты">
+                    <img src="assets/textures/icons/info_climate.svg" alt="" class="geo-tab-icon">
+                </button>
+                <button type="button" class="geo-tab-button inactive" data-geo-tab="exogenous" title="Экзогенные субстраты">
+                    <img src="assets/textures/icons/info_main.svg" alt="" class="geo-tab-icon">
+                </button>
+            </div>
+        </div>
+        <div class="geo-body">
+            <div class="geo-main-col">
+                <h3 class="geo-section-title" id="geodata-section-title" data-i18n="geo.tab.lithosphere">Литосферные породы</h3>
+                <div id="geodata-list"></div>
+            </div>
+            <div class="geo-chart-col">
+                <div id="geodata-chart"></div>
+                <div id="geodata-legend"></div>
+                <div id="geodata-desc"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="specialists-panel" style="display: none;" data-ui="true">
+        <div class="specialists-panel-header"></div>
+        <div class="specialists-panel-body">
+            <div class="specialists-summary-bar">
+                <div class="specialists-summary-item">
+                    <img class="specialists-summary-icon" src="assets/textures/icons/pop_idle.png" alt="">
+                    <span class="specialists-summary-label" data-i18n="spec.idlers">Тунеядцы</span>
+                    <span class="specialists-summary-value" id="spec-summary-idlers">0</span>
+                </div>
+                <div class="specialists-summary-item">
+                    <img class="specialists-summary-icon" src="assets/textures/icons/pop_creators.png" alt="">
+                    <span class="specialists-summary-label" data-i18n="spec.creators">Созидатели</span>
+                    <span class="specialists-summary-value" id="spec-summary-creators">0</span>
+                </div>
+            </div>
+            <div class="specialists-hint"><span data-i18n="spec.hint">Здесь вы распределяете обустроенных жителей по специальностям. Тунеядцы — свободные люди, ещё не занятые работой. Созидатели — сумма нанятых инженеров, агрономов и учёных.</span></div>
+            <h2 class="specialists-distribution-title" data-i18n="spec.distribution">Распределение специалистов</h2>
+            <div class="specialists-roles">
+                <div class="specialist-role-row" data-role="engineers">
+                    <span class="specialist-role-name" data-i18n="spec.engineers">Инженеры</span>
+                    <div class="specialist-slider-wrap">
+                        <div class="specialist-custom-track"></div>
+                        <input type="range" min="0" max="100" value="0" class="specialist-slider" id="spec-slider-engineers" data-role="engineers">
+                    </div>
+                    <div class="specialist-role-meta">
+                        <span class="specialist-role-pct" id="spec-pct-engineers">0%</span>
+                        <span class="specialist-role-counts" id="spec-counts-engineers">[0 / 0]</span>
+                    </div>
+                    <img class="specialist-role-portrait" src="assets/textures/icons/specialist_engineer.png" alt="Инженеры">
+                </div>
+                <div class="specialist-role-row" data-role="agronomists">
+                    <span class="specialist-role-name" data-i18n="spec.agronomists">Агрономы</span>
+                    <div class="specialist-slider-wrap">
+                        <div class="specialist-custom-track"></div>
+                        <input type="range" min="0" max="100" value="0" class="specialist-slider" id="spec-slider-agronomists" data-role="agronomists">
+                    </div>
+                    <div class="specialist-role-meta">
+                        <span class="specialist-role-pct" id="spec-pct-agronomists">0%</span>
+                        <span class="specialist-role-counts" id="spec-counts-agronomists">[0 / 0]</span>
+                    </div>
+                    <img class="specialist-role-portrait" src="assets/textures/icons/specialist_agronomist.png" alt="Агрономы">
+                </div>
+                <div class="specialist-role-row" data-role="scientists">
+                    <span class="specialist-role-name" data-i18n="spec.scientists">Ученые</span>
+                    <div class="specialist-slider-wrap">
+                        <div class="specialist-custom-track"></div>
+                        <input type="range" min="0" max="100" value="0" class="specialist-slider" id="spec-slider-scientists" data-role="scientists">
+                    </div>
+                    <div class="specialist-role-meta">
+                        <span class="specialist-role-pct" id="spec-pct-scientists">0%</span>
+                        <span class="specialist-role-counts" id="spec-counts-scientists">[0 / 0]</span>
+                    </div>
+                    <img class="specialist-role-portrait" src="assets/textures/icons/specialist_scientist.png" alt="Ученые">
+                </div>
+                <div class="specialist-role-row" data-role="expeditioners">
+                    <span class="specialist-role-name" data-i18n="spec.expeditioners">Экспедиционеры</span>
+                    <div class="specialist-slider-wrap">
+                        <div class="specialist-custom-track"></div>
+                        <input type="range" min="0" max="100" value="0" class="specialist-slider" id="spec-slider-expeditioners" data-role="expeditioners">
+                    </div>
+                    <div class="specialist-role-meta">
+                        <span class="specialist-role-pct" id="spec-pct-expeditioners">0%</span>
+                        <span class="specialist-role-counts" id="spec-counts-expeditioners">[0 / 0]</span>
+                    </div>
+                    <img class="specialist-role-portrait" src="assets/textures/icons/specialist_expeditioner.png" alt="Экспедиционеры">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="building-list" data-ui="true">
+        <div class="building-list-header"></div>
+        <div class="building-list-body">
+            <div class="building-list-categories">
+                <button id="COP01" class="building-category-button active" data-i18n="cat.COP01">Инфраструктура</button>
+                <button id="COP02" class="building-category-button inactive" data-i18n="cat.COP02">Добыча</button>
+                <button id="COP03" class="building-category-button inactive" data-i18n="cat.COP03">Промышленность</button>
+                <button id="COP04" class="building-category-button inactive" data-i18n="cat.COP04">Энергетика</button>
+                <button id="COP05" class="building-category-button inactive" data-i18n="cat.COP05">Наука</button>
+                <button id="COP06" class="building-category-button inactive" data-i18n="cat.COP06">Особое</button>
+            </div>
+            <div class="building-grid-scroll" id="building-grid-scroll">
+            <div class="building-grid" id="building-grid">
+                <!-- Слоты зданий генерируются buildingList.js (BUILDING_SLOT_SPECS) -->
+            </div>
+            </div>
+        </div>
+    </div>
+
+    
+<div id="building-modal" style="display: none;" data-ui="true">
+   
+    <div class="bottom-plate"></div>
+    <div class="modal-header">
+            <button type="button" class="modal-codex-btn" id="building-modal-codex-btn" title="Кодекс" data-i18n-title="codex.openEntry" data-ui>?</button>
+            <button class="modal-close-button" data-ui>✖</button>
+        </div>
+    <div class="modal-tabs">
+        <button class="modal-tab-button active" id="modal-tab-main" data-ui data-i18n="modal.tab.main">Основное</button>
+        <button class="modal-tab-button inactive" id="modal-tab-schemes" data-ui data-i18n="modal.tab.schemes">Схемы</button>
+        <button class="modal-tab-button inactive" id="modal-tab-modules" data-ui data-i18n="modal.tab.modules">Модули</button>
+        <button class="modal-tab-button inactive" id="modal-tab-decisions" data-ui data-i18n="modal.tab.decisions">Решения</button>
+        <button class="modal-tab-button inactive" id="modal-tab-analytics" data-ui data-i18n="modal.tab.analytics">Аналитика</button>
+        <button class="modal-tab-button inactive" id="modal-tab-levels" data-ui data-i18n="modal.tab.levels">Уровни</button>
+    </div>
+    <div class="modal-body">
+    <div class="modal-content" id="modal-main-content">
+        <div class="modal-avatar-container">
+            <img class="modal-avatar" src="" alt="Building Avatar">
+            <video class="modal-avatar-video" muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="modal-info-container">
+            <p><strong data-i18n="building.name">Название:</strong> <span id="modal-building-name" data-i18n-default="common.unknown">Неизвестно</span></p>
+            <p><strong data-i18n="modal.rank">Ранг:</strong> <span id="modal-rank">1 / 9</span></p>
+            <p><strong data-i18n="building.level">Уровень:</strong> <span id="modal-level">0 / 0</span></p>
+            <p><strong data-i18n="building.built">Построено:</strong> <span id="modal-built-count">0x</span></p>
+            <p><strong data-i18n="building.area">Площадь:</strong> <span id="modal-area" class="modal-area-value">— / —</span></p>
+            <p id="modal-structure-row"><strong data-i18n="building.structure">Структура:</strong> <span id="modal-structure-value">— / —</span></p>
+            <p id="energy-production" style="display: none;"><strong data-i18n="modal.energyProd">Производство энергии:</strong> <span id="energy-production-value">0 Вт / 0 Вт</span></p>
+            <p id="energy-consumption" style="display: none;"><strong data-i18n="modal.energyCons">Расход энергии:</strong> <span id="energy-value">0 Вт / 0 Вт</span></p>
+            <p id="energy-storage" style="display: none;"><strong data-i18n="modal.energyStored">Накоплено энергии:</strong> <span id="energy-storage-value">0 Вт·ч / 0 Вт·ч</span></p>
+            <p id="modal-population" style="display: none;"><strong data-i18n="modal.popCap">Вместимость населения:</strong> <span id="modal-population-value">0 / 0</span></p>
+            <p id="modal-storage" style="display: none;"><strong data-i18n="modal.storageFill">Склад:</strong> <span id="modal-storage-value">—</span></p>
+            <p><strong data-i18n="building.description">Описание:</strong> <span id="modal-description"><span class="modal-description-value"></p>
+        </div>
+    </div>
+    <div id="schemes-panel" class="ui-scroll">
+        <div id="schemes-list" data-building-id=""></div>
+    </div>
+    <div id="levels-panel" class="levels-panel" style="display: none;">
+        <div class="levels-table-scroll">
+            <table id="levels-table" class="levels-table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="levels-cost-popover" class="levels-cost-popover" hidden></div>
+    </div>
+    <div id="building-controls-container" class="building-controls-container">
+    <!-- Левый блок: кнопки строительства -->
+    <div id="building-buttons-container" class="building-buttons-container">
+        <button id="BUILNG001" class="building-button active" data-i18n="modal.build">Построить</button>
+        <button id="BUILNG002" class="building-button " data-i18n="modal.demolish">Разобрать</button>
+        <button id="BUILNG003" class="building-button " data-i18n="modal.upgrade">Улучшить</button>
+        <button id="BUILNG004" class="building-button " data-i18n="modal.downgrade">Ухудшить</button>
+    </div>
+    
+    <!-- Правый блок: инженерные требования (пока пустой, заполните по нужде) -->
+    <div id="requirements-container" class="requirements-container">
+        <!-- Прогрессбар на всю площадь контейнера (под иконкой и текстом) -->
+        <div id="construction-progress-bar" class="construction-progress-bar" aria-hidden="true">
+            <div class="construction-progress-mover">
+                <div class="construction-progress-fill"></div>
+                <span class="construction-progress-edge"></span>
+                <span class="construction-progress-arrows-slot">
+                    <span class="construction-progress-arrows">›››</span>
+                </span>
+            </div>
+        </div>
+        <img src="/assets/textures/icons/ChatGPT Image 7 окт. 2025 г., 16_55_23.png" alt="Build Power" class="build-power-icon">
+        <div id="construction-timer-wrap" class="construction-timer-wrap">
+            <div id="construction-action-label" class="construction-action-label"></div>
+            <span id="construction-timer-text" class="construction-timer-text">00:00:00 00:00:0000</span>
+        </div>
+    </div>
+        <div id="building-resource-costs" class="building-resource-costs">
+            <div id="building-resource-costs-inner" class="building-resource-costs-inner"></div>
+        </div>
+    </div>
+    <div  id="power-container" class="power-container">
+        <span class="power-label" data-i18n="modal.power">Мощность</span>
+    <div class="power-slider-container">
+        <div class="custom-track"></div> <!-- Кастомный трек -->
+        <input type="range" min="0" max="100" value="100" id="power-slider">
+    </div>
+    <div class="power-value-container">
+        <span id="power-value">100 \\ 100%</span>
+        <div class="specialists">
+            <div class="specialist">
+                <img src="assets/textures/icons/engineer.png" alt="Engineer">
+                <span id="engineering-capacity">${building.currentEngineeringCapacity || 0} / ${building.maxEngineeringCapacity || 0}</span>
+            </div>
+            <div class="specialist">
+                <img src="assets/textures/icons/botanist.png" alt="Botanist">
+                <span id="botanical-capacity">${building.currentBotanicalCapacity || 0} / ${building.maxBotanicalCapacity || 0}</span>
+            </div>
+            <div class="specialist">
+                <img src="assets/textures/icons/scientist.png" alt="Scientist">
+                <span id="scientific-capacity">${building.currentScientificCapacity || 0} / ${building.maxScientificCapacity || 0}</span>
+            </div>
+            <div class="specialist">
+                <img src="assets/textures/icons/expeditioner.png" alt="Expeditioner">
+                <span id="expedition-capacity">0 / 0</span>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<div id="quests-panel" data-ui="true">
+        <div class="quests-panel-header"><span data-i18n="quests.panelTitle">Поручения:</span></div>
+        <div id="quests-list"></div>
+    </div>
+    <div id="camera-height" data-ui="true"></div>
+
+    <!-- Модалка поручения -->
+    <div id="quest-modal" data-ui="true" style="display:none;">
+        <div class="quest-modal-header">
+            <span id="quest-modal-title">Поручение</span>
+            <button type="button" class="quest-modal-close" id="quest-modal-close">×</button>
+        </div>
+        <div class="quest-modal-body">
+            <div class="quest-modal-top">
+                <div class="quest-media-box" id="quest-media"></div>
+                <div class="quest-info-box">
+                    <div><span class="qi-label" data-i18n="quests.infoName">Название:</span> <span id="quest-info-title"></span></div>
+                    <div id="quest-modal-chapter"></div>
+                    <div id="quest-modal-page"></div>
+                    <div><span class="qi-label" data-i18n="quests.progress">Ход выполнения:</span></div>
+                    <div id="quest-objectives"></div>
+                </div>
+            </div>
+            <div class="quest-page-text" id="quest-page-text"></div>
+            <div id="quest-choices"></div>
+            <div class="quest-nav">
+                <button type="button" class="quest-nav-btn" id="quest-page-prev" title="Назад" data-i18n-title="quests.prev">◀</button>
+                <button type="button" class="quest-nav-btn" id="quest-page-next" title="Далее" data-i18n-title="quests.next">▶</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Внешний диалог NPC -->
+    <div id="npc-dialogue-panel" data-ui="true" style="display:none;">
+        <div id="npc-dialogue-avatar"></div>
+        <div class="npc-dialogue-box">
+            <button type="button" id="npc-dialogue-close">×</button>
+            <div id="npc-dialogue-name"></div>
+            <div id="npc-dialogue-text" class="ui-scroll"></div>
+        </div>
+    </div>
+
+    <!-- Новый общий popup -->
+    <div id="resource-popup" data-ui="true" style="display: none;">
+        <div class="popup-item">Тестовый элемент 1</div>
+        <div class="popup-item">Тестовый элемент 2</div>
+    </div>
+    
+    <script src="tooltips.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+   
+    <script type="module" src="state.js"></script>
+<script type="module" src="utils.js"></script>
+<script type="module" src="shaders.js"></script>
+<script type="module" src="bodyParameters.js"></script>
+<script type="module" src="functions.js"></script>
+<script type="module" src="buildingHelpers.js"></script>
+<script type="module" src="resourceUI.js"></script>
+
+    
+    <div id="calculator-modal" style="display:none;" data-ui="true">
+        <div class="calc-window">
+            <div class="calc-header">
+                <span class="calc-title" data-i18n="calculator.title">Калькулятор</span>
+                <button type="button" id="calculator-close" class="calc-close" aria-label="close">✖</button>
+            </div>
+            <div class="calc-body">
+                <div class="calc-main">
+                    <div class="calc-display-wrap" id="calc-display-wrap">
+                        <div class="calc-screen">
+                            <div id="calc-expression"></div>
+                            <div id="calc-display">0</div>
+                        </div>
+                        <div class="calc-display-actions">
+                            <button type="button" id="calc-copy" class="calc-icon-btn" title="Копировать">⧉</button>
+                            <button type="button" id="calc-paste" class="calc-icon-btn" title="Вставить">📋</button>
+                        </div>
+                    </div>
+                    <div class="calc-keys">
+                        <button type="button" class="calc-key" data-action="clear">C</button>
+                        <button type="button" class="calc-key" data-action="back">⌫</button>
+                        <button type="button" class="calc-key op" data-action="div">÷</button>
+                        <button type="button" class="calc-key op" data-action="mul">×</button>
+
+                        <button type="button" class="calc-key" data-digit="7">7</button>
+                        <button type="button" class="calc-key" data-digit="8">8</button>
+                        <button type="button" class="calc-key" data-digit="9">9</button>
+                        <button type="button" class="calc-key op" data-action="sub">−</button>
+
+                        <button type="button" class="calc-key" data-digit="4">4</button>
+                        <button type="button" class="calc-key" data-digit="5">5</button>
+                        <button type="button" class="calc-key" data-digit="6">6</button>
+                        <button type="button" class="calc-key op" data-action="add">+</button>
+
+                        <button type="button" class="calc-key" data-digit="1">1</button>
+                        <button type="button" class="calc-key" data-digit="2">2</button>
+                        <button type="button" class="calc-key" data-digit="3">3</button>
+                        <button type="button" class="calc-key eq" data-action="eq">=</button>
+
+                        <button type="button" class="calc-key span-2" data-digit="0">0</button>
+                        <button type="button" class="calc-key" data-action="comma">,</button>
+                        <button type="button" class="calc-key" data-action="ce" title="Сброс ввода">CE</button>
+                    </div>
+                </div>
+                <div class="calc-history">
+                    <div class="calc-history-title" data-i18n="calculator.history">История</div>
+                    <div id="calc-history-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notepad-modal" style="display:none;" data-ui="true">
+        <div class="notepad-window">
+            <div class="notepad-header">
+                <span class="notepad-title" data-i18n="notepad.title">Блокнот</span>
+                <button type="button" id="notepad-close" class="notepad-close" aria-label="close">✖</button>
+            </div>
+            <div class="notepad-body">
+                <textarea id="notepad-textarea" spellcheck="false" autocomplete="off"></textarea>
+            </div>
+            <div class="notepad-footer">
+                <span>Стр. <b id="notepad-stat-line">1</b></span>
+                <span>Стлб. <b id="notepad-stat-col">1</b></span>
+                <span>Символов: <b id="notepad-stat-chars">0</b></span>
+            </div>
+        </div>
+    </div>
+
+<script type="module" src="camera.js"></script>
+<script type="module" src="ui.js"></script>
+<script type="module" src="bodies.js"></script>
+<script type="module" src="settings.js"></script>
+<script type="module" src="saveSystem.js"></script>
+<script type="module" src="saveUI.js"></script>
+<script type="module" src="hero.js"></script>
+<script type="module" src="technologies.js"></script>
+<script type="module" src="codex.js"></script>
+<script type="module" src="firmSelect.js"></script>
+<script type="module" src="trendCharts.js"></script>
+<link rel="stylesheet" href="developerConsole.css">
+<script type="module" src="developerConsole.js"></script>
+<script type="module" src="opticalScan.js"></script>
+<script type="module" src="navigator.js"></script>
+<script type="module" src="main.js"></script>
+
+
+    <!-- Соцсети (левый низ) -->
+    <div id="social-panel" class="social-panel" data-ui="true">
+        <!-- Постер за кнопками: путь к картинке в src ниже -->
+        <img id="social-poster" class="social-poster" src="assets/textures/ui/social_poster.png" alt="">
+        <div class="social-panel-title" data-i18n="social.title">Мы в:</div>
+        <div class="social-buttons">
+            <!-- Ссылки соцсетей: атрибут href -->
+            <a id="social-vk" class="social-btn" href="https://vk.com/" target="_blank" rel="noopener noreferrer" title="VK">
+                <img src="assets/textures/icons/social_vk.png" alt="VK">
+            </a>
+            <a id="social-discord" class="social-btn" href="https://discord.com/" target="_blank" rel="noopener noreferrer" title="Discord">
+                <img src="assets/textures/icons/social_discord.png" alt="Discord">
+            </a>
+        </div>
+    </div>
+
+    <!-- Превью последней сборки (только главное меню) -->
+    <div id="vh-preview-wrap" class="vh-preview-wrap" data-ui="true">
+        <img id="vh-preview-avatar" class="vh-preview-avatar" src="assets/textures/npc/seleznev.png" alt="">
+        <div id="vh-preview" class="vh-preview">
+            <div class="vh-preview-header" data-i18n="version.news">Новости сборки</div>
+            <div id="vh-preview-body"></div>
+        </div>
+    </div>
+
+    <!-- Кнопка текущей сборки (правый низ) -->
+    <button type="button" id="vh-build-btn" class="vh-build-btn" data-ui="true">
+        <div class="vh-build-btn-label" data-i18n="version.builds">Сборка:</div>
+        <div id="vh-build-number" class="vh-build-btn-number">—</div>
+    </button>
+
+    <!-- Модалка истории версий -->
+    <div id="vh-history-modal" class="vh-history-modal" data-ui="true" style="display:none;">
+        <div class="vh-history-panel">
+            <div class="vh-history-header">
+                <span data-i18n="version.historyTitle">История изменений</span>
+                <button type="button" id="vh-history-close" class="vh-history-close">×</button>
+            </div>
+            <div id="vh-history-list" class="vh-history-list ui-scroll"></div>
+            <div class="vh-history-footer">
+                <button type="button" id="vh-page-prev" class="vh-page-btn">◀</button>
+                <span id="vh-page-info" class="vh-page-info">1 / 1</span>
+                <button type="button" id="vh-page-next" class="vh-page-btn">▶</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Имя игровой сессии -->
+    <div id="session-name-modal" data-ui="true">
+        <div class="session-name-panel">
+            <div class="session-name-header" data-i18n="session.title">Название игры</div>
+            <input id="session-name-input" class="session-name-input" type="text" maxlength="42" data-i18n-placeholder="session.placeholder" placeholder="Введите название…">
+            <div class="session-name-actions">
+                <button type="button" id="session-cancel-btn" class="session-name-btn" data-i18n="session.cancel">Отмена</button>
+                <button type="button" id="session-immerse-btn" class="session-name-btn primary" disabled data-i18n="session.immerse">Погружение</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Экран Интро -->
+    <div id="intro-screen">
+        <canvas id="intro-canvas"></canvas>
+        <button type="button" id="intro-skip-btn" class="intro-skip-btn" data-i18n="intro.skip">Пропустить заставку</button>
+        <div id="intro-caption" class="intro-caption"></div>
+        <div id="intro-video-frame" class="intro-video-frame">
+            <video id="intro-video" playsinline></video>
+        </div>
+        <div class="intro-title-layer">
+            <div id="intro-title-line1" class="intro-title-line line1"></div>
+            <div id="intro-title-line2" class="intro-title-line line2"></div>
+        </div>
+        <div id="intro-fade" class="intro-fade"></div>
+        <div id="intro-loading" class="intro-loading">
+            <div data-i18n="intro.loading">Загрузка…</div>
+            <div class="intro-loading-bar"><div id="intro-loading-fill" class="intro-loading-fill"></div></div>
+            <div id="intro-loading-pct" class="intro-loading-pct">0%</div>
+        </div>
+    </div>
+
+
+
+    <!-- Панель технологий (Наука) -->
+    <div id="tech-panel">
+        <div class="tech-panel-backdrop"></div>
+        <div class="tech-panel-window">
+            <div class="tech-panel-top">
+                <div class="tech-panel-title" id="tech-panel-title">Технологии</div>
+                <div class="tech-panel-rate" id="tech-panel-rate" title="Выработка технологий">
+                    <img src="assets/textures/icons/technologies.png" alt="">
+                    <span class="tech-panel-rate-value" id="tech-panel-rate-value">+0 тех./мин</span>
+                </div>
+                <div class="tech-active-research" id="tech-active-research" hidden></div>
+                <div class="tech-panel-spacer"></div>
+                <button type="button" class="tech-panel-close" aria-label="Close">×</button>
+            </div>
+            <div class="tech-panel-body">
+                <nav class="tech-nav" id="tech-nav"></nav>
+                <div class="tech-tree-host">
+                    <div class="tech-tree-bg" aria-hidden="true">
+                        <div class="tech-tree-grid"></div>
+                        <div class="tech-tree-shimmer"></div>
+                    </div>
+                    <div class="tech-tree-viewport" id="tech-tree-viewport">
+                        <div class="tech-tree-world" id="tech-tree-world"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модальное окно технологии -->
+            <div id="tech-detail-modal" class="tech-detail-modal" aria-hidden="true">
+                <div class="tech-detail-grid-bg" aria-hidden="true"></div>
+                <div class="tech-detail-inner">
+                    <!-- Хэдер: аватар + тёмная рамка с названием -->
+                    <div class="tech-detail-header">
+                        <div class="tech-detail-avatar-frame">
+                            <div class="tech-detail-avatar" id="tech-detail-avatar"></div>
+                        </div>
+                        <div class="tech-detail-header-body">
+                            <div class="tech-detail-header-top">
+                                <div class="tech-detail-title" id="tech-detail-title"></div>
+                                <button type="button" class="tech-detail-codex-btn" id="tech-detail-codex-btn" title="Кодекс" data-i18n-title="codex.openEntry" aria-label="Codex">?</button>
+                                <button type="button" class="tech-detail-close" id="tech-detail-close" aria-label="Close">×</button>
+                            </div>
+                            <div class="tech-detail-header-main">
+                                <div class="tech-detail-left-col">
+                                    <div class="tech-detail-stage" id="tech-detail-stage">
+                                        <div class="tech-detail-stage-level" id="tech-detail-stage-level">0 / 0</div>
+                                        <div class="tech-detail-stage-name" id="tech-detail-stage-name"></div>
+                                    </div>
+                                    <div class="tech-detail-upgrade" id="tech-detail-upgrade" role="button" tabindex="0">
+                                        <div class="tech-detail-upgrade-art" id="tech-detail-upgrade-art"></div>
+                                        <div class="tech-detail-upgrade-body">
+                                            <div class="tech-detail-upgrade-label" id="tech-detail-upgrade-label">Улучшить технологию</div>
+                                            <div class="tech-detail-upgrade-status" id="tech-detail-upgrade-status"></div>
+                                            <div class="tech-detail-upgrade-bar" aria-hidden="true">
+                                                <div class="tech-detail-upgrade-bar-fill" id="tech-detail-upgrade-bar-fill"></div>
+                                            </div>
+                                            <div class="tech-detail-upgrade-eta" id="tech-detail-upgrade-eta"></div>
+                                            <div class="tech-detail-upgrade-pts" id="tech-detail-upgrade-pts"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tech-detail-desc" id="tech-detail-desc"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Требования / разблокировки — нижняя левая половина -->
+                    <div class="tech-detail-bottom">
+                        <div class="tech-detail-rel">
+                            <div class="tech-detail-rel-block" data-rel="requires">
+                                <div class="tech-detail-rel-title" id="tech-detail-requires-title">Требует</div>
+                                <div class="tech-detail-rel-cards" id="tech-detail-requires"></div>
+                            </div>
+                            <div class="tech-detail-rel-block" data-rel="unlocks">
+                                <div class="tech-detail-rel-title" id="tech-detail-unlocks-title">Открывает</div>
+                                <div class="tech-detail-rel-cards" id="tech-detail-unlocks"></div>
+                            </div>
+                        </div>
+                        <div class="tech-detail-stats" id="tech-detail-stats" hidden>
+                            <div class="tech-detail-stats-title" id="tech-detail-stats-title">Характеристики технологии:</div>
+                            <div class="tech-detail-stats-list" id="tech-detail-stats-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Окно управления героем -->
+    <div id="hero-panel">
+        <div class="hero-panel-backdrop"></div>
+        <div class="hero-panel-window">
+            <div class="hero-panel-top">
+                <div class="hero-panel-title">Управление героем</div>
+                <button type="button" class="hero-panel-close" aria-label="Close">×</button>
+            </div>
+            <div class="hero-panel-body">
+                <nav class="hero-nav">
+                    <button type="button" class="hero-nav-item active" data-section="dossier">Досье</button>
+                    <button type="button" class="hero-nav-item locked" data-section="equipment">Экипировка</button>
+                    <button type="button" class="hero-nav-item" data-section="skills">Навыки</button>
+                    <button type="button" class="hero-nav-item" data-section="quests">История поручений</button>
+                    <button type="button" class="hero-nav-item locked" data-section="mail">Почта</button>
+                </nav>
+                <div class="hero-mid"></div>
+                <div class="hero-deep"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Кодекс -->
+    <div id="codex-panel">
+        <div class="codex-panel-backdrop"></div>
+        <div class="codex-panel-window">
+            <div class="codex-panel-top">
+                <div class="codex-panel-title">Кодекс</div>
+                <button type="button" class="codex-panel-close" aria-label="Close">×</button>
+            </div>
+            <div class="codex-panel-body">
+                <nav class="codex-nav"></nav>
+                <div class="codex-mid"></div>
+                <div class="codex-deep"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

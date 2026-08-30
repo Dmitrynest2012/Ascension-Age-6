@@ -1,0 +1,1765 @@
+[
+  {
+    "id": 4000,
+    "name": {
+      "ru": "Вселенная-512",
+      "en": "Universe-512",
+      "de": "Universum-512"
+    },
+    "type": "universe",
+    "parent": 5000,
+    "children": [
+      3000,
+      3001
+    ],
+    "size": 140000,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": 0,
+    "centerZ": 0,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "age": 13800000000.0,
+    "distanceLy": 0,
+    "radius": 320000,
+    "description": {
+      "ru": "Вселенная-512 — замкнутый пузырь пространства-времени, внутри которого находятся галактики Млечный путь и Андромеда. Снаружи виден как полупрозрачная сфера с белёсым лимбом.",
+      "en": "Universe-512 is a closed spacetime bubble containing the Milky Way and Andromeda galaxies. From outside it appears as a translucent sphere with a pale rim.",
+      "de": "Universum-512 ist eine geschlossene Raumzeit-Blase mit der Milchstraße und Andromeda. Von außen erscheint sie als durchscheinende Sphäre mit hellem Rand."
+    },
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "avgSurfaceTemp": null,
+    "universeId": 4000,
+    "multiverseId": 5000
+  },
+  {
+    "id": 3000,
+    "name": {
+      "ru": "Млечный путь",
+      "en": "Milky Way",
+      "de": "Milchstraße"
+    },
+    "type": "galaxy",
+    "parent": 4000,
+    "children": [
+      2000,
+      2001,
+      2002,
+      2003
+    ],
+    "size": 60000,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": 0,
+    "centerZ": 0,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "age": 13600000000.0,
+    "distanceLy": 0.0,
+    "radius": 52850.0,
+    "description": {
+      "ru": "Млечный путь — спиральная галактика с перемычкой. Солнечная система находится на периферии галактического диска, в рукаве Ориона, далеко от центра. Диаметр диска около 100 тысяч световых лет. Межзвёздные туманности и звёздные системы вращаются вокруг её центра.",
+      "en": "The Milky Way is a barred spiral galaxy. The Solar System lies on the periphery of the galactic disk, in the Orion Arm, far from the centre. The disk is about 100 thousand light-years across. Interstellar nebulae and star systems orbit its centre.",
+      "de": "Die Milchstraße ist eine Balkenspiralgalaxie. Das Sonnensystem liegt am Rand der galaktischen Scheibe, im Orionarm, weit vom Zentrum entfernt. Die Scheibe hat einen Durchmesser von etwa 100.000 Lichtjahren. Interstellare Nebel und Sternsysteme kreisen um ihr Zentrum."
+    },
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0,
+    "orbitalRadius": 0,
+    "universeId": 4000,
+    "galaxyId": 3000
+  },
+  {
+    "id": 3001,
+    "name": {
+      "ru": "Андромеда",
+      "en": "Andromeda",
+      "de": "Andromeda"
+    },
+    "type": "galaxy",
+    "parent": 4000,
+    "children": [],
+    "size": 72000,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": 95000,
+    "centerZ": 42000,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "age": 10000000000.0,
+    "distanceLy": 2537000.0,
+    "radius": 110000.0,
+    "description": {
+      "ru": "Галактика Андромеды (M31) — ближайшая крупная спиральная галактика к Млечному пути. По размеру она больше нашей галактики. В игре пока без внутренних звёздных систем.",
+      "en": "The Andromeda Galaxy (M31) is the nearest large spiral galaxy to the Milky Way. It is larger than our galaxy. In-game it has no internal star systems yet.",
+      "de": "Die Andromeda-Galaxie (M31) ist die nächste große Spiralgalaxie zur Milchstraße. Sie ist größer als unsere Galaxie."
+    },
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "avgSurfaceTemp": null,
+    "universeId": 4000,
+    "galaxyId": 3001
+  },
+  {
+    "id": 2000,
+    "name": {
+      "ru": "Местная межзвёздная туманность",
+      "en": "Local Interstellar Cloud",
+      "de": "Lokale interstellare Wolke"
+    },
+    "type": "interstellarNebula",
+    "parent": 3000,
+    "children": [
+      1000,
+      1001
+    ],
+    "size": 1200,
+    "distance": 0,
+    "day": 0,
+    "year": 84007500000.0,
+    "texture": null,
+    "centerX": -12876.1,
+    "centerZ": 15280.8,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "age": 45000000.0,
+    "distanceLy": 0.0,
+    "radius": 15.0,
+    "description": {
+      "ru": "Местная межзвёздная туманность (LIC) — область относительно разреженного межзвёздного вещества, в которой находится Солнечная система. Это часть Местного пузыря. Внутри облака расположены ближайшие звёздные системы, включая Солнце и Альфу Центавра.",
+      "en": "The Local Interstellar Cloud (LIC) is a region of relatively sparse interstellar medium that contains the Solar System. It is part of the Local Bubble. Within the cloud lie the nearest star systems, including the Sun and Alpha Centauri.",
+      "de": "Die Lokale interstellare Wolke (LIC) ist ein Gebiet relativ dünner interstellarer Materie, in dem sich das Sonnensystem befindet. Sie ist Teil der Lokalen Blase. Innerhalb der Wolke liegen die nächsten Sternensysteme, darunter Sonne und Alpha Centauri."
+    },
+    "nebulaColors": [
+      "#6a8caf",
+      "#3d5a7a",
+      "#a890c0",
+      "#2a4060"
+    ],
+    "nebulaGeometry": {
+      "shape": "irregularCloud",
+      "lobes": 5,
+      "noiseScale": 2.4,
+      "edgeSoftness": 0.55
+    },
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0,
+    "orbitalRadius": 19982.4,
+    "galaxyId": 3000,
+    "orbitalStartAngle": 2.271
+  },
+  {
+    "id": 1000,
+    "name": {
+      "ru": "Солнечная система",
+      "en": "Solar System",
+      "de": "Sonnensystem"
+    },
+    "type": "starSystem",
+    "parent": 2000,
+    "children": [
+      0
+    ],
+    "size": 0.01,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": 0,
+    "centerZ": 0,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "Солнечная система — гравитационно связанная система вокруг звезды Солнце, включающая планеты, карликовые планеты, спутники, астероиды и кометы.",
+      "en": "The Solar System is a gravitationally bound system around the star Sun, including planets, dwarf planets, moons, asteroids and comets.",
+      "de": "Das Sonnensystem ist ein gravitativ gebundenes System um den Stern Sonne und umfasst Planeten, Zwergplaneten, Monde, Asteroiden und Kometen."
+    },
+    "radius": 7479893534.999999,
+    "age": 4600000000.0,
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0,
+    "orbitalRadius": 0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "nebulaId": 2000,
+    "galaxyId": 3000
+  },
+  {
+    "id": 0,
+    "name": {
+      "ru": "Солнце",
+      "en": "Sun",
+      "de": "Sonne"
+    },
+    "type": "star",
+    "parent": null,
+    "children": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "size": 2,
+    "distance": 0,
+    "day": 25.38,
+    "year": 0,
+    "texture": "assets/textures/planets/sun.jpg",
+    "centerX": -12876.1,
+    "centerZ": 15280.8,
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 0,
+    "rotationStartAngle": 0,
+    "rings": true,
+    "ringCount": 2,
+    "ringDensity": 32000,
+    "ringSpacing": 72,
+    "ringThickness": 15,
+    "colonized": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "Солнце — звезда спектрального класса G2V, вокруг которой вращаются все планеты Солнечной системы. Оно состоит в основном из водорода и гелия. Ядро Солнца производит колоссальное количество энергии за счёт термоядерных реакций. Жизнь на Земле существует благодаря его теплу и свету.",
+      "en": "The Sun is a G2V spectral class star around which all planets of the Solar System orbit. It consists mainly of hydrogen and helium. The Sun's core produces a colossal amount of energy through thermonuclear reactions. Life on Earth exists thanks to its heat and light.",
+      "de": "Die Sonne ist ein Stern der Spektralklasse G2V, um den alle Planeten des Sonnensystems kreisen. Sie besteht hauptsächlich aus Wasserstoff und Helium. Der Kern der Sonne erzeugt durch thermonukleare Reaktionen eine kolossale Menge an Energie. Das Leben auf der Erde existiert dank ihrer Wärme und ihres Lichts."
+    },
+    "radius": 696340,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "age": 4600000000.0,
+    "avgSurfaceTemp": 5500,
+    "gravityWellRadius": 2785360.0,
+    "orbitalRadius": 0,
+    "starSystemId": 1000,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#ffb45a",
+    "atmosphereScale": 1.22,
+    "atmosphereIntensity": 1.55,
+    "atmosphereScaleHeight": 0.3,
+    "nebulaId": 2000,
+    "galaxyId": 3000
+  },
+  {
+    "id": 1,
+    "name": {
+      "ru": "Меркурий",
+      "en": "Mercury",
+      "de": "Merkur"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1,
+    "distance": 10,
+    "day": 58.65,
+    "year": 0.241,
+    "texture": "assets/textures/planets/mercury.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 0.9128410225158002,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 2439.7,
+    "description": {
+      "ru": "Меркурий — самая близкая к Солнцу планета. Из-за отсутствия плотной атмосферы его поверхность подвержена резким перепадам температур от -180°C до +430°C. Он имеет каменистый рельеф, испещрённый кратерами. Несмотря на малый размер, Меркурий обладает значительным металлическим ядром.",
+      "en": "Mercury is the closest planet to the Sun. Due to the absence of a dense atmosphere, its surface experiences extreme temperature swings from -180°C to +430°C. It has a rocky terrain riddled with craters. Despite its small size, Mercury has a substantial metallic core.",
+      "de": "Merkur ist der sonnennächste Planet. Aufgrund fehlender dichter Atmosphäre ist seine Oberfläche extremen Temperaturschwankungen von -180°C bis +430°C ausgesetzt. Er hat ein felsiges, von Kratern durchzogenes Relief. Trotz seiner geringen Größe besitzt Merkur einen beträchtlichen metallischen Kern."
+    },
+    "surfacePercents": {
+      "land": 100,
+      "water": 0,
+      "forests": 0,
+      "deserts": 80,
+      "mountains": 10,
+      "plains": 10,
+      "steppes": 0,
+      "rivers": 0,
+      "lakes": 0,
+      "glaciers": 0
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": 167,
+    "gravityWellRadius": 9758.8,
+    "orbitalRadius": 57909050,
+    "hasAtmosphere": false,
+    "hasMagneticField": false
+  },
+  {
+    "id": 2,
+    "name": {
+      "ru": "Венера",
+      "en": "Venus",
+      "de": "Venus"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1,
+    "distance": 20,
+    "day": 243,
+    "year": 0.615,
+    "texture": "assets/textures/planets/venus.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 0.4838641962421222,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 6051.8,
+    "description": {
+      "ru": "Венера — вторая планета от Солнца и ближайшая соседка Земли. Её атмосфера состоит в основном из углекислого газа, что вызывает сильный парниковый эффект. Поверхность Венеры раскалена до +470°C, а давление в 90 раз выше земного. Планета покрыта вулканами и равнинами лавы.",
+      "en": "Venus is the second planet from the Sun and Earth's closest neighbor. Its atmosphere consists mainly of carbon dioxide, causing a strong greenhouse effect. The surface of Venus is scorched to +470°C, and the pressure is 90 times higher than Earth's. The planet is covered with volcanoes and lava plains.",
+      "de": "Venus ist der zweite Planet von der Sonne und der nächste Nachbar der Erde. Ihre Atmosphäre besteht hauptsächlich aus Kohlendioxid, was einen starken Treibhauseffekt verursacht. Die Oberfläche der Venus ist auf +470°C erhitzt, und der Druck ist 90-mal höher als auf der Erde. Der Planet ist mit Vulkanen und Lavaebenen bedeckt."
+    },
+    "surfacePercents": {
+      "land": 100,
+      "water": 0,
+      "forests": 0,
+      "deserts": 40,
+      "mountains": 20,
+      "plains": 40,
+      "steppes": 0,
+      "rivers": 0,
+      "lakes": 0,
+      "glaciers": 0
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": 464,
+    "gravityWellRadius": 24207.2,
+    "orbitalRadius": 108208000,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#e8c070",
+    "atmosphereScale": 1.13,
+    "atmosphereIntensity": 1.45,
+    "atmosphereScaleHeight": 0.38,
+    "hasMagneticField": false
+  },
+  {
+    "id": 3,
+    "childStructureIds": [
+      "CONSTRC001",
+      "CONSTRC002",
+      "CONSTRC003",
+      "CONSTRC004",
+      "CONSTRC005",
+      "CONSTRC006",
+      "CONSTRC007",
+      "CONSTRC020",
+      "CONSTRC021",
+      "CONSTRC022",
+      "CONSTRC040",
+      "CONSTRC041",
+      "CONSTRC042",
+      "CONSTRC043",
+      "CONSTRC060",
+      "CONSTRC080"
+    ],
+    "name": {
+      "ru": "Святая Русь",
+      "en": "Holy Rus",
+      "de": "Heilige Rus"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [
+      4
+    ],
+    "size": 1,
+    "distance": 30,
+    "day": 1,
+    "year": 1,
+    "texture": "assets/textures/planets/earth.jpg",
+    "specularMap": "assets/textures/planets/earth_specular.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 1.8194830771367223,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": true,
+    "has_technoport": false,
+    "description": {
+      "ru": "Земля — третья планета от Солнца и единственная известная обитаемая планета. Её поверхность покрыта океанами, горами и равнинами. Уникальная атмосфера поддерживает жизнь благодаря кислороду и озоновому слою. Земля имеет один спутник — Луну.",
+      "en": "Earth is the third planet from the Sun and the only known inhabited planet. Its surface is covered with oceans, mountains and plains. A unique atmosphere supports life thanks to oxygen and the ozone layer. Earth has one moon — the Moon.",
+      "de": "Die Erde ist der dritte Planet von der Sonne und der einzige bekannte bewohnte Planet. Ihre Oberfläche ist von Ozeanen, Bergen und Ebenen bedeckt. Eine einzigartige Atmosphäre erhält das Leben dank Sauerstoff und der Ozonschicht. Die Erde hat einen Mond — den Mond."
+    },
+    "radius": 6371,
+    "resources": {
+      "population": 5,
+      "technologies": 700,
+      "stock": {
+        "RES_WATER": 50.0,
+        "RES_IRON_INGOT": 90.0,
+        "RES_FOOD": 8.0,
+        "RES_REPAIR_KIT": 30,
+        "RES_ICE": 90,
+        "RES_EMPTY_CANISTER": 50,
+        "RES_PACKED_WATER": 15.0,
+        "RES_LETTUCE": 0,
+        "RES_WOOD_LOG": 0,
+        "RES_COPPER_INGOT": 0,
+        "RES_TITANIUM_INGOT": 0,
+        "RES_ALUMINUM_INGOT": 0,
+        "RES_TUNGSTEN_INGOT": 0,
+        "RES_SULFUR_POWDER": 0,
+        "RES_IRON_SHEET": 200.0,
+        "RES_IRON_RODS": 180.0,
+        "RES_SCREWS_AND_NUTS_SET": 40.0,
+        "RES_SAND": 100.0,
+        "RES_IRON_WIRE": 0,
+        "RES_IRON_GRATE": 0,
+        "RES_REINFORCED_IRON_PLATE": 0,
+        "RES_IRON_FRAME": 0,
+        "RES_COPPER_ORE": 0,
+        "RES_COPPER_ORE_CLEAN": 0,
+        "RES_COPPER_SHEET": 0,
+        "RES_COPPER_RODS": 0,
+        "RES_STATOR": 0,
+        "RES_ROTOR": 0,
+        "RES_COPPER_WIRE": 0,
+        "RES_CARBON_ROCK": 0,
+        "RES_ROUGH_COAL": 0,
+        "RES_TIMBER": 0,
+        "RES_PLANKS": 0,
+        "RES_WOODEN_TOOL_HANDLES": 0,
+        "RES_CRUDE_OIL": 0
+      }
+    },
+    "surfacePercents": {
+      "land": 29.2,
+      "water": 70.8,
+      "forests": 9.4,
+      "deserts": 10.0,
+      "mountains": 7.0,
+      "plains": 8.0,
+      "steppes": 3.0,
+      "rivers": 0.3,
+      "lakes": 0.5,
+      "glaciers": 3.0
+    },
+    "age": 4540000000.0,
+    "avgSurfaceTemp": 15,
+    "gravityWellRadius": 25484.0,
+    "orbitalRadius": 149597870.7,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#6BA3FF",
+    "atmosphereScale": 1.065,
+    "atmosphereIntensity": 0.75,
+    "atmosphereScaleHeight": 0.18,
+    "hasClouds": true,
+    "cloudMap": "assets/textures/planets/earth_clouds.jpg",
+    "cloudDensity": 0.99,
+    "cloudScale": 1.025,
+    "hasCityLights": true,
+    "cityLightsMap": "assets/textures/planets/earth_lights.jpg",
+    "cityLightsIntensity": 1.35,
+    "cityLightsScale": 1.004,
+    "hasMagneticField": true,
+    "auroraIntensity": 0.4,
+    "auroraScale": 1.09,
+    "units": {
+      "space": [
+        {
+          "unitTypeId": "UNIT_BURAN_T1",
+          "count": 1,
+          "slot": 0
+        }
+      ],
+      "air": [],
+      "ground": []
+    },
+    "geoExploration": true,
+    "geoDeposits": {
+      "GEO_N2": {
+        "current": 3870000000000000.0,
+        "max": 3870000000000000.0
+      },
+      "GEO_O2": {
+        "current": 1040000000000000.0,
+        "max": 1040000000000000.0
+      },
+      "GEO_CO2": {
+        "current": 3100000000000.0,
+        "max": 4500000000000.0
+      },
+      "GEO_CH4": {
+        "current": 4800000000.0,
+        "max": 9000000000.0
+      },
+      "GEO_HE": {
+        "current": 3700000000.0,
+        "max": 3700000000.0
+      },
+      "GEO_NE": {
+        "current": 65000000000.0,
+        "max": 65000000000.0
+      },
+      "GEO_AR": {
+        "current": 65900000000000.0,
+        "max": 65900000000000.0
+      },
+      "GEO_IRON_ROCK": {
+        "current": 115000000000.0,
+        "max": 240000000000.0
+      },
+      "GEO_COPPER_ROCK": {
+        "current": 750000000.0,
+        "max": 1900000000.0
+      },
+      "GEO_TITANIUM_ROCK": {
+        "current": 680000000.0,
+        "max": 1400000000.0
+      },
+      "GEO_TUNGSTEN_ROCK": {
+        "current": 2800000.0,
+        "max": 7500000.0
+      },
+      "GEO_ALUMINUM_ROCK": {
+        "current": 19000000000.0,
+        "max": 48000000000.0
+      },
+      "GEO_SULFUR_ROCK": {
+        "current": 4600000000.0,
+        "max": 11000000000.0
+      },
+      "GEO_LIMESTONE": {
+        "current": 480000000000.0,
+        "max": 950000000000.0
+      },
+      "GEO_WATER": {
+        "current": 1.35e+18,
+        "max": 1.4e+18
+      },
+      "GEO_ICE": {
+        "current": 2.4e+16,
+        "max": 2.9e+16
+      },
+      "GEO_OIL": {
+        "current": 120000000000.0,
+        "max": 450000000000.0
+      },
+      "GEO_SAND": {
+        "current": 9500000000000.0,
+        "max": 18000000000000.0
+      },
+      "GEO_CARBON_ROCK": {
+        "current": 420000000000.0,
+        "max": 950000000000.0
+      },
+      "GEO_WOOD": {
+        "current": 220000000000.0,
+        "max": 450000000000.0
+      }
+    },
+    "geoSurveySites": 0,
+    "diameterKm": 12742,
+    "groundResourceNodes": [
+      {
+        "id": "node_ice_west_base",
+        "resourceId": "GMAP_ICE",
+        "lon": 79.7944,
+        "lat": 71.9364,
+        "note": "≈10 км к юго-западу от базы Космистов (80°E, 72°N)"
+      }
+    ],
+    "plannedConstruction": true
+  },
+  {
+    "id": 4,
+    "name": {
+      "ru": "Луна",
+      "en": "Moon",
+      "de": "Mond"
+    },
+    "type": "moon",
+    "parent": 3,
+    "children": [],
+    "size": 0.5,
+    "distance": 6,
+    "day": 27.32,
+    "year": 0.074,
+    "texture": "assets/textures/planets/moon.jpg",
+    "gravityWellMultiplier": 2,
+    "orbitalStartAngle": 3.6765987730028455,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 1737.4,
+    "description": {
+      "ru": "Луна — единственный естественный спутник Земли. Её поверхность покрыта кратерами, морями застывшей лавы и горами. Луна играет ключевую роль в приливных процессах Земли. Она также стала первой целью для пилотируемых космических миссий.",
+      "en": "The Moon is Earth's only natural satellite. Its surface is covered with craters, seas of solidified lava and mountains. The Moon plays a key role in Earth's tidal processes. It was also the first target for crewed space missions.",
+      "de": "Der Mond ist der einzige natürliche Satellit der Erde. Seine Oberfläche ist mit Kratern, Meeren aus erstarrter Lava und Bergen bedeckt. Der Mond spielt eine Schlüsselrolle bei den Gezeitenprozessen der Erde. Er war auch das erste Ziel bemannter Weltraummissionen."
+    },
+    "surfacePercents": {
+      "land": 100,
+      "water": 0,
+      "forests": 0,
+      "deserts": 0,
+      "mountains": 25,
+      "plains": 75,
+      "steppes": 0,
+      "rivers": 0,
+      "lakes": 0,
+      "glaciers": 0
+    },
+    "age": 4510000000.0,
+    "avgSurfaceTemp": -20,
+    "gravityWellRadius": 3474.8,
+    "orbitalRadius": 384400,
+    "hasAtmosphere": false,
+    "hasMagneticField": false,
+    "geoExploration": false,
+    "geoDeposits": {
+      "GEO_N2": {
+        "current": 0,
+        "max": 100000000.0
+      },
+      "GEO_O2": {
+        "current": 0,
+        "max": 50000000.0
+      },
+      "GEO_CO2": {
+        "current": 1000000.0,
+        "max": 20000000.0
+      },
+      "GEO_CH4": {
+        "current": 0,
+        "max": 1000000.0
+      },
+      "GEO_HE": {
+        "current": 500000000.0,
+        "max": 2000000000.0
+      },
+      "GEO_NE": {
+        "current": 10000000.0,
+        "max": 50000000.0
+      },
+      "GEO_AR": {
+        "current": 20000000.0,
+        "max": 80000000.0
+      },
+      "GEO_IRON_ROCK": {
+        "current": 80000000000.0,
+        "max": 150000000000.0
+      },
+      "GEO_COPPER_ROCK": {
+        "current": 100000000.0,
+        "max": 400000000.0
+      },
+      "GEO_TITANIUM_ROCK": {
+        "current": 2000000000.0,
+        "max": 5000000000.0
+      },
+      "GEO_TUNGSTEN_ROCK": {
+        "current": 500000.0,
+        "max": 2000000.0
+      },
+      "GEO_ALUMINUM_ROCK": {
+        "current": 5000000000.0,
+        "max": 12000000000.0
+      },
+      "GEO_SULFUR_ROCK": {
+        "current": 300000000.0,
+        "max": 900000000.0
+      },
+      "GEO_LIMESTONE": {
+        "current": 0,
+        "max": 100000000.0
+      },
+      "GEO_WATER": {
+        "current": 1000000000.0,
+        "max": 5000000000.0
+      },
+      "GEO_ICE": {
+        "current": 20000000000.0,
+        "max": 80000000000.0
+      },
+      "GEO_OIL": {
+        "current": 0,
+        "max": 0
+      },
+      "GEO_SAND": {
+        "current": 5000000000000.0,
+        "max": 10000000000000.0
+      }
+    },
+    "geoSurveySites": 5,
+    "diameterKm": 3474.8
+  },
+  {
+    "id": 5,
+    "name": {
+      "ru": "Марс",
+      "en": "Mars",
+      "de": "Mars"
+    },
+    "type": "planet",
+    "childStructureIds": [
+      "CONSTRC0011"
+    ],
+    "parent": 0,
+    "children": [
+      6
+    ],
+    "size": 1,
+    "distance": 45,
+    "day": 1.03,
+    "year": 1.88,
+    "texture": "assets/textures/planets/mars.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 2.627202196746529,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": true,
+    "has_technoport": false,
+    "radius": 3389.5,
+    "description": {
+      "ru": "Марс — четвёртая планета от Солнца, известная как Красная планета из-за оксидов железа на поверхности. На нём есть самые большие вулканы и каньоны в Солнечной системе. Учёные считают, что в прошлом на Марсе могла быть вода в жидком виде. Сегодня планета активно изучается роботами и спутниками.",
+      "en": "Mars is the fourth planet from the Sun, known as the Red Planet due to iron oxides on its surface. It has the largest volcanoes and canyons in the Solar System. Scientists believe that liquid water may have existed on Mars in the past. Today the planet is actively studied by robots and satellites.",
+      "de": "Mars ist der vierte Planet von der Sonne und als Roter Planet bekannt wegen der Eisenoxide auf seiner Oberfläche. Auf ihm gibt es die größten Vulkane und Canyons im Sonnensystem. Wissenschaftler gehen davon aus, dass es auf dem Mars in der Vergangenheit flüssiges Wasser gegeben haben könnte. Heute wird der Planet aktiv von Robotern und Satelliten erforscht."
+    },
+    "resources": {
+      "population": 12,
+      "raw": 20,
+      "materials": 5,
+      "food": 0.5,
+      "energy": 3000,
+      "technologies": 150
+    },
+    "surfacePercents": {
+      "land": 100,
+      "water": 0,
+      "forests": 0,
+      "deserts": 70,
+      "mountains": 15,
+      "plains": 12,
+      "steppes": 0,
+      "rivers": 0,
+      "lakes": 0,
+      "glaciers": 3
+    },
+    "age": 4600000000.0,
+    "avgSurfaceTemp": -63,
+    "gravityWellRadius": 13558.0,
+    "orbitalRadius": 227939200,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#d4896a",
+    "atmosphereScale": 1.04,
+    "atmosphereIntensity": 0.42,
+    "atmosphereScaleHeight": 0.16,
+    "hasMagneticField": false
+  },
+  {
+    "id": 6,
+    "name": {
+      "ru": "Деймос",
+      "en": "Deimos",
+      "de": "Deimos"
+    },
+    "type": "moon",
+    "parent": 5,
+    "children": [],
+    "size": 0.5,
+    "distance": 6,
+    "day": 1.26244,
+    "year": 0.00346,
+    "texture": "assets/textures/planets/deimos.jpg",
+    "gravityWellMultiplier": 2,
+    "orbitalStartAngle": 2.5321784017,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 6.2,
+    "description": {
+      "ru": "Деймос — один из двух спутников Марса, открытый в 1877 году. Он имеет неправильную форму и сильно изрыт кратерами. Диаметр Деймоса составляет всего около 12 км. Его гравитация настолько мала, что удерживать атмосферу он не может.",
+      "en": "Deimos is one of the two moons of Mars, discovered in 1877. It has an irregular shape and is heavily cratered. Deimos' diameter is only about 12 km. Its gravity is so weak that it cannot hold an atmosphere.",
+      "de": "Deimos ist einer der beiden Monde des Mars, entdeckt 1877. Er hat eine unregelmäßige Form und ist stark von Kratern zerfurcht. Der Durchmesser von Deimos beträgt nur etwa 12 km. Seine Schwerkraft ist so gering, dass er keine Atmosphäre halten kann."
+    },
+    "surfacePercents": {
+      "land": 0,
+      "water": 0,
+      "forests": 0,
+      "deserts": 0,
+      "mountains": 0,
+      "plains": 0,
+      "steppes": 0,
+      "rivers": 0,
+      "lakes": 0,
+      "glaciers": 0
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": -20,
+    "gravityWellRadius": 12.4,
+    "orbitalRadius": 29919574.14,
+    "hasAtmosphere": false,
+    "hasMagneticField": false
+  },
+  {
+    "id": 7,
+    "name": {
+      "ru": "Церера",
+      "en": "Ceres",
+      "de": "Ceres"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1,
+    "distance": 74,
+    "day": 1.26244,
+    "year": 4.6,
+    "texture": "assets/textures/planets/ceres.jpg",
+    "gravityWellMultiplier": 2,
+    "orbitalStartAngle": 2.5321784017,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 473,
+    "description": {
+      "ru": "Церера — крупнейший объект в поясе астероидов и первая открытая карликовая планета. Её поверхность покрыта кратерами и следами криовулканической активности. Учёные предполагают, что под её корой может находиться слой льда. Церера стала объектом миссии Dawn в 2015 году.",
+      "en": "Ceres is the largest object in the asteroid belt and the first discovered dwarf planet. Its surface is covered with craters and traces of cryovolcanic activity. Scientists suggest that a layer of ice may lie beneath its crust. Ceres was the target of the Dawn mission in 2015.",
+      "de": "Ceres ist das größte Objekt im Asteroidengürtel und der erste entdeckte Zwergplanet. Seine Oberfläche ist mit Kratern und Spuren kryovulkanischer Aktivität bedeckt. Wissenschaftler vermuten, dass sich unter seiner Kruste eine Eisschicht befinden könnte. Ceres war 2015 Ziel der Mission Dawn."
+    },
+    "surfacePercents": {
+      "land": 0,
+      "water": 0,
+      "forests": 0,
+      "deserts": 0,
+      "mountains": 0,
+      "plains": 0,
+      "steppes": 0,
+      "rivers": 0,
+      "lakes": 0,
+      "glaciers": 0
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": 15,
+    "gravityWellRadius": 946.0,
+    "orbitalRadius": 369008081.06,
+    "hasAtmosphere": false,
+    "hasMagneticField": false
+  },
+  {
+    "id": 8,
+    "name": {
+      "ru": "Юпитер",
+      "en": "Jupiter",
+      "de": "Jupiter"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1.5,
+    "distance": 105,
+    "day": 0.41354,
+    "year": 11.862,
+    "texture": "assets/textures/planets/jupiter.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 0.68,
+    "rotationStartAngle": 0,
+    "rings": true,
+    "ringCount": 1,
+    "ringDensity": 20,
+    "ringSpacing": 5,
+    "ringThickness": 2,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 69911,
+    "description": {
+      "ru": "Юпитер — крупнейшая планета Солнечной системы, газовый гигант. Его атмосфера состоит в основном из водорода и гелия. На поверхности наблюдаются мощные бури, включая знаменитое Большое Красное Пятно. У Юпитера более 90 спутников и слабая система колец.",
+      "en": "Jupiter is the largest planet in the Solar System, a gas giant. Its atmosphere consists mainly of hydrogen and helium. Powerful storms are observed on its surface, including the famous Great Red Spot. Jupiter has more than 90 moons and a faint ring system.",
+      "de": "Jupiter ist der größte Planet des Sonnensystems, ein Gasriese. Seine Atmosphäre besteht hauptsächlich aus Wasserstoff und Helium. Auf seiner Oberfläche werden mächtige Stürme beobachtet, darunter der berühmte Große Rote Fleck. Jupiter hat mehr als 90 Monde und ein schwaches Ringsystem."
+    },
+    "age": 4600000000.0,
+    "avgSurfaceTemp": -110,
+    "gravityWellRadius": 279644.0,
+    "orbitalRadius": 778340821,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#d4b48a",
+    "atmosphereScale": 1.09,
+    "atmosphereIntensity": 1.15,
+    "atmosphereScaleHeight": 0.28,
+    "hasMagneticField": true,
+    "auroraIntensity": 0.35,
+    "auroraScale": 1.09
+  },
+  {
+    "id": 9,
+    "name": {
+      "ru": "Сатурн",
+      "en": "Saturn",
+      "de": "Saturn"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1.5,
+    "distance": 145,
+    "day": 0.4393,
+    "year": 29.457,
+    "texture": "assets/textures/planets/saturn.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 4.2,
+    "rotationStartAngle": 0,
+    "rings": true,
+    "ringCount": 1,
+    "ringDensity": 4000,
+    "ringSpacing": 4,
+    "ringThickness": 4,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 58232,
+    "description": {
+      "ru": "Сатурн — газовый гигант, известный своей системой колец. Его атмосфера богата водородом и гелием. Кольца состоят в основном изо льда и каменных обломков. У Сатурна более 80 спутников, крупнейший из которых — Титан.",
+      "en": "Saturn is a gas giant famous for its ring system. Its atmosphere is rich in hydrogen and helium. The rings consist mainly of ice and rocky debris. Saturn has more than 80 moons, the largest of which is Titan.",
+      "de": "Saturn ist ein Gasriese, bekannt für sein Ringsystem. Seine Atmosphäre ist reich an Wasserstoff und Helium. Die Ringe bestehen hauptsächlich aus Eis und Gesteinsbrocken. Saturn hat mehr als 80 Monde, der größte davon ist Titan."
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": -140,
+    "gravityWellRadius": 232928.0,
+    "orbitalRadius": 1426666422,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#e8d6a8",
+    "atmosphereScale": 1.08,
+    "atmosphereIntensity": 0.95,
+    "atmosphereScaleHeight": 0.26,
+    "hasMagneticField": true,
+    "auroraIntensity": 0.35,
+    "auroraScale": 1.09
+  },
+  {
+    "id": 10,
+    "name": {
+      "ru": "Уран",
+      "en": "Uranus",
+      "de": "Uranus"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1.5,
+    "distance": 185,
+    "day": 0.71866,
+    "year": 84.099,
+    "texture": "assets/textures/planets/uranus.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 1.79,
+    "rotationStartAngle": 0,
+    "rings": true,
+    "ringCount": 1,
+    "ringDensity": 1000,
+    "ringSpacing": 4,
+    "ringThickness": 4,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 25362,
+    "description": {
+      "ru": "Уран — ледяной гигант с уникальным наклоном оси вращения. Он вращается почти «лежа на боку», из-за чего сезоны на планете длятся десятки лет. Атмосфера состоит из водорода, гелия и метана, который придаёт планете голубоватый цвет. Уран окружён тонкой системой колец.",
+      "en": "Uranus is an ice giant with a unique axial tilt. It rotates almost 'on its side', causing seasons on the planet to last for decades. The atmosphere consists of hydrogen, helium and methane, which gives the planet a bluish color. Uranus is surrounded by a thin ring system.",
+      "de": "Uranus ist ein Eisriese mit einer einzigartigen Achsneigung. Er rotiert nahezu „auf der Seite liegend“, weshalb die Jahreszeiten auf dem Planeten Jahrzehnte dauern. Die Atmosphäre besteht aus Wasserstoff, Helium und Methan, das dem Planeten eine bläuliche Farbe verleiht. Uranus ist von einem dünnen Ringsystem umgeben."
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": -195,
+    "gravityWellRadius": 101448.0,
+    "orbitalRadius": 2870658186,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#9ed4e0",
+    "atmosphereScale": 1.07,
+    "atmosphereIntensity": 0.88,
+    "atmosphereScaleHeight": 0.24,
+    "hasMagneticField": true,
+    "auroraIntensity": 0.35,
+    "auroraScale": 1.09
+  },
+  {
+    "id": 11,
+    "name": {
+      "ru": "Нептун",
+      "en": "Neptune",
+      "de": "Neptun"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1.5,
+    "distance": 225,
+    "day": 0.67125,
+    "year": 164.79,
+    "texture": "assets/textures/planets/neptune.jpg",
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 4.12,
+    "rotationStartAngle": 0,
+    "rings": true,
+    "ringCount": 1,
+    "ringDensity": 1000,
+    "ringSpacing": 4,
+    "ringThickness": 4,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 24622,
+    "description": {
+      "ru": "Нептун — самая дальняя планета Солнечной системы. Его атмосфера богата метаном, что придаёт планете насыщенный синий цвет. На поверхности наблюдаются мощные ветры, самые быстрые в Солнечной системе. У Нептуна есть кольца и несколько крупных спутников.",
+      "en": "Neptune is the farthest planet of the Solar System. Its atmosphere is rich in methane, giving the planet a deep blue color. Powerful winds are observed on its surface, the fastest in the Solar System. Neptune has rings and several large moons.",
+      "de": "Neptun ist der am weitesten entfernte Planet des Sonnensystems. Seine Atmosphäre ist reich an Methan, was dem Planeten eine intensive blaue Farbe verleiht. Auf seiner Oberfläche werden mächtige Winde beobachtet, die schnellsten im Sonnensystem. Neptun hat Ringe und mehrere große Monde."
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": -200,
+    "gravityWellRadius": 98488.0,
+    "orbitalRadius": 4498396441,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#4a7ec8",
+    "atmosphereScale": 1.07,
+    "atmosphereIntensity": 1.0,
+    "atmosphereScaleHeight": 0.24,
+    "hasMagneticField": true,
+    "auroraIntensity": 0.35,
+    "auroraScale": 1.09
+  },
+  {
+    "id": 12,
+    "name": {
+      "ru": "Плутон",
+      "en": "Pluto",
+      "de": "Pluto"
+    },
+    "type": "planet",
+    "parent": 0,
+    "children": [],
+    "size": 1,
+    "distance": 265,
+    "day": 6.375,
+    "year": 248,
+    "texture": "assets/textures/planets/pluto.jpg",
+    "gravityWellMultiplier": 2,
+    "orbitalStartAngle": 2.74,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 1188.3,
+    "description": {
+      "ru": "Плутон — карликовая планета, ранее считавшаяся девятой планетой. Его поверхность состоит изо льда и камня, а атмосфера очень разреженная. Плутон имеет крупнейший спутник Харон, с которым образует двойную систему. Он был исследован миссией New Horizons в 2015 году.",
+      "en": "Pluto is a dwarf planet formerly considered the ninth planet. Its surface consists of ice and rock, and its atmosphere is very thin. Pluto has the largest moon Charon, with which it forms a binary system. It was explored by the New Horizons mission in 2015.",
+      "de": "Pluto ist ein Zwergplanet, der früher als neunter Planet galt. Seine Oberfläche besteht aus Eis und Gestein, und die Atmosphäre ist sehr dünn. Pluto hat den größten Mond Charon, mit dem er ein Doppelsystem bildet. Er wurde 2015 von der Mission New Horizons erforscht."
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": 15,
+    "gravityWellRadius": 2376.6,
+    "orbitalRadius": 1321447857.85,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#c8d2e0",
+    "atmosphereScale": 1.028,
+    "atmosphereIntensity": 0.22,
+    "atmosphereScaleHeight": 0.14,
+    "hasMagneticField": false
+  },
+  {
+    "id": 1001,
+    "name": {
+      "ru": "Система Альфа Центавра",
+      "en": "Alpha Centauri System",
+      "de": "Alpha-Centauri-System"
+    },
+    "type": "starSystem",
+    "parent": 2000,
+    "children": [
+      20
+    ],
+    "size": 0.01,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": 700,
+    "centerZ": 700,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "Система Альфа Центавра — гравитационно связанная система вокруг звезды Солнце, включающая планеты, карликовые планеты, спутники, астероиды и кометы.",
+      "en": "The Alpha Centauri System is a gravitationally bound system around the star Alpha Centauri, including planets, dwarf planets, moons, asteroids and comets.",
+      "de": "Das Alpha-Centauri-System ist ein gravitativ gebundenes System um den Stern Alpha Centauri und umfasst Planeten, Zwergplaneten, Monde, Asteroiden und Kometen."
+    },
+    "radius": 7479893534.999999,
+    "age": 4600000000.0,
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0,
+    "orbitalRadius": 0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "nebulaId": 2000,
+    "galaxyId": 3000
+  },
+  {
+    "id": 20,
+    "name": {
+      "ru": "Альфа Центавра",
+      "en": "Alpha Centauri",
+      "de": "Alpha Centauri"
+    },
+    "type": "star",
+    "parent": null,
+    "children": [
+      21,
+      22
+    ],
+    "size": 2,
+    "texture": "assets/textures/planets/sun.jpg",
+    "centerX": -12176.1,
+    "centerZ": 15980.8,
+    "orbitalStartAngle": 0,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 695000,
+    "description": {
+      "ru": "Альфа Центавра — ближайшая к нам звёздная система, состоящая из нескольких звёзд. Она находится на расстоянии около 4,37 световых лет от Земли. Эта система включает звёзды, похожие на Солнце, и является популярной целью для поиска внеземной жизни. В научной фантастике её часто рассматривают как первую цель межзвёздных экспедиций.",
+      "en": "Alpha Centauri is the nearest star system to us, consisting of several stars. It is located about 4.37 light-years from Earth. This system includes stars similar to the Sun and is a popular target in the search for extraterrestrial life. In science fiction it is often considered the first destination for interstellar expeditions.",
+      "de": "Alpha Centauri ist das uns nächstgelegene Sternensystem und besteht aus mehreren Sternen. Es befindet sich in einer Entfernung von etwa 4,37 Lichtjahren von der Erde. Das System enthält sonnenähnliche Sterne und ist ein beliebtes Ziel bei der Suche nach außerirdischem Leben. In der Science-Fiction wird es oft als erstes Ziel interstellarer Expeditionen betrachtet."
+    },
+    "age": 4600000000.0,
+    "avgSurfaceTemp": 5500,
+    "gravityWellRadius": 695000.0,
+    "orbitalRadius": 0,
+    "starSystemId": 1001,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#ffc878",
+    "atmosphereScale": 1.2,
+    "atmosphereIntensity": 1.5,
+    "atmosphereScaleHeight": 0.3,
+    "nebulaId": 2000,
+    "galaxyId": 3000
+  },
+  {
+    "id": 21,
+    "name": {
+      "ru": "Андара",
+      "en": "Andara",
+      "de": "Andara"
+    },
+    "type": "planet",
+    "parent": 20,
+    "size": 1,
+    "distance": 25,
+    "texture": "assets/textures/planets/andara.png",
+    "orbitalStartAngle": 0,
+    "rotationStartAngle": 0,
+    "day": 1.5,
+    "year": 1.2,
+    "gravityWellMultiplier": 4,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 6020,
+    "description": {
+      "ru": "Андара — планета в системе Альфы Центавра. Её поверхность покрыта зелёными континентами и океанами, богатая флора напоминает земные джунгли. Учёные предполагают, что атмосфера содержит большое количество кислорода. Планета потенциально пригодна для колонизации.",
+      "en": "Andara is a planet in the Alpha Centauri system. Its surface is covered with green continents and oceans; the rich flora resembles Earth's jungles. Scientists suggest that the atmosphere contains a large amount of oxygen. The planet is potentially suitable for colonization.",
+      "de": "Andara ist ein Planet im Alpha-Centauri-System. Seine Oberfläche ist mit grünen Kontinenten und Ozeanen bedeckt; die reiche Flora erinnert an irdische Dschungel. Wissenschaftler vermuten, dass die Atmosphäre einen hohen Sauerstoffanteil enthält. Der Planet ist potenziell für eine Kolonisierung geeignet."
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": 15,
+    "gravityWellRadius": 24080.0,
+    "orbitalRadius": 124664892.25,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#5eb8c8",
+    "atmosphereScale": 1.07,
+    "atmosphereIntensity": 0.9,
+    "atmosphereScaleHeight": 0.2,
+    "hasMagneticField": true,
+    "auroraIntensity": 0.35,
+    "auroraScale": 1.09
+  },
+  {
+    "id": 22,
+    "name": {
+      "ru": "Галана",
+      "en": "Galana",
+      "de": "Galana"
+    },
+    "type": "planet",
+    "parent": 20,
+    "size": 1,
+    "distance": 40,
+    "texture": "assets/textures/planets/galana.jpg",
+    "orbitalStartAngle": 2.0,
+    "rotationStartAngle": 0,
+    "day": 100,
+    "year": 2,
+    "gravityWellMultiplier": 4,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 7840,
+    "description": {
+      "ru": "Галана — пустынная планета в системе Альфы Центавра. Её поверхность покрыта каменными равнинами и барханами, богатая залежами ферритовых металлических руд. Атмосфера насыщена микрочастицами оксидов, что делает дыхание без защиты крайне вредным. Несмотря на суровые условия, планета может представлять интерес для добывающей промышленности.",
+      "en": "Galana is a desert planet in the Alpha Centauri system. Its surface is covered with rocky plains and dunes, rich in deposits of ferritic metal ores. The atmosphere is saturated with oxide microparticles, making unprotected breathing extremely harmful. Despite the harsh conditions, the planet may be of interest for the mining industry.",
+      "de": "Galana ist ein Wüstenplanet im Alpha-Centauri-System. Seine Oberfläche ist von steinigen Ebenen und Dünen bedeckt und reich an Vorkommen ferritischer Metallerze. Die Atmosphäre ist mit Oxid-Mikropartikeln gesättigt, was das Atmen ohne Schutz äußerst schädlich macht. Trotz der rauen Bedingungen könnte der Planet für die Bergbauindustrie von Interesse sein."
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": 15,
+    "gravityWellRadius": 31360.0,
+    "orbitalRadius": 199463827.6,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#c890d0",
+    "atmosphereScale": 1.1,
+    "atmosphereIntensity": 1.15,
+    "atmosphereScaleHeight": 0.3,
+    "hasMagneticField": false
+  },
+  {
+    "id": 23,
+    "name": {
+      "ru": "Фрея",
+      "en": "Freya",
+      "de": "Freya"
+    },
+    "type": "moon",
+    "parent": 22,
+    "size": 0.5,
+    "distance": 6,
+    "texture": "assets/textures/planets/freya.jpg",
+    "orbitalStartAngle": 0,
+    "rotationStartAngle": 0,
+    "day": 30,
+    "year": 0.1,
+    "gravityWellMultiplier": 2,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "radius": 1500,
+    "description": {
+      "ru": "Фрея — спутник Галаны, имеющий скалистую поверхность. На её поверхности можно наблюдать множество кратеров и разломов. Из-за слабой гравитации атмосферы практически нет. Однако предполагается наличие подповерхностных ледяных залежей.",
+      "en": "Freya is a moon of Galana with a rocky surface. Numerous craters and fractures can be observed on its surface. Due to weak gravity there is virtually no atmosphere. However, subsurface ice deposits are believed to exist.",
+      "de": "Freya ist ein Mond von Galana mit felsiger Oberfläche. Auf seiner Oberfläche sind zahlreiche Krater und Verwerfungen zu beobachten. Aufgrund der schwachen Schwerkraft gibt es praktisch keine Atmosphäre. Es wird jedoch angenommen, dass unter der Oberfläche Eislagerstätten vorhanden sind."
+    },
+    "age": 4500000000.0,
+    "avgSurfaceTemp": -20,
+    "gravityWellRadius": 3000.0,
+    "orbitalRadius": 29919574.14,
+    "hasAtmosphere": true,
+    "atmosphereColor": "#a8b8d0",
+    "atmosphereScale": 1.035,
+    "atmosphereIntensity": 0.32,
+    "atmosphereScaleHeight": 0.15,
+    "hasMagneticField": false
+  },
+  {
+    "id": 2001,
+    "name": {
+      "ru": "Туманность Ориона",
+      "en": "Orion Nebula",
+      "de": "Orionnebel"
+    },
+    "type": "interstellarNebula",
+    "parent": 3000,
+    "children": [
+      1100
+    ],
+    "size": 1800,
+    "distance": 0,
+    "day": 0,
+    "year": 84007500000.0,
+    "texture": null,
+    "centerX": -172.8,
+    "centerZ": 14765.0,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "age": 2000000.0,
+    "distanceLy": 1344.0,
+    "radius": 36.0,
+    "galaxyId": 3000,
+    "orbitalRadius": 14766.0,
+    "orbitalStartAngle": 1.583,
+    "description": {
+      "ru": "Туманность Ориона (M42) — яркая эмиссионная туманность в созвездии Ориона, одна из ближайших областей активного звездообразования (~1344 св. лет).",
+      "en": "The Orion Nebula (M42) is a bright emission nebula in Orion and one of the nearest massive star-forming regions (~1344 ly).",
+      "de": "Der Orionnebel (M42) ist ein heller Emissionsnebel im Sternbild Orion und eine der nächsten Regionen aktiver Sternentstehung (~1344 Lj)."
+    },
+    "nebulaColors": [
+      "#ff6b4a",
+      "#ff9a5c",
+      "#6a8cff",
+      "#2a3060"
+    ],
+    "nebulaGeometry": {
+      "shape": "irregularCloud",
+      "lobes": 6,
+      "noiseScale": 2.6,
+      "edgeSoftness": 0.5
+    },
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0
+  },
+  {
+    "id": 2002,
+    "name": {
+      "ru": "Туманность Орла",
+      "en": "Eagle Nebula",
+      "de": "Adlernebel"
+    },
+    "type": "interstellarNebula",
+    "parent": 3000,
+    "children": [
+      1200
+    ],
+    "size": 1600,
+    "distance": 0,
+    "day": 0,
+    "year": 84007500000.0,
+    "texture": null,
+    "centerX": -13227.4,
+    "centerZ": 2227.0,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "age": 5500000.0,
+    "distanceLy": 7000.0,
+    "radius": 32.0,
+    "galaxyId": 3000,
+    "orbitalRadius": 13413.6,
+    "orbitalStartAngle": 2.975,
+    "description": {
+      "ru": "Туманность Орла (M16) — эмиссионная туманность в созвездии Змеи, известна «Столпами творения». Расстояние около 7000 световых лет.",
+      "en": "The Eagle Nebula (M16) is an emission nebula in Serpens, famous for the Pillars of Creation. About 7000 light-years away.",
+      "de": "Der Adlernebel (M16) ist ein Emissionsnebel in der Schlange, bekannt für die Säulen der Schöpfung. Etwa 7000 Lichtjahre entfernt."
+    },
+    "nebulaColors": [
+      "#c07050",
+      "#e0a070",
+      "#5080a0",
+      "#203040"
+    ],
+    "nebulaGeometry": {
+      "shape": "irregularCloud",
+      "lobes": 6,
+      "noiseScale": 2.6,
+      "edgeSoftness": 0.5
+    },
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0
+  },
+  {
+    "id": 2003,
+    "name": {
+      "ru": "Туманность Киля",
+      "en": "Carina Nebula",
+      "de": "Carinanebel"
+    },
+    "type": "interstellarNebula",
+    "parent": 3000,
+    "children": [
+      1300
+    ],
+    "size": 2000,
+    "distance": 0,
+    "day": 0,
+    "year": 84007500000.0,
+    "texture": null,
+    "centerX": 15827.7,
+    "centerZ": 3047.3,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "age": 3000000.0,
+    "distanceLy": 8500.0,
+    "radius": 40.0,
+    "galaxyId": 3000,
+    "orbitalRadius": 16118.4,
+    "orbitalStartAngle": 0.19,
+    "description": {
+      "ru": "Туманность Киля (NGC 3372) — одна из крупнейших видимых эмиссионных туманностей, содержит массивную звезду Эта Киля. ~8500 св. лет.",
+      "en": "The Carina Nebula (NGC 3372) is one of the largest visible emission nebulae and hosts the massive star Eta Carinae. ~8500 ly.",
+      "de": "Der Carinanebel (NGC 3372) ist einer der größten sichtbaren Emissionsnebel und beherbergt den massereichen Stern Eta Carinae. ~8500 Lj."
+    },
+    "nebulaColors": [
+      "#ff5080",
+      "#ff80a0",
+      "#80c0ff",
+      "#402060"
+    ],
+    "nebulaGeometry": {
+      "shape": "irregularCloud",
+      "lobes": 6,
+      "noiseScale": 2.6,
+      "edgeSoftness": 0.5
+    },
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0
+  },
+  {
+    "id": 1100,
+    "name": {
+      "ru": "Система Трапеции",
+      "en": "Trapezium System",
+      "de": "Trapez-System"
+    },
+    "type": "starSystem",
+    "parent": 2001,
+    "children": [
+      30
+    ],
+    "size": 0.01,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": -172.8,
+    "centerZ": 14765.0,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "Скопление Трапеции — молодая группа массивных звёзд в центре туманности Ориона.",
+      "en": "The Trapezium Cluster is a young group of massive stars at the heart of the Orion Nebula.",
+      "de": "Der Trapezhaufen ist eine junge Gruppe massereicher Sterne im Zentrum des Orionnebels."
+    },
+    "radius": 1000000000.0,
+    "age": 1000000000.0,
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0,
+    "orbitalRadius": 0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "nebulaId": 2001,
+    "galaxyId": 3000
+  },
+  {
+    "id": 1200,
+    "name": {
+      "ru": "Система NGC 6611",
+      "en": "NGC 6611 System",
+      "de": "NGC-6611-System"
+    },
+    "type": "starSystem",
+    "parent": 2002,
+    "children": [
+      40
+    ],
+    "size": 0.01,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": -13227.4,
+    "centerZ": 2227.0,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "Рассеянное скопление NGC 6611 освещает туманность Орла.",
+      "en": "Open cluster NGC 6611 illuminates the Eagle Nebula.",
+      "de": "Der offene Sternhaufen NGC 6611 erleuchtet den Adlernebel."
+    },
+    "radius": 1000000000.0,
+    "age": 1000000000.0,
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0,
+    "orbitalRadius": 0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "nebulaId": 2002,
+    "galaxyId": 3000
+  },
+  {
+    "id": 1300,
+    "name": {
+      "ru": "Система Эты Киля",
+      "en": "Eta Carinae System",
+      "de": "Eta-Carinae-System"
+    },
+    "type": "starSystem",
+    "parent": 2003,
+    "children": [
+      50
+    ],
+    "size": 0.01,
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "centerX": 15827.7,
+    "centerZ": 3047.3,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "Система вокруг гипергиганта Эта Киля в туманности Киля.",
+      "en": "System around the hypergiant Eta Carinae in the Carina Nebula.",
+      "de": "System um den Hyperriesen Eta Carinae im Carinanebel."
+    },
+    "radius": 1000000000.0,
+    "age": 1000000000.0,
+    "avgSurfaceTemp": null,
+    "gravityWellRadius": 0,
+    "orbitalRadius": 0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "nebulaId": 2003,
+    "galaxyId": 3000
+  },
+  {
+    "id": 30,
+    "name": {
+      "ru": "θ Ориона",
+      "en": "Theta Orionis",
+      "de": "Theta Orionis"
+    },
+    "type": "star",
+    "parent": null,
+    "children": [],
+    "size": 1.6,
+    "distance": 0,
+    "day": 10,
+    "year": 0,
+    "texture": "assets/textures/planets/sun.jpg",
+    "centerX": -172.8,
+    "centerZ": 14765.0,
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 0,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "θ Ориона — массивные горячие звёзды скопления Трапеции, ионизирующие туманность Ориона.",
+      "en": "Theta Orionis — massive hot stars of the Trapezium that ionize the Orion Nebula.",
+      "de": "Theta Orionis — massereiche heiße Sterne des Trapezes, die den Orionnebel ionisieren."
+    },
+    "radius": 557072.0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "starSystemId": 1100,
+    "nebulaId": 2001,
+    "galaxyId": 3000,
+    "avgSurfaceTemp": 5500
+  },
+  {
+    "id": 40,
+    "name": {
+      "ru": "HD 168076",
+      "en": "HD 168076",
+      "de": "HD 168076"
+    },
+    "type": "star",
+    "parent": null,
+    "children": [],
+    "size": 1.8,
+    "distance": 0,
+    "day": 10,
+    "year": 0,
+    "texture": "assets/textures/planets/sun.jpg",
+    "centerX": -13227.4,
+    "centerZ": 2227.0,
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 0,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "HD 168076 — одна из ярчайших звёзд скопления NGC 6611 в туманности Орла.",
+      "en": "HD 168076 is one of the brightest stars of NGC 6611 in the Eagle Nebula.",
+      "de": "HD 168076 ist einer der hellsten Sterne von NGC 6611 im Adlernebel."
+    },
+    "radius": 626706.0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "starSystemId": 1200,
+    "nebulaId": 2002,
+    "galaxyId": 3000,
+    "avgSurfaceTemp": 5500
+  },
+  {
+    "id": 50,
+    "name": {
+      "ru": "Эта Киля",
+      "en": "Eta Carinae",
+      "de": "Eta Carinae"
+    },
+    "type": "star",
+    "parent": null,
+    "children": [],
+    "size": 2.4,
+    "distance": 0,
+    "day": 10,
+    "year": 0,
+    "texture": "assets/textures/planets/sun.jpg",
+    "centerX": 15827.7,
+    "centerZ": 3047.3,
+    "gravityWellMultiplier": 4,
+    "orbitalStartAngle": 0,
+    "rotationStartAngle": 0,
+    "rings": false,
+    "colonized": false,
+    "has_technoport": false,
+    "description": {
+      "ru": "Эта Киля — гипергигант и одна из самых массивных известных звёзд, находится в туманности Киля.",
+      "en": "Eta Carinae is a hypergiant and one of the most massive known stars, located in the Carina Nebula.",
+      "de": "Eta Carinae ist ein Hyperriese und einer der massereichsten bekannten Sterne im Carinanebel."
+    },
+    "radius": 835608.0,
+    "resources": {
+      "population": 0,
+      "technologies": 0,
+      "stock": {}
+    },
+    "starSystemId": 1300,
+    "nebulaId": 2003,
+    "galaxyId": 3000,
+    "avgSurfaceTemp": 5500
+  },
+  {
+    "id": 4001,
+    "name": {
+      "ru": "Вселенная-500",
+      "en": "Universe-500",
+      "de": "Universum-500"
+    },
+    "type": "universe",
+    "parent": 5000,
+    "universeId": 4001,
+    "multiverseId": 5000,
+    "children": [
+      3002
+    ],
+    "size": 140000,
+    "centerX": 380000,
+    "centerZ": 90000,
+    "age": 13800000000,
+    "description": {
+      "ru": "Вселенная-500 — замкнутый пузырь пространства-времени по соседству со Вселенной-512. Внутри находится спиральная галактика Халикс. Межзвёздных туманностей и более мелких тел пока не известно. Снаружи видна как полупрозрачная сфера с белым лимбом; с соседней вселенной связана потоком энергии, заметным только за пределами пузырей.",
+      "en": "Universe-500 is a closed spacetime bubble neighbouring Universe-512. Inside lies the spiral galaxy Halix. No interstellar nebulae or smaller bodies are known yet. From outside it appears as a translucent sphere with a white limb; it is linked to its neighbour by an energy stream visible only outside the bubbles.",
+      "de": "Universum-500 ist eine geschlossene Raumzeit-Blase neben Universum-512. Im Inneren liegt die Spiralgalaxie Halix. Interstellare Nebel und kleinere Körper sind noch unbekannt. Von außen erscheint sie als durchscheinende Sphäre mit weißem Rand; mit der Nachbaruniversum ist sie durch einen nur außerhalb der Blasen sichtbaren Energiestrom verbunden."
+    },
+    "distance": 0,
+    "day": 0,
+    "year": 0,
+    "texture": null,
+    "colonized": false,
+    "developed": false,
+    "has_technoport": false,
+    "distanceLy": 0,
+    "radius": 320000,
+    "avgSurfaceTemp": null
+  },
+  {
+    "id": 5000,
+    "name": {
+      "ru": "Мультивселенная",
+      "en": "Multiverse",
+      "de": "Multiversum"
+    },
+    "type": "multiverse",
+    "parent": null,
+    "children": [
+      4000,
+      4001
+    ],
+    "size": 900000,
+    "centerX": 190000,
+    "centerZ": 45000,
+    "age": null,
+    "description": {
+      "ru": "Мультивселенная — высший доступный масштаб карты. Содержит множество вселенных-пузырей, соединённых потоками энергии. Камера может выходить за пределы отдельной вселенной и видеть её целиком как сферу.",
+      "en": "The Multiverse is the highest map scale available. It contains many universe-bubbles linked by energy streams. The camera can leave a single universe and see it whole as a sphere.",
+      "de": "Das Multiversum ist die höchste verfügbare Kartenskala. Es enthält viele Universums-Blasen, verbunden durch Energieströme. Die Kamera kann ein Universum verlassen und es als ganze Sphäre sehen."
+    }
+  },
+  {
+    "id": 3002,
+    "name": {
+      "ru": "Халикс",
+      "en": "Halix",
+      "de": "Halix"
+    },
+    "type": "galaxy",
+    "parent": 4001,
+    "galaxyId": 3002,
+    "universeId": 4001,
+    "multiverseId": 5000,
+    "children": [],
+    "size": 52000,
+    "centerX": 380000,
+    "centerZ": 90000,
+    "age": 9800000000,
+    "description": {
+      "ru": "Халикс — спиральная галактика внутри Вселенной-500. Пока без известных межзвёздных туманностей и более мелких тел; пыль рукавов и ядра уже видна на уровне галактики.",
+      "en": "Halix is a spiral galaxy inside Universe-500. No known interstellar nebulae or smaller bodies yet; arm and core dust are already visible at galaxy scale.",
+      "de": "Halix ist eine Spiralgalaxie in Universum-500. Noch ohne bekannte interstellare Nebel oder kleinere Körper; Arm- und Kernstaub sind auf Galaxie-Ebene sichtbar."
+    }
+  }
+]

@@ -1,0 +1,200 @@
+/* ======================================================================
+   unitFlight.css — маркеры юнитов, маршрут, зоны полёта
+   ====================================================================== */
+
+#unit-map-markers {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 880;
+}
+
+.unit-map-marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    clip-path: none;
+}
+
+.unit-map-marker img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+    transform-origin: center center;
+}
+
+.unit-map-marker.unit-busy {
+    cursor: default;
+}
+
+/* Таргет выбора/hover — без поворота (на контейнере, не на img) */
+.unit-map-marker::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    background:
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) top left / 28% 2px no-repeat,
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) top left / 2px 28% no-repeat,
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) top right / 28% 2px no-repeat,
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) top right / 2px 28% no-repeat,
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) bottom left / 28% 2px no-repeat,
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) bottom left / 2px 28% no-repeat,
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) bottom right / 28% 2px no-repeat,
+        linear-gradient(var(--unit-target-color, transparent), var(--unit-target-color, transparent)) bottom right / 2px 28% no-repeat;
+}
+
+.unit-map-marker:hover:not(.selected):not(.unit-busy) {
+    --unit-target-color: rgba(160, 160, 160, 0.9);
+}
+.unit-map-marker:hover:not(.selected):not(.unit-busy)::before {
+    opacity: 1;
+}
+
+.unit-map-marker.selected {
+    --unit-target-color: rgba(0, 210, 255, 0.95);
+}
+.unit-map-marker.selected::before {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px rgba(0, 200, 255, 0.5));
+}
+
+/* ----- Оверлей маршрута ----- */
+#unit-flight-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 879;
+}
+#unit-flight-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+.unit-flight-path {
+    fill: none;
+    stroke-width: 2.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: none;
+}
+.unit-flight-path.ghost {
+    stroke: rgba(120, 220, 255, 0.45) !important;
+    stroke-width: 1.75;
+    stroke-dasharray: 7 6;
+    opacity: 1;
+}
+
+.unit-flight-dest {
+    position: absolute;
+    display: none;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) top left / 28% 2px no-repeat,
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) top left / 2px 28% no-repeat,
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) top right / 28% 2px no-repeat,
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) top right / 2px 28% no-repeat,
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) bottom left / 28% 2px no-repeat,
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) bottom left / 2px 28% no-repeat,
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) bottom right / 28% 2px no-repeat,
+        linear-gradient(rgba(255, 210, 40, 0.95), rgba(255, 210, 40, 0.95)) bottom right / 2px 28% no-repeat;
+    filter: drop-shadow(0 0 3px rgba(255, 200, 40, 0.45));
+}
+.unit-flight-dest.ghost {
+    opacity: 0.4;
+    filter: none;
+}
+.unit-flight-dest.pulse {
+    animation: unit-dest-pulse 1.05s ease-in-out infinite;
+}
+@keyframes unit-dest-pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.28); opacity: 0.72; }
+}
+
+/* ----- Зоны режима полёта ----- */
+#unit-flight-zones {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 878;
+}
+
+.flight-zone {
+    position: absolute;
+    display: none;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+/* Зелёная зона посадки: бордер + полосы опасности наружу */
+.flight-zone-land {
+    border: 1px solid rgba(40, 220, 90, 0.92);
+    box-shadow: 0 0 0 1px rgba(20, 80, 40, 0.25);
+    /* полосы снаружи кольца */
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(40, 200, 80, 0.0) 0px,
+            rgba(40, 200, 80, 0.0) 5px,
+            rgba(50, 210, 90, 0.35) 5px,
+            rgba(50, 210, 90, 0.35) 9px
+        );
+    /* маска: только кольцо наружу от бордера */
+    -webkit-mask-image: radial-gradient(
+        circle,
+        transparent calc(50% - 1px),
+        #000 calc(50%),
+        #000 calc(50% + var(--zone-band, 14px)),
+        transparent calc(50% + var(--zone-band, 14px) + 1px)
+    );
+    mask-image: radial-gradient(
+        circle,
+        transparent calc(50% - 1px),
+        #000 calc(50%),
+        #000 calc(50% + var(--zone-band, 14px)),
+        transparent calc(50% + var(--zone-band, 14px) + 1px)
+    );
+}
+
+/* Жёлтая зона края колодца: 80–99%, градиент/полосы внутрь */
+.flight-zone-edge {
+    border: 1px solid rgba(255, 200, 40, 0.88);
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 190, 30, 0.0) 0px,
+            rgba(255, 190, 30, 0.0) 5px,
+            rgba(255, 200, 50, 0.32) 5px,
+            rgba(255, 200, 50, 0.32) 9px
+        );
+    -webkit-mask-image: radial-gradient(
+        circle,
+        transparent calc(50% - var(--zone-band, 16px) - 1px),
+        #000 calc(50% - var(--zone-band, 16px)),
+        #000 calc(50%),
+        transparent calc(50% + 1px)
+    );
+    mask-image: radial-gradient(
+        circle,
+        transparent calc(50% - var(--zone-band, 16px) - 1px),
+        #000 calc(50% - var(--zone-band, 16px)),
+        #000 calc(50%),
+        transparent calc(50% + 1px)
+    );
+}

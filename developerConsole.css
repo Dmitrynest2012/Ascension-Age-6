@@ -1,0 +1,95 @@
+/* Консоль разработчика — фирменный стиль */
+#dev-console {
+  position: fixed;
+  left: 18px;
+  top: 82px;
+  width: 400px;
+  height: 450px;
+  z-index: 10050;
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 12px 12px 10px;
+  color: #d8d8d8;
+  background: linear-gradient(165deg, rgba(8, 10, 12, 0.92) 0%, rgba(14, 16, 18, 0.88) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(90, 100, 110, 0.45);
+  /* скосы: ЛВ + ПН */
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+  font-family: "Consolas", "Courier New", ui-monospace, monospace;
+  font-size: 12px;
+  pointer-events: auto;
+}
+#dev-console.is-open { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+
+#dev-console-header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(80, 90, 100, 0.4);
+  color: #9ec9e8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+#dev-console-log {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  padding-right: 4px;
+  line-height: 1.45;
+  color: #b8c0c8;
+}
+#dev-console-log .dev-line { margin: 0 0 4px; word-break: break-word; }
+#dev-console-log .dev-line.ok { color: #8fdf9a; }
+#dev-console-log .dev-line.err { color: #e08888; }
+#dev-console-log .dev-line.info { color: #9ec9e8; }
+#dev-console-log .dev-line.cmd { color: #e8e0b0; }
+
+#dev-console-input-row {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(80, 90, 100, 0.35);
+}
+#dev-console-prompt {
+  color: #6ab0e0;
+  user-select: none;
+}
+#dev-console-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #eef2f6;
+  font: inherit;
+  caret-color: #6ab0e0;
+}
+#dev-console-input::placeholder { color: rgba(180, 190, 200, 0.35); }
+
+/* мигающий курсор-индикатор ожидания, когда инпут пуст и в фокусе */
+#dev-console-caret {
+  width: 7px;
+  height: 14px;
+  background: #6ab0e0;
+  opacity: 0;
+  flex: 0 0 auto;
+}
+#dev-console.is-open #dev-console-input:focus + #dev-console-caret,
+#dev-console.is-open #dev-console-caret.is-blink {
+  animation: dev-caret-blink 1s steps(1) infinite;
+}
+@keyframes dev-caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}

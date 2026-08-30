@@ -1,0 +1,19 @@
+[
+  {
+    "id": "GUNIT_EXPEDITIONER",
+    "name": {
+      "ru": "Экспедиционер",
+      "en": "Expeditioner",
+      "de": "Expediteur"
+    },
+    "icon": "assets/textures/icons/unit_expeditioner.svg",
+    "iconSize": 64,
+    "speedKmh": 5.5,
+    "visionRadiusKm": 25,
+    "description": {
+      "ru": "Пеший разведчик. Исследует поверхность и снимает туман войны.",
+      "en": "Foot scout. Explores the surface and clears fog of war.",
+      "de": "Fußaufklärer. Erkundet die Oberfläche und hebt den Kriegsnebel."
+    }
+  }
+]

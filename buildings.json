@@ -1,0 +1,3089 @@
+[
+  {
+    "id": "CONSTRC001",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "База Космистов",
+      "en": "Cosmist Base",
+      "de": "Kosmist-Basis"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 1,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/base.png",
+    "avatarVideo": "assets/textures/buildings/Infrastructure/base.mp4",
+    "built_count": 1,
+    "description": {
+      "ru": "Эта структура не использовалась около 70 лет, но здесь есть всё для выживания, лаборатория, гидропоника и солнечные панели.",
+      "en": "This structure has not been used for about 70 years, but it still contains everything needed for survival: a laboratory, hydroponics and solar panels.",
+      "de": "Diese Struktur wurde etwa 70 Jahre lang nicht genutzt, doch hier ist alles für das Überleben vorhanden: Labor, Hydroponik und Solarpaneele."
+    },
+    "unique_building": true,
+    "departments": "DEP1, DEP2, DEP3, DEP4",
+    "OccupiedArea": [
+      500,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750
+    ],
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "currentExpeditionCapacity": 0,
+    "maxExpeditionCapacity": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+    ],
+    "CurrentBuildingCapacity": 0,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      5000,
+      6000,
+      7000,
+      8000,
+      9000,
+      10000,
+      12000,
+      14000,
+      16000
+    ],
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      4.286,
+      4.8,
+      5.357,
+      5.914,
+      6.429,
+      6.943,
+      8.057,
+      8.571,
+      9.429
+    ],
+    "IsResidential": true,
+    "PopulationCapacity": [
+      50,
+      62,
+      78,
+      98,
+      122,
+      153,
+      191,
+      238,
+      298
+    ],
+    "ReservePopulationCapacity": [
+      34,
+      21,
+      27,
+      34,
+      42,
+      53,
+      66,
+      83,
+      104
+    ],
+    "Structure": [
+      5000,
+      5750,
+      6600,
+      7600,
+      8750,
+      10000,
+      11500,
+      13200,
+      15000
+    ],
+    "StartingStructure": 3000,
+    "IsResourceStorage": true,
+    "ResourceStorageCategory": "3a",
+    "ResourceStorageCapacity": [
+      2,
+      3,
+      4,
+      5,
+      7,
+      9,
+      12,
+      15,
+      20
+    ],
+    "ResourceCosts": [
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 40
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 25
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 15
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 62
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 39
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 23
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 84
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 52
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 32
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 106
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 66
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 40
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 128
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 80
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 48
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 150
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 94
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 56
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 172
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 108
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 65
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 194
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 121
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 73
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_IRON_SHEET",
+          "amount": 216
+        },
+        {
+          "resourceId": "RES_IRON_RODS",
+          "amount": 135
+        },
+        {
+          "resourceId": "RES_SCREWS_AND_NUTS_SET",
+          "amount": 81
+        }
+      ]
+    ],
+    "ResourceRefundFactor": 0.5,
+    "StoresEnergy": true,
+    "MaxEnergyCapacity": [
+      8000,
+      9600,
+      11520,
+      13824,
+      16589,
+      19907,
+      23888,
+      28666,
+      34399
+    ],
+    "ChargeRate": [
+      400,
+      460,
+      529,
+      608,
+      699,
+      804,
+      925,
+      1063,
+      1223
+    ],
+    "DischargeRate": [
+      500,
+      575,
+      661,
+      760,
+      874,
+      1005,
+      1156,
+      1330,
+      1529
+    ]
+  },
+  {
+    "id": "CONSTRC0011",
+    "parentBodyId": 5,
+    "name": {
+      "ru": "База Космистов",
+      "en": "Cosmist Base",
+      "de": "Kosmist-Basis"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 1,
+    "maxLevel": 8,
+    "OccupiedArea": [
+      500,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750
+    ],
+    "avatar": "assets/textures/buildings/Infrastructure/base.png",
+    "built_count": 1,
+    "description": {
+      "ru": "Эта структура не использовалась около 70 лет, но здесь есть всё для выживания, лаборатория, гидропоника и солнечные панели.",
+      "en": "This structure has not been used for about 70 years, but it still contains everything needed for survival: a laboratory, hydroponics and solar panels.",
+      "de": "Diese Struktur wurde etwa 70 Jahre lang nicht genutzt, doch hier ist alles für das Überleben vorhanden: Labor, Hydroponik und Solarpaneele."
+    },
+    "unique_building": true,
+    "departments": "DEP2, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "CurrentBuildingCapacity": 0,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      1250,
+      1500,
+      1750,
+      2000,
+      2250,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "StoresEnergy": true,
+    "MaxEnergyCapacity": [
+      8000,
+      9600,
+      11520,
+      13824,
+      16589,
+      19907,
+      23888,
+      28666,
+      34399
+    ],
+    "ChargeRate": [
+      400,
+      460,
+      529,
+      608,
+      699,
+      804,
+      925,
+      1063,
+      1223
+    ],
+    "DischargeRate": [
+      500,
+      575,
+      661,
+      760,
+      874,
+      1005,
+      1156,
+      1330,
+      1529
+    ]
+  },
+  {
+    "id": "CONSTRC002",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Лагерь Выживальщиков",
+      "en": "Survivalist Camp",
+      "de": "Überlebenskamp"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/camp.png",
+    "built_count": 0,
+    "OccupiedArea": [
+      500,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750
+    ],
+    "BuildTime": [
+      5,
+      150,
+      175,
+      200,
+      225,
+      250,
+      275,
+      300,
+      325
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "description": {
+      "ru": "Укреплённое поселение, возведённое из подручных материалов. Здесь живут люди, готовые выдержать любую катастрофу. Их дисциплина и решимость позволяют выживать даже в самых суровых условиях.",
+      "en": "A fortified settlement built from scavenged materials. People who are ready to endure any catastrophe live here. Their discipline and resolve allow them to survive even in the harshest conditions.",
+      "de": "Eine befestigte Siedlung, errichtet aus behelfsmäßigen Materialien. Hier leben Menschen, die bereit sind, jede Katastrophe zu überstehen. Ihre Disziplin und Entschlossenheit ermöglichen das Überleben selbst unter den härtesten Bedingungen."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "CurrentBuildingCapacity": 0,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      1250,
+      1500,
+      1750,
+      2000,
+      2250,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "IsResidential": true,
+    "PopulationCapacity": [
+      120,
+      150,
+      188,
+      235,
+      294,
+      368,
+      460,
+      575,
+      720
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "ReservePopulationCapacity": [
+      80,
+      50,
+      65,
+      82,
+      102,
+      128,
+      160,
+      200,
+      250
+    ]
+  },
+  {
+    "id": "CONSTRC0021",
+    "parentBodyId": 5,
+    "name": {
+      "ru": "Лагерь Выживальщиков",
+      "en": "Survivalist Camp",
+      "de": "Überlebenskamp"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "OccupiedArea": [
+      500,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750
+    ],
+    "avatar": "assets/textures/buildings/Infrastructure/camp.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Укреплённое поселение, возведённое из подручных материалов. Здесь живут люди, готовые выдержать любую катастрофу. Их дисциплина и решимость позволяют выживать даже в самых суровых условиях.",
+      "en": "A fortified settlement built from scavenged materials. People who are ready to endure any catastrophe live here. Their discipline and resolve allow them to survive even in the harshest conditions.",
+      "de": "Eine befestigte Siedlung, errichtet aus behelfsmäßigen Materialien. Hier leben Menschen, die bereit sind, jede Katastrophe zu überstehen. Ihre Disziplin und Entschlossenheit ermöglichen das Überleben selbst unter den härtesten Bedingungen."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": [
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "IsResidential": true,
+    "PopulationCapacity": [
+      120,
+      150,
+      188,
+      235,
+      294,
+      368,
+      460,
+      575,
+      720
+    ],
+    "ReservePopulationCapacity": [
+      80,
+      50,
+      65,
+      82,
+      102,
+      128,
+      160,
+      200,
+      250
+    ],
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      1250,
+      1500,
+      1750,
+      2000,
+      2250,
+      2500,
+      3000,
+      3500,
+      4000
+    ]
+  },
+  {
+    "id": "CONSTRC003",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Посёлок",
+      "en": "Settlement",
+      "de": "Siedlung"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/village.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Небольшое поселение, где объединяются семьи и ремесленники. Посёлок служит основой для дальнейшего роста и развития инфраструктуры.",
+      "en": "A small settlement where families and craftsmen come together. The settlement serves as the foundation for further growth and infrastructure development.",
+      "de": "Eine kleine Siedlung, in der sich Familien und Handwerker zusammenschließen. Die Siedlung bildet die Grundlage für weiteres Wachstum und den Ausbau der Infrastruktur."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 10,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 2,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "PopulationCapacity": [
+      400,
+      500,
+      625,
+      780,
+      975,
+      1220,
+      1525,
+      1905,
+      2380
+    ]
+  },
+  {
+    "id": "CONSTRC004",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Город",
+      "en": "City",
+      "de": "Stadt"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/city.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Крупный городской центр с развитой инфраструктурой. Здесь есть промышленность, транспорт и системы жизнеобеспечения для тысяч жителей.",
+      "en": "A large urban center with developed infrastructure. It features industry, transport and life-support systems for thousands of residents.",
+      "de": "Ein großes städtisches Zentrum mit entwickelter Infrastruktur. Hier gibt es Industrie, Verkehr und Lebenserhaltungssysteme für Tausende von Bewohnern."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 100,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 4,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "PopulationCapacity": [
+      2000,
+      2500,
+      3125,
+      3905,
+      4880,
+      6100,
+      7625,
+      9530,
+      11915
+    ]
+  },
+  {
+    "id": "CONSTRC005",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Мегаполис",
+      "en": "Metropolis",
+      "de": "Metropole"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/metropolis.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Огромный мегаполис, объединяющий миллионы жителей. В его основе — мощные промышленные и научные комплексы, формирующие сердце цивилизации.",
+      "en": "A vast metropolis uniting millions of residents. At its core are powerful industrial and scientific complexes that form the heart of civilization.",
+      "de": "Eine riesige Metropole, die Millionen von Einwohnern vereint. Ihr Kern sind mächtige Industrie- und Wissenschaftskomplexe, die das Herz der Zivilisation bilden."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 1000,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 10,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "PopulationCapacity": [
+      10000,
+      12500,
+      15625,
+      19530,
+      24415,
+      30520,
+      38150,
+      47690,
+      59610
+    ]
+  },
+  {
+    "id": "CONSTRC006",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Больница",
+      "en": "Hospital",
+      "de": "Krankenhaus"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/hospital.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Медицинское учреждение для оказания помощи раненым и больным. Оборудовано современными средствами диагностики и лечения.",
+      "en": "A medical facility for treating the wounded and the sick. Equipped with modern diagnostic and treatment equipment.",
+      "de": "Eine medizinische Einrichtung zur Versorgung von Verwundeten und Kranken. Ausgestattet mit modernen Diagnose- und Behandlungsmitteln."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 1,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 3,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC007",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Перинатальный центр",
+      "en": "Perinatal Center",
+      "de": "Perinatalzentrum"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/perinatal center.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Центр по уходу за новорождёнными и матерями. Обеспечивает условия для рождения и выживания будущих поколений.",
+      "en": "A center for the care of newborns and mothers. It provides the conditions necessary for the birth and survival of future generations.",
+      "de": "Ein Zentrum für die Betreuung von Neugeborenen und Müttern. Es schafft die Voraussetzungen für die Geburt und das Überleben künftiger Generationen."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 1,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 2,
+    "CurrentBuildingCapacity": 0,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      2500,
+      2750,
+      3000,
+      3250,
+      3500,
+      3750,
+      4250,
+      4750,
+      5250
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC020",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Ферма",
+      "en": "Farm",
+      "de": "Farm"
+    },
+    "constructionZone": "MC3",
+    "category": "COP02",
+    "currentLevel": 0,
+    "maxLevel": 4,
+    "avatar": "assets/textures/buildings/Extraction/farm.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Сельскохозяйственный комплекс для выращивания культур и животных. Является основным источником продовольствия.",
+      "en": "An agricultural complex for growing crops and raising animals. It is the primary source of food.",
+      "de": "Ein landwirtschaftlicher Komplex zum Anbau von Nutzpflanzen und zur Tierhaltung. Er ist die Hauptquelle für Nahrungsmittel."
+    },
+    "unique_building": false,
+    "departments": "DEP1, DEP2",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      80,
+      100,
+      125,
+      155,
+      190,
+      230,
+      280,
+      340,
+      410
+    ],
+    "CurrentBuildingCapacity": 100
+  },
+  {
+    "id": "CONSTRC021",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Насосная станция",
+      "en": "Pump Station",
+      "de": "Pumpstation"
+    },
+    "constructionZone": "MC3",
+    "category": "COP02",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Extraction/water intake station.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Станция для добычи и подачи воды. Обеспечивает жизненно важные ресурсы для поселения.",
+      "en": "A station for extracting and supplying water. It provides vital resources for the settlement.",
+      "de": "Eine Station zur Gewinnung und Versorgung mit Wasser. Sie stellt lebenswichtige Ressourcen für die Siedlung bereit."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      200,
+      240,
+      290,
+      350,
+      420,
+      500,
+      600,
+      720,
+      860
+    ],
+    "ExtractionBonus": [
+      1.0,
+      1.12,
+      1.25,
+      1.4,
+      1.55,
+      1.75,
+      2.0,
+      2.25,
+      2.55
+    ]
+  },
+  {
+    "id": "CONSTRC022",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Карьер",
+      "en": "Quarry",
+      "de": "Steinbruch"
+    },
+    "constructionZone": "MC3",
+    "category": "COP02",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Extraction/quarry.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Небольшой карьер, где ведётся добыча легкодоступных минеральных пород. Здесь трудятся добытчики, разбивая каменные пласты и собирая сырьё для дальнейшей переработки.",
+      "en": "A small quarry where easily accessible mineral rock is extracted. Miners work here, breaking rock layers and collecting raw materials for further processing.",
+      "de": "Ein kleiner Steinbruch, in dem leicht zugängliche Mineralgesteine abgebaut werden. Hier arbeiten Bergleute, die Gesteinsschichten aufbrechen und Rohstoffe für die Weiterverarbeitung sammeln."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      200,
+      240,
+      290,
+      350,
+      420,
+      500,
+      600,
+      720,
+      860
+    ],
+    "ExtractionBonus": [
+      1.0,
+      1.18,
+      1.35,
+      1.55,
+      1.8,
+      2.1,
+      2.45,
+      2.85,
+      3.3
+    ]
+  },
+  {
+    "id": "CONSTRC040",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Солнечная электростанция",
+      "en": "Solar Power Plant",
+      "de": "Solarkraftwerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "OccupiedArea": [
+      500,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750
+    ],
+    "avatar": "assets/textures/buildings/Energy/solar.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Электростанция, использующая энергию солнца для снабжения поселения электричеством.",
+      "en": "A power plant that uses solar energy to supply the settlement with electricity.",
+      "de": "Ein Kraftwerk, das Sonnenenergie nutzt, um die Siedlung mit Strom zu versorgen."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 1,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      3000,
+      5000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "avatarVideo": "assets/textures/buildings/Energy/solar.mp4",
+    "ResourceCosts": [
+      [
+        {
+          "resourceId": "RES_REINFORCED_CONCRETE",
+          "amount": 48
+        },
+        {
+          "resourceId": "RES_IRON_FRAME",
+          "amount": 24
+        },
+        {
+          "resourceId": "RES_COPPER_POWER_CABLE",
+          "amount": 18
+        },
+        {
+          "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+          "amount": 12
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_REINFORCED_CONCRETE",
+          "amount": 61
+        },
+        {
+          "resourceId": "RES_IRON_FRAME",
+          "amount": 31
+        },
+        {
+          "resourceId": "RES_COPPER_POWER_CABLE",
+          "amount": 23
+        },
+        {
+          "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+          "amount": 15
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_REINFORCED_CONCRETE",
+          "amount": 75
+        },
+        {
+          "resourceId": "RES_IRON_FRAME",
+          "amount": 37
+        },
+        {
+          "resourceId": "RES_COPPER_POWER_CABLE",
+          "amount": 28
+        },
+        {
+          "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+          "amount": 19
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_REINFORCED_CONCRETE",
+          "amount": 88
+        },
+        {
+          "resourceId": "RES_IRON_FRAME",
+          "amount": 44
+        },
+        {
+          "resourceId": "RES_COPPER_POWER_CABLE",
+          "amount": 33
+        },
+        {
+          "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+          "amount": 22
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_REINFORCED_CONCRETE",
+          "amount": 102
+        },
+        {
+          "resourceId": "RES_IRON_FRAME",
+          "amount": 51
+        },
+        {
+          "resourceId": "RES_COPPER_POWER_CABLE",
+          "amount": 38
+        },
+        {
+          "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+          "amount": 25
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_REINFORCED_CONCRETE",
+          "amount": 115
+        },
+        {
+          "resourceId": "RES_IRON_FRAME",
+          "amount": 58
+        },
+        {
+          "resourceId": "RES_COPPER_POWER_CABLE",
+          "amount": 43
+        },
+        {
+          "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+          "amount": 29
+        }
+      ],
+      [
+        {
+          "resourceId": "RES_REINFORCED_CONCRETE",
+          "amount": 129
+        },
+        {
+          "resourceId": "RES_IRON_FRAME",
+          "amount": 64
+        },
+        {
+          "resourceId": "RES_COPPER_POWER_CABLE",
+          "amount": 48
+        },
+        {
+          "resourceId": "RES_PHOTOVOLTAIC_PANEL",
+          "amount": 32
+        }
+      ]
+    ],
+    "ResourceRefundFactor": 0.5,
+    "BuildTime": [
+      30,
+      60,
+      90,
+      120,
+      160,
+      200,
+      250
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "Structure": [
+      100,
+      120,
+      145,
+      175,
+      210,
+      250,
+      300
+    ],
+    "StartingStructure": 100,
+    "RequiresElectricity": false
+  },
+  {
+    "id": "CONSTRC041",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Угольная электростанция",
+      "en": "Coal Power Plant",
+      "de": "Kohlekraftwerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "avatar": "assets/textures/buildings/Energy/coal-fired power plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Классическая электростанция на угле. Обеспечивает стабильную подачу энергии, но наносит вред экологии.",
+      "en": "A classic coal-fired power plant. It provides a stable energy supply but harms the environment.",
+      "de": "Ein klassisches Kohlekraftwerk. Es gewährleistet eine stabile Energieversorgung, schadet jedoch der Umwelt."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      3000,
+      5000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": false,
+    "EnergyConsumption": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "OccupiedArea": [
+      500,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700
+    ],
+    "BuildTime": [
+      60,
+      100,
+      140,
+      180,
+      230,
+      290,
+      360
+    ],
+    "Structure": [
+      150,
+      180,
+      220,
+      270,
+      330,
+      400,
+      500
+    ],
+    "StartingStructure": 150
+  },
+  {
+    "id": "CONSTRC042",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Гидроэлектростанция",
+      "en": "Hydro Power Plant",
+      "de": "Wasserkraftwerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "avatar": "assets/textures/buildings/Energy/hydro power plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Электростанция, использующая энергию воды. Экологически чистый, но требующий особых условий объект.",
+      "en": "A power plant that harnesses the energy of water. An environmentally clean facility that requires specific conditions.",
+      "de": "Ein Kraftwerk, das die Energie des Wassers nutzt. Eine umweltfreundliche Anlage, die besondere Bedingungen erfordert."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 4,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      3000,
+      5000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC043",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Геотермальная электростанция",
+      "en": "Geothermal Power Plant",
+      "de": "Geothermiekraftwerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "avatar": "assets/textures/buildings/Energy/geothermal power plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Электростанция, черпающая энергию из глубин планеты. Обеспечивает устойчивую и чистую подачу электричества.",
+      "en": "A power plant that draws energy from the depths of the planet. It provides a stable and clean supply of electricity.",
+      "de": "Ein Kraftwerk, das Energie aus den Tiefen des Planeten schöpft. Es gewährleistet eine stabile und saubere Stromversorgung."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 2,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      3000,
+      5000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC044",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Атомная электростанция",
+      "en": "Nuclear Power Plant",
+      "de": "Kernkraftwerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "avatar": "assets/textures/buildings/Energy/nuclear power plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Мощная электростанция, работающая на ядерном топливе. Деление тяжёлых ядер высвобождает огромное количество энергии, преобразуемой в электричество. Требует строгого контроля и надёжной защиты от аварий. При правильной эксплуатации обеспечивает стабильную генерацию на десятилетия.",
+      "en": "A powerful power plant operating on nuclear fuel. The fission of heavy nuclei releases vast amounts of energy that is converted into electricity. It requires strict control and reliable protection against accidents. When properly operated, it provides stable generation for decades.",
+      "de": "Ein leistungsstarkes Kraftwerk, das mit Kernbrennstoff betrieben wird. Die Spaltung schwerer Kerne setzt enorme Energiemengen frei, die in Elektrizität umgewandelt werden. Es erfordert strenge Kontrolle und zuverlässigen Schutz vor Unfällen. Bei korrektem Betrieb gewährleistet es über Jahrzehnte eine stabile Stromerzeugung."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 2,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      3000,
+      5000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC045",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Термоядерная электростанция",
+      "en": "Fusion Power Plant",
+      "de": "Fusionskraftwerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "avatar": "assets/textures/buildings/Energy/fusion power plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Передовая электростанция, использующая управляемый термоядерный синтез. В реакторе лёгкие ядра сливаются при сверхвысоких температурах, выделяя энергию по принципу, близкому к процессам в звёздах. Производит чистое электричество почти без радиоактивных отходов. Считается одной из самых перспективных технологий будущего.",
+      "en": "An advanced power plant that uses controlled thermonuclear fusion. In the reactor, light nuclei fuse at extremely high temperatures, releasing energy in a process similar to that occurring in stars. It produces clean electricity with almost no radioactive waste. It is considered one of the most promising technologies of the future.",
+      "de": "Ein fortschrittliches Kraftwerk, das die kontrollierte thermonukleare Fusion nutzt. Im Reaktor verschmelzen leichte Kerne bei extrem hohen Temperaturen und setzen Energie frei – nach einem Prinzip, das den Vorgängen in Sternen ähnelt. Es erzeugt sauberen Strom mit nahezu keinen radioaktiven Abfällen. Es gilt als eine der zukunftsträchtigsten Technologien."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 2,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      3000,
+      5000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC046",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Анигиляционная электростанция",
+      "en": "Annihilation Power Plant",
+      "de": "Annihilationskraftwerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "avatar": "assets/textures/buildings/Energy/annihilation power plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Экспериментальная электростанция, основанная на аннигиляции материи и антиматерии. При столкновении частиц и античастиц вся их масса превращается в энергию по формуле E=mc². Даёт колоссальную удельную мощность при минимальном расходе топлива. Требует сверхточной системы удержания и защиты от катастрофических выбросов.",
+      "en": "An experimental power plant based on the annihilation of matter and antimatter. When particles and antiparticles collide, their entire mass is converted into energy according to E=mc². It delivers enormous specific power with minimal fuel consumption. It requires an ultra-precise containment system and protection against catastrophic releases.",
+      "de": "Ein experimentelles Kraftwerk, das auf der Annihilation von Materie und Antimaterie basiert. Beim Zusammenstoß von Teilchen und Antiteilchen wird ihre gesamte Masse gemäß E=mc² in Energie umgewandelt. Es liefert eine enorme spezifische Leistung bei minimalem Brennstoffverbrauch. Es erfordert ein hochpräzises Einschlusssystem und Schutz vor katastrophalen Freisetzungen."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 2,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "ProducesElectricity": true,
+    "EnergyProduction": [
+      500,
+      750,
+      1000,
+      1500,
+      2000,
+      3000,
+      5000
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC047",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Малая аккумуляторная подстанция",
+      "en": "Small Battery Substation",
+      "de": "Kleine Batterie-Unterstation"
+    },
+    "constructionZone": "MC3",
+    "category": "COP04",
+    "currentLevel": 0,
+    "maxLevel": 6,
+    "OccupiedArea": [
+      500,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750
+    ],
+    "avatar": "assets/textures/buildings/Energy/small battery substation.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Компактная подстанция для накопления и распределения электроэнергии. Аккумуляторные блоки позволяют запасать излишки энергии в периоды низкой нагрузки и отдавать её в пиковые часы. Обеспечивает стабильность энергосети и снижает потери при передаче. Идеально подходит для небольших поселений и удалённых объектов.",
+      "en": "A compact substation for storing and distributing electricity. Battery banks allow surplus energy to be stored during periods of low demand and released during peak hours. It stabilizes the power grid and reduces transmission losses. Ideal for small settlements and remote facilities.",
+      "de": "Eine kompakte Unterstation zur Speicherung und Verteilung von Elektrizität. Akkubänke ermöglichen es, überschüssige Energie in Zeiten geringer Last zu speichern und zu Spitzenzeiten abzugeben. Sie stabilisiert das Stromnetz und verringert Übertragungsverluste. Ideal für kleine Siedlungen und abgelegene Anlagen."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 2,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "StoresEnergy": true,
+    "MaxEnergyCapacity": [
+      60000,
+      72000,
+      86400,
+      103680,
+      124416,
+      149299,
+      179159
+    ],
+    "ChargeRate": [
+      1500,
+      1725,
+      1984,
+      2281,
+      2624,
+      3017,
+      3470
+    ],
+    "DischargeRate": [
+      2000,
+      2300,
+      2645,
+      3042,
+      3498,
+      4023,
+      4626
+    ],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC060",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Фабрика обработки древесины",
+      "en": "Wood Processing Factory",
+      "de": "Holzverarbeitungsfabrik"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/lumber factory.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Производственный комплекс по переработке древесины в строительные и промышленные материалы.",
+      "en": "A production complex for processing wood into construction and industrial materials.",
+      "de": "Ein Produktionskomplex zur Verarbeitung von Holz zu Bau- und Industriematerialien."
+    },
+    "unique_building": false,
+    "departments": "DEP1",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "max_count": 8,
+    "OccupiedArea": [
+      0.004,
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.01,
+      0.012,
+      0.014,
+      0.016
+    ],
+    "BuildTime": [
+      40,
+      75,
+      110,
+      150,
+      190,
+      240,
+      290,
+      350,
+      420
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      600,
+      750,
+      900,
+      1100,
+      1350,
+      1650,
+      2000,
+      2400,
+      2900
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "Structure": [
+      100,
+      120,
+      145,
+      175,
+      210,
+      250,
+      300,
+      360,
+      430
+    ],
+    "StartingStructure": 100
+  },
+  {
+    "id": "CONSTRC080",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Библиотека",
+      "en": "Library",
+      "de": "Bibliothek"
+    },
+    "constructionZone": "MC3",
+    "category": "COP05",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Science/library.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Хранилище знаний и архивов. Библиотека служит центром образования и развития науки.",
+      "en": "A repository of knowledge and archives. The library serves as a center for education and the advancement of science.",
+      "de": "Ein Speicher für Wissen und Archive. Die Bibliothek dient als Zentrum für Bildung und die Weiterentwicklung der Wissenschaft."
+    },
+    "unique_building": true,
+    "departments": "DEP3",
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 0,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 1,
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": []
+  },
+  {
+    "id": "CONSTRC090",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Склад твёрдых материалов",
+      "en": "Solid Materials Warehouse",
+      "de": "Lager für feste Materialien"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/warehouse_solid.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Специализированное хранилище твёрдых ресурсов: руда, металлы, компоненты и прочие твёрдые материалы.",
+      "en": "Specialized storage for solid resources: ore, metals, components and other solid materials.",
+      "de": "Speziallager für feste Ressourcen: Erz, Metalle, Komponenten und andere Feststoffe."
+    },
+    "unique_building": false,
+    "max_count": 20,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.002,
+      0.0025,
+      0.003,
+      0.0035,
+      0.004,
+      0.005,
+      0.006,
+      0.007,
+      0.008
+    ],
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "currentExpeditionCapacity": 0,
+    "maxExpeditionCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": true,
+    "ResourceStorageCategory": "3b",
+    "ResourceStorageCapacity": [
+      5,
+      8,
+      12,
+      16,
+      22,
+      30,
+      40,
+      55,
+      70
+    ],
+    "Structure": [
+      80,
+      100,
+      120,
+      150,
+      180,
+      220,
+      270,
+      320,
+      400
+    ],
+    "StartingStructure": 80
+  },
+  {
+    "id": "CONSTRC010",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Технопорт",
+      "en": "Technoport",
+      "de": "Technoport"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 1,
+    "maxLevel": 5,
+    "avatar": "assets/textures/buildings/Infrastructure/technoport.png",
+    "built_count": 1,
+    "description": {
+      "ru": "Наземный комплекс приёма, хранения и обслуживания техники. Открывает раздел Технопорт и задаёт вместимость стоянки в м².",
+      "en": "Ground complex for receiving, storing and servicing vehicles. Unlocks the Technoport panel and sets parking capacity in m².",
+      "de": "Bodenkomplex zur Annahme, Lagerung und Wartung von Technik. Schaltet das Technoport-Panel frei und setzt die Stellplatzkapazität in m²."
+    },
+    "unique_building": true,
+    "max_count": 1,
+    "departments": "",
+    "OccupiedArea": [
+      0.01,
+      0.012,
+      0.014,
+      0.016,
+      0.018,
+      0.02
+    ],
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 4,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "currentExpeditionCapacity": 0,
+    "maxExpeditionCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      40,
+      55,
+      70,
+      90,
+      110,
+      140
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "IsTechnoport": true,
+    "TechnoportCapacity": [
+      8000,
+      12000,
+      18000,
+      26000,
+      36000,
+      50000
+    ],
+    "Structure": [
+      400,
+      500,
+      620,
+      760,
+      920,
+      1100
+    ],
+    "StartingStructure": 400
+  },
+  {
+    "id": "CONSTRC061",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Дробилка",
+      "en": "Crusher",
+      "de": "Brecher"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/crusher.jpg",
+    "built_count": 0,
+    "description": {
+      "ru": "Промышленная дробилка для измельчения и обогащения минерального сырья. Превращает железноносную породу в очищенную руду, пригодную для выплавки.",
+      "en": "Industrial crusher for grinding and beneficiating mineral feedstock. Turns iron-bearing rock into processed ore suitable for smelting.",
+      "de": "Industrieller Brecher zur Zerkleinerung und Aufbereitung mineralischer Rohstoffe. Wandelt eisenhaltiges Gestein in aufbereitetes Erz für die Verhüttung um."
+    },
+    "unique_building": false,
+    "max_count": 12,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.003,
+      0.0035,
+      0.004,
+      0.0045,
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.01
+    ],
+    "BuildTime": [
+      30,
+      60,
+      90,
+      120,
+      150,
+      180,
+      220,
+      260,
+      300
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      800,
+      1000,
+      1250,
+      1550,
+      1900,
+      2300,
+      2800,
+      3400,
+      4100
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "Structure": [
+      100,
+      120,
+      145,
+      175,
+      210,
+      250,
+      300,
+      360,
+      430
+    ],
+    "StartingStructure": 100
+  },
+  {
+    "id": "CONSTRC062",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Литейная",
+      "en": "Foundry",
+      "de": "Gießerei"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/foundry.jpg",
+    "built_count": 0,
+    "description": {
+      "ru": "Горячий цех выплавки металлов. Переплавляет очищенную руду в металлические слитки для дальнейшего производства.",
+      "en": "A hot metal-smelting shop. Melts processed ore into metal ingots for further manufacturing.",
+      "de": "Heiße Metallgießerei. Schmilzt aufbereitetes Erz zu Barren für die Weiterverarbeitung."
+    },
+    "unique_building": false,
+    "max_count": 10,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.004,
+      0.0045,
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.009,
+      0.011,
+      0.013
+    ],
+    "BuildTime": [
+      40,
+      80,
+      110,
+      140,
+      180,
+      220,
+      270,
+      320,
+      380
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      1200,
+      1500,
+      1850,
+      2250,
+      2700,
+      3200,
+      3800,
+      4500,
+      5300
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "Structure": [
+      120,
+      145,
+      175,
+      210,
+      250,
+      300,
+      360,
+      430,
+      520
+    ],
+    "StartingStructure": 120
+  },
+  {
+    "id": "CONSTRC063",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Завод базовых компонентов",
+      "en": "Basic Components Plant",
+      "de": "Werk für Basiskomponenten"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/components_base_plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Промышленный цех проката и метизов. Из металлических слитков изготавливает листы, прутья и крепёж для строительства и сборки.",
+      "en": "An industrial rolling and fastener shop. Turns metal ingots into sheets, rods and hardware for construction and assembly.",
+      "de": "Industriehalle für Walzen und Kleinteile. Fertigt aus Barren Bleche, Stangen und Befestigungsteile für Bau und Montage."
+    },
+    "unique_building": false,
+    "max_count": 8,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.009,
+      0.011,
+      0.013,
+      0.015,
+      0.018
+    ],
+    "BuildTime": [
+      50,
+      90,
+      130,
+      170,
+      210,
+      260,
+      310,
+      370,
+      440
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      3,
+      3,
+      4,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      1500,
+      1850,
+      2250,
+      2700,
+      3200,
+      3800,
+      4500,
+      5300,
+      6200
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "Structure": [
+      140,
+      170,
+      200,
+      240,
+      290,
+      350,
+      420,
+      500,
+      600
+    ],
+    "StartingStructure": 140
+  },
+  {
+    "id": "CONSTRC064",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Завод стандартных компонентов",
+      "en": "Standard Components Plant",
+      "de": "Werk für Standardkomponenten"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/components_standard_plant.jpg",
+    "built_count": 0,
+    "description": {
+      "ru": "Сборка более сложных деталей из базовых компонентов: усиленные пластины, каркасы и узлы для строительства и техники.",
+      "en": "Assembles more complex parts from basic components: reinforced plates, frames and assemblies for construction and machinery.",
+      "de": "Montage komplexerer Teile aus Basiskomponenten: verstärkte Platten, Rahmen und Baugruppen für Bau und Technik."
+    },
+    "unique_building": false,
+    "max_count": 6,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.007,
+      0.008,
+      0.01,
+      0.012,
+      0.014,
+      0.017,
+      0.02,
+      0.024,
+      0.028
+    ],
+    "BuildTime": [
+      70,
+      120,
+      170,
+      230,
+      290,
+      360,
+      440,
+      530,
+      630
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      4,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      14
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      2200,
+      2700,
+      3300,
+      4000,
+      4800,
+      5800,
+      7000,
+      8400,
+      10000
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "Structure": [
+      180,
+      220,
+      270,
+      330,
+      400,
+      480,
+      580,
+      700,
+      850
+    ],
+    "StartingStructure": 180
+  },
+  {
+    "id": "CONSTRC023",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Лесопилка",
+      "en": "Sawmill",
+      "de": "Sägewerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP02",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Extraction/sawmill.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Лесозаготовительный комплекс: валка, раскряжёвка и первичная обработка стволов. Извлекает запасы древесины небесного тела и выдаёт брёвна на склад.",
+      "en": "Logging complex: felling, bucking and primary processing of stems. Extracts the body’s wood deposits and delivers logs to storage.",
+      "de": "Holzeinschlagkomplex: Fällen, Aufarbeiten und Erstverarbeitung. Entnimmt die Holzvorräte des Himmelskörpers und liefert Stämme ins Lager."
+    },
+    "unique_building": false,
+    "max_count": 12,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.003,
+      0.0035,
+      0.004,
+      0.0045,
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.01
+    ],
+    "BuildTime": [
+      25,
+      50,
+      80,
+      110,
+      140,
+      180,
+      220,
+      270,
+      320
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      150,
+      180,
+      220,
+      270,
+      320,
+      390,
+      470,
+      560,
+      680
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "ExtractionBonus": [
+      1.0,
+      1.12,
+      1.25,
+      1.4,
+      1.55,
+      1.75,
+      2.0,
+      2.25,
+      2.55
+    ],
+    "Structure": [
+      80,
+      100,
+      120,
+      145,
+      175,
+      210,
+      250,
+      300,
+      360
+    ],
+    "StartingStructure": 80
+  },
+  {
+    "id": "CONSTRC024",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Нефтедобывающая платформа",
+      "en": "Oil Extraction Platform",
+      "de": "Ölplattform"
+    },
+    "constructionZone": "MC4",
+    "category": "COP02",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Extraction/oil_platform.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Надводная платформа для добычи каустобиолитов. Устанавливается на водной поверхности и извлекает сырой каустобиолит из недр.",
+      "en": "Surface-water platform for caustobiolith extraction. Moored on open water, it draws crude feedstock from subsurface reservoirs.",
+      "de": "Überwasserplattform zur Kaustobiolith-Förderung. Auf der Wasseroberfläche verankert, fördert sie Rohstoff aus unterirdischen Lagerstätten."
+    },
+    "unique_building": false,
+    "max_count": 8,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.004,
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.01,
+      0.012,
+      0.014,
+      0.016
+    ],
+    "BuildTime": [
+      55,
+      95,
+      140,
+      190,
+      250,
+      320,
+      400,
+      490,
+      590
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      400,
+      480,
+      580,
+      700,
+      850,
+      1000,
+      1200,
+      1450,
+      1750
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "ExtractionBonus": [
+      1.0,
+      1.1,
+      1.22,
+      1.35,
+      1.5,
+      1.7,
+      1.95,
+      2.2,
+      2.5
+    ],
+    "Structure": [
+      200,
+      240,
+      290,
+      350,
+      420,
+      500,
+      600,
+      720,
+      860
+    ],
+    "StartingStructure": 200
+  },
+  {
+    "id": "CONSTRC065",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Ректификационная колонна",
+      "en": "Rectification Column",
+      "de": "Rektifikationskolonne"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/rectification_column.jpg",
+    "built_count": 0,
+    "description": {
+      "ru": "Установка фракционной перегонки сырого каустобиолита. Разделяет жидкое сырьё на газовые фракции, в первую очередь этилен, для дальнейшей химической переработки.",
+      "en": "A fractional distillation unit for crude caustobiolith. Separates liquid feedstock into gas fractions, primarily ethylene, for further chemical processing.",
+      "de": "Anlage zur fraktionierten Destillation von rohem Kaustobiolith. Trennt flüssigen Rohstoff in Gasfraktionen, vor allem Ethylen, für die chemische Weiterverarbeitung."
+    },
+    "unique_building": false,
+    "max_count": 6,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.004,
+      0.0045,
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.01,
+      0.012,
+      0.014
+    ],
+    "BuildTime": [
+      45,
+      85,
+      120,
+      155,
+      195,
+      240,
+      290,
+      345,
+      410
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      1400,
+      1700,
+      2100,
+      2500,
+      3000,
+      3600,
+      4300,
+      5100,
+      6000
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "Structure": [
+      130,
+      155,
+      185,
+      220,
+      265,
+      320,
+      380,
+      450,
+      540
+    ],
+    "StartingStructure": 130
+  },
+  {
+    "id": "CONSTRC066",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Химический завод",
+      "en": "Chemical Plant",
+      "de": "Chemiewerk"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/chemical plant.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Химический комплекс полимеризации. Перерабатывает газ этилен в пластмассы и полимерные материалы для строительства и производства.",
+      "en": "A chemical polymerization complex. Converts ethylene gas into plastics and polymer materials for construction and manufacturing.",
+      "de": "Chemischer Polymerisationskomplex. Wandelt Ethylen-Gas in Kunststoffe und Polymermaterialien für Bau und Produktion um."
+    },
+    "unique_building": false,
+    "max_count": 6,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.01,
+      0.012,
+      0.014,
+      0.016,
+      0.02
+    ],
+    "BuildTime": [
+      55,
+      100,
+      140,
+      180,
+      230,
+      280,
+      340,
+      400,
+      480
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      2,
+      3,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      1600,
+      1950,
+      2350,
+      2800,
+      3350,
+      4000,
+      4750,
+      5600,
+      6600
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "Structure": [
+      140,
+      170,
+      200,
+      240,
+      290,
+      350,
+      420,
+      500,
+      600
+    ],
+    "StartingStructure": 140
+  },
+  {
+    "id": "CONSTRC091",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Склад газов",
+      "en": "Gas Warehouse",
+      "de": "Gaslager"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/warehouse_gas.jpg",
+    "built_count": 0,
+    "description": {
+      "ru": "Герметичное хранилище газообразных ресурсов: этилен и другие промышленные газы. Категория склада 2b — только газы.",
+      "en": "Sealed storage for gaseous resources: ethylene and other industrial gases. Storage category 2b — gases only.",
+      "de": "Druckdichtes Lager für gasförmige Ressourcen: Ethylen und andere Industriegase. Kategorie 2b — nur Gase."
+    },
+    "unique_building": false,
+    "max_count": 20,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.002,
+      0.0025,
+      0.003,
+      0.0035,
+      0.004,
+      0.005,
+      0.006,
+      0.007,
+      0.008
+    ],
+    "BuildTime": [
+      20,
+      40,
+      60,
+      85,
+      110,
+      140,
+      175,
+      215,
+      260
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "currentExpeditionCapacity": 0,
+    "maxExpeditionCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      4,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      25,
+      30
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": true,
+    "ResourceStorageCategory": "2b",
+    "ResourceStorageCapacity": [
+      4,
+      6,
+      9,
+      12,
+      16,
+      22,
+      30,
+      40,
+      55
+    ],
+    "Structure": [
+      80,
+      100,
+      120,
+      150,
+      180,
+      220,
+      270,
+      320,
+      400
+    ],
+    "StartingStructure": 80
+  },
+  {
+    "id": "CONSTRC092",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Склад жидкостей",
+      "en": "Liquid Warehouse",
+      "de": "Flüssigkeitslager"
+    },
+    "constructionZone": "MC3",
+    "category": "COP03",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Industry/warehouse_liquid.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Герметичное хранилище жидких ресурсов: вода, топливо, кислоты и прочие жидкости. Категория склада 3c — только жидкости.",
+      "en": "Sealed storage for liquid resources: water, fuels, acids and other liquids. Storage category 3c — liquids only.",
+      "de": "Dichtes Lager für flüssige Ressourcen: Wasser, Kraftstoffe, Säuren und andere Flüssigkeiten. Kategorie 3c — nur Flüssigkeiten."
+    },
+    "unique_building": false,
+    "max_count": 20,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.002,
+      0.0025,
+      0.003,
+      0.0035,
+      0.004,
+      0.005,
+      0.006,
+      0.007,
+      0.008
+    ],
+    "BuildTime": [
+      20,
+      40,
+      60,
+      85,
+      110,
+      140,
+      175,
+      215,
+      260
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "currentExpeditionCapacity": 0,
+    "maxExpeditionCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      15,
+      18
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": true,
+    "ResourceStorageCategory": "3c",
+    "ResourceStorageCapacity": [
+      5,
+      8,
+      12,
+      16,
+      22,
+      30,
+      40,
+      55,
+      70
+    ],
+    "Structure": [
+      80,
+      100,
+      120,
+      150,
+      180,
+      220,
+      270,
+      320,
+      400
+    ],
+    "StartingStructure": 80
+  },
+  {
+    "id": "CONSTRC025",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Атмосферный испаритель",
+      "en": "Atmospheric Evaporator",
+      "de": "Atmosphären-Verdampfer"
+    },
+    "constructionZone": "MC3",
+    "category": "COP02",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Extraction/atmospheric_evaporator.jpg",
+    "built_count": 0,
+    "description": {
+      "ru": "Установка захвата и сжижения атмосферных газов. Извлекает кислородный газ из летучих компонентов небесного тела и выдаёт жидкий кислород на склад.",
+      "en": "An atmospheric capture and liquefaction unit. Extracts oxygen gas from the body’s volatile components and delivers liquid oxygen to storage.",
+      "de": "Anlage zum Auffangen und Verflüssigen atmosphärischer Gase. Entnimmt Sauerstoffgas aus den flüchtigen Komponenten und liefert Flüssigsauerstoff ins Lager."
+    },
+    "unique_building": false,
+    "max_count": 12,
+    "departments": "DEP1",
+    "OccupiedArea": [
+      0.003,
+      0.0035,
+      0.004,
+      0.0045,
+      0.005,
+      0.006,
+      0.007,
+      0.008,
+      0.01
+    ],
+    "BuildTime": [
+      30,
+      55,
+      85,
+      115,
+      150,
+      190,
+      235,
+      285,
+      340
+    ],
+    "DismantlePenalty": 0.5,
+    "DowngradePenalty": 0.4,
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      5,
+      6
+    ],
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      350,
+      420,
+      500,
+      600,
+      720,
+      860,
+      1030,
+      1240,
+      1490
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "ResourceStorageCategory": null,
+    "ResourceStorageCapacity": [],
+    "ExtractionBonus": [
+      1.0,
+      1.12,
+      1.25,
+      1.4,
+      1.55,
+      1.75,
+      2.0,
+      2.25,
+      2.55
+    ],
+    "Structure": [
+      100,
+      120,
+      145,
+      175,
+      210,
+      250,
+      300,
+      360,
+      430
+    ],
+    "StartingStructure": 100
+  },
+  {
+    "id": "CONSTRC011",
+    "parentBodyId": 3,
+    "name": {
+      "ru": "Обсерватория",
+      "en": "Observatory",
+      "de": "Observatorium"
+    },
+    "constructionZone": "MC3",
+    "category": "COP01",
+    "currentLevel": 0,
+    "maxLevel": 8,
+    "avatar": "assets/textures/buildings/Infrastructure/observatory.png",
+    "built_count": 0,
+    "description": {
+      "ru": "Наземный оптический комплекс. Рецепт «Оптическое сканирование» задаёт двухслойную область видимости космоса (А1 / А2) и снимает космический туман войны в радиусе покрытия.",
+      "en": "Ground optical complex. The Optical Scanning recipe creates a two-layer space visibility area (A1 / A2) and clears cosmic fog of war inside its coverage.",
+      "de": "Optischer Bodenkomplex. Das Rezept «Optische Abtastung» erzeugt einen zweischichtigen Sichtbereich (A1 / A2) und hebt den kosmischen Kriegsnebel im Abdeckungsradius auf."
+    },
+    "unique_building": false,
+    "max_count": 8,
+    "departments": "DEP3",
+    "OccupiedArea": [
+      0.008,
+      0.01,
+      0.012,
+      0.014,
+      0.016,
+      0.018,
+      0.02,
+      0.024,
+      0.028
+    ],
+    "currentEngineeringCapacity": 0,
+    "maxEngineeringCapacity": 2,
+    "currentBotanicalCapacity": 0,
+    "maxBotanicalCapacity": 0,
+    "currentScientificCapacity": 0,
+    "maxScientificCapacity": 3,
+    "currentExpeditionCapacity": 0,
+    "maxExpeditionCapacity": 0,
+    "CurrentBuildingCapacity": 100,
+    "RequiresElectricity": true,
+    "EnergyConsumption": [
+      60,
+      80,
+      105,
+      135,
+      170,
+      210,
+      260,
+      320,
+      400
+    ],
+    "ProducesElectricity": false,
+    "EnergyProduction": [],
+    "IsResidential": false,
+    "PopulationCapacity": [],
+    "IsResourceStorage": false,
+    "IsObservatory": true,
+    "OpticalScanA1Mult": [
+      1,
+      1.18,
+      1.38,
+      1.62,
+      1.9,
+      2.22,
+      2.6,
+      3.05,
+      3.55
+    ],
+    "OpticalScanA2Mult": [
+      1,
+      1.16,
+      1.34,
+      1.55,
+      1.8,
+      2.08,
+      2.42,
+      2.8,
+      3.25
+    ],
+    "Structure": [
+      280,
+      340,
+      410,
+      490,
+      580,
+      680,
+      800,
+      940,
+      1100
+    ],
+    "StartingStructure": 280,
+    "ResourceCosts": []
+  }
+]

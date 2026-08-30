@@ -1,0 +1,461 @@
+
+/* Картография: карта слева на всю ширину до панели действий справа */
+#cartography-panel {
+    position: absolute;
+    top: 128px; /* ниже бара локации */
+    left: 430px; /* правее меню + подразделов (submenu ~240px + ширина кнопок) */
+    right: 10px; /* как у body-info / общей сводки */
+    z-index: 920; /* выше unit-map-markers (880) */
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    max-height: calc(100vh - 148px);
+    pointer-events: auto;
+    font-family: 'Play', sans-serif;
+    box-sizing: border-box;
+}
+.carto-map-window {
+    flex: 1 1 auto;
+    min-width: 240px;
+    max-width: calc(100% - 370px);
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background: rgba(14, 18, 20, 0.72);
+    border: 1px solid rgba(50, 60, 65, 0.5);
+    border-bottom: 1px solid rgba(0, 180, 200, 0.45);
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+    backdrop-filter: blur(6px);
+    max-height: calc(100vh - 148px);
+}
+.carto-map-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 14px 6px 18px;
+    font-size: 12.5px;
+    color: rgba(180, 230, 255, 0.9);
+    border-bottom: 1px solid rgba(60, 70, 75, 0.4);
+    background: rgba(10, 14, 16, 0.55);
+    flex-shrink: 0;
+}
+.carto-map-header .carto-coords {
+    font-variant-numeric: tabular-nums;
+    color: rgba(0, 230, 210, 0.95);
+    margin-left: 8px;
+}
+.carto-map-header .carto-fog-pct {
+    margin-left: auto;
+    text-align: right;
+    font-size: 11.5px;
+    color: rgba(160, 210, 230, 0.9);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+#carto-map-host {
+    position: relative;
+    width: 100%;
+    height: min(560px, calc(100vh - 160px));
+    overflow: hidden;
+    background: #03060a;
+    flex: 1 1 auto;
+}
+#carto-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+}
+.carto-actions-window {
+    flex: 0 0 360px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at top, rgba(40, 50, 48, 0.55), rgba(18, 22, 24, 0.5));
+    border: 1px solid rgba(50, 55, 60, 0.5);
+    border-bottom: 1px solid rgba(0, 180, 200, 0.4);
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 13px;
+    max-height: calc(100vh - 148px);
+}
+.carto-actions-header {
+    padding: 8px 12px 8px 16px;
+    border-bottom: 1px solid rgba(60, 70, 75, 0.45);
+    color: rgba(180, 230, 255, 0.92);
+    font-size: 13px;
+}
+.carto-actions-body {
+    padding: 10px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+.carto-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.carto-label { opacity: 0.75; font-size: 12px; }
+.carto-row-select {
+    align-items: flex-start;
+}
+.carto-firm-select,
+#carto-exp-type.firm-select {
+    width: 168px;
+    flex: 0 0 168px;
+}
+#carto-exp-type .firm-select-trigger {
+    padding: 5px 10px;
+    font-size: 12.5px;
+}
+#carto-exp-type .firm-select-dropdown {
+    z-index: 30;
+}
+.carto-actions-body select,
+.carto-actions-body input[type="number"] {
+    background: rgba(12, 16, 18, 0.85);
+    border: 1px solid rgba(70, 80, 85, 0.55);
+    border-bottom-color: rgba(0, 160, 180, 0.45);
+    color: #e8f4ff;
+    padding: 4px 8px;
+    font-family: 'Play', sans-serif;
+    font-size: 12.5px;
+    clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+.carto-btn {
+    width: 100%;
+    height: 32px;
+    border: 1px solid rgba(70, 80, 85, 0.5);
+    border-bottom: 1px solid rgba(0, 180, 200, 0.55);
+    background: rgba(24, 30, 32, 0.8);
+    color: rgba(210, 230, 240, 0.9);
+    font-family: 'Play', sans-serif;
+    font-size: 12.5px;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+.carto-btn:hover:not(:disabled) {
+    border-bottom-color: rgba(0, 230, 255, 0.9);
+    color: #fff;
+}
+.carto-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.carto-btn.primary:not(:disabled) {
+    background: rgba(16, 40, 36, 0.9);
+    border-bottom-color: rgba(0, 220, 180, 0.85);
+}
+.carto-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+.carto-tab {
+    flex: 1;
+    height: 26px;
+    font-size: 11.5px;
+    background: rgba(20, 24, 26, 0.7);
+    border: 1px solid rgba(60, 70, 75, 0.45);
+    color: rgba(180, 200, 210, 0.75);
+    cursor: pointer;
+    font-family: 'Play', sans-serif;
+}
+.carto-tab.active {
+    color: rgba(0, 230, 210, 0.95);
+    border-bottom-color: rgba(0, 192, 206, 0.8);
+}
+.carto-exp-list {
+    min-height: 56px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid rgba(50, 60, 65, 0.4);
+    background: rgba(8, 12, 14, 0.45);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.carto-exp-card {
+    padding: 8px 10px;
+    background: linear-gradient(180deg, rgba(22, 28, 30, 0.92), rgba(12, 16, 18, 0.85));
+    border: 1px solid rgba(60, 70, 75, 0.45);
+    border-bottom: 1px solid rgba(0, 180, 200, 0.35);
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    font-size: 12px;
+    cursor: pointer;
+    pointer-events: auto;
+    user-select: none;
+    touch-action: manipulation;
+}
+.carto-exp-card > *:not(.carto-exp-cancel) {
+    pointer-events: none;
+}
+.carto-exp-cancel {
+    pointer-events: auto;
+    margin-top: 6px;
+    width: 100%;
+    height: 26px;
+    font-size: 11px;
+    font-family: 'Play', sans-serif;
+    cursor: pointer;
+    background: rgba(40, 20, 20, 0.75);
+    border: 1px solid rgba(120, 60, 60, 0.55);
+    border-bottom-color: rgba(220, 80, 80, 0.55);
+    color: rgba(255, 200, 200, 0.9);
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+.carto-exp-cancel:hover {
+    border-bottom-color: rgba(255, 100, 100, 0.85);
+    color: #fff;
+}
+.carto-exp-meta {
+    font-size: 11px;
+    color: rgba(180, 210, 220, 0.85);
+    line-height: 1.35;
+}
+.carto-exp-eta {
+    font-size: 11.5px;
+    color: rgba(0, 220, 200, 0.9);
+    font-variant-numeric: tabular-nums;
+}
+.carto-exp-complete {
+    color: rgba(200, 210, 160, 0.88);
+    font-size: 11px;
+}
+.carto-exp-card.carto-exp-mine {
+    border-bottom-color: rgba(60, 220, 120, 0.55);
+}
+.carto-exp-card.carto-exp-return {
+    border-bottom-color: rgba(220, 180, 80, 0.5);
+}
+.carto-exp-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+.carto-exp-name {
+    color: rgba(230, 245, 255, 0.95);
+    font-weight: 500;
+}
+.carto-exp-badge {
+    font-size: 10.5px;
+    padding: 2px 7px;
+    background: rgba(0, 40, 50, 0.7);
+    border: 1px solid rgba(0, 180, 200, 0.4);
+    color: rgba(0, 230, 210, 0.95);
+    clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+    white-space: nowrap;
+}
+.carto-exp-mine .carto-exp-badge {
+    border-color: rgba(60, 220, 120, 0.5);
+    color: rgba(120, 255, 170, 0.95);
+    background: rgba(10, 40, 25, 0.75);
+}
+.carto-exp-phase {
+    color: rgba(180, 210, 220, 0.88);
+    font-size: 11.5px;
+    margin-bottom: 2px;
+}
+.carto-exp-eta {
+    color: rgba(0, 220, 200, 0.9);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+.carto-exp-meta {
+    color: rgba(160, 180, 190, 0.75);
+    font-size: 11px;
+}
+.carto-node-card {
+    padding: 10px 12px;
+    background: linear-gradient(180deg, rgba(18, 24, 28, 0.95), rgba(10, 14, 16, 0.88));
+    border: 1px solid rgba(60, 70, 75, 0.5);
+    border-bottom: 1px solid rgba(0, 180, 200, 0.4);
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    margin-bottom: 4px;
+}
+.carto-node-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.carto-node-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px rgba(0, 180, 220, 0.35));
+}
+.carto-node-title-wrap {
+    flex: 1;
+    min-width: 0;
+}
+.carto-node-title {
+    font-size: 13px;
+    color: rgba(230, 245, 255, 0.95);
+    font-weight: 500;
+}
+.carto-node-coords {
+    font-size: 11px;
+    color: rgba(0, 220, 200, 0.85);
+    font-variant-numeric: tabular-nums;
+}
+.carto-node-symbol {
+    font-size: 11px;
+    color: rgba(220, 240, 255, 0.75);
+    border: 1px solid rgba(120, 150, 170, 0.45);
+    padding: 2px 6px;
+    clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+    align-self: flex-start;
+}
+.carto-node-lines {
+    font-size: 11.5px;
+    color: rgba(200, 220, 230, 0.9);
+    line-height: 1.45;
+    margin-bottom: 6px;
+}
+.carto-node-rem {
+    color: rgba(160, 200, 180, 0.85);
+}
+.carto-node-desc {
+    font-size: 10.5px;
+    color: rgba(160, 180, 190, 0.8);
+    line-height: 1.4;
+    max-height: 72px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(50, 60, 65, 0.4);
+    padding-top: 6px;
+}
+.carto-exp-card {
+    cursor: pointer;
+}
+.carto-exp-card.is-active {
+    border-bottom-color: rgba(0, 220, 255, 0.85);
+    background: linear-gradient(180deg, rgba(28, 40, 44, 0.95), rgba(14, 20, 22, 0.9));
+}
+.carto-exp-card:hover {
+    border-color: rgba(80, 100, 110, 0.55);
+}
+/* Линейка масштаба — контейнер карты, не холст */
+.carto-scale {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+.carto-scale-bar {
+    height: 4px;
+    min-width: 24px;
+    background: linear-gradient(90deg, rgba(0, 220, 200, 0.95), rgba(0, 180, 220, 0.55));
+    border-left: 2px solid rgba(220, 245, 255, 0.95);
+    border-right: 2px solid rgba(220, 245, 255, 0.95);
+    box-shadow: 0 0 6px rgba(0, 200, 220, 0.35);
+    transition: width 0.2s ease;
+}
+.carto-scale-label {
+    font-size: 11px;
+    color: rgba(200, 235, 245, 0.92);
+    text-shadow: 0 0 4px #000, 0 1px 2px #000;
+    font-variant-numeric: tabular-nums;
+}
+/* Высотомер зума */
+.carto-altimeter {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+.carto-alt-track {
+    width: 6px;
+    height: 140px;
+    background: rgba(20, 28, 32, 0.75);
+    border: 1px solid rgba(60, 80, 90, 0.55);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+.carto-alt-fill {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0%;
+    background: linear-gradient(180deg, rgba(0, 230, 210, 0.95), rgba(0, 120, 160, 0.55));
+    box-shadow: 0 0 8px rgba(0, 220, 200, 0.45);
+    transition: height 0.25s ease;
+}
+.carto-alt-value {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 11px;
+    color: rgba(0, 230, 210, 0.95);
+    text-shadow: 0 0 4px #000;
+    font-variant-numeric: tabular-nums;
+}
+.carto-alt-marks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    font-size: 9px;
+    color: rgba(150, 170, 180, 0.7);
+}
+.carto-fog-dev {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: rgba(255, 200, 100, 0.95);
+    background: rgba(40, 20, 0, 0.75);
+    border: 1px solid rgba(255, 180, 60, 0.5);
+    pointer-events: none;
+}
+#carto-map-host {
+    position: relative;
+}
+.carto-empty {
+    opacity: 0.5;
+    font-size: 12px;
+    padding: 8px;
+    text-align: center;
+}
+.carto-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,180,200,0.35), transparent);
+    margin: 4px 0;
+}
+
+.carto-empty-hint {
+    padding: 28px 16px;
+    text-align: center;
+    color: rgba(180, 210, 220, 0.7);
+    font-size: 13px;
+    line-height: 1.45;
+}
+.carto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

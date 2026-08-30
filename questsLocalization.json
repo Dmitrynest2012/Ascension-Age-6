@@ -1,0 +1,968 @@
+{
+  "meta": {
+    "version": 1,
+    "defaultLang": "ru",
+    "languages": [
+      "ru",
+      "en",
+      "de"
+    ],
+    "description": "Диалоги квестов и NPC. Заполняйте ru/en/de. text = общий; text_man / text_woman — по полу."
+  },
+  "quests": {
+    "QST_INTRO_001": {
+      "title": {
+        "ru": "Пробуждение",
+        "en": "Awakening",
+        "de": "Erwachen"
+      },
+      "chapter": {
+        "ru": "Пролог",
+        "en": "Prologue",
+        "de": "Prolog"
+      },
+      "objectives": {
+        "OBJ_CHOOSE_GENDER": {
+          "ru": "Выберите пол персонажа",
+          "en": "Choose your character's gender",
+          "de": "Wähle das Geschlecht deines Charakters"
+        },
+        "OBJ_READ_INTRO": {
+          "ru": "Пройдите введение",
+          "en": "Complete the introduction",
+          "de": "Absolviere die Einführung"
+        }
+      },
+      "pages": {
+        "P1": {
+          "text": {
+            "ru": [
+              "Багровый полумрак коридора давил со всех сторон. Прижавшись спиной к холодной стене, вы жадно, до боли в глазах, смотрели на пляшущие языки костра. Только этот огонь еще удерживал жизнь в вашем насквозь промерзшем теле…"
+            ],
+            "en": [
+              "The crimson twilight of the corridor pressed in from all sides. Pressed back against the cold wall, you stared hungrily, until your eyes ached, at the dancing tongues of the fire. Only this flame still held life in your thoroughly frozen body…"
+            ],
+            "de": [
+              "Das purpurrote Halbdunkel des Korridors drückte von allen Seiten. Mit dem Rücken an die kalte Wand gepresst starrtest du gierig, bis die Augen schmerzten, auf die tanzenden Flammenzungen. Nur dieses Feuer hielt noch das Leben in deinem durch und durch erfrorenen Körper…"
+            ]
+          }
+        },
+        "P2": {
+          "text": {
+            "ru": [
+              "Вы опустили взгляд, пытаясь разглядеть собственное отражение в темной луже на полу. Кого вы там увидели?"
+            ],
+            "en": [
+              "You lowered your gaze, trying to make out your own reflection in the dark puddle on the floor. Whom did you see there?"
+            ],
+            "de": [
+              "Du senktest den Blick und versuchtest, dein eigenes Spiegelbild in der dunklen Pfütze auf dem Boden zu erkennen. Wen sahst du dort?"
+            ]
+          },
+          "choices": {
+            "CH_MALE": {
+              "ru": "Мужчина",
+              "en": "Male",
+              "de": "Mann"
+            },
+            "CH_FEMALE": {
+              "ru": "Женщина",
+              "en": "Female",
+              "de": "Frau"
+            }
+          }
+        },
+        "P3": {
+          "text": {
+            "ru": [
+              "Прошлое вернулось внезапно. Сознание захлестнула яростная, неуправляемая лавина воспоминаний. Но выстроить их в логическую цепочку не удалось — тишину разорвал шаркающий шаг. Из темноты вышел седовласый старец в испачканном белом халате. Жестом он приказал идти за ним. С трудом взяв себя в руки, вы поднялись на ноги и последовали вглубь комплекса…"
+            ],
+            "en": [
+              "The past returned suddenly. A furious, uncontrollable avalanche of memories swept over your consciousness. But you could not arrange them into a logical chain — the silence was torn by a shuffling step. Out of the darkness emerged a gray-haired old man in a stained white coat. With a gesture he ordered you to follow him. With difficulty gathering yourself, you rose to your feet and followed deeper into the complex…"
+            ],
+            "de": [
+              "Die Vergangenheit kehrte plötzlich zurück. Ein wütender, unkontrollierbarer Lawine von Erinnerungen überschwemmte dein Bewusstsein. Doch es gelang nicht, sie zu einer logischen Kette zu ordnen — die Stille wurde von einem schlurfenden Schritt zerrissen. Aus der Dunkelheit trat ein grauhaariger Greis in einem schmutzigen weißen Kittel. Mit einer Geste befahl er dir, ihm zu folgen. Mit Mühe rafftest du dich zusammen, standest auf und folgtest tiefer in den Komplex…"
+            ]
+          }
+        }
+      }
+    },
+    "QST_INTRO_002": {
+      "title": {
+        "ru": "Разговор с профессором",
+        "en": "Conversation with the Professor",
+        "de": "Gespräch mit dem Professor"
+      },
+      "chapter": {
+        "ru": "Глава I — Разговор с профессором",
+        "en": "Chapter I — Conversation with the Professor",
+        "de": "Kapitel I — Gespräch mit dem Professor"
+      },
+      "objectives": {
+        "OBJ_READ_TALK": {
+          "ru": "Поговорите по душам с профессором",
+          "en": "Have a heart-to-heart talk with the professor",
+          "de": "Führe ein aufrichtiges Gespräch mit dem Professor"
+        }
+      },
+      "pages": {
+        "P1": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: Присаживайся к столу, парень. И с возвращением с того света. Я доктор Виктор Геннадьевич Селезнев. Наш отряд наткнулся на тебя в глухой уральской тайге, глубоко в пещерах. Ты лежал там, как ледяная статуя, без признаков жизни. Мы отогрели тебя, и ты шёл за нашей группой беженцев до самой станции на автопилоте, будто в трансе. Теперь ты в сознании. Расскажи, что ты забыл в тех проклятых пещерах? И кем ты был… до Великого переселения?",
+              "Вы: Виктор Геннадьевич, голова раскалывается. О каком «Великом переселении» вы говорите? Я впервые об этом слышу.",
+              "Доктор Селезнев: (Прищуривается, внимательно вглядываясь в ваше лицо) Вот оно что… Похоже, ты у нас из «ранних». Куда древнее, чем я предполагал. Ладно, давай поиграем в загадки. Сперва ответь: какой сейчас год? Ну, по твоим внутренним часам.",
+              "Вы: Две тысячи двадцать четвертый. К чему эти странные вопросы?",
+              "Доктор Селезнев: (Тяжело вздыхает и трет уставшие глаза) К тому, парень, что сегодня тридцатое марта две тысячи сто восьмого года. Ты проспал в этой ледяной могиле долгих восемьдесят четыре года…"
+            ],
+            "en": [
+              "Doctor Seleznev: Sit down at the table, kid. And welcome back from the other side. I'm Doctor Viktor Gennadyevich Seleznev. Our squad found you deep in the Ural taiga, in the caves. You were lying there like an ice statue, with no signs of life. We warmed you up, and you walked with our group of refugees all the way to the station on autopilot, as if in a trance. Now you're conscious. Tell me, what were you doing in those damned caves? And who were you… before the Great Migration?",
+              "You: Viktor Gennadyevich, my head is splitting. What 'Great Migration' are you talking about? I'm hearing about this for the first time.",
+              "Doctor Seleznev: (Squints, carefully studying your face) So that's how it is… Looks like you're one of the 'early ones.' Much more ancient than I assumed. All right, let's play a little riddle game. First answer: what year is it now? According to your internal clock.",
+              "You: Two thousand twenty-four. Why these strange questions?",
+              "Doctor Seleznev: (Sighs heavily and rubs his tired eyes) Because, kid, today is the thirtieth of March of the year two thousand one hundred and eight. You slept in that icy grave for a long eighty-four years…"
+            ],
+            "de": [
+              "Doktor Seleznev: Setz dich an den Tisch, Junge. Und willkommen zurück aus dem Jenseits. Ich bin Doktor Viktor Gennadjewitsch Seleznev. Unsere Gruppe hat dich tief in der Ural-Taiga, in den Höhlen gefunden. Du lagst dort wie eine Eisstatue, ohne Lebenszeichen. Wir haben dich aufgewärmt, und du bist unserer Flüchtlingsgruppe bis zur Station im Autopilot-Modus gefolgt, wie in Trance. Jetzt bist du bei Bewusstsein. Erzähl, was hast du in diesen verdammten Höhlen verloren? Und wer warst du… vor der Großen Migration?",
+              "Du: Viktor Gennadjewitsch, der Kopf zerplatzt mir. Von welcher „Großen Migration“ reden Sie? Das höre ich zum ersten Mal.",
+              "Doktor Seleznev: (Blinzelt und betrachtet dein Gesicht aufmerksam) So ist das also… Sieht aus, als wärst du einer der „Frühen“. Viel älter, als ich dachte. Gut, lass uns Rätsel spielen. Zuerst antworte: Welches Jahr haben wir jetzt? Nach deiner inneren Uhr.",
+              "Du: Zweitausendvierundzwanzig. Wozu diese seltsamen Fragen?",
+              "Doktor Seleznev: (Seufzt schwer und reibt sich die müden Augen) Weil, Junge, heute der dreißigste März des Jahres zweitausendeinhundertacht ist. Du hast in diesem eisigen Grab lange vierundachtzig Jahre geschlafen…"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: Присаживайтесь, барышня. Моё почтение. Рад видеть, что взгляд стал осмысленным. Меня зовут Виктор Геннадьевич Селезнев, я здешний доктор. Мы нашли вас в сердце уральской тайги, в одной из затопленных ледником пещер. Вы были полностью заморожены. Мы сотворили чудо — вернули вас к жизни. Сюда, на станцию, вы дошли с нашей волной беженцев, но ничего не соображали. Ответьте, как вы там оказались? И какую жизнь вы вели до Великого переселения?",
+              "Вы: Виктор Геннадьевич, я ничего не понимаю. Какое еще переселение? Что вообще происходит?",
+              "Доктор Селезнев: (Замирает, откладывая бумаги в сторону) Интересно… Значит, амнезия тут ни при чем. Вы из прошлой эпохи, верно? Давайте проверим. Какой сейчас год, по вашему мнению?",
+              "Вы: Две тысячи двадцать четвертый, разумеется. Почему вы так смотрите на меня?",
+              "Доктор Селезнев: Сегодня тридцатое марта две тысячи сто восьмого года, мисс. Вы провели в криогенном анабиозе восемьдесят четыре года. Мир, который вы знали, давно исчез."
+            ],
+            "en": [
+              "Doctor Seleznev: Please sit down, miss. My respects. Glad to see that your gaze has become meaningful. My name is Viktor Gennadyevich Seleznev, the local doctor. We found you in the heart of the Ural taiga, in one of the glacier-flooded caves. You were completely frozen. We performed a miracle — brought you back to life. You reached the station with our wave of refugees, but you weren't aware of anything. Tell me, how did you end up there? And what life did you lead before the Great Migration?",
+              "You: Viktor Gennadyevich, I don't understand anything. What migration? What's going on at all?",
+              "Doctor Seleznev: (Freezes, setting the papers aside) Interesting… So amnesia has nothing to do with it. You're from a previous era, right? Let's check. What year is it now, in your opinion?",
+              "You: Two thousand twenty-four, of course. Why are you looking at me like that?",
+              "Doctor Seleznev: Today is the thirtieth of March of the year two thousand one hundred and eight, miss. You spent eighty-four years in cryogenic anabiosis. The world you knew has long since disappeared."
+            ],
+            "de": [
+              "Doktor Seleznev: Setzen Sie sich bitte, Fräulein. Meine Hochachtung. Es freut mich zu sehen, dass Ihr Blick wieder wissend geworden ist. Mein Name ist Viktor Gennadjewitsch Seleznev, der hiesige Arzt. Wir haben Sie im Herzen der Ural-Taiga gefunden, in einer der vom Gletscher überfluteten Höhlen. Sie waren vollständig eingefroren. Wir haben ein Wunder vollbracht — Sie wieder zum Leben erweckt. Hierher, zur Station, sind Sie mit unserer Flüchtlingswelle gekommen, aber Sie haben nichts mitbekommen. Antworten Sie, wie sind Sie dort hineingeraten? Und welches Leben führten Sie vor der Großen Migration?",
+              "Du: Viktor Gennadjewitsch, ich verstehe nichts. Welche Migration noch? Was passiert hier überhaupt?",
+              "Doktor Seleznev: (Erstarrt und legt die Papiere beiseite) Interessant… Also hat Amnesie damit nichts zu tun. Sie stammen aus einer vergangenen Epoche, stimmt's? Lassen Sie uns prüfen. Welches Jahr haben wir jetzt, Ihrer Meinung nach?",
+              "Du: Zweitausendvierundzwanzig, natürlich. Warum schauen Sie mich so an?",
+              "Doktor Seleznev: Heute ist der dreißigste März des Jahres zweitausendeinhundertacht, Fräulein. Sie haben vierundachtzig Jahre in kryogenem Anabioseschlaf verbracht. Die Welt, die Sie kannten, ist längst verschwunden."
+            ]
+          }
+        },
+        "P2": {
+          "text_man": {
+            "ru": [
+              "Вы: (Качаете головой, в глазах читается паника) Это бред... Этого просто не может быть! Я отчетливо помню, как мы с парнями взяли отпуск. Собрались на Урал, дикарями, заняться альпинизмом. Прилетели регулярным рейсом... А в горах я отделился от группы. Меня буквально потащило в сторону. Дикое, навязчивое ощущение, будто я обязан подняться именно по тому склону. Там я и наткнулся на этот грот. Зашел внутрь, а дальше — резкая, ослепительная вспышка прямо перед глазами. И все. Темнота, дикий холод, а потом я открываю глаза уже среди ваших людей... Неужели я правда пролежал там чертову уйму лет? В это невозможно поверить.",
+              "Доктор Селезнев: (Задумчиво стучит пальцами по столу) Звучит как бред сумасшедшего или завязка фантастического романа. И тем не менее, с точки зрения чистой науки, крио-стаз абсолютно реален. Природа давно это придумала. Те же медведи способны регулировать метаболизм силой нервных импульсов и впадать в глубокую спячку... Правда, медведей в нашем мире почти не осталось. Вымерли. Как и многое другое.",
+              "Вы: (Подаетесь вперед) Доктор, не тяните. Что, черт возьми, произошло с миром, пока я спал?"
+            ],
+            "en": [
+              "You: (Shake your head, panic readable in your eyes) This is nonsense... This simply can't be! I clearly remember how the guys and I took a vacation. We headed to the Urals, roughing it, to do some mountaineering. Flew in on a regular flight... And in the mountains I separated from the group. I was literally pulled aside. A wild, obsessive feeling that I had to climb that particular slope. That's where I came across this grotto. I went inside, and then — a sharp, blinding flash right in front of my eyes. And that was it. Darkness, savage cold, and then I open my eyes already among your people... Did I really lie there for a damn long time? It's impossible to believe.",
+              "Doctor Seleznev: (Thoughtfully taps his fingers on the table) Sounds like the ravings of a madman or the setup of a science-fiction novel. And yet, from the point of view of pure science, cryostasis is absolutely real. Nature came up with it long ago. Bears, for example, can regulate their metabolism with nerve impulses and fall into deep hibernation... True, there are almost no bears left in our world. They went extinct. Like much else.",
+              "You: (Lean forward) Doctor, don't drag it out. What the hell happened to the world while I was asleep?"
+            ],
+            "de": [
+              "Du: (Schüttelst den Kopf, in den Augen steht Panik) Das ist Wahnsinn... Das kann einfach nicht sein! Ich erinnere mich genau, wie wir Jungs Urlaub genommen haben. Wir sind in den Ural gefahren, wild, um zu klettern. Mit dem Linienflug gekommen... Und in den Bergen habe ich mich von der Gruppe getrennt. Es hat mich förmlich zur Seite gezogen. Ein wildes, aufdringliches Gefühl, als müsste ich genau diesen Hang hinaufsteigen. Dort bin ich auf diese Grotte gestoßen. Ich bin hineingegangen, und dann — ein scharfer, blendender Blitz direkt vor den Augen. Und das war's. Dunkelheit, eisige Kälte, und dann öffne ich die Augen mitten unter euren Leuten... Habe ich wirklich so verdammt lange dort gelegen? Das ist unmöglich zu glauben.",
+              "Doktor Seleznev: (Trommelt nachdenklich mit den Fingern auf den Tisch) Klingt wie der Wahn eines Verrückten oder der Anfang eines Science-Fiction-Romans. Und dennoch ist Kryostase aus Sicht der reinen Wissenschaft absolut real. Die Natur hat das schon lange erfunden. Bären zum Beispiel können ihren Stoffwechsel mit Nervenimpulsen regulieren und in einen tiefen Winterschlaf fallen... Allerdings gibt es in unserer Welt kaum noch Bären. Sie sind ausgestorben. Wie so vieles andere.",
+              "Du: (Beugst dich vor) Doktor, ziehen Sie es nicht in die Länge. Was zum Teufel ist mit der Welt passiert, während ich geschlafen habe?"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Вы: (Закрываете лицо руками, голос дрожит) Этого не может быть... Пожалуйста, скажите, что это шутка. Я ведь помню все как вчера! Мы с подругами планировали этот отпуск месяцами, хотели заняться альпинизмом. Купили билеты на самолет, прилетели на Урал... Уже на маршруте я почему-то отстала от девочек. Меня словно магнитом потянуло к одной скале — странное, непреодолимое предчувствие, что мне нужно именно туда. В горах я и нашла ту злополучную пещеру. Шагнула вглубь, и вдруг вспышка света, резкая вспышка! А потом только леденящий холод... и я прихожу в себя в окружении ваших беженцев. Неужели я действительно пробыла там столько лет? Это не укладывается в голове.",
+              "Доктор Селезнев: (Смотрит на вас с искренним сочувствием) Понимаю ваш шок, мисс. История звучит невероятно. Но биология знает подобные примеры. Крио-сон — это не магия. Вспомните медведей, которые силой эволюционных механизмов замедляют метаболизм до критического минимума и уходят в зимнюю спячку. Правда, живых медведей на планете уже почти не осталось...",
+              "Вы: (Резко поднимаете взгляд) Доктор... Так что же случилось с остальным миром?"
+            ],
+            "en": [
+              "You: (Cover your face with your hands, voice trembling) This can't be... Please tell me this is a joke. I remember everything as if it were yesterday! My girlfriends and I planned this vacation for months, we wanted to go mountaineering. We bought plane tickets, flew to the Urals... Already on the route I somehow lagged behind the girls. I was drawn like a magnet to one rock — a strange, irresistible premonition that I needed to go exactly there. In the mountains I found that ill-fated cave. I stepped deeper, and suddenly a flash of light, a sharp flash! And then only freezing cold... and I come to my senses surrounded by your refugees. Did I really spend so many years there? It doesn't fit in my head.",
+              "Doctor Seleznev: (Looks at you with genuine sympathy) I understand your shock, miss. The story sounds incredible. But biology knows similar examples. Cryosleep is not magic. Remember the bears that, by evolutionary mechanisms, slow their metabolism to a critical minimum and go into winter hibernation. True, there are almost no living bears left on the planet...",
+              "You: (Sharply raise your gaze) Doctor... So what happened to the rest of the world?"
+            ],
+            "de": [
+              "Du: (Bedeckst das Gesicht mit den Händen, die Stimme zittert) Das kann nicht sein... Bitte sagen Sie, dass das ein Scherz ist. Ich erinnere mich an alles, als wäre es gestern! Wir Freundinnen haben diesen Urlaub monatelang geplant, wollten klettern gehen. Flugtickets gekauft, in den Ural geflogen... Schon auf der Route bin ich irgendwie hinter den Mädchen zurückgeblieben. Es hat mich wie ein Magnet zu einem Felsen gezogen — ein seltsames, unüberwindbares Vorgefühl, dass ich genau dorthin musste. In den Bergen habe ich jene unglückselige Höhle gefunden. Bin tiefer hineingetreten, und plötzlich ein Lichtblitz, ein scharfer Blitz! Und dann nur noch eisige Kälte... und ich komme inmitten eurer Flüchtlinge zu mir. Habe ich wirklich so viele Jahre dort verbracht? Das passt nicht in meinen Kopf.",
+              "Doktor Seleznev: (Schaut dich mit aufrichtigem Mitgefühl an) Ich verstehe Ihren Schock, Fräulein. Die Geschichte klingt unglaublich. Aber die Biologie kennt ähnliche Beispiele. Kryoschlaf ist keine Magie. Denken Sie an die Bären, die durch evolutionäre Mechanismen ihren Stoffwechsel auf ein kritisches Minimum verlangsamen und in den Winterschlaf gehen. Allerdings gibt es auf dem Planeten kaum noch lebende Bären...",
+              "Du: (Hebe den Blick scharf) Doktor... Was ist also mit dem Rest der Welt passiert?"
+            ]
+          }
+        },
+        "P3": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: (Тяжело вздыхает, глядя на серый пейзаж стен) Если коротко — апокалипсис. То самое глобальное потепление, о котором в твое время кричали на каждом углу, в итоге бабахнуло на полную мощность. Прибрежные мегаполисы ушли под воду. Пустыни сожрали миллиарды гектаров земли, вызвав дикий, уродливый голод. А потом пришли новые болезни. Ваша пандемия две тысячи девятнадцатого года — просто детская простуда по сравнению с тем, что выкосило человечество через пару десятилетий после твоего исчезновения. Сегодня на всей планете осталось от силы несколько миллионов выживших. Цивилизация мертва. Государства рухнули. Горстка выживших богачей со своими слугами забилась под землю, спряталась в закрытых океанских хабах или сбежала на орбитальные станции. Мы уже целую вечность не видели самолетов или ракет в небе. Либо у элиты кончились ресурсы, либо они улетели колонизировать другие миры. Хотя в последнее верится с трудом — все программы по освоению Луны и Марса мировые лидеры свернули еще в тридцатых годах твоего века. Мы предоставлены сами себе на умирающей Земле."
+            ],
+            "en": [
+              "Doctor Seleznev: (Sighs heavily, looking at the gray landscape of the walls) In short — the apocalypse. That very global warming everyone shouted about on every corner in your time finally exploded at full power. Coastal megacities went underwater. Deserts swallowed billions of hectares of land, causing wild, ugly famine. And then new diseases came. Your pandemic of two thousand nineteen was just a child's cold compared to what wiped out humanity a couple of decades after your disappearance. Today, only a few million survivors remain on the entire planet. Civilization is dead. States have collapsed. A handful of surviving rich people with their servants have burrowed underground, hidden in closed ocean hubs, or fled to orbital stations. We haven't seen planes or rockets in the sky for an eternity. Either the elite ran out of resources, or they flew off to colonize other worlds. Though the latter is hard to believe — all Moon and Mars exploration programs were shut down by world leaders back in the thirties of your century. We are left to ourselves on a dying Earth."
+            ],
+            "de": [
+              "Doktor Seleznev: (Seufzt schwer und blickt auf die graue Landschaft der Wände) Kurz gesagt — die Apokalypse. Genau jene globale Erwärmung, über die man zu deiner Zeit an jeder Ecke geschrien hat, ist schließlich mit voller Wucht explodiert. Küstenmetropolen sind unter Wasser gegangen. Wüsten haben Milliarden Hektar Land verschlungen und einen wilden, hässlichen Hunger ausgelöst. Und dann kamen neue Krankheiten. Eure Pandemie von zweitausendneunzehn war nur ein Kinderschnupfen im Vergleich zu dem, was die Menschheit ein paar Jahrzehnte nach deinem Verschwinden ausgelöscht hat. Heute sind auf dem ganzen Planeten höchstens ein paar Millionen Überlebende übrig. Die Zivilisation ist tot. Die Staaten sind zusammengebrochen. Eine Handvoll überlebender Reicher hat sich mit ihren Dienern unter die Erde verkrochen, in geschlossenen Ozean-Hubs versteckt oder ist auf Orbitalstationen geflohen. Wir haben schon eine ganze Ewigkeit keine Flugzeuge oder Raketen am Himmel gesehen. Entweder sind der Elite die Ressourcen ausgegangen, oder sie sind abgehauen, um andere Welten zu kolonisieren. Obwohl Letzteres schwer zu glauben ist — alle Mond- und Mars-Programme haben die Weltführer schon in den Dreißigern deines Jahrhunderts eingestellt. Wir sind uns selbst überlassen auf einer sterbenden Erde."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: (Опускает плечи, его голос звучит глухо) Конец света, барышня. Все случилось именно так, как предсказывали ученые вашей эпохи. Глобальное потепление нанесло первый удар. Океан поглотил цветущие прибрежные города. Пустыни расползлись по континентам, уничтожив сельское хозяйство. Следом за страшным продовольственным кризисом пришли вирусы-мутанты. Помните пандемию две тысячи девятнадцатого года? Забудьте. Это были цветочки. Новые штаммы буквально выкашивали целые страны. Сейчас население Земли едва насчитывает пару миллионов человек. Старый мир уничтожен. Прежняя власть пала. Самые богатые люди планеты вместе с охраной и обслугой замуровались в подземных бункерах, изолированных морских полисах и на космических платформах. В небесах давно пусто — ни инверсионных следов, ни отблесков спутников. Скорее всего, их ресурсы просто иссякли. Или, что маловероятно, они все-таки рискнули запустить проект колонизации дальнего космоса. Хотя, насколько я помню историю, Лунную и Марсианскую программы окончательно похоронили еще в тридцатых годах прошлого века. Нас просто бросили здесь."
+            ],
+            "en": [
+              "Doctor Seleznev: (Drops his shoulders, his voice sounds hollow) The end of the world, miss. Everything happened exactly as the scientists of your era predicted. Global warming dealt the first blow. The ocean swallowed the flourishing coastal cities. Deserts spread across the continents, destroying agriculture. Following the terrible food crisis came mutant viruses. Do you remember the pandemic of two thousand nineteen? Forget it. Those were flowers. New strains literally mowed down entire countries. Now Earth's population barely numbers a couple of million people. The old world is destroyed. The former power has fallen. The richest people on the planet, together with their guards and servants, have walled themselves up in underground bunkers, isolated sea polises, and on space platforms. The skies have long been empty — no contrails, no satellite glints. Most likely their resources simply ran out. Or, which is unlikely, they still risked launching a deep-space colonization project. Although, as far as I remember history, the Lunar and Martian programs were finally buried back in the thirties of the last century. They simply abandoned us here."
+            ],
+            "de": [
+              "Doktor Seleznev: (Senkt die Schultern, seine Stimme klingt hohl) Das Ende der Welt, Fräulein. Alles ist genau so gekommen, wie die Wissenschaftler Ihrer Epoche vorhergesagt haben. Die globale Erwärmung hat den ersten Schlag geführt. Der Ozean hat die blühenden Küstenstädte verschlungen. Wüsten haben sich über die Kontinente ausgebreitet und die Landwirtschaft vernichtet. Auf die schreckliche Nahrungsmittelkrise folgten Mutantenviren. Erinnern Sie sich an die Pandemie von zweitausendneunzehn? Vergessen Sie sie. Das waren Kinderspielereien. Neue Stämme haben buchstäblich ganze Länder ausgemäht. Heute zählt die Erdbevölkerung kaum noch ein paar Millionen Menschen. Die alte Welt ist vernichtet. Die frühere Macht ist gefallen. Die reichsten Menschen des Planeten haben sich zusammen mit Wachen und Dienern in unterirdischen Bunkern, isolierten Meerespolis und auf Weltraumplattformen eingemauert. Der Himmel ist seit Langem leer — keine Kondensstreifen, kein Glitzern von Satelliten. Höchstwahrscheinlich sind ihre Ressourcen einfach versiegt. Oder, was unwahrscheinlich ist, sie haben doch riskiert, ein Projekt zur Kolonisierung des tiefen Weltraums zu starten. Obwohl, soweit ich mich an die Geschichte erinnere, die Mond- und Mars-Programme schon in den Dreißigern des letzten Jahrhunderts endgültig begraben wurden. Man hat uns einfach hier zurückgelassen."
+            ]
+          }
+        },
+        "P4": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: Нашему братству крупно повезло. Мы — одни из немногих, кого пощадили голод и смертоносная зараза. Годами мы кочевали по истерзанному континенту. Искали место для нового дома, откуда можно будет по кирпичику возродить человечество. За всю мою долгую жизнь произошло лишь два по-настоящему великих события. Первое — день, когда мне в руки попала книга «Катрены Создателя». И второе — день, когда мы нашли и откопали тебя.",
+              "Вы: (Удивленно вскидываете брови) Мир тесен, Доктор... Я ведь тоже читал эту книгу. Еще там, в своем времени.",
+              "Доктор Селезнев: (Замирает, его глаза широко раскрываются) Вот оно как... Знаешь, тут даже закоренелый человек науки поневоле уверует в судьбу. Это произведение ведь никогда не было мейнстримом — ни в твоем двадцать первом веке, ни в начале нашего столетия. Но эти знания выжили. Их бережно, тайком передавали из поколения в поколение, в основном благодаря отчаянным усилиям молодежи. Именно так этот бесценный источник дошел и до меня."
+            ],
+            "en": [
+              "Doctor Seleznev: Our brotherhood was very lucky. We are among the few whom hunger and the deadly plague spared. For years we wandered across the devastated continent. We searched for a place for a new home from which we could rebuild humanity brick by brick. In all my long life only two truly great events occurred. The first — the day the book 'Quatrains of the Creator' fell into my hands. And the second — the day we found and dug you up.",
+              "You: (Raise your eyebrows in surprise) It's a small world, Doctor... I also read that book. Back then, in my time.",
+              "Doctor Seleznev: (Freezes, his eyes widen) So that's how it is... You know, even a hardened man of science can't help but believe in fate here. This work was never mainstream — neither in your twenty-first century nor at the beginning of our century. But this knowledge survived. It was carefully, secretly passed from generation to generation, mainly thanks to the desperate efforts of the youth. That's how this priceless source reached me as well."
+            ],
+            "de": [
+              "Doktor Seleznev: Unserer Bruderschaft hat das große Glück gelächelt. Wir gehören zu den wenigen, die Hunger und die tödliche Seuche verschont haben. Jahrelang sind wir über den zerrissenen Kontinent gezogen. Wir suchten einen Ort für ein neues Zuhause, von dem aus die Menschheit Stein für Stein wiederauferstehen könnte. In meinem ganzen langen Leben gab es nur zwei wirklich große Ereignisse. Das erste — der Tag, an dem mir das Buch „Quatrains des Schöpfers“ in die Hände fiel. Und das zweite — der Tag, an dem wir dich gefunden und ausgegraben haben.",
+              "Du: (Ziehst überrascht die Augenbrauen hoch) Die Welt ist klein, Doktor... Ich habe dieses Buch auch gelesen. Noch damals, in meiner Zeit.",
+              "Doktor Seleznev: (Erstarrt, seine Augen weiten sich) So ist das also... Weißt du, hier glaubt selbst ein eingefleischter Wissenschaftler unwillkürlich an das Schicksal. Dieses Werk war nie Mainstream — weder in deinem einundzwanzigsten Jahrhundert noch zu Beginn unseres Jahrhunderts. Aber dieses Wissen hat überlebt. Es wurde sorgfältig, heimlich von Generation zu Generation weitergegeben, vor allem dank der verzweifelten Bemühungen der Jugend. So ist diese unschätzbare Quelle auch zu mir gelangt."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: Наша община побратимов — одна из редких групп, сумевших спастись от голодной смерти и мора. Мы бесконечно долго скитались по континенту в поисках безопасного пристанища. Искали точку опоры, чтобы возродить цивилизацию. В моей судьбе было всего два архиважных, поворотных момента. День, когда я открыл для себя книгу «Катрены Создателя». И день, когда мы обнаружили и откопали вас в тех ледниках.",
+              "Вы: (Вздрагиваете от неожиданности) Как тесен мир... Я ведь тоже читала эту книгу. Очень хорошо ее помню.",
+              "Доктор Селезнев: (Смотрит на вас с благоговейным шоком) Невероятно... Похоже, от судьбы не уйти, даже если ты привык верить только сухим научным фактам. Это пророчество ведь не было популярным. Ни в двадцать первом веке, ни на заре нашего краха. Но скрытые в нем истины бережно несли сквозь поколения. Хранили, передавали дальше — особенно старалась молодежь, которая верила в лучшее. Только благодаря их верности книга попала мне в руки."
+            ],
+            "en": [
+              "Doctor Seleznev: Our community of brothers is one of the rare groups that managed to escape starvation and the plague. We wandered endlessly across the continent in search of a safe haven. We looked for a foothold to revive civilization. In my fate there were only two crucial, turning-point moments. The day I discovered the book 'Quatrains of the Creator' for myself. And the day we found and dug you up in those glaciers.",
+              "You: (Start from surprise) How small the world is... I also read that book. I remember it very well.",
+              "Doctor Seleznev: (Looks at you with reverent shock) Incredible... It seems one cannot escape fate, even if one is used to believing only dry scientific facts. This prophecy was never popular. Neither in the twenty-first century nor at the dawn of our collapse. But the truths hidden in it were carefully carried through the generations. They were preserved and passed on — especially by the youth who believed in something better. Only thanks to their loyalty did the book fall into my hands."
+            ],
+            "de": [
+              "Doktor Seleznev: Unsere Bruderschaftsgemeinschaft ist eine der seltenen Gruppen, die dem Hungertod und der Seuche entkommen konnten. Wir sind endlos lange über den Kontinent gezogen auf der Suche nach einem sicheren Zufluchtsort. Wir suchten einen Halt, um die Zivilisation wiederzubeleben. In meinem Schicksal gab es nur zwei archiwichtige, Wendepunkt-Momente. Der Tag, an dem ich das Buch „Quatrains des Schöpfers“ für mich entdeckte. Und der Tag, an dem wir Sie in jenen Gletschern gefunden und ausgegraben haben.",
+              "Du: (Zuckst vor Überraschung zusammen) Wie klein die Welt ist... Ich habe dieses Buch auch gelesen. Ich erinnere mich sehr gut daran.",
+              "Doktor Seleznev: (Schaut dich mit ehrfürchtigem Schock an) Unglaublich... Es scheint, dem Schicksal kann man nicht entkommen, selbst wenn man gewohnt ist, nur an trockene wissenschaftliche Fakten zu glauben. Diese Prophezeiung war nie populär. Weder im einundzwanzigsten Jahrhundert noch zu Beginn unseres Zusammenbruchs. Aber die darin verborgenen Wahrheiten wurden sorgfältig durch die Generationen getragen. Man bewahrte sie und gab sie weiter — besonders die Jugend, die an etwas Besseres glaubte, bemühte sich. Nur dank ihrer Treue kam das Buch in meine Hände."
+            ]
+          }
+        },
+        "P5": {
+          "text_man": {
+            "ru": [
+              "Вы: Книга действительно поразительная. Но вы серьезно хотите построить новое общество, опираясь лишь на откровения Творца?",
+              "Доктор Селезнев: (Его глаза загораются фанатичным блеском) На абсолютном Равенстве и непоколебимой вере в Высший Космический Разум. Пятую цивилизацию уже не склеить, парень, она мертва и гниет. Наш удел — Шестая раса. Никак иначе. И знаешь, я убежден: мы откопали тебя не случайно. Отцу Абсолюту было угодно, чтобы наши пути пересеклись в этой временной точке. Нам критически нужны твои руки и твоя свежая голова для сотворения этого нового мира. Неужели тебе не хочется заглянуть за горизонт возможного?",
+              "Вы: (Тяжело выдыхаете) Профессор, вы хоть осознаете масштаб того, о чем просите? Чтобы поднять такое из пепла, потребуются просто нечеловеческие, титанические усилия.",
+              "Доктор Селезнев: (Мгновенно трезвеет, огонь в глазах тухнет) Прекрасно осознаю. И не стану винить, если ты развернешься и уйдешь. Но у нас катастрофически не хватает людей. Еда и чистая вода на исходе, последние дрова в коридоре догорают... Мои братья и сестры банально замерзают насмерть, пока мы тут философствуем."
+            ],
+            "en": [
+              "You: The book is truly amazing. But are you seriously planning to build a new society based solely on the revelations of the Creator?",
+              "Doctor Seleznev: (His eyes light up with fanatical gleam) On absolute Equality and unshakable faith in the Higher Cosmic Mind. The Fifth Civilization can no longer be glued back together, kid, it is dead and rotting. Our lot is the Sixth Race. No other way. And you know, I am convinced: we did not dig you up by chance. It was the will of the Father Absolute that our paths crossed at this point in time. We critically need your hands and your fresh head to create this new world. Don't you want to look beyond the horizon of the possible?",
+              "You: (Exhale heavily) Professor, do you even realize the scale of what you're asking? To raise something like that from the ashes will require simply superhuman, titanic efforts.",
+              "Doctor Seleznev: (Instantly sobers, the fire in his eyes dies) I am perfectly aware. And I won't blame you if you turn around and leave. But we are catastrophically short of people. Food and clean water are running out, the last firewood in the corridor is burning down... My brothers and sisters are simply freezing to death while we philosophize here."
+            ],
+            "de": [
+              "Du: Das Buch ist wirklich erstaunlich. Aber wollen Sie ernsthaft eine neue Gesellschaft aufbauen, die sich nur auf die Offenbarungen des Schöpfers stützt?",
+              "Doktor Seleznev: (Seine Augen leuchten fanatisch auf) Auf absoluter Gleichheit und unerschütterlichem Glauben an den Höheren Kosmischen Verstand. Die Fünfte Zivilisation lässt sich nicht mehr kitten, Junge, sie ist tot und verrottet. Unser Los ist die Sechste Rasse. Anders nicht. Und weißt du, ich bin überzeugt: Wir haben dich nicht zufällig ausgegraben. Dem Vater Absolut war es recht, dass sich unsere Wege in diesem Zeitpunkt kreuzten. Wir brauchen dringend deine Hände und deinen frischen Kopf, um diese neue Welt zu erschaffen. Willst du nicht hinter den Horizont des Möglichen blicken?",
+              "Du: (Atmest schwer aus) Professor, sind Sie sich überhaupt des Ausmaßes dessen bewusst, worum Sie bitten? Um so etwas aus der Asche zu erheben, braucht es schlicht übermenschliche, titanische Anstrengungen.",
+              "Doktor Seleznev: (Nüchtern sofort, das Feuer in den Augen erlischt) Ich bin mir dessen vollkommen bewusst. Und ich werde es dir nicht übel nehmen, wenn du dich umdrehst und gehst. Aber uns fehlen katastrophal die Menschen. Essen und sauberes Wasser gehen zur Neige, das letzte Brennholz im Korridor brennt ab... Meine Brüder und Schwestern erfrieren schlicht, während wir hier philosophieren."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Вы: Эта книга поистине удивительна. Но неужели вы планируете возродить человечество, основываясь только на заповедях Создателя?",
+              "Доктор Селезнев: (Подается вперед, понижая голос до шепота) Мы возведем его на фундаменте истинного Равенства и веры в Высшую Космическую Силу. Пятая цивилизация исчерпала себя, ее не спасти. Настало время Шестой. Мое чутье ученого подсказывает: ваша находка — это не слепая удача. Отцу Абсолюту нужно было свести нас здесь и сейчас. Нам жизненно необходима ваша помощь в строительстве этого нового завтра. Неужели вам не хочется попытаться заглянуть за горизонт привычного мира?",
+              "Вы: (Внимательно смотрите ему в глаза) Надеюсь, вы полностью отдаете себе отчет в своих словах. То, что вы задумали, потребует нечеловеческих, жертвенных усилий.",
+              "Доктор Селезнев: (Грустно улыбается и опускает голову) Понимаю. Слишком хорошо понимаю. Я приму любой ваш выбор, даже если вы откажетесь. Но поймите и нас: община обескровлена. Запасы продовольствия и медикаментов тают на глазах, дрова для костров заканчиваются. Мои единомышленники просто замерзают в этих потемках. Нам очень нужны те, кто готов бороться."
+            ],
+            "en": [
+              "You: This book is truly wonderful. But are you really planning to revive humanity based solely on the commandments of the Creator?",
+              "Doctor Seleznev: (Leans forward, lowering his voice to a whisper) We will raise it on the foundation of true Equality and faith in the Higher Cosmic Force. The Fifth Civilization has exhausted itself, it cannot be saved. The time of the Sixth has come. My scientist's instinct tells me: your discovery is not blind luck. The Father Absolute needed to bring us together here and now. We vitally need your help in building this new tomorrow. Don't you want to try looking beyond the horizon of the familiar world?",
+              "You: (Look him carefully in the eyes) I hope you fully realize the meaning of your words. What you have planned will require superhuman, sacrificial efforts.",
+              "Doctor Seleznev: (Smiles sadly and lowers his head) I understand. Too well. I will accept any choice of yours, even if you refuse. But understand us too: the community is bled dry. Stocks of food and medicine are melting before our eyes, firewood for the fires is running out. My like-minded people are simply freezing in this gloom. We badly need those who are ready to fight."
+            ],
+            "de": [
+              "Du: Dieses Buch ist wahrhaft wunderbar. Aber planen Sie wirklich, die Menschheit allein auf den Geboten des Schöpfers wiederzubeleben?",
+              "Doktor Seleznev: (Beugt sich vor und senkt die Stimme zum Flüstern) Wir werden es auf dem Fundament wahrer Gleichheit und des Glaubens an die Höhere Kosmische Kraft errichten. Die Fünfte Zivilisation hat sich erschöpft, sie ist nicht zu retten. Die Zeit der Sechsten ist gekommen. Mein Wissenschaftlerinstinkt sagt mir: Ihre Entdeckung ist kein blinder Zufall. Der Vater Absolut musste uns hier und jetzt zusammenführen. Wir brauchen Ihre Hilfe beim Bau dieses neuen Morgen lebensnotwendig. Möchten Sie nicht versuchen, hinter den Horizont der gewohnten Welt zu blicken?",
+              "Du: (Schaust ihm aufmerksam in die Augen) Ich hoffe, Sie sind sich der Bedeutung Ihrer Worte voll bewusst. Was Sie vorhaben, wird übermenschliche, opferbereite Anstrengungen erfordern.",
+              "Doktor Seleznev: (Lächelt traurig und senkt den Kopf) Ich verstehe. Allzu gut. Ich werde jede Ihrer Entscheidungen akzeptieren, selbst wenn Sie ablehnen. Aber verstehen Sie auch uns: Die Gemeinschaft ist ausgeblutet. Die Vorräte an Nahrung und Medizin schmelzen vor unseren Augen, das Brennholz für die Feuer geht zur Neige. Meine Gesinnungsgenossen erfrieren schlicht in diesem Dunkel. Wir brauchen dringend jene, die bereit sind zu kämpfen."
+            ]
+          }
+        },
+        "P6": {
+          "text_man": {
+            "ru": [
+              "Вы: (Коротко киваете) Попытаться стоит. В конце концов, если бы Богу действительно нужно было навсегда стереть человечество с лица Земли ради полного перезапуска... Он бы сделал это одним махом, а не оставлял нас здесь. С чего начнем?",
+              "Доктор Селезнев: (С облегчением выдыхает, на лице появляется слабая улыбка) Правильные слова, парень. Пойдем обратно в коридор. Познакомлю тебя с ребятами, введу в курс дела и объясню, за что хвататься в первую очередь. Совсем из головы вылетело от радости... Как мне к тебе обращаться?",
+              "Вы: Александр Сергеевич Щербаков. Но для своих — можно просто Саша."
+            ],
+            "en": [
+              "You: (Nod briefly) It's worth trying. After all, if God really needed to wipe humanity from the face of the Earth forever for a complete restart... He would have done it in one go, instead of leaving us here. Where do we start?",
+              "Doctor Seleznev: (Exhales with relief, a faint smile appears on his face) The right words, kid. Let's go back to the corridor. I'll introduce you to the guys, bring you up to speed and explain what to grab first. Completely slipped my mind from joy... How should I address you?",
+              "You: Alexander Sergeyevich Shcherbakov. But for our own — just Sasha is fine."
+            ],
+            "de": [
+              "Du: (Nickst kurz) Es lohnt sich, es zu versuchen. Schließlich, wenn Gott die Menschheit wirklich für immer von der Erde tilgen wollte für einen kompletten Neustart... hätte Er es mit einem Schlag getan und uns nicht hier zurückgelassen. Womit fangen wir an?",
+              "Doktor Seleznev: (Atmet erleichtert aus, ein schwaches Lächeln erscheint auf seinem Gesicht) Die richtigen Worte, Junge. Gehen wir zurück in den Korridor. Ich stelle dich den Jungs vor, bringe dich auf den neuesten Stand und erkläre, woran man zuerst anpacken muss. Vor Freude völlig vergessen... Wie soll ich dich ansprechen?",
+              "Du: Alexander Sergejewitsch Schtscherbakow. Aber unter uns — einfach Sascha."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Вы: Попробовать определенно стоит. Во всяком случае, если бы Творцу было нужно окончательно смыть человечество волной для полного обнуления жизни... Он бы давно довел это до конца. С чего начнем?",
+              "Доктор Селезнев: (Его плечи расслабляются, в глазах мелькает искренняя благодарность) Золотые слова, мисс. Давайте вернемся в коридор. Я познакомлю вас с нашей общиной и детально объясню текущие задачи. Совсем заговорился и забыл спросить самое главное... Как ваше имя?",
+              "Вы: Александра Сергеевна Щербакова. Можно просто Саша. И давайте сразу на «ты», профессор. Так будет проще."
+            ],
+            "en": [
+              "You: It's definitely worth trying. In any case, if the Creator needed to finally wash humanity away with a wave for a complete reset of life... He would have finished it long ago. Where do we start?",
+              "Doctor Seleznev: (His shoulders relax, sincere gratitude flashes in his eyes) Golden words, miss. Let's return to the corridor. I'll introduce you to our community and explain the current tasks in detail. I got so carried away talking that I forgot to ask the most important thing... What is your name?",
+              "You: Alexandra Sergeyevna Shcherbakova. Just Sasha is fine. And let's switch to 'you' right away, professor. It will be simpler."
+            ],
+            "de": [
+              "Du: Es lohnt sich bestimmt, es zu versuchen. Jedenfalls, wenn der Schöpfer die Menschheit endgültig mit einer Welle wegspülen wollte für ein komplettes Zurücksetzen des Lebens... hätte Er es längst zu Ende gebracht. Womit fangen wir an?",
+              "Doktor Seleznev: (Seine Schultern entspannen sich, in den Augen blitzt aufrichtige Dankbarkeit auf) Goldene Worte, Fräulein. Kehren wir in den Korridor zurück. Ich stelle Sie unserer Gemeinschaft vor und erkläre die aktuellen Aufgaben im Detail. Ich habe mich so ins Reden vertieft, dass ich das Wichtigste zu fragen vergessen habe... Wie ist Ihr Name?",
+              "Du: Alexandra Sergejewna Schtscherbakowa. Einfach Sascha. Und lassen Sie uns gleich zum „du“ übergehen, Professor. So wird es einfacher."
+            ]
+          }
+        }
+      }
+    },
+    "QST_INTRO_003": {
+      "title": {
+        "ru": "Знакомство с коллективом",
+        "en": "Meeting the Team",
+        "de": "Bekanntschaft mit dem Team"
+      },
+      "chapter": {
+        "ru": "Глава II — Знакомство с коллективом",
+        "en": "Chapter II — Meeting the Team",
+        "de": "Kapitel II — Bekanntschaft mit dem Team"
+      },
+      "objectives": {
+        "OBJ_READ_CREW": {
+          "ru": "Познакомьтесь с коллективом",
+          "en": "Meet the team",
+          "de": "Lerne das Team kennen"
+        },
+        "OBJ_HIRE_ONE_ENG": {
+          "ru": "Наймите {current}/{target} Инженера",
+          "en": "Hire {current}/{target} Engineer",
+          "de": "Stelle {current}/{target} Ingenieur ein"
+        },
+        "OBJ_BASE_ENERGY_2800": {
+          "ru": "Комплекс: энергия {current}/{target} Вт",
+          "en": "Complex: energy {current}/{target} W",
+          "de": "Komplex: Energie {current}/{target} W"
+        }
+      },
+      "pages": {
+        "P1": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: (Хлопает в ладоши, привлекая внимание сидящих у костра людей) Ита-а-ак, минуту внимания, народ! Пополнение в наших рядах. Перед вами Александр Сергеевич. Нет, не Пушкин, стихов не пообещаю, но верю парень надежный. Он выслушал меня и согласился помочь нашей миссии. Саша, добро пожаловать в братство!"
+            ],
+            "en": [
+              "Doctor Seleznev: (Claps his hands, drawing the attention of the people sitting by the fire) All riiight, a moment of attention, folks! Reinforcement in our ranks. Before you stands Alexander Sergeyevich. No, not Pushkin, I won't promise any poems, but I believe the guy is reliable. He listened to me and agreed to help our mission. Sasha, welcome to the brotherhood!"
+            ],
+            "de": [
+              "Doktor Seleznev: (Klatscht in die Hände und zieht die Aufmerksamkeit der am Feuer Sitzenden auf sich) Alsoooo, einen Moment Aufmerksamkeit, Leute! Verstärkung in unseren Reihen. Vor euch steht Alexander Sergejewitsch. Nein, nicht Puschkin, Gedichte verspreche ich keine, aber ich glaube, der Junge ist zuverlässig. Er hat mir zugehört und zugestimmt, unserer Mission zu helfen. Sascha, willkommen in der Bruderschaft!"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: (Громко объявляет, выходя вместе с вами к угасающему костру) Прошу минутку внимания, друзья! Познакомьтесь, это Александра Сергеевна. Настоящая сильная духом барышня, которая успела повидать жизнь. Она приняла наше предложение и согласилась помочь миссии. Саша, добро пожаловать в наше братство!"
+            ],
+            "en": [
+              "Doctor Seleznev: (Announces loudly, coming out with you to the dying fire) A moment of attention, friends! Meet Alexandra Sergeyevna. A true strong-spirited lady who has seen life. She accepted our offer and agreed to help the mission. Sasha, welcome to our brotherhood!"
+            ],
+            "de": [
+              "Doktor Seleznev: (Verkündet laut, während er mit dir zum erlöschenden Feuer herauskommt) Einen Moment Aufmerksamkeit bitte, Freunde! Lernt Alexandra Sergejewna kennen. Eine echte, geistig starke Dame, die schon einiges vom Leben gesehen hat. Sie hat unser Angebot angenommen und zugestimmt, der Mission zu helfen. Sascha, willkommen in unserer Bruderschaft!"
+            ]
+          }
+        },
+        "P2": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: Знакомься, это Иван Юрьевич. Наш незаменимый инженер. Отлично орудует любыми инструментами, до костей разбирается в электрике и механике. Без преувеличения — мастер на все руки.",
+              "Инженер Иван Юрьевич: (Вытирает испачканные мазутом ладони о штаны и протягивает крепкую руку) Здорово, коль живой. Добро пожаловать в наш холодный рай."
+            ],
+            "en": [
+              "Doctor Seleznev: Meet Ivan Yuryevich. Our irreplaceable engineer. Excellent with any tools, knows electricity and mechanics to the bone. Without exaggeration — a jack of all trades.",
+              "Engineer Ivan Yuryevich: (Wipes his oil-stained palms on his pants and extends a firm hand) Glad you're alive. Welcome to our cold paradise."
+            ],
+            "de": [
+              "Doktor Seleznev: Lernt kennen, das ist Iwan Jurjewitsch. Unser unersetzlicher Ingenieur. Hantiert hervorragend mit allen Werkzeugen, kennt sich bis auf die Knochen in Elektrik und Mechanik aus. Ohne Übertreibung — ein Alleskönner.",
+              "Ingenieur Iwan Jurjewitsch: (Wischt die ölbeschmierten Handflächen an der Hose ab und streckt eine kräftige Hand hin) Schön, dass du lebst. Willkommen in unserem kalten Paradies."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: Знакомься, это Иван Юрьевич. Наш главный технарь. Отлично орудует любыми инструментами, виртуозно разбирается в электрике и механике. Словом, мастер на все руки.",
+              "Инженер Иван Юрьевич: (Приподнимает испачканную голову, удивленно, но тепло улыбаясь) Доброе утро, прекрасная миледи. Нечасто в наших краях встретишь столь очаровательное пополнение."
+            ],
+            "en": [
+              "Doctor Seleznev: Meet Ivan Yuryevich. Our chief tech guy. Excellent with any tools, virtuoso in electricity and mechanics. In a word, a jack of all trades.",
+              "Engineer Ivan Yuryevich: (Lifts his dirty head, smiling in surprise but warmly) Good morning, beautiful milady. Not often do we meet such a charming addition in our parts."
+            ],
+            "de": [
+              "Doktor Seleznev: Lernt kennen, das ist Iwan Jurjewitsch. Unser Chef-Techniker. Hantiert hervorragend mit allen Werkzeugen, ist ein Virtuose in Elektrik und Mechanik. Mit einem Wort: ein Alleskönner.",
+              "Ingenieur Iwan Jurjewitsch: (Hebt den schmutzigen Kopf und lächelt überrascht, aber herzlich) Guten Morgen, schöne Milady. Nicht oft trifft man in unseren Gegenden so einen bezaubernden Neuzugang."
+            ]
+          }
+        },
+        "P3": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: А вот наш лучший биолог, агроном и просто неисправимый оптимист — Оксана Валентиновна. Единственный человек здесь, который умудряется дарить нам улыбки.",
+              "Агроном Оксана Валентиновна: (Радостно всплескивает руками) Здравствуйте! Искренне рада, что вы теперь с нами, Александр Сергеевич. Мне так не терпится показать вам гидропонику, которую я реанимировала в соседней секции! Там такие ароматные травы, а какие саженцы проклюнулись...",
+              "Доктор Селезнев: (Кашляет, прерывая её поток слов) Оксана Валентиновна! Пожалуйста, давайте не торопить события. Человек только из крио-сна, дайте ему хотя бы осмотреться."
+            ],
+            "en": [
+              "Doctor Seleznev: And here is our best biologist, agronomist and simply incorrigible optimist — Oksana Valentinovna. The only person here who manages to give us smiles.",
+              "Agronomist Oksana Valentinovna: (Claps her hands joyfully) Hello! Sincerely glad that you are now with us, Alexander Sergeyevich. I can't wait to show you the hydroponics that I revived in the neighboring section! There are such fragrant herbs, and what seedlings have sprouted...",
+              "Doctor Seleznev: (Coughs, interrupting her stream of words) Oksana Valentinovna! Please, let's not rush things. The man has only just come out of cryosleep, at least let him look around."
+            ],
+            "de": [
+              "Doktor Seleznev: Und hier ist unsere beste Biologin, Agronomin und schlicht unverbesserliche Optimistin — Oksana Walentinowna. Der einzige Mensch hier, der es schafft, uns Lächeln zu schenken.",
+              "Agronomin Oksana Walentinowna: (Klatscht freudig in die Hände) Hallo! Aufrichtig froh, dass Sie jetzt bei uns sind, Alexander Sergejewitsch. Ich kann es kaum erwarten, Ihnen die Hydroponik zu zeigen, die ich im Nachbarabschnitt wiederbelebt habe! Dort gibt es so duftende Kräuter, und welche Setzlinge sind aufgegangen...",
+              "Doktor Seleznev: (Hustet und unterbricht ihren Wortschwall) Oksana Walentinowna! Bitte, lassen Sie uns die Dinge nicht überstürzen. Der Mann ist gerade erst aus dem Kryoschlaf erwacht, lassen Sie ihn wenigstens erstmal umsehen."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: А вот наш лучший биолог, агроном и просто замечательный, позитивный человек — Оксана Валентиновна. Наш лучик света в этом мрачном месте.",
+              "Агроном Оксана Валентиновна: (Приветливо машет рукой и искренне хихикает) Приветики! Какое счастье, у нас наконец-то девочек прибыло! Саша, я так рада знакомству. Ой, у меня в гидропонном отсеке как раз первые всходы пошли, там так здорово пахнет настоящей зеленью! Нам обязательно нужно будет поболтать.",
+              "Доктор Селезнев: (С улыбкой качает головой) Оксана Валентиновна, тише, тише. Не заваливайте Сашу новостями с порога, она еще от стазиса до конца не отошла."
+            ],
+            "en": [
+              "Doctor Seleznev: And here is our best biologist, agronomist and simply wonderful, positive person — Oksana Valentinovna. Our ray of light in this gloomy place.",
+              "Agronomist Oksana Valentinovna: (Waves her hand in greeting and giggles sincerely) Hi there! What happiness, finally more girls have arrived! Sasha, I'm so glad to meet you. Oh, in my hydroponic section the first sprouts have just appeared, it smells so wonderfully of real greenery there! We definitely need to chat.",
+              "Doctor Seleznev: (Shakes his head with a smile) Oksana Valentinovna, quieter, quieter. Don't overwhelm Sasha with news right from the doorstep, she hasn't fully recovered from stasis yet."
+            ],
+            "de": [
+              "Doktor Seleznev: Und hier ist unsere beste Biologin, Agronomin und schlicht wunderbare, positive Person — Oksana Walentinowna. Unser Lichtstrahl an diesem düsteren Ort.",
+              "Agronomin Oksana Walentinowna: (Winkt freundlich und kichert aufrichtig) Hallöchen! Was für ein Glück, endlich sind Mädchen dazugekommen! Sascha, ich freue mich so auf die Bekanntschaft. Oh, in meinem Hydroponik-Abschnitt sind gerade die ersten Keimlinge aufgegangen, es riecht dort so herrlich nach echtem Grün! Wir müssen unbedingt plaudern.",
+              "Doktor Seleznev: (Schüttelt lächelnd den Kopf) Oksana Walentinowna, leiser, leiser. Überhäufen Sie Sascha nicht gleich von der Schwelle an mit Neuigkeiten, sie ist noch nicht ganz aus dem Stasis erwacht."
+            ]
+          }
+        },
+        "P4": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: И, конечно, не пропустим Сергея Артуровича. Наш лучший следопыт, картограф и опытнейший экспедиционер. Если бы не его навыки ориентирования, мы бы никогда не обнаружили эту станцию в снегах.",
+              "Экспедиционер Сергей Артурович: (Неторопливо подбрасывает щепку в костер и внимательно оценивает вас взглядом) Здравствуй, Александр. С возвращением в реальность. Сразу дам совет: на улицу пока даже не думай соваться. Приборы показывают, что надвигается аномальный мороз. Живыми оттуда не возвращаются."
+            ],
+            "en": [
+              "Doctor Seleznev: And of course we won't skip Sergey Arturovich. Our best tracker, cartographer and most experienced expeditionary. If not for his orienteering skills, we would never have discovered this station in the snows.",
+              "Expeditionary Sergey Arturovich: (Leisurely tosses a chip into the fire and carefully appraises you with his gaze) Hello, Alexander. Welcome back to reality. I'll give you advice right away: don't even think about going outside for now. The instruments show that an anomalous frost is approaching. People don't return from there alive."
+            ],
+            "de": [
+              "Doktor Seleznev: Und natürlich überspringen wir Sergej Arturowitsch nicht. Unser bester Fährtenleser, Kartograf und erfahrenster Expeditionsmann. Ohne seine Orientierungskünste hätten wir diese Station im Schnee nie entdeckt.",
+              "Expeditionär Sergej Arturowitsch: (Wirft gemächlich ein Holzstückchen ins Feuer und mustert dich aufmerksam) Hallo, Alexander. Willkommen zurück in der Realität. Gleich mal ein Rat: Denk vorerst nicht einmal daran, nach draußen zu gehen. Die Geräte zeigen, dass anomaler Frost naht. Lebend kommt man von dort nicht zurück."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: И, разумеется, нельзя обойти вниманием Сергея Артуровича. Превосходный следопыт, картограф и бывалый экспедиционер. Без его чутья и карт мы бы до сих пор блуждали по тайге и никогда не нашли эту станцию.",
+              "Экспедиционер Сергей Артурович: (Сдержанно кивает, его голос звучит хрипло, но спокойно) Приветствую, Александра. Если все еще знобит после крио-камеры — зайди за угол, там лежат чистые термо-пледы, укутайся. И главное: наружу пока лучше вообще не высовываться. Там адский холод, и шторм только усиливается."
+            ],
+            "en": [
+              "Doctor Seleznev: And of course we cannot overlook Sergey Arturovich. An excellent tracker, cartographer and seasoned expeditionary. Without his instinct and maps we would still be wandering the taiga and would never have found this station.",
+              "Expeditionary Sergey Arturovich: (Nods restrainedly, his voice sounds hoarse but calm) Greetings, Alexandra. If you're still chilly after the cryo-chamber — go around the corner, there are clean thermal blankets there, wrap yourself up. And most importantly: better not stick your nose outside at all for now. There's hellish cold out there, and the storm is only intensifying."
+            ],
+            "de": [
+              "Doktor Seleznev: Und selbstverständlich dürfen wir Sergej Arturowitsch nicht übergehen. Ein hervorragender Fährtenleser, Kartograf und erfahrener Expeditionsmann. Ohne seinen Spürsinn und seine Karten würden wir immer noch durch die Taiga irren und hätten diese Station nie gefunden.",
+              "Expeditionär Sergej Arturowitsch: (Nickt zurückhaltend, seine Stimme klingt heiser, aber ruhig) Willkommen, Alexandra. Wenn es dich nach der Kryokammer noch fröstelt — geh um die Ecke, dort liegen saubere Thermodecken, wickel dich ein. Und das Wichtigste: Nach draußen besser vorerst überhaupt nicht hinauslehnen. Dort herrscht höllische Kälte, und der Sturm wird nur stärker."
+            ]
+          }
+        },
+        "P5": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: Ну и напоследок черкну пару слов о себе, раз уж мы все в одном расстрельном списке. Я ученый. Всю жизнь посвятил фундаментальной науке, изучал самые разные дисциплины, от медицины до физики.",
+              "Вы: Что ж, теперь моя очередь. До того как проснуться здесь, я работал менеджером на производстве. В свободное время увлекался скалолазанием и боевыми искусствами. А потом… провалился во времени на восемьдесят четыре года. Если не считать крио-сон, мне тридцать семь лет. Объясните наконец, что это вообще за станция?",
+              "Инженер Иван Юрьевич: (Почесывает затылок) Вот это мы и пытаемся выяснить, подкидыш. Если бы нам удалось полностью восстановить электропитание, появился бы шанс оживить терминалы и вскрыть бортовые электронные журналы. Уверен, там есть ответы на все вопросы.",
+              "Доктор Селезнев: Блестящая мысль, Иван! Александр Сергеевич, пока вы были в отключке, мы успели бегло осмотреть этот блок. Тут у нас мини-лаборатория, гидропонный отсек и щитовая подстанция. Любопытно… для каких конкретно целей старый мир отгрохал весь этот арктический комплекс?"
+            ],
+            "en": [
+              "Doctor Seleznev: And finally a few words about myself, since we're all on the same firing list. I am a scientist. I've devoted my whole life to fundamental science, studying the most diverse disciplines, from medicine to physics.",
+              "You: Well, now it's my turn. Before waking up here, I worked as a production manager. In my free time I was into rock climbing and martial arts. And then… I fell through time for eighty-four years. Not counting cryosleep, I'm thirty-seven. Finally explain what kind of station this even is?",
+              "Engineer Ivan Yuryevich: (Scratches the back of his head) That's exactly what we're trying to find out, foundling. If we managed to fully restore the power supply, there would be a chance to revive the terminals and open the onboard electronic logs. I'm sure the answers to all questions are there.",
+              "Doctor Seleznev: Brilliant idea, Ivan! Alexander Sergeyevich, while you were out, we managed to briefly inspect this block. Here we have a mini-laboratory, a hydroponic section and a switchboard substation. Curious… for what specific purposes did the old world build this entire Arctic complex?"
+            ],
+            "de": [
+              "Doktor Seleznev: Und zum Schluss ein paar Worte über mich, da wir alle auf derselben Abschussliste stehen. Ich bin Wissenschaftler. Mein ganzes Leben habe ich der Grundlagenforschung gewidmet und die verschiedensten Disziplinen studiert, von Medizin bis Physik.",
+              "Du: Nun, jetzt bin ich an der Reihe. Bevor ich hier aufwachte, arbeitete ich als Produktionsmanager. In meiner Freizeit war ich leidenschaftlicher Kletterer und Kampfsportler. Und dann… bin ich vierundachtzig Jahre durch die Zeit gefallen. Ohne den Kryoschlaf bin ich siebenunddreißig. Erklären Sie endlich, was das überhaupt für eine Station ist?",
+              "Ingenieur Iwan Jurjewitsch: (Kratzt sich am Hinterkopf) Genau das versuchen wir herauszufinden, Findling. Wenn es uns gelänge, die Stromversorgung vollständig wiederherzustellen, gäbe es eine Chance, die Terminals wiederzubeleben und die bordseitigen elektronischen Logbücher zu öffnen. Ich bin sicher, dort sind die Antworten auf alle Fragen.",
+              "Doktor Seleznev: Brillante Idee, Iwan! Alexander Sergejewitsch, während Sie bewusstlos waren, haben wir diesen Block kurz inspiziert. Hier haben wir ein Mini-Labor, einen Hydroponik-Abschnitt und eine Schaltanlage. Interessant… zu welchen konkreten Zwecken hat die alte Welt diesen ganzen arktischen Komplex errichtet?"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: Ну и напоследок добавлю пару слов о себе, раз уж мы теперь в одной лодке. Я человек науки. Всю сознательную жизнь занимался исследованиями, изучал самые полярные дисциплины, от вирусологии до биофизики.",
+              "Вы: Что ж, тогда давайте знакомиться заново. В прошлой жизни я была менеджером на крупном производстве. Увлекалась экстремальным скалолазанием и боевыми искусствами. А потом… выпала из реальности на долгие восемьдесят четыре года. Чисто биологически мне тридцать семь. Так куда именно мы попали? Что это за станция?",
+              "Инженер Иван Юрьевич: (Глухо вздыхает) Хороший вопрос, Александра. Мы и сами блуждаем в потемках. Вот если бы мы смогли подать стабильное напряжение и восстановить электропитание, то оживили бы компьютеры. Считаем локальные базы данных, изучим электронные журналы — и дело в шляпе.",
+              "Доктор Селезнев: Отличная идея, Юрич! Александра Сергеевна, пока вы восстанавливали силы, наш отряд немного разведал обстановку. Мы наткнулись на компактную научную лабораторию, гидропонику и подстанцию. Удивительный набор. Интересно, ради чего здесь совместили все эти модули?"
+            ],
+            "en": [
+              "Doctor Seleznev: And finally a few words about myself, since we're now in the same boat. I am a man of science. All my conscious life I have been engaged in research, studying the most polar disciplines, from virology to biophysics.",
+              "You: Well then, let's get acquainted anew. In my past life I was a manager at a large production facility. I was into extreme rock climbing and martial arts. And then… I fell out of reality for a long eighty-four years. Purely biologically I'm thirty-seven. So where exactly have we ended up? What kind of station is this?",
+              "Engineer Ivan Yuryevich: (Sighs hollowly) A good question, Alexandra. We ourselves are wandering in the dark. If we could supply stable voltage and restore the power, we would revive the computers. We'd read the local databases, study the electronic logs — and Bob's your uncle.",
+              "Doctor Seleznev: Excellent idea, Yurich! Alexandra Sergeyevna, while you were recovering your strength, our squad scouted the situation a bit. We came across a compact scientific laboratory, hydroponics and a substation. An amazing set. Interesting, for what purpose were all these modules combined here?"
+            ],
+            "de": [
+              "Doktor Seleznev: Und zum Schluss ein paar Worte über mich, da wir jetzt im selben Boot sitzen. Ich bin ein Mensch der Wissenschaft. Mein ganzes bewusstes Leben habe ich mich mit Forschung beschäftigt und die polarsten Disziplinen studiert, von Virologie bis Biophysik.",
+              "Du: Nun, dann lassen Sie uns neu bekannt machen. In meinem früheren Leben war ich Managerin in einem großen Produktionsbetrieb. Ich war leidenschaftliche Extremskletterin und Kampfsportlerin. Und dann… bin ich für lange vierundachtzig Jahre aus der Realität gefallen. Rein biologisch bin ich siebenunddreißig. Wohin genau sind wir also geraten? Was ist das für eine Station?",
+              "Ingenieur Iwan Jurjewitsch: (Seufzt dumpf) Eine gute Frage, Alexandra. Wir selbst tappen im Dunkeln. Wenn wir stabile Spannung liefern und die Stromversorgung wiederherstellen könnten, würden wir die Computer wiederbeleben. Lokale Datenbanken auslesen, elektronische Logbücher studieren — und fertig.",
+              "Doktor Seleznev: Ausgezeichnete Idee, Juritsch! Alexandra Sergejewna, während Sie Ihre Kräfte zurückgewannen, hat unsere Gruppe die Lage etwas erkundet. Wir sind auf ein kompaktes Forschungslabor, Hydroponik und eine Unterstation gestoßen. Eine erstaunliche Kombination. Interessant, zu welchem Zweck man hier all diese Module zusammengelegt hat?"
+            ]
+          }
+        },
+        "P6": {
+          "text_man": {
+            "ru": [
+              "Инженер Иван Юрьевич: На крыше комплекса у нас смонтирована солнечная панель. В пике она выдает сущие крохи, около двенадцати киловатт мощности. Но для старта этого минимума хватит: запустим терминалы, запитаем электрорадиатор и дадим свет в пару жилых отсеков. Сейчас от нее толку ноль. Но если счистить плотную шапку снега и перебрать поврежденную проводку, то дело выгорит.",
+              "Вы: (Внимательно выслушав каждого, берете инициативу в свои руки) Раз так, предлагаю распределить задачи по нашим профессиональным навыкам. Действуем системно. Иван, на тебе реанимация электроснабжения и панели. Оксана, займись полной инвентаризацией всего, что осталось на станции — нужно знать точные цифры по ресурсам. Сергей, твоя задача — мониторить бурю и держать периметр, нам не нужны незваные гости. Вы, Виктор Геннадьевич, садитесь за терминалы, как только пойдет ток. А я возьму на себя общую координацию и организацию процессов. Такое видение ситуации. Как вам план, команда?"
+            ],
+            "en": [
+              "Engineer Ivan Yuryevich: On the roof of the complex we have a solar panel installed. At peak it produces mere crumbs, about twelve kilowatts of power. But for a start this minimum will be enough: we'll launch the terminals, power the electric radiator and give light to a couple of living sections. Right now it's of zero use. But if we clear the thick cap of snow and overhaul the damaged wiring, it will work out.",
+              "You: (Having carefully listened to everyone, take the initiative) In that case, I propose distributing the tasks according to our professional skills. We act systematically. Ivan, power supply and panel revival is on you. Oksana, take full inventory of everything left on the station — we need exact figures on resources. Sergey, your task is to monitor the storm and hold the perimeter, we don't need uninvited guests. You, Viktor Gennadyevich, sit at the terminals as soon as the current flows. And I will take overall coordination and organization of the processes. That's my vision of the situation. How do you like the plan, team?"
+            ],
+            "de": [
+              "Ingenieur Iwan Jurjewitsch: Auf dem Dach des Komplexes haben wir ein Solarpanel montiert. Im Peak liefert es nur Krümel, etwa zwölf Kilowatt Leistung. Aber für den Start reicht dieses Minimum: Terminals anwerfen, den Elektroheizkörper speisen und ein paar Wohnabschnitte beleuchten. Gerade jetzt ist es nutzlos. Aber wenn wir die dicke Schneedecke abtragen und die beschädigte Verkabelung überholen, wird es klappen.",
+              "Du: (Nachdem du jedem aufmerksam zugehört hast, ergreifst du die Initiative) Wenn dem so ist, schlage ich vor, die Aufgaben nach unseren beruflichen Fähigkeiten zu verteilen. Wir handeln systematisch. Iwan, die Wiederbelebung der Stromversorgung und des Panels liegt bei dir. Oksana, mach eine vollständige Inventur von allem, was auf der Station übrig ist — wir brauchen genaue Zahlen zu den Ressourcen. Sergej, deine Aufgabe ist es, den Sturm zu überwachen und den Perimeter zu halten, wir brauchen keine ungebetenen Gäste. Sie, Viktor Gennadjewitsch, setzen sich an die Terminals, sobald der Strom fließt. Und ich übernehme die Gesamtkoordination und Organisation der Prozesse. Das ist meine Sicht der Lage. Wie findet ihr den Plan, Team?"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Инженер Иван Юрьевич: На крыше нашего блока закреплена солнечная панель. На пике своей силы она выдает совсем немного, в районе двенадцати киловатт. Однако для первой искры этого достаточно: оживим компьютеры, обогреватель и пустим ток в несколько комнат. Сейчас панель почти на нуле. Но если полностью откопать ее из-под снега и починить распределительную проводку, все должно сработать.",
+              "Вы: (Уверенно обводите присутствующих взглядом и берете управление на себя) Раз так, считаю целесообразным разделиться по нашим ключевым умениям. Будем работать слаженно. Иван, ты отвечаешь за восстановление энергосети. Оксана, на тебе инвентаризация — нужно детально пересчитать все, что есть на станции. Сергей будет непрерывно отслеживать погоду и следить, чтобы к нам никто не подобрался снаружи. Вы, Виктор Геннадьевич, займетесь базами данных, когда терминалы оживут. Я же организую и скоординирую все эти процессы. Вот такой план действий. Что скажете?"
+            ],
+            "en": [
+              "Engineer Ivan Yuryevich: On the roof of our block a solar panel is fixed. At the peak of its strength it produces very little, around twelve kilowatts. However, for the first spark this is enough: we'll revive the computers, the heater and send current into several rooms. Right now the panel is almost at zero. But if we fully dig it out from under the snow and repair the distribution wiring, everything should work.",
+              "You: (Confidently survey those present and take control) In that case, I consider it expedient to divide according to our key skills. We'll work in coordination. Ivan, you are responsible for restoring the power grid. Oksana, inventory is on you — we need to carefully recount everything on the station. Sergey will continuously monitor the weather and make sure no one approaches us from outside. You, Viktor Gennadyevich, will deal with the databases when the terminals come alive. And I will organize and coordinate all these processes. Here's the action plan. What do you say?"
+            ],
+            "de": [
+              "Ingenieur Iwan Jurjewitsch: Auf dem Dach unseres Blocks ist ein Solarpanel befestigt. Auf dem Höhepunkt seiner Kraft liefert es nur wenig, etwa zwölf Kilowatt. Für den ersten Funken reicht das jedoch: Computer und Heizgerät wiederbeleben und Strom in einige Räume leiten. Gerade ist das Panel fast auf Null. Aber wenn wir es vollständig aus dem Schnee freilegen und die Verteilerverkabelung reparieren, sollte alles funktionieren.",
+              "Du: (Überblickst selbstbewusst die Anwesenden und übernimmst die Führung) Wenn dem so ist, halte ich es für zweckmäßig, uns nach unseren Schlüsselkompetenzen aufzuteilen. Wir werden koordiniert arbeiten. Iwan, du bist für die Wiederherstellung des Energienetzes verantwortlich. Oksana, Inventur liegt bei dir — wir müssen alles auf der Station genau durchzählen. Sergej wird ununterbrochen das Wetter überwachen und darauf achten, dass sich niemand von außen nähert. Sie, Viktor Gennadjewitsch, kümmern sich um die Datenbanken, sobald die Terminals wieder leben. Und ich organisiere und koordiniere all diese Prozesse. Das ist der Aktionsplan. Was sagt ihr?"
+            ]
+          }
+        },
+        "P7": {
+          "text_man": {
+            "ru": [
+              "Доктор Селезнев: (Переглядывается с остальными и, заметив их согласные кивки, одобрительно улыбается) Предельно практичный план, Александр Сергеевич. Команда согласна. Пойдемте, я покажу вам комнату, из которой будет удобнее всего координировать работу станции. Но прежде чем мы разойдемся... Предлагаю всем сонастроиться.",
+              "В коридоре воцарилась глубокая тишина. Люди замерли на несколько минут, прикрыв глаза и мысленно посылая тепло и любовь в холодное пространство. Слышался лишь тихий свист пламени, пожирающего последние щепки в костре...",
+              "А затем община ударно принялась за работу. На лицах появилась надежда, каждый с верой смотрел в завтрашний день. Из динамиков старенького, чудом выжившего плеера зазвучала знакомая, до боли родная музыка из фильма «Гостья из будущего» 1984 года. Песня о прекрасном далеком вела людей за собой..."
+            ],
+            "en": [
+              "Doctor Seleznev: (Exchanges glances with the others and, noticing their agreeing nods, smiles approvingly) An extremely practical plan, Alexander Sergeyevich. The team agrees. Let's go, I'll show you the room from which it will be most convenient to coordinate the station's work. But before we disperse... I propose that we all attune ourselves.",
+              "Deep silence settled in the corridor. People froze for several minutes, closing their eyes and mentally sending warmth and love into the cold space. Only the quiet hiss of the flame devouring the last chips in the fire could be heard...",
+              "And then the community vigorously set to work. Hope appeared on their faces, each looked with faith into tomorrow. From the speakers of an old, miraculously surviving player came the familiar, painfully native music from the 1984 film 'Guest from the Future'. The song about the beautiful far away led the people on..."
+            ],
+            "de": [
+              "Doktor Seleznev: (Wechselt Blicke mit den anderen und lächelt zustimmend, als er ihre Nicken bemerkt) Ein äußerst praktischer Plan, Alexander Sergejewitsch. Das Team ist einverstanden. Gehen wir, ich zeige Ihnen den Raum, von dem aus sich die Arbeit der Station am bequemsten koordinieren lässt. Aber bevor wir uns trennen... schlage ich vor, dass wir uns alle einstimmen.",
+              "Im Korridor herrschte tiefe Stille. Die Menschen erstarrten für einige Minuten, schlossen die Augen und sandten mental Wärme und Liebe in den kalten Raum. Man hörte nur das leise Zischen der Flamme, die die letzten Holzspäne im Feuer verschlang...",
+              "Und dann machte sich die Gemeinschaft tatkräftig an die Arbeit. Auf den Gesichtern erschien Hoffnung, jeder blickte mit Glauben in den morgigen Tag. Aus den Lautsprechern eines alten, wundersam überlebenden Players erklang die vertraute, schmerzhaft heimatliche Musik aus dem Film „Gast aus der Zukunft“ von 1984. Das Lied vom schönen Fernen führte die Menschen mit sich..."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "Доктор Селезнев: (Оглядывает притихших людей, ловит их одобрительные взгляды и кивает) Отличный, зрелый план, Александра Сергеевна. Мужчины не возражают. Пойдемте, я провожу вас в отсек, из которого будет удобнее всего управлять всеми процессами. Но перед стартом... Предлагаю устроить короткую сонастройку.",
+              "В багровом полумраке все затихли. На пару минут люди погрузились в молчаливую медитацию, закрыв глаза и наполняя это забытое Богом место искренней любовью и поддержкой. Лишь костер тихо потрескивал, согревая озябшие руки...",
+              "После этого все слаженно и энергично принялись за труд. Вдохновленные общей целью, они мечтали о возрождении мира, пока из динамиков лилась легендарная, светлая музыка из кинофильма 1984 года «Гостья из будущего». И этот мотив дарил надежду, что далекое завтра обязательно станет к ним справедливым..."
+            ],
+            "en": [
+              "Doctor Seleznev: (Looks over the quieted people, catches their approving glances and nods) An excellent, mature plan, Alexandra Sergeyevna. The men have no objections. Let's go, I'll take you to the section from which it will be most convenient to manage all processes. But before the start... I propose a short attunement.",
+              "In the crimson twilight everyone fell silent. For a couple of minutes people immersed themselves in silent meditation, closing their eyes and filling this God-forsaken place with sincere love and support. Only the fire quietly crackled, warming the chilled hands...",
+              "After that everyone set to work in a coordinated and energetic manner. Inspired by the common goal, they dreamed of the rebirth of the world while from the speakers poured the legendary, bright music from the 1984 film 'Guest from the Future'. And this motif gave hope that the distant tomorrow would certainly become fair to them..."
+            ],
+            "de": [
+              "Doktor Seleznev: (Blickt über die verstummten Menschen, fängt ihre zustimmenden Blicke ein und nickt) Ein ausgezeichneter, reifer Plan, Alexandra Sergejewna. Die Männer haben keine Einwände. Gehen wir, ich begleite Sie in den Abschnitt, von dem aus sich alle Prozesse am bequemsten steuern lassen. Aber vor dem Start... schlage ich eine kurze Einstimmung vor.",
+              "Im purpurroten Halbdunkel verstummten alle. Für ein paar Minuten versanken die Menschen in schweigende Meditation, schlossen die Augen und füllten diesen gottverlassenen Ort mit aufrichtiger Liebe und Unterstützung. Nur das Feuer knisterte leise und wärmte die fröstelnden Hände...",
+              "Danach machten sich alle koordiniert und energisch an die Arbeit. Inspiriert vom gemeinsamen Ziel träumten sie von der Wiedergeburt der Welt, während aus den Lautsprechern die legendäre, helle Musik aus dem Film „Gast aus der Zukunft“ von 1984 erklang. Und dieses Motiv schenkte Hoffnung, dass das ferne Morgen ihnen bestimmt gerecht werden würde..."
+            ]
+          }
+        }
+      }
+    },
+    "QST_INTRO_004": {
+      "title": {
+        "ru": "Мороз близко",
+        "en": "Frost Draws Near",
+        "de": "Frost rückt näher"
+      },
+      "chapter": {
+        "ru": "Глава III — Мороз близко",
+        "en": "Chapter III — Frost Draws Near",
+        "de": "Kapitel III — Frost rückt näher"
+      },
+      "objectives": {
+        "OBJ_READ_CH3": {
+          "ru": "Прочитать главу",
+          "en": "Read the chapter",
+          "de": "Kapitel lesen"
+        },
+        "OBJ_MINE_ICE": {
+          "ru": "Добыча льда: экспедиция {current}/{target}",
+          "en": "Ice mining: expedition {current}/{target}",
+          "de": "Eisabbau: Expedition {current}/{target}"
+        },
+        "OBJ_PACKED_WATER_RATE": {
+          "ru": "Упак. вода: {current}/{target} л/мин",
+          "en": "Packed water: {current}/{target} L/min",
+          "de": "Abgepacktes Wasser: {current}/{target} l/min"
+        },
+        "OBJ_LETTUCE_POWER": {
+          "ru": "Салат, мощность схемы: {current}/{target}%",
+          "en": "Lettuce recipe power: {current}/{target}%",
+          "de": "Salat, Schema-Leistung: {current}/{target}%"
+        },
+        "OBJ_BASE_SEAL": {
+          "ru": "Герметизация базы: {current}/{target}% до 21:00",
+          "en": "Seal the base: {current}/{target}% by 21:00",
+          "de": "Basis abdichten: {current}/{target}% bis 21:00"
+        }
+      },
+      "pages": {
+        "P1": {
+          "text_man": {
+            "ru": [
+              "*^** Сноровисто разобравшись со сплетением проводов в электрощитке, Иван замерил фазы и тщательно зачистил контакты от налета окисления. Щелкнув чередой тумблеров для точной настройки, он выбрался через люк на обледенелую крышу. Несколько взмахов лопатой — и плотная снежная шапка, блокировавшая солнечную панель, полетела вниз. Ожившая сеть мгновенно отозвалась низким гулом, пустив ток по артериям кабелей. В ту же секунду мрак коридоров и комнат рассеялся под ярким, резким светом светодиодных ламп. Спешно спустившись с обдуваемой ветром кровли, Инженер заглянул в жилой блок и запустил электрорадиатор, который тут же принялся разгонять сковавший убежище холод. Напоследок мастер решительно шагнул в лабораторию. **^*"
+            ],
+            "en": [
+              "*^** Having deftly untangled the nest of wires in the breaker box, Ivan measured the phases and carefully cleaned the contacts of oxidation. After a series of precise switch clicks he climbed through the hatch onto the iced-over roof. A few swings of the shovel — and the dense snow cap that had blocked the solar panel went flying down. The revived grid answered at once with a low hum, sending current through the arteries of cable. In the same instant the gloom of corridors and rooms scattered under the sharp light of LED lamps. Hurrying down from the wind-scoured roof, the Engineer looked into the living block and started the electric radiator, which immediately began to drive the shelter's seized cold away. At last the craftsman stepped firmly into the laboratory. **^*"
+            ],
+            "de": [
+              "*^** Gewandt entwirrte Iwan das Leitungsgeflecht im Sicherungskasten, maß die Phasen und säuberte die Kontakte gründlich von Oxidationsbelag. Nach einer Reihe präziser Schalterklicks stieg er durch die Luke auf das vereiste Dach. Ein paar Schaufelschläge — und die dichte Schneehaube, die das Solarpanel blockiert hatte, flog hinab. Das wiedererwachte Netz antwortete sogleich mit einem dumpfen Summen und schickte Strom durch die Kabeladern. Im selben Augenblick wich das Dunkel der Korridore und Räume dem grellen LED-Licht. Eilig vom windgepeitschten Dach herabgestiegen, blickte der Ingenieur in den Wohnblock und startete den Elektroheizkörper, der sogleich die erstarrte Kälte aus dem Unterschlupf zu vertreiben begann. Zuletzt trat der Meister entschlossen ins Labor. **^*"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "*^** Сноровисто разобравшись со сплетением проводов в электрощитке, Иван замерил фазы и тщательно зачистил контакты от налета окисления. Щелкнув чередой тумблеров для точной настройки, он выбрался через люк на обледенелую крышу. Несколько взмахов лопатой — и плотная снежная шапка, блокировавшая солнечную панель, полетела вниз. Ожившая сеть мгновенно отозвалась низким гулом, пустив ток по артериям кабелей. В ту же секунду мрак коридоров и комнат рассеялся под ярким, резким светом светодиодных ламп. Спешно спустившись с обдуваемой ветром кровли, Инженер заглянул в жилой блок и запустил электрорадиатор, который тут же принялся разгонять сковавший убежище холод. Напоследок мастер решительно шагнул в лабораторию. **^*"
+            ],
+            "en": [
+              "*^** Having deftly untangled the nest of wires in the breaker box, Ivan measured the phases and carefully cleaned the contacts of oxidation. After a series of precise switch clicks he climbed through the hatch onto the iced-over roof. A few swings of the shovel — and the dense snow cap that had blocked the solar panel went flying down. The revived grid answered at once with a low hum, sending current through the arteries of cable. In the same instant the gloom of corridors and rooms scattered under the sharp light of LED lamps. Hurrying down from the wind-scoured roof, the Engineer looked into the living block and started the electric radiator, which immediately began to drive the shelter's seized cold away. At last the craftsman stepped firmly into the laboratory. **^*"
+            ],
+            "de": [
+              "*^** Gewandt entwirrte Iwan das Leitungsgeflecht im Sicherungskasten, maß die Phasen und säuberte die Kontakte gründlich von Oxidationsbelag. Nach einer Reihe präziser Schalterklicks stieg er durch die Luke auf das vereiste Dach. Ein paar Schaufelschläge — und die dichte Schneehaube, die das Solarpanel blockiert hatte, flog hinab. Das wiedererwachte Netz antwortete sogleich mit einem dumpfen Summen und schickte Strom durch die Kabeladern. Im selben Augenblick wich das Dunkel der Korridore und Räume dem grellen LED-Licht. Eilig vom windgepeitschten Dach herabgestiegen, blickte der Ingenieur in den Wohnblock und startete den Elektroheizkörper, der sogleich die erstarrte Kälte aus dem Unterschlupf zu vertreiben begann. Zuletzt trat der Meister entschlossen ins Labor. **^*"
+            ]
+          }
+        },
+        "P2": {
+          "text_man": {
+            "ru": [
+              "*^** Потолочные плафоны наконец залили комнату с терминалами ровным светом. Масляный радиатор в углу уже вовсю трудился, постепенно вытесняя из помещения въедливый сырой холод. Команда дружно взялась за дело: помогли Кириллу запитать системные блоки и подключить мониторы — к счастью, электроника пребывала в отличном состоянии. Вы лично помогли профессору оперативно накатить и настроить операционную систему, благо старые навыки программирования еще не были окончательно позабыты. Спустя пару минут на экране уверенно развернулось древо проводника, а вслед за ним открылись и текстовые документы. Поправив очки, профессор Селезнев углубился в чтение всплывших рапортов и инструкций. Его седая, почти облысевшая голова склонилась над дисплеем, а полы засаленного белого халата, наброшенного поверх темно-синей рубашки, едва заметно подрагивали от волнения. **^*"
+            ],
+            "en": [
+              "*^** The ceiling fixtures finally filled the terminal room with even light. The oil radiator in the corner was already working hard, slowly driving the clinging damp cold from the room. The team set to work together: they helped Kirill power the system units and hook up the monitors — luckily the electronics were in excellent shape. You personally helped the professor install and configure the OS in short order; the old programming skills had not been entirely forgotten. A couple of minutes later the explorer tree unfolded on the screen, and text documents opened after it. Adjusting his glasses, Professor Seleznev buried himself in the reports and instructions that appeared. His grey, almost bald head bent over the display, and the flaps of the greasy white coat thrown over a dark-blue shirt trembled faintly with excitement. **^*"
+            ],
+            "de": [
+              "*^** Die Deckenleuchten tauchten den Terminalraum endlich in gleichmäßiges Licht. Der Ölradiator in der Ecke arbeitete bereits auf Hochtouren und verdrängte nach und nach die beißende, feuchte Kälte. Das Team packte gemeinsam an: Sie halfen Kirill, die Systemblöcke zu speisen und die Monitore anzuschließen — glücklicherweise war die Elektronik in bestem Zustand. Sie halfen dem Professor persönlich, das Betriebssystem rasch aufzuspielen und einzurichten; die alten Programmierkenntnisse waren noch nicht ganz verblasst. Wenige Minuten später entfaltete sich auf dem Bildschirm der Explorer-Baum, danach öffneten sich Textdokumente. Die Brille zurechtrückend, vertiefte sich Professor Seleznev in die aufgetauchten Rapporte und Anweisungen. Sein graues, fast kahles Haupt neigte sich über das Display, und die Säume des fettigen weißen Kittels über dem dunkelblauen Hemd zitterten kaum merklich vor Erregung. **^*"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "*^** Потолочные плафоны наконец залили комнату с терминалами ровным светом. Масляный радиатор в углу уже вовсю трудился, постепенно вытесняя из помещения въедливый сырой холод. Команда дружно взялась за дело: помогли Кириллу запитать системные блоки и подключить мониторы — к счастью, электроника пребывала в отличном состоянии. Вы лично помогли профессору оперативно накатить и настроить операционную систему, благо старые навыки программирования еще не были окончательно позабыты. Спустя пару минут на экране уверенно развернулось древо проводника, а вслед за ним открылись и текстовые документы. Поправив очки, профессор Селезнев углубился в чтение всплывших рапортов и инструкций. Его седая, почти облысевшая голова склонилась над дисплеем, а полы засаленного белого халата, наброшенного поверх темно-синей рубашки, едва заметно подрагивали от волнения. **^*"
+            ],
+            "en": [
+              "*^** The ceiling fixtures finally filled the terminal room with even light. The oil radiator in the corner was already working hard, slowly driving the clinging damp cold from the room. The team set to work together: they helped Kirill power the system units and hook up the monitors — luckily the electronics were in excellent shape. You personally helped the professor install and configure the OS in short order; the old programming skills had not been entirely forgotten. A couple of minutes later the explorer tree unfolded on the screen, and text documents opened after it. Adjusting his glasses, Professor Seleznev buried himself in the reports and instructions that appeared. His grey, almost bald head bent over the display, and the flaps of the greasy white coat thrown over a dark-blue shirt trembled faintly with excitement. **^*"
+            ],
+            "de": [
+              "*^** Die Deckenleuchten tauchten den Terminalraum endlich in gleichmäßiges Licht. Der Ölradiator in der Ecke arbeitete bereits auf Hochtouren und verdrängte nach und nach die beißende, feuchte Kälte. Das Team packte gemeinsam an: Sie halfen Kirill, die Systemblöcke zu speisen und die Monitore anzuschließen — glücklicherweise war die Elektronik in bestem Zustand. Sie halfen dem Professor persönlich, das Betriebssystem rasch aufzuspielen und einzurichten; die alten Programmierkenntnisse waren noch nicht ganz verblasst. Wenige Minuten später entfaltete sich auf dem Bildschirm der Explorer-Baum, danach öffneten sich Textdokumente. Die Brille zurechtrückend, vertiefte sich Professor Seleznev in die aufgetauchten Rapporte und Anweisungen. Sein graues, fast kahles Haupt neigte sich über das Display, und die Säume des fettigen weißen Kittels über dem dunkelblauen Hemd zitterten kaum merklich vor Erregung. **^*"
+            ]
+          }
+        },
+        "P3": {
+          "text_man": {
+            "ru": [
+              "*^** У самого выхода замер Иван Юрьевич. Переминаясь с ноги на ногу, инженер крепко сжимал в руке массивный гаечный ключ. **^*",
+              "Иван Юрьевич: Ну, что там, док?",
+              "Селезнев: Тише вы… не отвлекайте.",
+              "Селезнев: Судя по этим записям, мы действительно внутри секретной лаборатории. Более того, весь этот подземный комплекс … это автономная база Выживания. Ее возвели еще в 2036 году по заказу одного российского миллионера, Аркадия Карпова. Мужик вовремя сообразил, что мир катится в бездну. Пока оставались ресурсы и время, он отгрохал это убежище, надеясь укрыть семью от грядущего апокалипсиса. Вот только судьба распорядилась иначе. Бункер-то достроили, но сам Карпов сюда так и не добрался. Его частный самолет сбили над Московской областью прямо в момент взлета … Это подтверждают логи автоматической системы оповещения."
+            ],
+            "en": [
+              "*^** Ivan Yuryevich froze at the doorway. Shifting from foot to foot, the engineer gripped a heavy wrench. **^*",
+              "Ivan Yuryevich: Well, what is it, doc?",
+              "Seleznev: Quiet… don't distract me.",
+              "Seleznev: Judging by these records we really are inside a secret laboratory. More than that, this entire underground complex is an autonomous Survival base. It was built back in 2036 on the order of a Russian millionaire, Arkady Karpov. The man realized in time that the world was sliding into the abyss. While resources and time remained, he threw up this shelter, hoping to hide his family from the coming apocalypse. Fate decided otherwise. The bunker was finished, but Karpov never made it here. His private plane was shot down over the Moscow region right at takeoff… The automatic alert logs confirm it."
+            ],
+            "de": [
+              "*^** Iwan Jurjewitsch blieb am Ausgang stehen. Von einem Fuß auf den anderen tretend, umklammerte der Ingenieur einen schweren Schraubenschlüssel. **^*",
+              "Iwan Jurjewitsch: Nun, was ist, Doc?",
+              "Seleznev: Leise… lenkt mich nicht ab.",
+              "Seleznev: Diesen Aufzeichnungen nach befinden wir uns wirklich in einem geheimen Labor. Mehr noch: dieser ganze unterirdische Komplex ist eine autonome Überlebensbasis. Sie wurde 2036 im Auftrag eines russischen Millionärs, Arkadi Karpow, errichtet. Der Mann begriff rechtzeitig, dass die Welt in den Abgrund rollte. Solange Mittel und Zeit blieben, zog er diesen Unterschlupf hoch, um die Familie vor der kommenden Apokalypse zu bergen. Doch das Schicksal wollte anders. Den Bunker vollendete man, aber Karpow selbst kam nie an. Sein Privatflugzeug wurde über dem Gebiet Moskau im Moment des Starts abgeschossen… Das bestätigen die Logs des automatischen Meldesystems."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "*^** У самого выхода замер Иван Юрьевич. Переминаясь с ноги на ногу, инженер крепко сжимал в руке массивный гаечный ключ. **^*",
+              "Иван Юрьевич: Ну, что там, док?",
+              "Селезнев: Тише вы … не отвлекайте.",
+              "Селезнев: Судя по этим записям, мы действительно внутри секретной лаборатории. Более того, весь этот подземный комплекс … это автономная база Выживания. Ее возвели еще в 2036 году по заказу одного российского миллионера, Аркадия Карпова. Мужик вовремя сообразил, что мир катится в бездну. Пока оставались ресурсы и время, он отгрохал это убежище, надеясь укрыть семью от грядущего апокалипсиса. Вот только судьба распорядилась иначе. Бункер-то достроили, но сам Карпов сюда так и не добрался. Его частный самолет сбили над Московской областью прямо в момент взлета … Это подтверждают логи автоматической системы оповещения."
+            ],
+            "en": [
+              "*^** Ivan Yuryevich froze at the doorway. Shifting from foot to foot, the engineer gripped a heavy wrench. **^*",
+              "Ivan Yuryevich: Well, what is it, doc?",
+              "Seleznev: Quiet… don't distract me.",
+              "Seleznev: Judging by these records we really are inside a secret laboratory. More than that, this entire underground complex is an autonomous Survival base. It was built back in 2036 on the order of a Russian millionaire, Arkady Karpov. The man realized in time that the world was sliding into the abyss. While resources and time remained, he threw up this shelter, hoping to hide his family from the coming apocalypse. Fate decided otherwise. The bunker was finished, but Karpov never made it here. His private plane was shot down over the Moscow region right at takeoff… The automatic alert logs confirm it."
+            ],
+            "de": [
+              "*^** Iwan Jurjewitsch blieb am Ausgang stehen. Von einem Fuß auf den anderen tretend, umklammerte der Ingenieur einen schweren Schraubenschlüssel. **^*",
+              "Iwan Jurjewitsch: Nun, was ist, Doc?",
+              "Seleznev: Leise… lenkt mich nicht ab.",
+              "Seleznev: Diesen Aufzeichnungen nach befinden wir uns wirklich in einem geheimen Labor. Mehr noch: dieser ganze unterirdische Komplex ist eine autonome Überlebensbasis. Sie wurde 2036 im Auftrag eines russischen Millionärs, Arkadi Karpow, errichtet. Der Mann begriff rechtzeitig, dass die Welt in den Abgrund rollte. Solange Mittel und Zeit blieben, zog er diesen Unterschlupf hoch, um die Familie vor der kommenden Apokalypse zu bergen. Doch das Schicksal wollte anders. Den Bunker vollendete man, aber Karpow selbst kam nie an. Sein Privatflugzeug wurde über dem Gebiet Moskau im Moment des Starts abgeschossen… Das bestätigen die Logs des automatischen Meldesystems."
+            ]
+          }
+        },
+        "P4": {
+          "text_man": {
+            "ru": [
+              "*^** Дверь лаборатории резко распахнулась, и внутрь буквально влетела запыхавшаяся девушка. Это была Оксана Валентиновна, наш агроном. На ходу поправляя растрепавшиеся волосы, она взволнованно обратилась к присутствующим: **^*",
+              "Оксана Валентиновна: Александр Сергеевич! Профессор Селезнев! Я закончила полную инвентаризацию наших запасов. Расклад, честно говоря, паршивый. Сухих пайков осталось от силы килограммов восемь. С дистиллированной водой в канистрах тоже негусто — набралось всего литров четырнадцать. Ну и килограммов пятьдесят подготовленной почвы в мешках. Это критическая ситуация! Воды нам хватит максимум на сутки, и это при условии, что мы вообще не станем тратить ее на гидропонику. А провизия, по моим расчетам, полностью иссякнет уже через день-два.",
+              "Селезнев: Да уж, ситуация действительно на грани катастрофы. Без надежного источника воды мы здесь долго не протянем.",
+              "Сергей Артурович: Когда я осматривал соседние отсеки, то наткнулся на работающий опреснитель-испаритель. Он предназначен как раз для переработки льда в талую воду. Снаружи этого добра навалом — сугробы выше крыши. Я беру на себя доставку льда внутрь комплекса. Но кто-то должен постоянно дежурить у установки и контролировать процесс вымораживания.",
+              "Оксана Валентиновна: Сереж, да это же проще пареной репы! Считай, что с водоснабжением вопрос решен, я возьму контроль на себя.",
+              "Вы: Ладно, команда. Допустим, проблему с питьем мы закроем. Но без стабильного притока нормальной еды человеческий организм протянет от силы недели две, ну максимум четыре. Потом начнется очевидное, и мы просто загнемся. Оксана, скажи прямо: ресурсов нашей гидропонной установки вообще хватит, чтобы прокормить всю группу?",
+              "Оксана Валентиновна: Печалька, Александр Сергеевич... В режиме жесточайшей экономии местная гидропоника способна выдать норму только на троих. А нас тут, напомню, пятеро. И все же я настоятельно рекомендую запустить линии прямо сейчас. Так мы хотя бы выиграем драгоценное время на поиски другого выхода."
+            ],
+            "en": [
+              "*^** The laboratory door flew open and a breathless young woman burst in. It was Oksana Valentinovna, our agronomist. Smoothing her tousled hair as she came, she spoke in agitation: **^*",
+              "Oksana Valentinovna: Alexander Sergeyevich! Professor Seleznev! I have finished a full inventory of our stores. The picture, frankly, is rotten. Eight kilos of dry rations at most. Distilled water in canisters is thin too — only about fourteen litres. And fifty kilos of prepared soil in sacks. This is critical! The water will last a day at most, and that is if we spend none of it on hydroponics. Provisions, by my count, will be gone in a day or two.",
+              "Seleznev: Yes… we are on the edge of disaster. Without a reliable water source we will not last long here.",
+              "Sergey Arturovich: While I was checking the neighbouring compartments I found a working evaporator-desalinator. It is meant to turn ice into meltwater. Outside there is no shortage — drifts higher than the roof. I will bring ice into the complex. Someone must stay on the unit and watch the freeze-distillation.",
+              "Oksana Valentinovna: Seryozha, that is child's play! Consider the water problem solved; I will take control.",
+              "You: All right, team. Suppose we close the drinking problem. Without a steady flow of real food a human body lasts two weeks, four at best. Then the obvious begins, and we simply fold. Oksana, say it straight: will our hydroponics even feed the whole group?",
+              "Oksana Valentinovna: Bad news, Alexander Sergeyevich… In the harshest economy the local hydroponics can cover a ration for three. There are five of us. Still I strongly advise starting the lines now. That at least buys precious time to find another way."
+            ],
+            "de": [
+              "*^** Die Labortür flog auf, und atemlos stürzte eine junge Frau herein. Es war Oksana Walentinowna, unsere Agronomin. Im Laufen ordnete sie das zerzauste Haar und wandte sich erregt an die Anwesenden: **^*",
+              "Oksana Walentinowna: Alexander Sergejewitsch! Professor Seleznev! Ich habe die Vorräte vollständig inventarisiert. Die Lage ist, ehrlich gesagt, miserabel. Höchstens acht Kilo Trockenrationen. Destilliertes Wasser in Kanistern auch knapp — kaum vierzehn Liter. Dazu fünfzig Kilo vorbereitete Erde in Säcken. Das ist kritisch! Das Wasser reicht höchstens einen Tag, und das nur, wenn wir nichts für die Hydroponik verwenden. Die Verpflegung ist nach meiner Rechnung in ein, zwei Tagen weg.",
+              "Seleznev: Ja… wir stehen am Rand der Katastrophe. Ohne verlässliche Wasserquelle halten wir hier nicht lange durch.",
+              "Sergei Arturowitsch: Als ich die Nachbarräume prüfte, stieß ich auf einen funktionierenden Verdampfer-Entsalzer. Er ist genau dazu da, Eis in Schmelzwasser zu verwandeln. Draußen gibt es davon mehr als genug — Schneewehen über Dachhöhe. Ich übernehme den Eisnachschub. Jemand muss aber ständig an der Anlage wachen und die Gefrierdestillation überwachen.",
+              "Oksana Walentinowna: Serjosch, das ist ein Kinderspiel! Die Wasserfrage gilt als gelöst, ich übernehme die Kontrolle.",
+              "Sie: Gut, Team. Nehmen wir an, das Trinken ist vorerst geklärt. Ohne stetigen Zustrom echter Nahrung hält ein Körper zwei Wochen durch, höchstens vier. Dann beginnt das Offensichtliche, und wir brechen zusammen. Oksana, sag es geradeheraus: reicht unsere Hydroponik, um die ganze Gruppe zu ernähren?",
+              "Oksana Walentinowna: Traurige Kunde, Alexander Sergejewitsch… Im härtesten Sparbetrieb schafft die lokale Hydroponik die Norm nur für drei. Wir sind hier, ich erinnere daran, fünf. Trotzdem rate ich dringend, die Linien jetzt zu starten. So gewinnen wir wenigstens kostbare Zeit für einen anderen Ausweg."
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "*^** В лабораторию буквально влетела Оксана, едва не выронив из рук кипу бумаг. Запыхавшаяся, с растрепавшимися волосами, она подбежала прямиком к вам и, схватив за руку, взволнованно затараторила: **^*",
+              "Оксана Валентиновна: Саша! Александра Сергеевна! Профессор! Я только что со склада инвентаризации, там полный кошмар! У нас на всё про всё осталось всего 8 кило сухпайков. С водой вообще беда — в канистрах болтается около 14 литров дистиллята. Почвы в мешках полно, килограммов 50, но что толку? Девочки, это катастрофа, нам этой воды на сутки едва хватит, даже если мы гидропонную систему вообще трогать не будем! А еда... еда закончится через день, ну максимум два, я уже всё до крошки посчитала!",
+              "Селезнев: Да … Ситуация, мягко говоря, аховая. Без питьевой воды мы тут очень быстро протянем ноги.",
+              "Сергей Артурович: Спокойно, не паникуйте. Когда я прочесывал соседние полузатопленные комнаты, то наткнулся на уцелевшую установку для выработки талой воды. За стенами бункера этого льда и снега — завались. Давай я займусь этим? Буду выходить наружу и обеспечивать базу сырьем. Главное, чтобы кто-то присматривал за самим процессом вымораживания.",
+              "Оксана Валентиновна: Серёж, да о чем речь, это же проще пареной репы! Саш, не переживай, считай, что чистая вода у нас уже в кармане!",
+              "Вы: Ребята, ценить ваш настрой я буду потом. Ладно, проблему с питьем мы временно закроем. Но без нормального производства калорий группа протянет от силы недели две, ну в лучшем случае четыре, пока организмы просто не откажут. Оксана, посмотри на меня и ответь честно: мощностей гидропоники хватит, чтобы нас прокормить?",
+              "Оксана Валентиновна: Печалька, Саш... Местная система рассчитана всего на троих, да и то в режиме жесточайшей голодовки. А нас здесь, напоминаю, пятеро ртов. Но я все равно умоляю вас ее запустить. Так мы хотя бы выиграем немного драгоценного времени, чтобы придумать что-то еще."
+            ],
+            "en": [
+              "*^** Oksana burst into the lab, almost dropping a sheaf of papers. Breathless, hair tousled, she ran straight to you, caught your hand and spilled the words: **^*",
+              "Oksana Valentinovna: Sasha! Alexandra Sergeyevna! Professor! I just came from inventory — it's a nightmare! We have eight kilos of rations all told. Water is worse — about fourteen litres of distillate sloshing in canisters. Soil in sacks we have, fifty kilos, but so what? Girls, this is a catastrophe: that water barely lasts a day even if we never touch the hydroponics! And food… food is gone in a day, two at most, I counted every crumb!",
+              "Seleznev: Yes… The situation is, to put it mildly, dire. Without drinking water we will not last here.",
+              "Sergey Arturovich: Easy, don't panic. Sweeping the half-flooded rooms next door I found a surviving meltwater unit. Outside the bunker there is ice and snow to spare. Let me handle it? I will go out and feed the base with feedstock. Someone just has to watch the freeze-distillation itself.",
+              "Oksana Valentinovna: Seryozha, of course — child's play! Sasha, don't worry, clean water is as good as in the bag!",
+              "You: I will praise the spirit later. Fine, we close drinking for now. Without real calorie production the group lasts two weeks, four on a good day, until the bodies simply fail. Oksana, look at me and answer honestly: is the hydroponics enough to feed us?",
+              "Oksana Valentinovna: Bad news, Sasha… The local system is built for three, and that in starvation mode. Five mouths here, I remind you. Still I beg you to start it. We at least buy a little precious time to think of something else."
+            ],
+            "de": [
+              "*^** Oksana stürzte ins Labor und ließ beinahe den Stoß Papiere fallen. Atemlos, mit zerzaustem Haar, lief sie geradewegs auf Sie zu, griff Ihre Hand und redete erregt drauflos: **^*",
+              "Oksana Walentinowna: Sascha! Alexandra Sergejewna! Professor! Ich komme vom Inventur-Lager — ein Albtraum! Insgesamt acht Kilo Rationen. Beim Wasser erst recht: in den Kanistern schwappen etwa vierzehn Liter Destillat. Erde in Säcken haben wir, fünfzig Kilo, aber was nützt das? Mädels, das ist eine Katastrophe, das Wasser reicht kaum einen Tag, selbst wenn wir die Hydroponik gar nicht anfassen! Und das Essen… das Essen ist in einem Tag weg, höchstens zwei, ich habe jedes Krümelchen gezählt!",
+              "Seleznev: Ja… Die Lage ist, milde gesagt, verheerend. Ohne Trinkwasser halten wir hier nicht lange durch.",
+              "Sergei Arturowitsch: Ruhig, keine Panik. Als ich die halb überfluteten Nachbarräume durchsuchte, fand ich eine unversehrte Anlage für Schmelzwasser. Hinter den Bunkerwänden liegt Eis und Schnee in Mengen. Soll ich das übernehmen? Ich gehe hinaus und versorge die Basis mit Rohstoff. Hauptsache, jemand wacht über die Gefrierdestillation selbst.",
+              "Oksana Walentinowna: Serjosch, aber sicher — ein Kinderspiel! Sasch, keine Sorge, sauberes Wasser haben wir so gut wie in der Tasche!",
+              "Sie: Euren Elan lobe ich später. Gut, das Trinken schließen wir vorerst. Ohne echte Kalorienproduktion hält die Gruppe zwei Wochen, im besten Fall vier, bis die Körper einfach versagen. Oksana, sieh mich an und antworte ehrlich: reicht die Hydroponik, uns zu ernähren?",
+              "Oksana Walentinowna: Traurige Kunde, Sasch… Die lokale Anlage ist für drei ausgelegt, und das im härtesten Hungerbetrieb. Hier sind, ich erinnere daran, fünf Münder. Trotzdem flehe ich euch an, sie zu starten. So gewinnen wir wenigstens ein wenig kostbare Zeit, uns etwas anderes auszudenken."
+            ]
+          }
+        },
+        "P5": {
+          "text_man": {
+            "ru": [
+              "*^** В разговор резко вмешался Иван Юрьевич. Инженер, до этого молча слушавший коллег, раздраженно звякнул своим гаечным ключом: **^*",
+              "Иван Юрьевич: Ну, запустим мы её, а дальше-то что? Очевидно же, что этот комплекс не обслуживали десятилетиями. В обшивке корпуса куча сквозных пробоин! Мы сейчас еле-еле умудряемся согревать одну только лабораторию. В остальных-то отсеках уже через несколько часов, ближе к вечеру, наступит лютый мороз. Костер в коридоре, между прочим, уже окончательно потух. Опа-на… агроном, а ну-ка дай сюда свой листок с инвентаризацией! Мне ведь не показалось? У нас что, реально есть сертифицированные ремкомплекты? Ты их сама-то видела?! Отвечай!",
+              "Оксана Валентиновна: Эй, потише, Ваня! Чего ты раскричался? Конечно видела. На дальних стеллажах лежат несколько нераспечатанных чемоданов с инструментами.",
+              "Иван Юрьевич: Так это же в корне меняет дело! Я смогу намертво залатать дыры в корпусе. Это ликвидирует утечки тепла, и тогда Оксана спокойно вырастит свой салат без риска, что весь урожай перемерзнет в первую же ночь.",
+              "Вы: Тогда предлагаю следующий план. Сначала разбираемся с ремонтом и герметизацией корпуса Базы Выжив… нет. Отныне — Базы Космистов!",
+              "*^** Услышав новое название, спутники согласно переглянулись и закивали. **^*",
+              "Вы: Одновременно с этим Сергей налаживает поставки льда, а Оксана берет на себя производство талой воды. Так мы и от обезвоживания не умрем, и дадим гидропонике необходимый ресурс. Ну а профессор тем временем досконально изучит уцелевшую базу данных на терминале. Идет?",
+              "Команда: Да!"
+            ],
+            "en": [
+              "*^** Ivan Yuryevich cut in. The engineer, who had been listening in silence, rattled his wrench: **^*",
+              "Ivan Yuryevich: Fine, we start it — and then what? This complex has not been serviced for decades. The hull is full of through-holes! We can barely heat the laboratory alone. In the other compartments, by evening, a savage frost will set in. The corridor fire, by the way, is finally dead. Hold on… agronomist, give me that inventory sheet! Did I imagine it? Do we actually have certified repair kits? Did you see them yourself? Answer!",
+              "Oksana Valentinovna: Hey, easy, Vanya! Why the shouting? Of course I saw them. On the far racks there are several unopened cases of tools.",
+              "Ivan Yuryevich: That changes everything! I can seal the holes in the hull for good. That kills the heat leaks, and then Oksana can grow her lettuce without the crop freezing on the first night.",
+              "You: Then here is the plan. First we repair and seal the hull of Survival Base… no. From now on — Cosmist Base!",
+              "*^** Hearing the new name, the companions exchanged looks and nodded. **^*",
+              "You: At the same time Sergey sets up ice supply, and Oksana takes meltwater production. We will not die of thirst, and hydroponics gets what it needs. The professor, meanwhile, studies the surviving terminal database in full. Agreed?",
+              "The team: Yes!"
+            ],
+            "de": [
+              "*^** Iwan Jurjewitsch fiel scharf ins Wort. Der Ingenieur, der bisher geschwiegen hatte, ließ den Schraubenschlüssel knirschen: **^*",
+              "Iwan Jurjewitsch: Schön, wir starten sie — und dann? Der Komplex wurde jahrzehntelang nicht gewartet. In der Hülle stecken durchgehende Löcher! Wir schaffen es kaum, allein das Labor zu wärmen. In den übrigen Abschnitten kommt schon in ein paar Stunden, gegen Abend, grimmiger Frost. Das Feuer im Gang ist übrigens endgültig aus. Moment… Agronomin, her mit dem Inventurzettel! Hab ich mich versehen? Haben wir wirklich zertifizierte Reparatursätze? Hast du sie selbst gesehen? Antworte!",
+              "Oksana Walentinowna: He, leiser, Wanja! Was schreist du so? Natürlich habe ich sie gesehen. Auf den hinteren Regalen liegen mehrere ungeöffnete Werkzeugkoffer.",
+              "Iwan Jurjewitsch: Das ändert alles! Ich kann die Löcher in der Hülle fest schließen. Dann sind die Wärmelecks weg, und Oksana zieht ihren Salat, ohne dass die Ernte in der ersten Nacht erfriert.",
+              "Sie: Dann der Plan. Zuerst Reparatur und Abdichtung der Hülle von Überlebensbasis… nein. Von jetzt an — Kosmist-Basis!",
+              "*^** Beim neuen Namen sahen sich die Gefährten an und nickten. **^*",
+              "Sie: Zugleich organisiert Sergei den Eisnachschub, Oksana übernimmt die Schmelzwasserproduktion. So sterben wir nicht vor Durst und die Hydroponik bekommt, was sie braucht. Der Professor prüft derweil die erhaltene Datenbank am Terminal gründlich. Einverstanden?",
+              "Das Team: Ja!"
+            ]
+          },
+          "text_woman": {
+            "ru": [
+              "*^** В разговор резко вмешался Иван Юрьевич. Инженер, до этого молча слушавший коллег, раздраженно звякнул своим гаечным ключом: **^*",
+              "Иван Юрьевич: Ну, запустим мы её, а дальше-то что? Очевидно же, что этот бункер не обслуживали десятилетиями. В обшивке корпуса куча сквозных пробоин! Мы сейчас еле-еле умудряемся согревать одну только лабораторию. В остальных-то отсеках уже через несколько часов, ближе к вечеру, наступит лютый мороз. Костер в коридоре, между прочим, уже окончательно потух. Опа-на… Оксана, а ну-ка покажи листок! Мне ведь не показалось? У нас что, реально есть сертифицированные ремкомплекты? Ты их сама-то видела?! Говори же!",
+              "Оксана Валентиновна: Эй, полегче на поворотах, Ваня! Чего ты напустился? Конечно видела. На дальних стеллажах лежат несколько нераспечатанных чемоданов с инструментами.",
+              "Иван Юрьевич: Так это же в корне меняет дело! Я смогу намертво залатать дыры в корпусе! Это ликвидирует утечки тепла, и тогда Оксана спокойно вырастит свой салат без риска, что весь урожай перемерзнет в первую же ночь.",
+              "Вы: Отлично. Тогда предлагаю следующий план. Первым делом разбираемся с ремонтом и герметизацией корпуса Базы Выжив… нет. Отныне — Базы Космистов!",
+              "*^** Услышав новое название, спутники согласно переглянулись и одобрительно закивали. **^*",
+              "Вы: Одновременно с этим Сергей налаживает поставки льда, а Оксана берет на себя производство талой воды. Так мы и от обезвоживания спасемся, и дадим гидропонике необходимый ресурс. Ну а профессор тем временем досконально изучит уцелевшую базу данных на терминале. Идет, команда?",
+              "Команда: Да!"
+            ],
+            "en": [
+              "*^** Ivan Yuryevich cut in. The engineer, silent until now, rattled his wrench: **^*",
+              "Ivan Yuryevich: Fine, we start it — and then what? This bunker has not been serviced for decades. The hull is full of through-holes! We can barely heat the laboratory alone. In the other compartments, by evening, a savage frost will set in. The corridor fire is finally dead. Hold on… Oksana, show me that sheet! Did I imagine it? Do we actually have certified repair kits? Did you see them yourself? Speak!",
+              "Oksana Valentinovna: Easy on the corners, Vanya! Why the attack? Of course I saw them. On the far racks there are several unopened cases of tools.",
+              "Ivan Yuryevich: That changes everything! I can seal the holes in the hull for good! That kills the heat leaks, and then Oksana can grow her lettuce without the crop freezing on the first night.",
+              "You: Good. Then the plan. First we repair and seal the hull of Survival Base… no. From now on — Cosmist Base!",
+              "*^** Hearing the new name, the companions exchanged looks and nodded in approval. **^*",
+              "You: At the same time Sergey sets up ice supply, and Oksana takes meltwater production. We will not die of thirst, and hydroponics gets what it needs. The professor, meanwhile, studies the surviving terminal database in full. Agreed, team?",
+              "The team: Yes!"
+            ],
+            "de": [
+              "*^** Iwan Jurjewitsch fiel scharf ins Wort. Der Ingenieur, der bisher geschwiegen hatte, ließ den Schraubenschlüssel knirschen: **^*",
+              "Iwan Jurjewitsch: Schön, wir starten sie — und dann? Der Bunker wurde jahrzehntelang nicht gewartet. In der Hülle stecken durchgehende Löcher! Wir schaffen es kaum, allein das Labor zu wärmen. In den übrigen Abschnitten kommt schon in ein paar Stunden, gegen Abend, grimmiger Frost. Das Feuer im Gang ist endgültig aus. Moment… Oksana, zeig den Zettel! Hab ich mich versehen? Haben wir wirklich zertifizierte Reparatursätze? Hast du sie selbst gesehen? Sag schon!",
+              "Oksana Walentinowna: Langsamer in den Kurven, Wanja! Was fällt dir ein? Natürlich habe ich sie gesehen. Auf den hinteren Regalen liegen mehrere ungeöffnete Werkzeugkoffer.",
+              "Iwan Jurjewitsch: Das ändert alles! Ich kann die Löcher in der Hülle fest schließen! Dann sind die Wärmelecks weg, und Oksana zieht ihren Salat, ohne dass die Ernte in der ersten Nacht erfriert.",
+              "Sie: Gut. Dann der Plan. Zuerst Reparatur und Abdichtung der Hülle von Überlebensbasis… nein. Von jetzt an — Kosmist-Basis!",
+              "*^** Beim neuen Namen sahen sich die Gefährten an und nickten zustimmend. **^*",
+              "Sie: Zugleich organisiert Sergei den Eisnachschub, Oksana übernimmt die Schmelzwasserproduktion. So retten wir uns vor dem Verdursten, und die Hydroponik bekommt, was sie braucht. Der Professor prüft derweil die erhaltene Datenbank am Terminal gründlich. Einverstanden, Team?",
+              "Das Team: Ja!"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "npc": {
+    "NPC_UNKNOWN_GENDER": {
+      "name": {
+        "ru": "Неизвестный",
+        "en": "Unknown",
+        "de": "Unbekannt"
+      },
+      "text_man": {
+        "ru": [
+          "Неизвестный: Живее, молодой человек. Поднимайтесь и за мной."
+        ],
+        "en": [
+          "Unknown: Quicker, young man. Get up and follow me."
+        ],
+        "de": [
+          "Unbekannt: Schneller, junger Mann. Stehen Sie auf und folgen Sie mir."
+        ]
+      },
+      "text_woman": {
+        "ru": [
+          "Неизвестный: Рад, что вы пришли в себя. Пройдемте со мной, пожалуйста."
+        ],
+        "en": [
+          "Unknown: Glad you've come to. Please come with me."
+        ],
+        "de": [
+          "Unbekannt: Freut mich, dass Sie zu sich gekommen sind. Kommen Sie bitte mit mir."
+        ]
+      }
+    },
+    "NPC_CREW_TUTORIAL_SPECIALISTS": {
+      "name": {
+        "ru": "Доктор Селезнев",
+        "en": "Doctor Seleznev",
+        "de": "Doktor Seleznev"
+      },
+      "text_man": {
+        "ru": [
+          "Доктор Селезнев: Хорошо, закрой окно Поручений. Помогу тебе освоиться с интерфейсом. Смотри, чтобы начать вырабатывать электроэнергию, нам сперва нужно часть обустроенного населения перераспределить в специалистов. Сверху, как видишь, есть ^^панель^^ [[resource-bar]], она включает в себя карту команды (первый раздел под названием ^^\"Население\"^^ [[population]]) и карточки-разделы с ресурсами, расположенные чуть правее. Открой ^^первый раздел^^ [[population]], посмотри, сколько у тебя Всего жителей, бездомных (т.е. не заселенных), обустроенных. Тунеядцы — это обустроенные, т.е. заселенные жители, но они еще не распределены по профессиям. Далее переходишь в ^^меню Управления небесным телом^^ [[body-menu]] в раздел ^^Управление^^ [[menu-manage]], затем в подраздел ^^Специалисты^^ [[specialists-panel]]. Перед тобой откроется окно Распределения специалистов, найми одного Инженера через цветной горизонтальный ползунок, перемести ползунок вправо ^^(сюда)^^ [[spec-slider-engineers]]."
+        ],
+        "en": [
+          "Doctor Seleznev: Good, close the Quests window. I'll help you get used to the interface. Look, to start generating electricity, we first need to redistribute part of the settled population into specialists. At the top, as you can see, there is the ^^panel^^ [[resource-bar]], it includes the team card (the first section called ^^\"Population\"^^ [[population]]) and the resource section cards located a bit to the right. Open the ^^first section^^ [[population]], look how many Total residents, homeless (i.e. not settled), settled you have. Idlers are the settled ones, i.e. housed residents, but they are not yet assigned to professions. Next go to the ^^Celestial Body Management menu^^ [[body-menu]] into the ^^Management^^ [[menu-manage]] section, then into the ^^Specialists^^ [[specialists-panel]] subsection. The Specialists Distribution window will open in front of you, hire one Engineer via the colored horizontal slider, move the slider to the right ^^(here)^^ [[spec-slider-engineers]]."
+        ],
+        "de": [
+          "Doktor Seleznev: Gut, schließe das Aufträge-Fenster. Ich helfe dir, dich mit der Oberfläche vertraut zu machen. Schau, um Strom zu erzeugen, müssen wir zuerst einen Teil der angesiedelten Bevölkerung zu Spezialisten umverteilen. Oben, wie du siehst, gibt es die ^^Leiste^^ [[resource-bar]], sie umfasst die Team-Karte (den ersten Abschnitt namens ^^\"Bevölkerung\"^^ [[population]]) und die Ressourcen-Abschnittskarten etwas weiter rechts. Öffne den ^^ersten Abschnitt^^ [[population]], schau, wie viele Gesamtbewohner, Obdachlose (d. h. nicht angesiedelt), Angesiedelte du hast. Nichtstuer sind die Angesiedelten, d. h. untergebrachte Bewohner, die aber noch nicht den Berufen zugewiesen sind. Weiter gehst du ins ^^Himmelskörper-Verwaltungsmenü^^ [[body-menu]] in den Abschnitt ^^Verwaltung^^ [[menu-manage]], dann in den Unterabschnitt ^^Spezialisten^^ [[specialists-panel]]. Vor dir öffnet sich das Fenster der Spezialistenverteilung, stelle einen Ingenieur über den farbigen horizontalen Schieberegler ein, schiebe den Regler nach rechts ^^(hierher)^^ [[spec-slider-engineers]]."
+        ]
+      },
+      "text_woman": {
+        "ru": [
+          "Доктор Селезнев: Хорошо, закрой окно Поручений. Помогу тебе освоиться с интерфейсом. Смотри, чтобы начать вырабатывать электроэнергию, нам сперва нужно часть обустроенного населения перераспределить в специалистов. Сверху, как видишь, есть ^^панель^^ [[resource-bar]], она включает в себя карту команды (первый раздел под названием ^^\"Население\"^^ [[population]]) и карточки-разделы с ресурсами, расположенные чуть правее. Открой ^^первый раздел^^ [[population]], посмотри, сколько у тебя Всего жителей, бездомных (т.е. не заселенных), обустроенных. Тунеядцы — это обустроенные, т.е. заселенные жители, но они еще не распределены по профессиям. Далее переходишь в ^^меню Управления небесным телом^^ [[body-menu]] в раздел ^^Управление^^ [[menu-manage]], затем в подраздел ^^Специалисты^^ [[specialists-panel]]. Перед тобой откроется окно Распределения специалистов, найми одного Инженера через цветной горизонтальный ползунок, перемести ползунок вправо ^^(сюда)^^ [[spec-slider-engineers]]."
+        ],
+        "en": [
+          "Doctor Seleznev: Good, close the Quests window. I'll help you get used to the interface. Look, to start generating electricity, we first need to redistribute part of the settled population into specialists. At the top, as you can see, there is the ^^panel^^ [[resource-bar]], it includes the team card (the first section called ^^\"Population\"^^ [[population]]) and the resource section cards located a bit to the right. Open the ^^first section^^ [[population]], look how many Total residents, homeless (i.e. not settled), settled you have. Idlers are the settled ones, i.e. housed residents, but they are not yet assigned to professions. Next go to the ^^Celestial Body Management menu^^ [[body-menu]] into the ^^Management^^ [[menu-manage]] section, then into the ^^Specialists^^ [[specialists-panel]] subsection. The Specialists Distribution window will open in front of you, hire one Engineer via the colored horizontal slider, move the slider to the right ^^(here)^^ [[spec-slider-engineers]]."
+        ],
+        "de": [
+          "Doktor Seleznev: Gut, schließe das Aufträge-Fenster. Ich helfe dir, dich mit der Oberfläche vertraut zu machen. Schau, um Strom zu erzeugen, müssen wir zuerst einen Teil der angesiedelten Bevölkerung zu Spezialisten umverteilen. Oben, wie du siehst, gibt es die ^^Leiste^^ [[resource-bar]], sie umfasst die Team-Karte (den ersten Abschnitt namens ^^\"Bevölkerung\"^^ [[population]]) und die Ressourcen-Abschnittskarten etwas weiter rechts. Öffne den ^^ersten Abschnitt^^ [[population]], schau, wie viele Gesamtbewohner, Obdachlose (d. h. nicht angesiedelt), Angesiedelte du hast. Nichtstuer sind die Angesiedelten, d. h. untergebrachte Bewohner, die aber noch nicht den Berufen zugewiesen sind. Weiter gehst du ins ^^Himmelskörper-Verwaltungsmenü^^ [[body-menu]] in den Abschnitt ^^Verwaltung^^ [[menu-manage]], dann in den Unterabschnitt ^^Spezialisten^^ [[specialists-panel]]. Vor dir öffnet sich das Fenster der Spezialistenverteilung, stelle einen Ingenieur über den farbigen horizontalen Schieberegler ein, schiebe den Regler nach rechts ^^(hierher)^^ [[spec-slider-engineers]]."
+        ]
+      }
+    },
+    "NPC_CREW_TUTORIAL_SCHEMES": {
+      "name": {
+        "ru": "Доктор Селезнев",
+        "en": "Doctor Seleznev",
+        "de": "Doktor Seleznev"
+      },
+      "text_man": {
+        "ru": [
+          "Доктор Селезнев: Отлично, теперь у нас есть достаточно свободных Инженеров для запуска электросети. Далее в Панели управления небесным телом заходим в раздел ^^\"Строительство\"^^ [[menu-build]]. Подраздел ^^\"Наземное\"^^ [[submenu-ground]], Категория ^^\"Инфраструктура\"^^ [[building-category-infra]], щелкаем по ^^первому строению^^ [[building-base]]. Перед тобой откроется окно управления зданием, вверху переключаешься с вкладки ^^Основное^^ [[modal-tab-main]] на ^^Схемы^^ [[modal-tab-schemes]]. Схемы — они же Рецепты позволяют совершать какие-либо действия из здания, сейчас нам доступна схема ^^\"Фотосинтез\"^^ [[recipe-photosynthesis]], потяни до упора левый ползунок мощности схемы вверх, чтобы рецепт активировался."
+        ],
+        "en": [
+          "Doctor Seleznev: Excellent, now we have enough free Engineers to launch the power grid. Next in the Celestial Body Management Panel go to the ^^\"Construction\"^^ [[menu-build]] section. Subsection ^^\"Ground\"^^ [[submenu-ground]], Category ^^\"Infrastructure\"^^ [[building-category-infra]], click on the ^^first building^^ [[building-base]]. The building management window will open in front of you, at the top switch from the ^^Main^^ [[modal-tab-main]] tab to ^^Schemes^^ [[modal-tab-schemes]]. Schemes — also known as Recipes — allow performing certain actions from the building; currently the scheme ^^\"Photosynthesis\"^^ [[recipe-photosynthesis]] is available to us, pull the left scheme power slider all the way up so that the recipe activates."
+        ],
+        "de": [
+          "Doktor Seleznev: Ausgezeichnet, jetzt haben wir genug freie Ingenieure, um das Stromnetz zu starten. Weiter gehst du in der Himmelskörper-Verwaltungsleiste in den Abschnitt ^^\"Bau\"^^ [[menu-build]]. Unterabschnitt ^^\"Boden\"^^ [[submenu-ground]], Kategorie ^^\"Infrastruktur\"^^ [[building-category-infra]], klicke auf das ^^erste Gebäude^^ [[building-base]]. Vor dir öffnet sich das Gebäudeverwaltungsfenster, oben wechselst du vom Reiter ^^Haupt^^ [[modal-tab-main]] zu ^^Schemata^^ [[modal-tab-schemes]]. Schemata — auch Rezepte genannt — ermöglichen bestimmte Aktionen aus dem Gebäude; derzeit ist uns das Schema ^^\"Photosynthese\"^^ [[recipe-photosynthesis]] verfügbar, ziehe den linken Schema-Leistungsregler ganz nach oben, damit das Rezept aktiviert wird."
+        ]
+      },
+      "text_woman": {
+        "ru": [
+          "Доктор Селезнев: Отлично, теперь у нас есть достаточно свободных Инженеров для запуска электросети. Далее в Панели управления небесным телом заходим в раздел ^^\"Строительство\"^^ [[menu-build]]. Подраздел ^^\"Наземное\"^^ [[submenu-ground]], Категория ^^\"Инфраструктура\"^^ [[building-category-infra]], щелкаем по ^^первому строению^^ [[building-base]]. Перед тобой откроется окно управления зданием, вверху переключаешься с вкладки ^^Основное^^ [[modal-tab-main]] на ^^Схемы^^ [[modal-tab-schemes]]. Схемы — они же Рецепты позволяют совершать какие-либо действия из здания, сейчас нам доступна схема ^^\"Фотосинтез\"^^ [[recipe-photosynthesis]], потяни до упора левый ползунок мощности схемы вверх, чтобы рецепт активировался."
+        ],
+        "en": [
+          "Doctor Seleznev: Excellent, now we have enough free Engineers to launch the power grid. Next in the Celestial Body Management Panel go to the ^^\"Construction\"^^ [[menu-build]] section. Subsection ^^\"Ground\"^^ [[submenu-ground]], Category ^^\"Infrastructure\"^^ [[building-category-infra]], click on the ^^first building^^ [[building-base]]. The building management window will open in front of you, at the top switch from the ^^Main^^ [[modal-tab-main]] tab to ^^Schemes^^ [[modal-tab-schemes]]. Schemes — also known as Recipes — allow performing certain actions from the building; currently the scheme ^^\"Photosynthesis\"^^ [[recipe-photosynthesis]] is available to us, pull the left scheme power slider all the way up so that the recipe activates."
+        ],
+        "de": [
+          "Doktor Seleznev: Ausgezeichnet, jetzt haben wir genug freie Ingenieure, um das Stromnetz zu starten. Weiter gehst du in der Himmelskörper-Verwaltungsleiste in den Abschnitt ^^\"Bau\"^^ [[menu-build]]. Unterabschnitt ^^\"Boden\"^^ [[submenu-ground]], Kategorie ^^\"Infrastruktur\"^^ [[building-category-infra]], klicke auf das ^^erste Gebäude^^ [[building-base]]. Vor dir öffnet sich das Gebäudeverwaltungsfenster, oben wechselst du vom Reiter ^^Haupt^^ [[modal-tab-main]] zu ^^Schemata^^ [[modal-tab-schemes]]. Schemata — auch Rezepte genannt — ermöglichen bestimmte Aktionen aus dem Gebäude; derzeit ist uns das Schema ^^\"Photosynthese\"^^ [[recipe-photosynthesis]] verfügbar, ziehe den linken Schema-Leistungsregler ganz nach oben, damit das Rezept aktiviert wird."
+        ]
+      }
+    },
+    "NPC_CH3_CARTOGRAPHY": {
+      "name": {
+        "ru": "Профессор Селезнев",
+        "en": "Professor Seleznev",
+        "de": "Professor Seleznev"
+      },
+      "text_man": {
+        "ru": [
+          "Профессор Селезнев: Что же, Александр, пришло время воплотить в жизнь пункты нашей стратегии. Займи, пожалуйста кресло. Открой на терминале панель управления небесным телом и перейди в раздел ^^«Общее»^^ [[menu-general]], а следом загляни в подраздел ^^«Картография»^^ [[submenu-cartography]]. Перед твоим взором развернется двухмерная карта нашей многострадальной планеты. Видишь эту непроглядную черную зону вокруг? Это так называемый туман войны — неисследованные, скованные стужей территории. Со временем мы снимем эту завесу, но прямо сейчас акцент нужно сделать на другом. Обрати внимание: чуть юго-западнее нашей Базы Космистов отмечена богатая ресурсная жила, обозначенная просто как «Лёд». Зайди в меню управления Базой прямо через эту карту, чтобы оценить наши возможности. Там отобразится список доступных экспедиционеров — для начала нам нужен хотя бы один свободный специалист. Нашел? Отлично. Теперь выбери тип экспедиции «Добыча», укажи количество отправляемых людей и сразу после этого кликни прямо по ледяной жиле на карте. Процесс сбора запустится в автоматическом зацикленном режиме. Интерфейс сразу покажет таймер — через сколько минут наш человек доберется до точки. Что касается ремонта обшивки, вымораживания талой воды и выращивания салата в гидропонике … Думаю, тут ты без проблем разберешься самостоятельно. Главная подсказка, мой дорогой коллега, — все эти процессы завязаны на вкладку ^^«Схемы»^^ [[modal-tab-schemes]]."
+        ],
+        "en": [
+          "Professor Seleznev: Well, Alexander, it is time to put our strategy into practice. Take the chair, please. On the terminal open the celestial body panel, go to ^^General^^ [[menu-general]], then into ^^Cartography^^ [[submenu-cartography]]. A two-dimensional map of our long-suffering planet will unfold. See that pitch-black zone around us? That is the fog of war — unexplored, frost-bound land. In time we will lift the veil, but the accent now is elsewhere. Just southwest of Cosmist Base a rich vein is marked simply as Ice. Open the Base controls from this map and weigh what we have. You will see available expeditioners — we need at least one free specialist to start. Found them? Good. Choose expedition type Mining, set how many people go, then click the ice vein on the map. Collection will loop on its own. The interface will show a timer — how many minutes until our man reaches the point. As for hull repair, freeze-distillation and growing lettuce… I think you will manage those yourself. The main hint, my dear colleague: all of that lives on the ^^Schemes^^ [[modal-tab-schemes]] tab."
+        ],
+        "de": [
+          "Professor Seleznev: Nun, Alexander, es ist Zeit, die Punkte unserer Strategie umzusetzen. Nimm bitte den Sessel. Öffne am Terminal die Himmelskörper-Leiste, gehe zu ^^Allgemein^^ [[menu-general]] und dann in den Unterpunkt ^^Kartographie^^ [[submenu-cartography]]. Vor dir entfaltet sich die zweidimensionale Karte unseres geplagten Planeten. Siehst du diese pechschwarze Zone ringsum? Das ist der Fog of War — unerkundetes, froststarres Land. Mit der Zeit lüften wir den Schleier, aber jetzt liegt der Akzent woanders. Südwestlich unserer Kosmist-Basis ist eine reiche Ader schlicht als Eis markiert. Öffne die Basisverwaltung direkt über diese Karte und prüfe unsere Mittel. Dort siehst du verfügbare Expediteure — für den Anfang brauchen wir wenigstens einen freien Spezialisten. Gefunden? Gut. Wähle den Expeditionstyp Abbau, setze die Zahl der Leute und klicke danach direkt auf die Eisader. Die Sammlung läuft dann im Kreis. Die Oberfläche zeigt sogleich den Timer — in wie vielen Minuten unser Mann den Punkt erreicht. Was Rumpf-Reparatur, Gefrierdestillation und Salatanbau angeht… damit wirst du selbst fertig. Der wichtigste Hinweis, lieber Kollege: all das hängt am Reiter ^^Schemata^^ [[modal-tab-schemes]]."
+        ]
+      },
+      "text_woman": {
+        "ru": [
+          "Профессор Селезнев: Что же, Сашенька, пора переходить от слов к делу и реализовывать нашу стратегию. Садись за пульт, пожалуйста. Первым делом зайди в панель управления небесным телом, выбери раздел ^^«Общее»^^ [[menu-general]], а затем открой подраздел ^^«Картография»^^ [[submenu-cartography]]. Посмотри на экран — перед тобой двухмерная карта нашей многострадальной планеты. Видишь эти черные, бесконечные пустоты? Это туман войны, неизведанные земли. Мы обязательно исследуем их и раскроем карту позже, но сейчас у нас более приземленная и важная задача. Прямо под боком у Базы Космистов, на юго-западе, есть спасительная ресурсная жила — залежи льда. Кликни по иконке Базы на этой карте, чтобы проверить, кто из экспедиционеров сейчас в твоем распоряжении. Нам необходим как минимум один свободный человек. Как только определишься с кандидатом, выставляй тип экспедиции «Добыча», задай число специалистов в отряде и сразу после этого щелкай мышкой прямо по ледяной жиле на карте. Добыча пойдет на автомате по кругу, пока мы сами её не остановим. На экране сразу появится шкала времени, и ты увидишь, сколько Ване потребуется времени, чтобы дойти до цели. С ремонтом пробоин бункера, вымораживанием и посадкой салата, я думаю, ты и сама прекрасно сдюжишь. Подскажу только одно — все инструкции ищи в меню ^^«Схемы»^^ [[modal-tab-schemes]]. Удачи, Саша, я в тебя искренне верю."
+        ],
+        "en": [
+          "Professor Seleznev: Well, Sashenka, time to move from words to deeds and run our strategy. Sit at the console, please. First open the celestial body panel, choose ^^General^^ [[menu-general]], then ^^Cartography^^ [[submenu-cartography]]. Look at the screen — a two-dimensional map of our long-suffering planet. See those black, endless voids? Fog of war, unknown land. We will explore and uncover the map later; right now the task is more earthly. Right beside Cosmist Base, to the southwest, there is a saving vein — ice deposits. Click the Base icon on this map to see which expeditioners you have. We need at least one free person. Once you pick a candidate, set expedition type Mining, set the squad size, then click the ice vein. Mining will loop until we stop it. A time bar will appear at once; you will see how long Vanya needs to reach the mark. Hull patches, freeze-distillation and planting lettuce — I think you will handle those yourself. One hint only: look for the instructions under ^^Schemes^^ [[modal-tab-schemes]]. Good luck, Sasha. I believe in you."
+        ],
+        "de": [
+          "Professor Seleznev: Nun, Saschenka, Zeit, von Worten zu Taten zu kommen und unsere Strategie umzusetzen. Setz dich bitte an die Konsole. Zuerst die Himmelskörper-Leiste, Abschnitt ^^Allgemein^^ [[menu-general]], dann ^^Kartographie^^ [[submenu-cartography]]. Sieh auf den Schirm — die zweidimensionale Karte unseres geplagten Planeten. Siehst du diese schwarzen, endlosen Leeren? Fog of War, unbekannte Lande. Wir werden sie später erkunden und die Karte lüften; jetzt haben wir eine irdischere Aufgabe. Direkt neben der Kosmist-Basis, südwestlich, liegt eine rettende Ader — Eisvorkommen. Klicke auf das Basis-Symbol auf dieser Karte und prüfe, welche Expediteure dir zur Verfügung stehen. Wir brauchen mindestens einen freien Menschen. Hast du den Kandidaten, setze den Typ Abbau, die Truppstärke, und klicke dann auf die Eisader. Der Abbau läuft im Kreis, bis wir ihn stoppen. Sofort erscheint die Zeitskala — du siehst, wie lange Wanja bis zum Ziel braucht. Mit den Löchern im Bunker, der Gefrierdestillation und der Salatpflanzung wirst du selbst fertig. Nur ein Hinweis: alle Anweisungen stehen unter ^^Schemata^^ [[modal-tab-schemes]]. Viel Glück, Sascha. Ich glaube an dich."
+        ]
+      }
+    }
+  }
+}

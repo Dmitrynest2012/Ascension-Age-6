@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "birthDate": "1986-04-02"
+  },
+  "name": {
+    "male": {
+      "ru": "Александр Сергеевич Щербаков",
+      "en": "Alexander Sergeyevich Shcherbakov",
+      "de": "Alexander Sergejewitsch Schtscherbakow"
+    },
+    "female": {
+      "ru": "Александра Сергеевна Щербакова",
+      "en": "Alexandra Sergeyevna Shcherbakova",
+      "de": "Alexandra Sergejewna Schtscherbakowa"
+    },
+    "unknown": {
+      "ru": "Неизвестно",
+      "en": "Unknown",
+      "de": "Unbekannt"
+    }
+  },
+  "bio": {
+    "ru": "Менеджер, альпинист.",
+    "en": "Manager, mountaineer.",
+    "de": "Manager, Bergsteiger."
+  },
+  "ui": {
+    "title": { "ru": "Управление героем", "en": "Hero Management", "de": "Heldenverwaltung" },
+    "section.dossier": { "ru": "Досье", "en": "Dossier", "de": "Dossier" },
+    "section.equipment": { "ru": "Экипировка", "en": "Equipment", "de": "Ausrüstung" },
+    "section.skills": { "ru": "Навыки", "en": "Skills", "de": "Fähigkeiten" },
+    "section.quests": { "ru": "История поручений", "en": "Quest History", "de": "Auftragsverlauf" },
+    "section.mail": { "ru": "Почта", "en": "Mail", "de": "Post" },
+    "locked": { "ru": "Раздел пока недоступен", "en": "Section unavailable", "de": "Bereich noch nicht verfügbar" },
+    "field.fio": { "ru": "ФИО", "en": "Full name", "de": "Name" },
+    "field.age": { "ru": "Возраст", "en": "Age", "de": "Alter" },
+    "field.gender": { "ru": "Пол", "en": "Gender", "de": "Geschlecht" },
+    "field.bio": { "ru": "Биография", "en": "Biography", "de": "Biografie" },
+    "gender.male": { "ru": "Мужской", "en": "Male", "de": "Männlich" },
+    "gender.female": { "ru": "Женский", "en": "Female", "de": "Weiblich" },
+    "gender.unknown": { "ru": "Не указан", "en": "Not set", "de": "Nicht festgelegt" },
+    "years": { "ru": "лет", "en": "years", "de": "Jahre" },
+    "quests.main": { "ru": "Основная сюжетная линия", "en": "Main storyline", "de": "Haupthandlung" },
+    "quests.side": { "ru": "Побочные поручения", "en": "Side quests", "de": "Nebenaufträge" },
+    "quests.sideStub": { "ru": "Помочь Антону настроить подстанцию", "en": "Help Anton set up the substation", "de": "Anton helfen, die Unterstation einzurichten" },
+    "quests.chain": { "ru": "Цепочка поручений", "en": "Quest chain", "de": "Auftragskette" },
+    "quests.status.active": { "ru": "В процессе", "en": "In progress", "de": "Aktiv" },
+    "quests.status.completed": { "ru": "Выполнено", "en": "Completed", "de": "Abgeschlossen" },
+    "quests.status.failed": { "ru": "Провалено", "en": "Failed", "de": "Gescheitert" },
+    "quests.takenAt": { "ru": "Взято", "en": "Accepted", "de": "Angenommen" },
+    "quests.completedAt": { "ru": "Завершено", "en": "Completed at", "de": "Abgeschlossen am" },
+    "quests.failedAt": { "ru": "Провалено", "en": "Failed at", "de": "Gescheitert am" },
+    "quests.failedObjectives": { "ru": "Не выполнено", "en": "Not completed", "de": "Nicht erfüllt" },
+    "quests.failedAll": { "ru": "все пункты", "en": "all objectives", "de": "alle Ziele" },
+    "quests.prev": { "ru": "Предыдущее", "en": "Previous", "de": "Vorheriges" },
+    "quests.next": { "ru": "Следующее", "en": "Next", "de": "Nächstes" },
+    "quests.empty": { "ru": "Пока нет поручений", "en": "No quests yet", "de": "Noch keine Aufträge" },
+    "skills.empty": { "ru": "Навыки появятся позже", "en": "Skills will appear later", "de": "Fähigkeiten folgen später" },
+    "lockedHint": { "ru": "Доступно с начала Главы 1", "en": "Available from Chapter 1", "de": "Ab Kapitel 1 verfügbar" }
+  }
+}

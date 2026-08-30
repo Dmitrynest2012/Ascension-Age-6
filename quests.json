@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "version": 2,
+    "description": "Каталог поручений. Тексты — в questsLocalization.json"
+  },
+  "quests": [
+    {
+      "id": "QST_INTRO_001",
+      "activeOnStart": true,
+      "nextQuestId": "QST_INTRO_002",
+      "removeCardOnComplete": true,
+      "completeSound": "assets/audio/quests/quest_complete.mp3",
+      "objectiveCompleteSound": "assets/audio/quests/objective_complete.ogg",
+      "objectives": [
+        {
+          "id": "OBJ_CHOOSE_GENDER",
+          "type": "flag",
+          "flag": "playerGenderSet",
+          "required": true
+        },
+        {
+          "id": "OBJ_READ_INTRO",
+          "type": "pagesRead",
+          "pages": "all",
+          "required": true
+        }
+      ],
+      "pages": [
+        {
+          "id": "P1",
+          "image": "assets/textures/quests/intro_p1.png",
+          "music": "",
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3"
+        },
+        {
+          "id": "P2",
+          "image": "assets/textures/quests/intro_p1.png",
+          "music": "",
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "choices": [
+            {
+              "id": "CH_MALE",
+              "actions": [
+                {
+                  "type": "setGender",
+                  "value": "male"
+                },
+                {
+                  "type": "setFlag",
+                  "flag": "playerGenderSet",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "id": "CH_FEMALE",
+              "actions": [
+                {
+                  "type": "setGender",
+                  "value": "female"
+                },
+                {
+                  "type": "setFlag",
+                  "flag": "playerGenderSet",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "P3",
+          "image": "assets/textures/quests/intro_p1.png",
+          "music": "",
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/intro_p1.png",
+          "image_woman": "assets/textures/quests/intro_p1.png"
+        }
+      ],
+      "openModalOnStart": true,
+      "isMainStory": true,
+      "isSideQuest": false,
+      "previousQuestId": null
+    },
+    {
+      "id": "QST_INTRO_002",
+      "activeOnStart": false,
+      "nextQuestId": "QST_INTRO_003",
+      "removeCardOnComplete": true,
+      "completeSound": "assets/audio/quests/quest_complete.mp3",
+      "objectiveCompleteSound": "assets/audio/quests/objective_complete.ogg",
+      "objectives": [
+        {
+          "id": "OBJ_READ_TALK",
+          "type": "pagesRead",
+          "pages": "all",
+          "required": true
+        }
+      ],
+      "pages": [
+        {
+          "id": "P1",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": null,
+          "image_man": "assets/textures/quests/crew_p1.png",
+          "image_woman": "assets/textures/quests/crew_p1.png"
+        },
+        {
+          "id": "P2",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": null,
+          "image_man": "assets/textures/quests/crew_p1-6_man.png",
+          "image_woman": "assets/textures/quests/crew_p1-6_woman.png"
+        },
+        {
+          "id": "P3",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": null,
+          "image_man": "assets/textures/quests/crew_p1.png",
+          "image_woman": "assets/textures/quests/crew_p1.png"
+        },
+        {
+          "id": "P4",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": null,
+          "image_man": "assets/textures/quests/crew_p1.png",
+          "image_woman": "assets/textures/quests/crew_p1.png"
+        },
+        {
+          "id": "P5",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": null,
+          "image_man": "assets/textures/quests/crew_p1-6_man.png",
+          "image_woman": "assets/textures/quests/crew_p1-6_woman.png"
+        },
+        {
+          "id": "P6",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": null,
+          "image_man": "assets/textures/quests/crew_p1.png",
+          "image_woman": "assets/textures/quests/crew_p1.png"
+        }
+      ],
+      "isMainStory": true,
+      "isSideQuest": false,
+      "previousQuestId": "QST_INTRO_001"
+    },
+    {
+      "id": "QST_INTRO_003",
+      "activeOnStart": false,
+      "nextQuestId": "QST_INTRO_004",
+      "removeCardOnComplete": true,
+      "completeSound": "",
+      "objectiveCompleteSound": "assets/audio/quests/quest_complete.mp3",
+      "objectives": [
+        {
+          "id": "OBJ_READ_CREW",
+          "type": "pagesRead",
+          "pages": "all",
+          "required": true
+        },
+        {
+          "id": "OBJ_HIRE_ONE_ENG",
+          "type": "specialists",
+          "role": "engineers",
+          "target": 1,
+          "locationId": 3,
+          "required": true
+        },
+        {
+          "id": "OBJ_BASE_ENERGY_2800",
+          "type": "energyProduction",
+          "locationId": 3,
+          "target": 12000,
+          "mode": "atLeast",
+          "required": true
+        }
+      ],
+      "pages": [
+        {
+          "id": "P1",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/crew_p2.1-7_man.png",
+          "image_woman": "assets/textures/quests/crew_p2.1-7_woman.png"
+        },
+        {
+          "id": "P2",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/crew_p2.2.png",
+          "image_woman": "assets/textures/quests/crew_p2.2.png"
+        },
+        {
+          "id": "P3",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/crew_p2.3.png",
+          "image_woman": "assets/textures/quests/crew_p2.3.png"
+        },
+        {
+          "id": "P4",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/crew_p2.4.png",
+          "image_woman": "assets/textures/quests/crew_p2.4.png"
+        },
+        {
+          "id": "P5",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/crew_p2.1-7_man.png",
+          "image_woman": "assets/textures/quests/crew_p2.1-7_woman.png"
+        },
+        {
+          "id": "P6",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/crew_p2.1-7_man.png",
+          "image_woman": "assets/textures/quests/crew_p2.1-7_woman.png"
+        },
+        {
+          "id": "P7",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "assets/audio/quests/bgs_surroundings_campfire.mp3",
+          "image_man": "assets/textures/quests/crew_p2.7.png",
+          "image_woman": "assets/textures/quests/crew_p2.7.png"
+        }
+      ],
+      "textFirst": true,
+      "isMainStory": true,
+      "isSideQuest": false,
+      "previousQuestId": "QST_INTRO_002"
+    },
+    {
+      "id": "QST_INTRO_004",
+      "activeOnStart": false,
+      "nextQuestId": null,
+      "removeCardOnComplete": true,
+      "completeSound": "assets/audio/quests/quest_complete.mp3",
+      "objectiveCompleteSound": "assets/audio/quests/objective_complete.ogg",
+      "openModalOnStart": true,
+      "textFirst": true,
+      "isMainStory": true,
+      "isSideQuest": false,
+      "previousQuestId": "QST_INTRO_003",
+      "objectives": [
+        { "id": "OBJ_READ_CH3", "type": "pagesRead", "pages": "all", "required": true },
+        {
+          "id": "OBJ_MINE_ICE",
+          "type": "cartographyMission",
+          "locationId": 3,
+          "mission": "mine",
+          "nodeId": "node_ice_west_base",
+          "nodeResourceId": "GMAP_ICE",
+          "target": 1,
+          "required": true
+        },
+        {
+          "id": "OBJ_PACKED_WATER_RATE",
+          "type": "resourceProduction",
+          "locationId": 3,
+          "resourceId": "RES_PACKED_WATER",
+          "target": 0.1,
+          "required": true
+        },
+        {
+          "id": "OBJ_LETTUCE_POWER",
+          "type": "recipeLocalPower",
+          "locationId": 3,
+          "buildingId": "CONSTRC001",
+          "recipeId": "RCP_GROW_LETTUCE",
+          "target": 50,
+          "required": true
+        },
+        {
+          "id": "OBJ_BASE_SEAL",
+          "type": "buildingStructurePercent",
+          "locationId": 3,
+          "buildingId": "CONSTRC001",
+          "target": 100,
+          "deadlineHour": 21,
+          "deadlineMinute": 0,
+          "failOnDeadline": true,
+          "required": true
+        }
+      ],
+      "pages": [
+        {
+          "id": "P1",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "",
+          "image_man": "assets/textures/quests/crew_p3.jpg",
+          "image_woman": "assets/textures/quests/crew_p3.jpg"
+        },
+        {
+          "id": "P2",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "",
+          "image_man": "assets/textures/quests/crew_p3-1_man.png",
+          "image_woman": "assets/textures/quests/crew_p3-1_woman.png"
+        },
+        {
+          "id": "P3",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "",
+          "image_man": "assets/textures/quests/crew_p3-2.png",
+          "image_woman": "assets/textures/quests/crew_p3-2.png"
+        },
+        {
+          "id": "P4",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "",
+          "image_man": "assets/textures/quests/crew_p3-3_man.png",
+          "image_woman": "assets/textures/quests/crew_p3-3_woman.png"
+        },
+        {
+          "id": "P5",
+          "image": "assets/textures/quests/crew_p1.png",
+          "music": null,
+          "ambient": "",
+          "image_man": "assets/textures/quests/crew_p3-4.png",
+          "image_woman": "assets/textures/quests/crew_p3-4.png"
+        }
+      ]
+    }
+  ]
+}

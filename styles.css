@@ -1,0 +1,1775 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background: #000;
+    font-family: 'Play', sans-serif;
+    position: relative;
+}
+
+
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.7);
+    padding: 0px 0;
+    display: flex;
+    justify-content: space-between; /* теперь слева и справа */
+    align-items: center;
+    backdrop-filter: blur(6px);       /* само размытие */
+    -webkit-backdrop-filter: blur(6px); /* для Safari */
+    z-index: 900;
+}
+
+#header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 4px 8px;
+    height: 100%;
+}
+
+/* Рамка с иконкой */
+.header-icon-frame {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(120, 120, 120, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(
+        8px 0%,
+        calc(100% - 2px) 0%,
+        100% 2px,
+        100% calc(100% - 2px),
+        calc(100% - 2px) 100%,
+        2px 100%,
+        0% calc(100% - 2px),
+        0% 8px
+    );
+    overflow: hidden;
+    flex-shrink: 0;
+}
+/* Активный раздел «Герой» в шапке (взаимоисключение с Карта / Наука) */
+.header-icon-frame.header-mode-active {
+    border-color: rgba(90, 180, 255, 0.75);
+    box-shadow: 0 0 10px rgba(40, 140, 220, 0.45);
+}
+
+.header-icon {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Большие кнопки навигации */
+.header-nav-btn {
+    background: rgba(14, 14, 14, 0.55);
+    border: none;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 22px;
+    cursor: pointer;
+    clip-path: polygon(
+        10px 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 10px
+    );
+    transition: all 0.25s ease;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0 2px 2px rgba(128, 128, 128, 0.2);
+    min-width: 90px;
+    text-align: center;
+}
+
+.header-nav-btn:hover {
+    color: rgba(0, 238, 255, 0.95);
+    background-color: rgba(104, 104, 104, 0.35);
+}
+
+.header-nav-btn.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+    box-shadow: 0 2px 5px rgba(0, 192, 206, 0.55);
+    background-color: rgba(104, 104, 104, 0.18);
+    color: #fff;
+}
+
+.header-nav-btn.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0 2px 2px rgba(128, 128, 128, 0.2);
+}
+
+
+
+/* ===== Кнопка полноэкранного режима ===== */
+#fullscreen-btn {
+    position: fixed;
+    right: 350px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-family: 'Play', sans-serif;
+    padding: 0px 5px;
+    margin: 4px 0 4px 0;          /* впритык к time-control */
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 8px);
+    align-self: center;
+    min-width: 28px;
+    box-sizing: border-box;
+}
+
+#fullscreen-btn:hover {
+    background: rgba(0, 77, 99, 0.8);
+    color: rgba(0, 238, 255, 0.95);
+}
+
+/* Когда уже в полноэкранном режиме — можно менять иконку через JS */
+#fullscreen-btn.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+    box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5);
+    background-color: rgba(104, 104, 104, 0.22);
+}
+
+
+
+
+#time-control {
+    color: white;
+    font-family: 'Play', sans-serif;
+    background: #00000042;
+    padding: 4px 10px;  /* Сохраняем, но если нужно ровно 6px справа для времени — уменьшите padding-right до 10px (учитывая margin) */
+    margin: 4px 4px;
+    border: 1px solid rgba(0, 0, 0, 0.349);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 320px;
+    /* Убираем space-between — теперь используем auto для правого элемента */
+}
+
+#time-control button {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Play', sans-serif;
+    padding: 5px 5px;  /* Уменьшили горизонтальный padding до 2px, чтобы кнопки были компактнее и слитно */
+    margin: 0 0 0 0;  /* Убрали все margins — кнопки теперь слитно (0px между ними) */
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease; /* Плавная анимация */
+}
+
+#time-control button:hover {
+    background: rgba(0, 77, 99, 0.8);
+}
+
+#speed-value {
+    position: relative;
+    margin-left: 10px;  /* Небольшой отступ после кнопок */
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    /* Не трогаем, как просили */
+}
+
+#current-time {
+    margin-left: auto;  /* Отталкивает этот элемент к правому краю (группирует кнопки+speed слева) */
+    margin-right: 6px;  /* Небольшой отступ от правого края родителя */
+    font-size: 14px;
+    font-family: 'Play', sans-serif;
+    /* Убрали position: relative; right: 6px; — теперь используем margin для точного позиционирования */
+}
+
+#camera-height {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(49, 49, 49, 0.466);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    backdrop-filter: blur(6px);       /* само размытие */
+    -webkit-backdrop-filter: blur(6px); /* для Safari */
+    z-index: 900;
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+#resource-bar {
+    position: absolute;
+    top: 49px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    border-top: 1px solid rgba(65, 65, 65, 0.644);
+    background: rgba(36, 36, 36, 0.425);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 900;
+     overflow: visible; /* Добавляем, чтобы popup не обрезался */
+    display: flex;
+    justify-content: flex-start;  /* слева направо */
+    align-items: center;
+    gap: 5px;                     /* отступ между контейнерами */
+    padding-left: 10px;
+}
+
+/* Контейнер ресурса */
+.resource-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(112, 112, 112, 0.15);
+  color: #fff;
+  width: 122px;
+  min-width: 122px;
+  height: 18px;
+  padding: 2px 10px 2px 6px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+  z-index: 901;
+  transition: background 0.2s ease, transform 0.15s ease;
+  overflow: visible;
+
+  /* Бирюзовая линия снизу */
+  border-bottom: 1px solid rgba(211, 211, 211, 0.6);
+
+  /* Углы слегка скошены, левый верхний — чуть сильнее */
+  clip-path: polygon(
+    8px 0%,                /* усилили "откус" у левого верхнего угла */
+    calc(100% - 2px) 0%,   /* верхняя прямая */
+    100% 2px,              /* правый верхний угол */
+    100% calc(100% - 2px), /* правый нижний угол */
+    calc(100% - 2px) 100%, /* нижняя прямая */
+    2px 100%,              /* левый нижний угол */
+    0% calc(100% - 2px),   /* срез снизу */
+    0% 12px                 /* левый верхний угол — глубже остальных */
+  );
+}
+
+/* Активный контейнер */
+.resource-container.active {
+  background: rgba(200, 200, 200, 0.25);
+  border-bottom: 1px solid rgba(0, 192, 206, 1); /* Бирюзовый border с свечением */
+  box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5); /* Рассеянное свечение */
+}
+
+.resource-container:hover {
+  background: rgba(200, 200, 200, 0.22);
+}
+
+.resource-icon {
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  opacity: 0.9;
+  object-fit: contain;
+  margin-left: 3px;
+  margin-right: 6px; /* фиксированный отступ между иконкой и числом */
+}
+
+.resource-info {
+  display: flex;
+  align-items: center;
+  gap: 3px; /* <-- отступ между значением и единицей измерения */
+}
+
+.resource-value,
+.resource-unit {
+  pointer-events: none;
+  user-select: none;
+  margin: 0px 2px;
+}
+
+
+
+
+/* Всплывающее окно ресурса */
+#resource-popup {
+    position: fixed;
+    display: none;
+    width: 430px; 
+    height: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.5),
+        rgba(36, 36, 36, 0.425) 70%
+    );
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 12px 18px 12px; /* снизу запас под clip-path */
+    border: 1px solid rgba(80, 80, 80, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 1010;
+    /* Правый-нижний угол откусан */
+    clip-path: polygon(
+        6px 0%,
+        calc(100% - 4px) 0%,
+        100% 4px,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        4px 100%,
+        0% calc(100% - 4px),
+        0% 6px
+    );
+    transform: translateY(10px);
+    transition: opacity 0.25s ease;
+    box-sizing: border-box;
+}
+
+#resource-popup.visible {
+    display: block;
+    opacity: 1;
+    z-index: 12000;
+    transform: translateY(10px);
+}
+#resource-popup.firm-scroll-host {
+    overflow: hidden !important;
+    padding: 0 !important;
+    max-height: 70vh !important;
+    height: auto !important;
+}
+#resource-popup > .firm-scroll-inner {
+    display: block;
+    max-height: 70vh !important;
+    height: auto !important;
+    padding: 10px 16px 18px 12px;
+    box-sizing: border-box;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+#resource-popup > .firm-scroll-track {
+    z-index: 40 !important;
+}
+#resource-popup > .firm-scroll-track-v {
+    right: 2px !important;
+    top: 6px !important;
+    bottom: 6px !important;
+    width: 12px !important;
+}
+
+
+/* Эксперимент: вертикальный скроллбар попапа со «скошенными» ПВ/ПН углами (gradient-hack) */
+#resource-popup {
+    scrollbar-width: thin; /* Firefox fallback */
+    scrollbar-color: #5a5a5a #2a2a2a;
+}
+#resource-popup::-webkit-scrollbar {
+    width: 12px;
+}
+#resource-popup::-webkit-scrollbar-track {
+    background:
+        linear-gradient(135deg, transparent 7px, #2a2a2a 0) top right,
+        linear-gradient(225deg, transparent 7px, #2a2a2a 0) bottom right;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+}
+#resource-popup::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(135deg, transparent 7px, #555555 0) top right,
+        linear-gradient(225deg, transparent 7px, #555555 0) bottom right;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+}
+#resource-popup::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(135deg, transparent 7px, #6e6e6e 0) top right,
+        linear-gradient(225deg, transparent 7px, #6e6e6e 0) bottom right;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+}
+#resource-popup::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+/* Заголовок раздела — жирный, цветной */
+.popup-section-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.3px;
+
+    text-shadow:
+        0 0 2px #000,
+        0 0 4px rgba(0, 0, 0, 0.8),
+        1px 0 2px rgba(0, 0, 0, 0.85),
+        -1px 0 2px rgba(0, 0, 0, 0.85),
+        0 1px 2px rgba(0, 0, 0, 0.85),
+        0 -1px 2px rgba(0, 0, 0, 0.85);
+}
+.popup-section-title.section-energy { color: #e8c84a; }
+.popup-section-title.section-technologies { color: #b48cff; }
+.popup-section-title.section-food { color: #e85a5a; }
+.popup-section-title.section-products { color: #6ec6ff; }
+.popup-section-title.section-components { color: #d4a0ff; }
+.popup-section-title.section-materials { color: #b0b0b0; }
+.popup-section-title.section-raw { color: #c4a574; }
+.popup-section-title.section-population { color: #a8e063; }
+.popup-section-title.section-default { color: #ddd; }
+
+/* Строка параметра: иконка + название + значение */
+#resource-popup .popup-row.is-resource {
+    cursor: default;
+    margin: 3px 8px;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border-bottom: 1px solid transparent;
+    transition: background 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    box-sizing: border-box;
+}
+#resource-popup .popup-row.is-resource:hover {
+    /* зеркально: плотность слева → прозрачность справа */
+    background: linear-gradient(
+        90deg,
+        rgba(30, 150, 165, 0.42) 0%,
+        rgba(25, 110, 130, 0.28) 55%,
+        rgba(20, 70, 95, 0.08) 100%
+    );
+    box-shadow: inset 0 -1px 0 rgba(70, 190, 200, 0.35);
+    border-bottom-color: transparent;
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    border-radius: 0;
+}
+.popup-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    min-height: 22px;
+}
+.popup-row:last-of-type {
+    border-bottom: none;
+}
+
+.popup-row-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.popup-row-label {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 12px;
+    /* градиент: едва светло-серый → белый */
+    background: linear-gradient(to right, #c8c8c8 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* тень во все стороны (filter — работает с background-clip:text) */
+    filter: drop-shadow(0 0 1.2px rgba(0, 0, 0, 0.95))
+            drop-shadow(0 0 2.5px rgba(0, 0, 0, 0.75));
+}
+
+.popup-row-value {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #fff;
+    text-align: right;
+    white-space: nowrap;
+    text-shadow:
+        0 0 2px #000,
+        0 0 4px rgba(0, 0, 0, 0.85),
+        1px 0 2px rgba(0, 0, 0, 0.9),
+        -1px 0 2px rgba(0, 0, 0, 0.9),
+        0 1px 2px rgba(0, 0, 0, 0.9),
+        0 -1px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* Нижний зазор под clip-path (доп. к padding) */
+.popup-bottom-spacer {
+    height: 10px;
+    pointer-events: none;
+}
+
+/* совместимость со старым классом */
+.popup-item {
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-shadow:
+        0 0 2px #000,
+        0 0 4px rgba(0, 0, 0, 0.8),
+        1px 0 2px rgba(0, 0, 0, 0.85),
+        -1px 0 2px rgba(0, 0, 0, 0.85),
+        0 1px 2px rgba(0, 0, 0, 0.85),
+        0 -1px 2px rgba(0, 0, 0, 0.85);
+}
+.popup-item:last-child {
+    border-bottom: none;
+}
+
+
+
+
+
+#title-bar {
+    position: absolute;
+    top: 80px; /* Под ресурсной полоской (40px хэдер + 30px ресурсная полоска) */
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    width: 300px; /* Фиксированная ширина */
+    height: 30px; /* Произвольная высота, можно настроить */
+    background: rgba(36, 36, 36, 0.425); /* Тот же цвет и прозрачность, что у ресурсной полоски */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px)); /* Скошенные левый-нижний и правый-нижний углы */
+    backdrop-filter: blur(6px);       /* Замыливание фона */
+    -webkit-backdrop-filter: blur(6px); /* Для Safari */
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+#title-bar button {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Play', sans-serif;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#title-bar button:hover {
+    color: rgba(0, 192, 206, 0.8);
+}
+
+#prev-body {
+    margin-left: 10px; /* Отступ слева для сдвига к центру */
+}
+
+#next-body {
+    margin-right: 10px; /* Отступ справа для сдвига к центру */
+}
+
+#location-name {
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Новый UI элемент: Меню управления небесным телом */
+#body-control-menu {
+    position: absolute;
+    top: 92px; /* Чуть ниже ресурсной полоски */
+    left: 10px; /* Левая часть экрана */
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-header {
+    width: 220px; /* Ширина хэдера */
+    height: 20px; /* Высота хэдера */
+    background: rgba(17, 17, 17, 0.432); /* Темнее, чем основное окно */
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%); /* Скошен левый-верхний угол */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+.menu-body {
+    width: 200px; /* Ширина основного окна */
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.5), /* светлее по центру */
+        rgba(36, 36, 36, 0.425) 70%
+    );
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+    
+}
+
+.menu-button {
+    background: rgba(0, 0, 0, 0.5); /* Почти черный */
+    border: none;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px); /* Скошен левый-верхний угол */
+    transition: all 0.3s; /* Анимация наведения */
+}
+
+.menu-button:hover {
+    color: rgba(0, 238, 255, 0.966);
+    background-color: rgba(104, 104, 104, 0.322);
+}
+
+.menu-button.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1); /* Бирюзовый border с свечением */
+    box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5); /* Рассеянное свечение */
+    background-color: rgba(104, 104, 104, 0.122);
+}
+
+.menu-button.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5); /* Серый border */
+    box-shadow: 0 2px 2px rgba(128, 128, 128, 0.2); /* Слабое свечение */
+}
+
+.menu-button.locked {
+    background: repeating-linear-gradient(-45deg, 
+        rgba(255, 255, 0, 0.1), 
+        rgba(255, 255, 0, 0.1) 10px, 
+        rgba(0, 0, 0, 0.1) 10px, 
+        black 20px
+    ); /* Желто-черные полоски под обратным углом */
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.5); /* Текст полупрозрачный */
+}
+
+
+/* Подменю */
+#submenu {
+    position: absolute;
+    top: 92px; /* На том же уровне, что и основное меню */
+    left: 240px; /* Справа от основного меню (220px ширина хэдера + 10px отступ слева + 10px зазор) */
+    z-index: 900;
+    display: none; /* Скрыто по умолчанию */
+    flex-direction: column;
+}
+
+.submenu-header {
+    width: 176px; /* Меньше, чем у основного меню */
+    height: 16px; /* Меньше высота */
+    background: rgba(17, 17, 17, 0.432); /* Такой же фон, как у menu-header */
+    clip-path: polygon(18px 0, 100% 0, 100% 100%, 0 100%); /* Скошен левый-верхний угол, пропорционально меньше */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+.submenu-body {
+    width: 160px; /* Меньше, чем у основного меню */
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.5), /* светлее по центру */
+        rgba(36, 36, 36, 0.425) 70%
+    );
+    padding: 8px; /* Меньший padding */
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 900;
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+   
+}
+
+
+
+.submenu-button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 12px;
+    padding: 6px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+    transition: all 0.3s; /* Добавляем переход для фона */
+    z-index: 911; /* Увеличиваем z-index для кнопок */
+    pointer-events: auto; /* Явно разрешаем события */
+}
+
+.submenu-button:hover {
+    color: rgba(0, 238, 255, 0.966);
+    background-color: rgba(104, 104, 104, 0.322); /* Добавляем фон при наведении для лучшей видимости */
+}
+
+
+
+.submenu-button.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+    box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5);
+    background-color: rgba(104, 104, 104, 0.122);
+}
+.submenu-button.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0 2px 2px rgba(128, 128, 128, 0.2);
+}
+.submenu-button {
+    pointer-events: auto;
+}
+
+
+/* Стили для окна информации о небесном теле (общая сводка) */
+#body-info {
+    position: absolute;
+    top: 92px;
+    right: 10px;
+    z-index: 900;
+    display: none;
+    font-family: 'Play', sans-serif;
+    flex-direction: column;
+}
+
+.info-header {
+    width: 440px;
+    height: 30px;
+    background: rgba(17, 17, 17, 0.432);
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+    display: flex;
+    align-items: center;
+    padding: 0 6px 0 18px;
+    box-sizing: border-box;
+}
+
+.info-tabs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 100%;
+}
+
+/* Кнопки вкладок — стиль как modal-tab-button */
+.info-tab-button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    color: white;
+    font-family: 'Play', sans-serif;
+    padding: 2px 10px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+    transition: all 0.25s ease;
+}
+
+.info-tab-button:hover {
+    color: rgba(0, 238, 255, 0.95);
+    background-color: rgba(104, 104, 104, 0.32);
+}
+
+.info-tab-button.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+    box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5);
+    background-color: rgba(104, 104, 104, 0.18);
+}
+
+.info-tab-button.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0 2px 2px rgba(128, 128, 128, 0.2);
+}
+
+.info-tab-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    pointer-events: none;
+    opacity: 0.95;
+    filter: brightness(1.1);
+}
+
+.info-body {
+    width: 440px;
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.5),
+        rgba(36, 36, 36, 0.425) 70%
+    );
+    padding: 12px 12px 20px 12px; /* запас снизу под clip-path */
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+    /* правый-нижний угол откусан */
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 16px),
+        calc(100% - 16px) 100%,
+        0 100%
+    );
+    box-sizing: border-box;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.info-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-section {
+    margin-bottom: 14px;
+}
+
+/* Подраздел: вертикальный градиент белый → голубой */
+.info-subsection-title {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(100, 210, 255, 0.95) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.info-section p {
+    margin: 5px 0;
+}
+
+/* Названия параметров: горизонтальный градиент голубой → белый (как в модалке здания) */
+.info-section strong {
+    font-weight: bold;
+    background: linear-gradient(to right,
+        rgba(183, 244, 255, 0.9) 0%,
+        rgb(255, 255, 255) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+@supports not (background-clip: text) {
+    .info-section strong {
+        background: none;
+        color: rgba(183, 244, 255, 0.9);
+    }
+    .info-subsection-title {
+        background: none;
+        color: rgb(81, 235, 255);
+    }
+}
+
+.info-section span {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Краткое описание — курсив */
+.info-description-value {
+    font-style: italic;
+    opacity: 0.9;
+    font-size: 12px;
+}
+
+/* Стили зданий, модалки и строительства — в buildings.css */
+
+
+
+/* зелёная пирамида вверх */
+.trend-slot.trend-up::before {
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent #4dff6a transparent;
+    filter: drop-shadow(0 0 3px rgba(80, 220, 100, 0.65));
+}
+/* красная пирамида вниз */
+.trend-slot.trend-down::before {
+    border-width: 8px 5px 0 5px;
+    border-color: #ff4d4d transparent transparent transparent;
+    filter: drop-shadow(0 0 3px rgba(255, 70, 70, 0.55));
+}
+.trend-slot.trend-flat::before {
+    content: none;
+}
+
+.popup-row-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+}
+.popup-row-value
+
+/* Индикатор роста/убыли (пирамида) — кнопки разделов и попапы */
+.resource-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+.trend-slot {
+    display: inline-block;
+    width: 10px;
+    height: 9px;
+    flex: 0 0 10px;
+    margin-left: 2px;
+    vertical-align: middle;
+    position: relative;
+    overflow: visible;
+}
+.trend-slot.trend-up::before,
+.trend-slot.trend-down::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    pointer-events: none;
+}
+.trend-slot.trend-up::before {
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent #5dce6a transparent;
+    filter: drop-shadow(0 0 2px rgba(80, 200, 100, 0.5));
+}
+.trend-slot.trend-down::before {
+    border-width: 8px 5px 0 5px;
+    border-color: #e05555 transparent transparent transparent;
+    filter: drop-shadow(0 0 2px rgba(220, 70, 70, 0.45));
+}
+.trend-slot.trend-flat::before {
+    content: none !important;
+}
+.popup-row-value {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0;
+}
+.popup-row-value .trend-slot {
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+
+/* Аватар персонажа: пол не выбран — знак вопроса */
+.header-icon-frame {
+    position: relative;
+}
+.header-icon-frame.gender-unknown::after {
+    content: '?';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(220, 220, 220, 0.95);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    z-index: 2;
+}
+.header-icon-frame.gender-unknown .header-icon {
+    opacity: 0.15;
+}
+
+
+/* ===== UI inset guard: боковые отступы как задумано (не вплотную к краю) ===== */
+#camera-height {
+    left: 10px !important;
+    right: auto !important;
+}
+#body-control-menu {
+    left: 10px !important;
+}
+#submenu {
+    left: 240px !important;
+}
+#building-list {
+    left: 10px !important;
+}
+#quests-panel {
+    left: 10px !important;
+}
+#body-info {
+    right: 10px !important;
+    left: auto !important;
+}
+#header {
+    left: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+#header-left {
+    margin-left: 8px !important;
+}
+#resource-bar {
+    left: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 10px !important;
+}
+#title-bar {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* ===== ГЛАВНОЕ МЕНЮ ===== */
+body.main-menu-active > *:not(#main-menu):not(#social-panel):not(#social-poster):not(#vh-build-btn):not(#vh-preview-wrap):not(#vh-history-modal):not(#session-name-modal):not(#intro-screen) {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+body.main-menu-active #main-menu,
+body.main-menu-active #social-panel,
+body.main-menu-active #social-poster,
+body.main-menu-active #vh-build-btn,
+body.main-menu-active #vh-preview-wrap,
+body.main-menu-active #vh-history-modal,
+body.main-menu-active #session-name-modal {
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+body.main-menu-active #vh-preview-wrap {
+    pointer-events: none !important;
+}
+
+#main-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Play', sans-serif;
+    overflow: hidden;
+}
+
+.main-menu-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(0, 80, 100, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(0, 40, 70, 0.4) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 50%, rgba(10, 10, 20, 0.9) 0%, #000 100%);
+    z-index: 0;
+}
+
+/* Звёздный фон через псевдоэлемент */
+.main-menu-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1.5px 1.5px at 10% 15%, rgba(255,255,255,0.7) 50%, transparent 100%),
+        radial-gradient(1px 1px at 25% 40%, rgba(200,230,255,0.6) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.5) 50%, transparent 100%),
+        radial-gradient(1px 1px at 55% 70%, rgba(180,220,255,0.55) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 70% 25%, rgba(255,255,255,0.65) 50%, transparent 100%),
+        radial-gradient(1px 1px at 85% 55%, rgba(200,230,255,0.5) 50%, transparent 100%),
+        radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,0.4) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 60% 90%, rgba(180,220,255,0.45) 50%, transparent 100%),
+        radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,0.55) 50%, transparent 100%),
+        radial-gradient(1px 1px at 35% 60%, rgba(200,230,255,0.4) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 5% 50%, rgba(255,255,255,0.5) 50%, transparent 100%),
+        radial-gradient(1px 1px at 75% 75%, rgba(180,220,255,0.5) 50%, transparent 100%);
+    background-size: 100% 100%;
+    opacity: 0.85;
+    animation: stars-twinkle 8s ease-in-out infinite alternate;
+}
+
+@keyframes stars-twinkle {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.main-menu-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 40px;
+}
+
+.main-menu-title-block {
+    text-align: center;
+    user-select: none;
+}
+
+.main-menu-title-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main-menu-logo {
+    width: 256px;
+    height: 256px;
+    object-fit: contain;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+    flex-shrink: 0;
+    /* лёгкое свечение в тон меню, без рамок */
+    filter: drop-shadow(0 0 14px rgba(0, 192, 206, 0.28))
+            drop-shadow(0 0 28px rgba(40, 120, 200, 0.18));
+}
+
+.main-menu-title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1.15;
+}
+
+.main-menu-title {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 12px;
+    color: #fff;
+    text-shadow:
+        0 0 20px rgba(0, 192, 206, 0.5),
+        0 0 40px rgba(0, 120, 140, 0.3);
+    margin-bottom: 4px;
+}
+
+.main-menu-subtitle {
+    font-size: 28px;
+    letter-spacing: 18px;
+    color: rgba(0, 220, 235, 0.9);
+    text-shadow: 0 0 16px rgba(0, 192, 206, 0.45);
+    margin-bottom: 8px;
+}
+
+.main-menu-version {
+    font-size: 12px;
+    color: rgba(160, 180, 190, 0.55);
+    letter-spacing: 3px;
+}
+
+.main-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 280px;
+}
+
+.main-menu-btn {
+    position: relative;
+    background: rgba(14, 14, 14, 0.65);
+    border: none;
+    color: #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 14px 36px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-align: center;
+    clip-path: polygon(
+        14px 0%,
+        100% 0%,
+        100% calc(100% - 14px),
+        calc(100% - 14px) 100%,
+        0% 100%,
+        0% 14px
+    );
+    border-bottom: 1px solid rgba(128, 128, 128, 0.45);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.main-menu-btn:hover {
+    color: rgba(0, 238, 255, 0.95);
+    background: rgba(0, 60, 80, 0.45);
+    border-bottom: 1px solid rgba(0, 192, 206, 0.85);
+    box-shadow:
+        0 3px 12px rgba(0, 192, 206, 0.35),
+        0 0 20px rgba(0, 120, 140, 0.2);
+}
+
+.main-menu-btn:active {
+    background: rgba(0, 80, 100, 0.5);
+    transform: scale(0.98);
+}
+
+.main-menu-footer {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: rgba(140, 160, 170, 0.4);
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+/* Панель настроек */
+.main-menu-settings-panel {
+    position: absolute;
+    z-index: 2;
+    width: 380px;
+    max-width: 90vw;
+    background: rgba(20, 22, 28, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(80, 100, 110, 0.4);
+    clip-path: polygon(
+        16px 0%,
+        100% 0%,
+        100% calc(100% - 16px),
+        calc(100% - 16px) 100%,
+        0% 100%,
+        0% 16px
+    );
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(0, 192, 206, 0.35);
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.settings-close-btn {
+    background: transparent;
+    border: none;
+    color: rgba(200, 210, 220, 0.7);
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+    transition: color 0.2s;
+}
+
+.settings-close-btn:hover {
+    color: rgba(0, 238, 255, 0.95);
+}
+
+.settings-body {
+    padding: 20px 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(220, 230, 240, 0.9);
+    font-size: 14px;
+}
+
+.settings-row label {
+    flex: 0 0 140px;
+    letter-spacing: 0.5px;
+}
+
+.settings-row input[type="range"] {
+    flex: 1;
+    accent-color: rgba(0, 192, 206, 0.9);
+    height: 4px;
+}
+
+.settings-row select {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(100, 120, 130, 0.4);
+    color: #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 13px;
+    padding: 6px 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.settings-row select:focus {
+    border-color: rgba(0, 192, 206, 0.7);
+}
+
+.settings-action-btn {
+    background: rgba(14, 14, 14, 0.7);
+    border: 1px solid rgba(100, 120, 130, 0.4);
+    color: #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 13px;
+    padding: 6px 16px;
+    cursor: pointer;
+    clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px);
+    transition: all 0.2s ease;
+}
+
+.settings-action-btn:hover {
+    color: rgba(0, 238, 255, 0.95);
+    border-color: rgba(0, 192, 206, 0.6);
+    background: rgba(0, 50, 70, 0.5);
+}
+
+.settings-hint {
+    margin: 4px 0 0;
+    font-size: 11px;
+    color: rgba(140, 160, 170, 0.5);
+    letter-spacing: 0.3px;
+}
+
+#settings-volume-value {
+    min-width: 36px;
+    text-align: right;
+    font-size: 13px;
+    color: rgba(0, 220, 235, 0.85);
+}
+
+/* Скрытие меню после старта */
+#main-menu.hidden {
+    display: none !important;
+}
+
+/* ===== Кнопка настроек в хедере (шестерёнка) ===== */
+.header-settings-btn {
+    align-self: flex-start;
+    margin-top: 2px;
+    margin-right: 2px;
+    width: 22px;
+    height: 18px;
+    padding: 0;
+    background: rgba(14, 14, 14, 0.55);
+    border: none;
+    color: rgba(220, 230, 240, 0.85);
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(
+        5px 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 5px
+    );
+    border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+    transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+}
+
+.header-settings-btn:hover {
+    color: rgba(0, 238, 255, 0.95);
+    background: rgba(0, 60, 80, 0.45);
+    border-bottom-color: rgba(0, 192, 206, 0.7);
+    box-shadow: 0 2px 6px rgba(0, 192, 206, 0.3);
+}
+
+/* ===== Вкладки настроек ===== */
+.settings-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 8px 10px 0;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(60, 80, 90, 0.35);
+}
+
+.settings-tab {
+    background: rgba(14, 14, 14, 0.45);
+    border: none;
+    color: rgba(200, 210, 220, 0.7);
+    font-family: 'Play', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    cursor: pointer;
+    clip-path: polygon(
+        8px 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 8px
+    );
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.settings-tab:hover {
+    color: rgba(0, 238, 255, 0.9);
+    background: rgba(0, 50, 70, 0.35);
+}
+
+.settings-tab.active {
+    color: #fff;
+    background: rgba(0, 70, 90, 0.4);
+    border-bottom: 1px solid rgba(0, 192, 206, 0.85);
+    box-shadow: 0 2px 6px rgba(0, 192, 206, 0.25);
+}
+
+.settings-tab.inactive {
+    color: rgba(180, 190, 200, 0.65);
+}
+
+.settings-tab-panel {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.main-menu-settings-panel {
+    width: 420px;
+}
+
+
+/* ===== ИНТРО: только intro-screen видим ===== */
+body.intro-active > *:not(#intro-screen) {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+body.intro-active #intro-screen {
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+
+/* Штучный счётчик в попапе ресурсов: [N шт.] */
+.res-piece-count {
+    color: rgba(160, 160, 160, 0.9);
+    margin-right: 4px;
+    font-weight: 500;
+}
+.res-cap-sep {
+    opacity: 0.75;
+}
+
+
+/* ===== Footer настроек: Применить / Сохранено / Сброс ===== */
+.settings-footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 36px;
+    margin-top: 12px;
+    padding-top: 8px;
+}
+
+.settings-apply-btn {
+    margin: 0;
+    padding: 8px 18px;
+    font-family: 'Play', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: rgba(220, 235, 245, 0.95);
+    background: rgba(0, 70, 90, 0.55);
+    border: 1px solid rgba(0, 192, 206, 0.55);
+    cursor: pointer;
+    clip-path: polygon(
+        8px 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 8px
+    );
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.28s ease, transform 0.28s ease, background 0.2s, box-shadow 0.2s;
+    pointer-events: none;
+}
+.settings-apply-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.settings-apply-btn:hover {
+    background: rgba(0, 90, 110, 0.7);
+    box-shadow: 0 2px 10px rgba(0, 192, 206, 0.35);
+}
+
+.settings-saved-indicator {
+    margin-left: auto;
+    padding: 8px 14px;
+    font-family: 'Play', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    color: rgba(20, 40, 20, 0.95);
+    background: rgba(120, 180, 90, 0.85);
+    border: 1px solid rgba(100, 160, 70, 0.7);
+    cursor: default;
+    clip-path: polygon(
+        8px 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 8px
+    );
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+.settings-saved-indicator.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.settings-reset-btn {
+    margin: 0;
+    padding: 8px 14px;
+    font-family: 'Play', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    color: rgba(220, 180, 160, 0.9);
+    background: rgba(40, 20, 20, 0.45);
+    border: 1px solid rgba(160, 80, 60, 0.45);
+    cursor: pointer;
+    clip-path: polygon(
+        8px 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%,
+        0% 8px
+    );
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.settings-reset-btn:hover {
+    color: #fcc;
+    background: rgba(80, 30, 25, 0.55);
+    border-color: rgba(220, 100, 80, 0.65);
+}
+
+
+/* --- Переименование небесного тела (справа от #title-bar) --- */
+/* title-bar: left 50%, width 300px, centered → правый край ≈ 50% + 150px */
+#location-rename-controls {
+    position: absolute;
+    top: 80px;
+    left: calc(50% + 150px + 16px); /* 16px зазор от правого бока бара */
+    height: 30px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: auto;
+}
+
+#location-name-input {
+    flex-grow: 1;
+    min-width: 60px;
+    max-width: 180px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(0, 180, 200, 0.55);
+    border-bottom-color: rgba(0, 200, 220, 0.85);
+    color: #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    padding: 2px 8px;
+    outline: none;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+.location-rename-btn {
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 24, 28, 0.55);
+    border: 1px solid rgba(90, 100, 110, 0.55);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.location-rename-btn:hover {
+    border-color: rgba(0, 190, 210, 0.75);
+    color: #9eecff;
+    background: rgba(30, 40, 48, 0.7);
+}
+
+.location-rename-reset {
+    font-size: 15px;
+}
+
+/* Не перебивать prev/next внутри бара стилями rename */
+#title-bar > button {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+
+.header-tool-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+}
+
+
+/* Значения в попапе: отступ справа, чтобы макс. не упирался в край */
+#resource-popup .popup-row-value {
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+#resource-popup > .firm-scroll-inner {
+    padding-right: 18px !important;
+}
+
+
+/* Названия ресурсов в попапе — светло-серые + тень как раньше */
+#resource-popup .popup-row-label {
+    color: #c8c8c8 !important;
+    -webkit-text-fill-color: #c8c8c8 !important;
+    background: none !important;
+    filter: none !important;
+    text-shadow:
+        0 0 2px #000,
+        0 0 4px rgba(0, 0, 0, 0.8),
+        1px 0 2px rgba(0, 0, 0, 0.85),
+        -1px 0 2px rgba(0, 0, 0, 0.85),
+        0 1px 2px rgba(0, 0, 0, 0.85),
+        0 -1px 2px rgba(0, 0, 0, 0.85) !important;
+}
+#resource-popup .res-piece-count {
+    color: #b8b8b8 !important;
+    text-shadow:
+        0 0 2px #000,
+        0 0 4px rgba(0, 0, 0, 0.8),
+        1px 0 2px rgba(0, 0, 0, 0.85),
+        -1px 0 2px rgba(0, 0, 0, 0.85),
+        0 1px 2px rgba(0, 0, 0, 0.85),
+        0 -1px 2px rgba(0, 0, 0, 0.85) !important;
+}
+#resource-popup .popup-row-value {
+    text-shadow:
+        0 0 2px #000,
+        0 0 4px rgba(0, 0, 0, 0.75),
+        1px 0 2px rgba(0, 0, 0, 0.8),
+        -1px 0 2px rgba(0, 0, 0, 0.8),
+        0 1px 2px rgba(0, 0, 0, 0.8),
+        0 -1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Подсветка строк во всех разделах попапа (энергия, технологии, население, склады) */
+#resource-popup .popup-row {
+    cursor: default;
+    margin: 3px 8px;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border-bottom: 1px solid transparent;
+    transition: background 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    box-sizing: border-box;
+}
+#resource-popup .popup-row:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(30, 150, 165, 0.42) 0%,
+        rgba(25, 110, 130, 0.28) 55%,
+        rgba(20, 70, 95, 0.08) 100%
+    );
+    box-shadow: inset 0 -1px 0 rgba(70, 190, 200, 0.35);
+    border-bottom-color: transparent;
+}
+
+
+.header-nav-btn.header-nav-locked,
+.header-nav-btn.locked {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: auto;
+}
+.header-nav-btn.header-nav-locked:hover,
+.header-nav-btn.locked:hover {
+    color: inherit;
+    background: transparent;
+}
+
+
+#resource-popup .popup-row.is-hoverable,
+#resource-popup .popup-row.is-resource {
+    cursor: default;
+}
+#resource-popup .popup-row.is-hoverable:hover,
+#resource-popup .popup-row.is-resource:hover,
+#resource-popup .popup-row:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(30, 150, 165, 0.42) 0%,
+        rgba(25, 110, 130, 0.28) 55%,
+        rgba(20, 70, 95, 0.08) 100%
+    ) !important;
+    box-shadow: inset 0 -1px 0 rgba(70, 190, 200, 0.35) !important;
+    border-bottom-color: transparent !important;
+    /* фирменный скос левого-верхнего угла подсветки */
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    border-radius: 0;
+}

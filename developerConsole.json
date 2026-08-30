@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "version": "0.1"
+  },
+  "commands": {
+    "population": {
+      "ru": [
+        "население",
+        "нас"
+      ],
+      "en": [
+        "population",
+        "pop"
+      ],
+      "de": [
+        "bevölkerung",
+        "bev"
+      ]
+    },
+    "resource": {
+      "ru": [
+        "ресурс",
+        "рес"
+      ],
+      "en": [
+        "resource",
+        "res"
+      ],
+      "de": [
+        "ressource",
+        "res"
+      ]
+    },
+    "speed": {
+      "ru": [
+        "скорость",
+        "скор"
+      ],
+      "en": [
+        "speed",
+        "spd"
+      ],
+      "de": [
+        "geschwindigkeit",
+        "geschw"
+      ]
+    },
+    "speed_reset": {
+      "ru": [
+        "скорость сброс",
+        "скор сброс"
+      ],
+      "en": [
+        "speed reset",
+        "spd reset"
+      ],
+      "de": [
+        "geschwindigkeit reset",
+        "geschw reset"
+      ]
+    },
+    "tech": {
+      "ru": [
+        "технологии",
+        "тех"
+      ],
+      "en": [
+        "tech",
+        "technology"
+      ],
+      "de": [
+        "technik",
+        "tech"
+      ]
+    },
+    "tech_reset": {
+      "ru": [
+        "технологии сброс",
+        "тех сброс"
+      ],
+      "en": [
+        "tech reset",
+        "technology reset"
+      ],
+      "de": [
+        "technik reset",
+        "tech reset"
+      ]
+    },
+    "power": {
+      "ru": [
+        "энергия",
+        "элек"
+      ],
+      "en": [
+        "power",
+        "energy"
+      ],
+      "de": [
+        "energie",
+        "strom"
+      ]
+    },
+    "power_reset": {
+      "ru": [
+        "энергия сброс",
+        "элек сброс"
+      ],
+      "en": [
+        "power reset",
+        "energy reset"
+      ],
+      "de": [
+        "energie reset",
+        "strom reset"
+      ]
+    },
+    "help": {
+      "ru": [
+        "помощь",
+        "хелп",
+        "?"
+      ],
+      "en": [
+        "help",
+        "?"
+      ],
+      "de": [
+        "hilfe",
+        "?"
+      ]
+    },
+    "optics": {
+      "ru": [
+        "оптика",
+        "видимость"
+      ],
+      "en": [
+        "optics",
+        "visibility"
+      ],
+      "de": [
+        "optik",
+        "sicht"
+      ]
+    }
+  },
+  "ui": {
+    "title": {
+      "ru": "Консоль разработчика",
+      "en": "Developer console",
+      "de": "Entwicklerkonsole"
+    },
+    "placeholder": {
+      "ru": "Введите команду…",
+      "en": "Enter command…",
+      "de": "Befehl eingeben…"
+    },
+    "unlocked": {
+      "ru": "Консоль разблокирована. Тильда (~) — открыть/закрыть.",
+      "en": "Console unlocked. Tilde (~) toggles open/close.",
+      "de": "Konsole freigeschaltet. Tilde (~) öffnet/schließt."
+    },
+    "locked": {
+      "ru": "Консоль заблокирована.",
+      "en": "Console locked.",
+      "de": "Konsole gesperrt."
+    },
+    "ok": {
+      "ru": "OK",
+      "en": "OK",
+      "de": "OK"
+    },
+    "err_unknown": {
+      "ru": "Неизвестная команда. Введите «помощь».",
+      "en": "Unknown command. Type “help”.",
+      "de": "Unbekannter Befehl. «hilfe» eingeben."
+    },
+    "err_args": {
+      "ru": "Неверные аргументы.",
+      "en": "Invalid arguments.",
+      "de": "Ungültige Argumente."
+    },
+    "err_no_location": {
+      "ru": "Нет текущей локации.",
+      "en": "No current location.",
+      "de": "Kein aktueller Standort."
+    },
+    "err_resource": {
+      "ru": "Ресурс не найден.",
+      "en": "Resource not found.",
+      "de": "Ressource nicht gefunden."
+    },
+    "err_menu": {
+      "ru": "Консоль доступна только в игровой сессии.",
+      "en": "Console is only available in an active game session.",
+      "de": "Konsole nur in einer aktiven Spielsitzung verfügbar."
+    },
+    "help_body": {
+      "ru": "Команды: население N | ресурс ID N | скорость Nx | скорость сброс | технологии N | технологии сброс | энергия N | энергия сброс | оптика вкл/выкл | помощь",
+      "en": "Commands: population N | resource ID N | speed Nx | speed reset | tech N | tech reset | power N | power reset | optics on/off | help",
+      "de": "Befehle: bevölkerung N | ressource ID N | geschwindigkeit Nx | geschwindigkeit reset | technik N | technik reset | energie N | energie reset | hilfe | optik an/aus"
+    },
+    "msg_population": {
+      "ru": "Население = {n}",
+      "en": "Population = {n}",
+      "de": "Bevölkerung = {n}"
+    },
+    "msg_resource": {
+      "ru": "{id} = {n}",
+      "en": "{id} = {n}",
+      "de": "{id} = {n}"
+    },
+    "msg_speed": {
+      "ru": "Множитель скорости юнитов = {n}×",
+      "en": "Unit speed multiplier = {n}×",
+      "de": "Einheitengeschwindigkeit = {n}×"
+    },
+    "msg_speed_reset": {
+      "ru": "Скорость юнитов сброшена.",
+      "en": "Unit speed reset.",
+      "de": "Einheitengeschwindigkeit zurückgesetzt."
+    },
+    "msg_tech": {
+      "ru": "Выработка технологий = {n}/мин (override)",
+      "en": "Tech output = {n}/min (override)",
+      "de": "Technikausstoß = {n}/min (Override)"
+    },
+    "msg_tech_reset": {
+      "ru": "Выработка технологий сброшена.",
+      "en": "Tech output reset.",
+      "de": "Technikausstoß zurückgesetzt."
+    },
+    "msg_power": {
+      "ru": "Выработка энергии = {n} (override)",
+      "en": "Power output = {n} (override)",
+      "de": "Energieausstoß = {n} (Override)"
+    },
+    "msg_power_reset": {
+      "ru": "Выработка энергии сброшена.",
+      "en": "Power output reset.",
+      "de": "Energieausstoß zurückgesetzt."
+    },
+    "msg_optics_on": {
+      "ru": "Оптическая видимость включена (туман войны + блок Мультивселенной).",
+      "en": "Optical visibility ON (fog of war + Multiverse camera lock).",
+      "de": "Optische Sicht AN (Kriegsnebel + Multiversum-Sperre)."
+    },
+    "msg_optics_off": {
+      "ru": "Оптическая видимость выключена (весь космос виден, камера Мультивселенной разблокирована). Не сохраняется.",
+      "en": "Optical visibility OFF (all space visible, Multiverse camera unlocked). Not saved.",
+      "de": "Optische Sicht AUS (gesamter Kosmos sichtbar, Multiversum-Kamera frei). Wird nicht gespeichert."
+    }
+  }
+}

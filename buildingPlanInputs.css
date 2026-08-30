@@ -1,0 +1,123 @@
+/* Плановые инпуты — внутри кнопки, перед текстом */
+.building-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    box-sizing: border-box;
+}
+.building-button .building-button-label {
+    flex: 1 1 auto;
+    text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.building-button .plan-target-input {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.45);
+    color: #e8f6ff;
+    font-family: 'Play', sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+    outline: none;
+    pointer-events: none;
+    box-sizing: border-box;
+    transition:
+        width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        max-width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.28s ease,
+        opacity 0.22s ease,
+        padding 0.28s ease,
+        margin 0.28s ease;
+}
+.building-button.plan-open .plan-target-input {
+    width: 48px;
+    min-width: 48px;
+    max-width: 56px;
+    height: 26px;
+    opacity: 1;
+    padding: 0 4px;
+    margin-right: 8px;
+    pointer-events: auto;
+    border: 1px solid rgba(90, 160, 200, 0.45);
+    /* скос ЛВ + ПН как у кнопок/карточек */
+    clip-path: polygon(
+        7px 0,
+        100% 0,
+        100% calc(100% - 7px),
+        calc(100% - 7px) 100%,
+        0 100%,
+        0 7px
+    );
+    border-radius: 0;
+}
+.building-button.plan-open .plan-target-input:focus {
+    border-color: rgba(100, 200, 240, 0.9);
+    background: rgba(0, 12, 24, 0.6);
+}
+
+/* Нехватка ресурсов при плане — жёлтая подсветка кнопки */
+.building-button.plan-unaffordable:not(.locked) {
+    border-color: rgba(220, 180, 40, 0.85) !important;
+    box-shadow: 0 0 0 1px rgba(220, 180, 40, 0.35), inset 0 -1px 0 rgba(220, 180, 40, 0.55);
+    color: #f0e6a0;
+}
+/* Тот же уровень / то же кол-во — операция бессмысленна */
+.building-button.plan-noop:not(.locked) {
+    background: rgba(120, 120, 120, 0.35) !important;
+    color: #c8c8c8 !important;
+    border-bottom-color: rgba(160, 160, 160, 0.55) !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+}
+
+/* Пирамидка на мини-карточке здания (на уровне аватарки) */
+.building-item {
+    position: relative;
+    overflow: visible;
+}
+.building-action-tri {
+    position: absolute;
+    right: 6px;
+    top: 58px;
+    z-index: 5;
+    font-size: 12px;
+    line-height: 1;
+    pointer-events: none;
+    opacity: 0;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
+    animation: none;
+}
+.building-item.is-constructing .building-action-tri--up {
+    opacity: 1;
+    color: #3dff7a;
+    text-shadow: 0 0 6px rgba(40, 255, 120, 0.65);
+    animation: building-tri-rise 1.55s ease-in-out infinite;
+}
+.building-item.is-deconstructing .building-action-tri--down {
+    opacity: 1;
+    color: #ff5a5a;
+    text-shadow: 0 0 6px rgba(255, 60, 60, 0.55);
+    animation: building-tri-fall 1.55s ease-in-out infinite;
+}
+@keyframes building-tri-rise {
+    0%   { opacity: 0;    transform: translateY(9px); }
+    12%  { opacity: 0.95; transform: translateY(6px); }
+    70%  { opacity: 0.85; transform: translateY(-7px); }
+    100% { opacity: 0;    transform: translateY(-12px); }
+}
+@keyframes building-tri-fall {
+    0%   { opacity: 0;    transform: translateY(-9px); }
+    12%  { opacity: 0.95; transform: translateY(-6px); }
+    70%  { opacity: 0.85; transform: translateY(7px); }
+    100% { opacity: 0;    transform: translateY(12px); }
+}

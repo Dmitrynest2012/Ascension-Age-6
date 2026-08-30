@@ -1,0 +1,80 @@
+/* ===== Графы (связи) дерева технологий ===== */
+
+.tech-links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.tech-link-base,
+.tech-link-core,
+.tech-link-flow {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* --- locked: бледно-серый, без анимации --- */
+.tech-link--locked .tech-link-base {
+    stroke: rgba(90, 100, 110, 0.22);
+    stroke-width: 4;
+}
+.tech-link--locked .tech-link-core {
+    stroke: rgba(120, 130, 140, 0.38);
+    stroke-width: 1.6;
+}
+.tech-link--locked .tech-link-flow {
+    stroke: transparent;
+    stroke-width: 0;
+}
+
+/* --- active: ребёнок открыт, никто не качается — мягкий бирюзовый, медленный конвейер --- */
+.tech-link--active .tech-link-base {
+    stroke: rgba(30, 120, 150, 0.28);
+    stroke-width: 5;
+    filter: url(#tech-link-glow);
+}
+.tech-link--active .tech-link-core {
+    stroke: rgba(70, 190, 210, 0.72);
+    stroke-width: 1.85;
+}
+.tech-link--active .tech-link-flow {
+    stroke: rgba(160, 240, 255, 0.55);
+    stroke-width: 2.2;
+    stroke-dasharray: 6 18;
+    stroke-dashoffset: 0;
+    animation: tech-link-conveyor-slow 2.8s linear infinite;
+}
+
+/* --- boost: родитель/ребёнок исследуется — яркий голубой-бирюзовый, быстрый конвейер --- */
+.tech-link--boost .tech-link-base {
+    stroke: rgba(40, 180, 230, 0.45);
+    stroke-width: 7;
+    filter: url(#tech-link-glow-strong);
+}
+.tech-link--boost .tech-link-core {
+    stroke: url(#tech-link-grad-boost);
+    stroke-width: 2.4;
+    filter: url(#tech-link-glow-strong);
+    animation: tech-link-pulse 1.4s ease-in-out infinite;
+}
+.tech-link--boost .tech-link-flow {
+    stroke: rgba(200, 255, 250, 0.92);
+    stroke-width: 2.6;
+    stroke-dasharray: 8 10;
+    animation: tech-link-conveyor-fast 0.85s linear infinite;
+}
+
+@keyframes tech-link-conveyor-slow {
+    to { stroke-dashoffset: -24; }
+}
+@keyframes tech-link-conveyor-fast {
+    to { stroke-dashoffset: -18; }
+}
+@keyframes tech-link-pulse {
+    0%, 100% { opacity: 0.82; }
+    50%      { opacity: 1; }
+}

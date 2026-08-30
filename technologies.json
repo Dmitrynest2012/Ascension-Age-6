@@ -1,0 +1,2110 @@
+{
+  "meta": {
+    "version": 2,
+    "cardWidth": 132,
+    "cardHeight": 148,
+    "gapX": 56,
+    "gapY": 36,
+    "padX": 64,
+    "padY": 64,
+    "minWorldW": 1800,
+    "minWorldH": 1200,
+    "upgradeImage": "assets/textures/technologies/scientist_microscope.png"
+  },
+  "stageDefs": [
+    {
+      "id": "none",
+      "color": "#6a6a6a",
+      "name": {
+        "ru": "Не изучена",
+        "en": "Unresearched",
+        "de": "Unerforscht"
+      }
+    },
+    {
+      "id": "basic",
+      "color": "#8b6914",
+      "name": {
+        "ru": "Базовая",
+        "en": "Basic",
+        "de": "Basis"
+      }
+    },
+    {
+      "id": "primitive",
+      "color": "#c9a227",
+      "name": {
+        "ru": "Примитивная",
+        "en": "Primitive",
+        "de": "Primitiv"
+      }
+    },
+    {
+      "id": "advanced",
+      "color": "#3a9e5a",
+      "name": {
+        "ru": "Продвинутая",
+        "en": "Advanced",
+        "de": "Fortgeschritten"
+      }
+    },
+    {
+      "id": "super",
+      "color": "#2a7ec8",
+      "name": {
+        "ru": "Сверхпродвинутая",
+        "en": "Superior",
+        "de": "Überlegen"
+      }
+    },
+    {
+      "id": "divine",
+      "color": "#9b7ec8",
+      "name": {
+        "ru": "Божественная",
+        "en": "Divine",
+        "de": "Göttlich"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "fundamental",
+      "order": 0,
+      "icon": "assets/textures/icons/tech_cat_fundamental.svg",
+      "name": {
+        "ru": "Фундаментальные",
+        "en": "Fundamental",
+        "de": "Fundamental"
+      }
+    },
+    {
+      "id": "infrastructure",
+      "order": 1,
+      "icon": "assets/textures/icons/tech_cat_infrastructure.svg",
+      "name": {
+        "ru": "Инфраструктурные",
+        "en": "Infrastructure",
+        "de": "Infrastruktur"
+      }
+    },
+    {
+      "id": "transport",
+      "order": 2,
+      "icon": "assets/textures/icons/tech_cat_transport.svg",
+      "name": {
+        "ru": "Транспортные",
+        "en": "Transport",
+        "de": "Transport"
+      }
+    },
+    {
+      "id": "raw",
+      "order": 3,
+      "icon": "assets/textures/icons/tech_cat_raw.svg",
+      "name": {
+        "ru": "Сырьевые",
+        "en": "Resource",
+        "de": "Rohstoffe"
+      }
+    },
+    {
+      "id": "production",
+      "order": 4,
+      "icon": "assets/textures/icons/tech_cat_production.svg",
+      "name": {
+        "ru": "Производственные",
+        "en": "Production",
+        "de": "Produktion"
+      }
+    },
+    {
+      "id": "energy",
+      "order": 5,
+      "icon": "assets/textures/icons/tech_cat_energy.svg",
+      "name": {
+        "ru": "Энергетические",
+        "en": "Energy",
+        "de": "Energie"
+      }
+    },
+    {
+      "id": "military",
+      "order": 6,
+      "icon": "assets/textures/icons/tech_cat_military.svg",
+      "name": {
+        "ru": "Военные",
+        "en": "Military",
+        "de": "Militär"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "id": "base",
+      "categoryId": "fundamental",
+      "order": 0,
+      "column": 0,
+      "row": 0,
+      "name": {
+        "ru": "Базовое",
+        "en": "Basics",
+        "de": "Grundlagen"
+      }
+    },
+    {
+      "id": "atmo_suborbit",
+      "categoryId": "transport",
+      "order": 0,
+      "column": 0,
+      "row": 0,
+      "name": {
+        "ru": "Атмосферное / суборбитальное",
+        "en": "Atmospheric / suborbital",
+        "de": "Atmosphärisch / suborbital"
+      }
+    },
+    {
+      "id": "sublight",
+      "categoryId": "transport",
+      "order": 1,
+      "column": 2,
+      "row": 0,
+      "name": {
+        "ru": "Субсветовое",
+        "en": "Sublight",
+        "de": "Unterlicht"
+      }
+    },
+    {
+      "id": "ftl",
+      "categoryId": "transport",
+      "order": 2,
+      "column": 4,
+      "row": 0,
+      "name": {
+        "ru": "Сверхсветовое",
+        "en": "Faster-than-light",
+        "de": "Überlicht"
+      }
+    },
+    {
+      "id": "exotic_drive",
+      "categoryId": "transport",
+      "order": 3,
+      "column": 6,
+      "row": 0,
+      "name": {
+        "ru": "Экзотическое",
+        "en": "Exotic",
+        "de": "Exotisch"
+      }
+    }
+  ],
+  "technologies": [
+    {
+      "id": "TECH_PHYSICS",
+      "categoryId": "fundamental",
+      "groupId": "base",
+      "column": 0,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 10,
+      "discovered": true,
+      "image": "assets/textures/technologies/physics.png",
+      "name": {
+        "ru": "Физика",
+        "en": "Physics",
+        "de": "Physik"
+      },
+      "description": {
+        "ru": "Основы классической и современной физики. База для прикладных исследований: механика, термодинамика, электромагнетизм и квантовые эффекты в инженерных масштабах. Без этой дисциплины невозможны дальнейшие ветки двигателестроения и материаловедения.",
+        "en": "Foundations of classical and modern physics. Base for applied research: mechanics, thermodynamics, electromagnetism and quantum effects at engineering scales. Further propulsion and materials branches depend on it.",
+        "de": "Grundlagen der klassischen und modernen Physik. Basis für angewandte Forschung: Mechanik, Thermodynamik, Elektromagnetismus und Quanteneffekte im technischen Maßstab."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          2
+        ],
+        "primitive": [
+          3,
+          4
+        ],
+        "advanced": [
+          5,
+          6
+        ],
+        "super": [
+          7,
+          8
+        ],
+        "divine": [
+          9,
+          10
+        ]
+      },
+      "prerequisites": [],
+      "unlocks": [
+        "TECH_PROPULSION"
+      ],
+      "levelCosts": [
+        50,
+        80,
+        120,
+        180,
+        250,
+        350,
+        500,
+        700,
+        950,
+        1300
+      ],
+      "requirements": {
+        "unlockParents": [],
+        "perLevel": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    {
+      "id": "TECH_PROPULSION",
+      "categoryId": "fundamental",
+      "groupId": "base",
+      "column": 2,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 10,
+      "discovered": true,
+      "image": "assets/textures/technologies/propulsion.png",
+      "name": {
+        "ru": "Двигателестроение",
+        "en": "Propulsion Engineering",
+        "de": "Antriebstechnik"
+      },
+      "description": {
+        "ru": "Теория и практика силовых установок: от тепловых машин до перспективных схем. Охватывает КПД, тягу, ресурс и интеграцию с корпусом аппарата. Открывает ветку атмосферных и суборбитальных двигателей.",
+        "en": "Theory and practice of powerplants: from heat engines to advanced schemes. Covers efficiency, thrust, lifetime and airframe integration. Unlocks atmospheric and suborbital drive branches.",
+        "de": "Theorie und Praxis von Antrieben: von Wärmekraftmaschinen bis zu Zukunftskonzepten. Wirkungsgrad, Schub, Lebensdauer und Integration."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          2
+        ],
+        "primitive": [
+          3,
+          4
+        ],
+        "advanced": [
+          5,
+          7
+        ],
+        "super": [
+          8,
+          9
+        ],
+        "divine": [
+          10,
+          10
+        ]
+      },
+      "prerequisites": [
+        "TECH_PHYSICS"
+      ],
+      "unlocks": [
+        "TECH_ICE"
+      ],
+      "levelCosts": [
+        60,
+        100,
+        150,
+        220,
+        320,
+        450,
+        650,
+        900,
+        1200,
+        1600
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_PHYSICS",
+            "level": 1
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 6
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 7
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 8
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PHYSICS",
+              "level": 9
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ICE",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 0,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/internal combustion engine.png",
+      "name": {
+        "ru": "ДВС",
+        "en": "ICE",
+        "de": "Verbrennungsmotor"
+      },
+      "description": {
+        "ru": "Двигатель внутреннего сгорания — надёжная атмосферная тяга для наземной и воздушной техники. Простая конструкция, доступное топливо, ограниченный потолок по высоте и скорости. Стартовая точка транспортной ветки.",
+        "en": "Internal combustion engine — reliable atmospheric thrust for ground and air vehicles. Simple design, available fuel, limited ceiling in altitude and speed. Entry point of the transport branch.",
+        "de": "Verbrennungsmotor — zuverlässiger atmosphärischer Antrieb für Boden- und Luftfahrzeuge. Einfache Bauweise, begrenzte Höhen- und Geschwindigkeitsgrenze."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          2
+        ],
+        "primitive": [
+          3,
+          4
+        ],
+        "advanced": [
+          5,
+          6
+        ],
+        "super": [
+          7,
+          7
+        ],
+        "divine": [
+          8,
+          8
+        ]
+      },
+      "prerequisites": [
+        "TECH_PROPULSION"
+      ],
+      "unlocks": [
+        "TECH_ELECTRIC_MOTOR",
+        "TECH_BIOFUEL_ENGINE",
+        "TECH_WHEEL",
+        "TECH_GAS_TANK",
+        "TECH_BATTERY_STD"
+      ],
+      "levelCosts": [
+        40,
+        70,
+        110,
+        170,
+        250,
+        360,
+        520,
+        750
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_PROPULSION",
+            "level": 1
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 6
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 7
+            }
+          ]
+        ]
+      },
+      "stats": [
+        {
+          "id": "STAT_ICE_HP",
+          "polarity": "positive",
+          "name": {
+            "ru": "Мощность",
+            "en": "Horsepower",
+            "de": "Leistung"
+          },
+          "unit": {
+            "ru": "л.с.",
+            "en": "hp",
+            "de": "PS"
+          },
+          "values": [
+            0,
+            45,
+            60,
+            78,
+            100,
+            125,
+            155,
+            195,
+            240
+          ]
+        },
+        {
+          "id": "STAT_ICE_POWER_DRAW",
+          "polarity": "negative",
+          "name": {
+            "ru": "Энергопотребление",
+            "en": "Power draw",
+            "de": "Leistungsaufnahme"
+          },
+          "unit": {
+            "ru": "Вт",
+            "en": "W",
+            "de": "W"
+          },
+          "values": [
+            0,
+            420,
+            510,
+            620,
+            750,
+            900,
+            1080,
+            1300,
+            1550
+          ]
+        },
+        {
+          "id": "STAT_ICE_WEIGHT",
+          "polarity": "negative",
+          "name": {
+            "ru": "Вес двигателя",
+            "en": "Engine weight",
+            "de": "Motorgewicht"
+          },
+          "unit": {
+            "ru": "кг",
+            "en": "kg",
+            "de": "kg"
+          },
+          "values": [
+            0,
+            180,
+            195,
+            210,
+            230,
+            250,
+            275,
+            300,
+            330
+          ]
+        },
+        {
+          "id": "STAT_ICE_EFFICIENCY",
+          "polarity": "positive",
+          "name": {
+            "ru": "КПД",
+            "en": "Efficiency",
+            "de": "Wirkungsgrad"
+          },
+          "unit": {
+            "ru": "%",
+            "en": "%",
+            "de": "%"
+          },
+          "values": [
+            0,
+            28,
+            31,
+            34,
+            37,
+            40,
+            43,
+            46,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TECH_ELECTRIC_MOTOR",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 1,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 6,
+      "discovered": true,
+      "image": "assets/textures/technologies/electric engine.png",
+      "name": {
+        "ru": "Электродвигатель",
+        "en": "Electric motor",
+        "de": "Elektromotor"
+      },
+      "description": {
+        "ru": "Электрическая тяга для наземного и лёгкого воздушного транспорта. Высокий КПД, тихая работа, зависимость от ёмкости накопителей и сети зарядки.",
+        "en": "Electric traction for ground and light air vehicles. High efficiency, quiet operation, depends on storage capacity and charging grid.",
+        "de": "Elektrischer Antrieb für Boden- und leichte Luftfahrzeuge. Hoher Wirkungsgrad, leiser Betrieb."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          3
+        ],
+        "advanced": [
+          4,
+          4
+        ],
+        "super": [
+          5,
+          5
+        ],
+        "divine": [
+          6,
+          6
+        ]
+      },
+      "prerequisites": [
+        "TECH_ICE",
+        "TECH_PROPULSION"
+      ],
+      "unlocks": [],
+      "levelCosts": [
+        45,
+        75,
+        120,
+        180,
+        260,
+        380
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_ICE",
+            "level": 1
+          },
+          {
+            "techId": "TECH_PROPULSION",
+            "level": 1
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 1
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 1
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 3
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 5
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 5
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_BIOFUEL_ENGINE",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 1,
+      "row": 1,
+      "level": 0,
+      "maxLevel": 6,
+      "discovered": true,
+      "image": "assets/textures/technologies/biofuel_engine.png",
+      "name": {
+        "ru": "Биотопливный двигатель",
+        "en": "Biofuel engine",
+        "de": "Biokraftstoffmotor"
+      },
+      "description": {
+        "ru": "Тепловой двигатель на возобновляемом биотопливе. Компромисс между доступностью сырья и выбросами; мост между классическим ДВС и более чистыми схемами.",
+        "en": "Heat engine on renewable biofuel. Trade-off between feedstock availability and emissions; bridge from classic ICE to cleaner schemes.",
+        "de": "Wärmekraftmaschine mit biogenem Kraftstoff. Kompromiss zwischen Rohstoffverfügbarkeit und Emissionen."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          3
+        ],
+        "advanced": [
+          4,
+          4
+        ],
+        "super": [
+          5,
+          5
+        ],
+        "divine": [
+          6,
+          6
+        ]
+      },
+      "prerequisites": [
+        "TECH_ICE",
+        "TECH_PROPULSION"
+      ],
+      "unlocks": [
+        "TECH_BIOFUEL_TANK"
+      ],
+      "levelCosts": [
+        45,
+        75,
+        120,
+        180,
+        260,
+        380
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_ICE",
+            "level": 1
+          },
+          {
+            "techId": "TECH_PROPULSION",
+            "level": 1
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 1
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 1
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 1
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 3
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 5
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 5
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_WHEEL",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 1,
+      "row": 2,
+      "level": 0,
+      "maxLevel": 6,
+      "discovered": true,
+      "image": "assets/textures/technologies/standard modern wheel.png",
+      "name": {
+        "ru": "Стандартное современное колесо",
+        "en": "Standard modern wheel",
+        "de": "Modernes Standardrad"
+      },
+      "description": {
+        "ru": "Пневматическое колесо с резиновым протектором и металлическим ободом. Базовый узел шасси: сцепление, амортизация ударов и распределение нагрузки. От него зависят проходимость и управляемость наземной техники.",
+        "en": "Pneumatic wheel with rubber tread and metal rim. Basic chassis unit: grip, shock absorption and load distribution. Ground vehicle mobility and handling depend on it.",
+        "de": "Luftreifen mit Gummiprofil und Metallfelge. Basis des Fahrwerks: Haftung, Dämpfung und Lastverteilung."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          3
+        ],
+        "advanced": [
+          4,
+          4
+        ],
+        "super": [
+          5,
+          5
+        ],
+        "divine": [
+          6,
+          6
+        ]
+      },
+      "prerequisites": [
+        "TECH_ICE"
+      ],
+      "unlocks": [
+        "TECH_STEEL_CORD_WHEEL"
+      ],
+      "levelCosts": [
+        35,
+        55,
+        90,
+        140,
+        210,
+        320
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_ICE",
+            "level": 2
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 6
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_GAS_TANK",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 1,
+      "row": 3,
+      "level": 0,
+      "maxLevel": 5,
+      "discovered": true,
+      "image": "assets/textures/technologies/gas tank.png",
+      "name": {
+        "ru": "Бак с бензином",
+        "en": "Gasoline tank",
+        "de": "Benzintank"
+      },
+      "description": {
+        "ru": "Ёмкость для хранения жидкого углеводородного топлива. Конструкция учитывает герметичность, вентиляцию паров и защиту от ударов. Без надёжного бака дальность ДВС-техники остаётся символической.",
+        "en": "Vessel for storing liquid hydrocarbon fuel. Design covers sealing, vapour venting and impact protection. Without a reliable tank ICE range stays symbolic.",
+        "de": "Behälter für flüssigen Kohlenwasserstoffkraftstoff. Dichtheit, Entlüftung und Aufprallschutz bestimmen die Reichweite."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          2
+        ],
+        "advanced": [
+          3,
+          3
+        ],
+        "super": [
+          4,
+          4
+        ],
+        "divine": [
+          5,
+          5
+        ]
+      },
+      "prerequisites": [
+        "TECH_ICE"
+      ],
+      "unlocks": [],
+      "levelCosts": [
+        30,
+        50,
+        80,
+        130,
+        200
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_ICE",
+            "level": 2
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 5
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_BATTERY_STD",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 2,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 6,
+      "discovered": true,
+      "image": "assets/textures/technologies/standard battery for transport.png",
+      "name": {
+        "ru": "Стандартный аккумулятор для транспорта",
+        "en": "Standard transport battery",
+        "de": "Standard-Fahrzeugbatterie"
+      },
+      "description": {
+        "ru": "Литий-ионный или свинцово-кислотный накопитель энергии для электротранспорта и бортовых систем. Ёмкость, вес и рабочий температурный диапазон задают реальный запас хода и надёжность в полевых условиях.",
+        "en": "Li-ion or lead-acid energy storage for electric vehicles and onboard systems. Capacity, mass and operating temperature range set real range and field reliability.",
+        "de": "Li-Ionen- oder Blei-Säure-Speicher für Elektrofahrzeuge und Bordsysteme. Kapazität, Masse und Temperaturbereich bestimmen Reichweite und Zuverlässigkeit."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          3
+        ],
+        "advanced": [
+          4,
+          4
+        ],
+        "super": [
+          5,
+          5
+        ],
+        "divine": [
+          6,
+          6
+        ]
+      },
+      "prerequisites": [
+        "TECH_ICE"
+      ],
+      "unlocks": [
+        "TECH_BATTERY_QUANTUM"
+      ],
+      "levelCosts": [
+        50,
+        80,
+        130,
+        200,
+        300,
+        450
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_ICE",
+            "level": 2
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 5
+            }
+          ]
+        ]
+      },
+      "stats": [
+        {
+          "id": "STAT_BAT_STD_CAPACITY",
+          "polarity": "positive",
+          "name": {
+            "ru": "Энергоёмкость",
+            "en": "Energy capacity",
+            "de": "Energiekapazität"
+          },
+          "unit": {
+            "ru": "кВт·ч",
+            "en": "kWh",
+            "de": "kWh"
+          },
+          "values": [
+            0,
+            12,
+            18,
+            28,
+            42,
+            60,
+            85
+          ]
+        },
+        {
+          "id": "STAT_BAT_STD_WEIGHT",
+          "polarity": "negative",
+          "name": {
+            "ru": "Вес",
+            "en": "Weight",
+            "de": "Gewicht"
+          },
+          "unit": {
+            "ru": "кг",
+            "en": "kg",
+            "de": "kg"
+          },
+          "values": [
+            0,
+            95,
+            110,
+            130,
+            155,
+            185,
+            220
+          ]
+        },
+        {
+          "id": "STAT_BAT_STD_THERMAL",
+          "polarity": "positive",
+          "name": {
+            "ru": "Термостойкость",
+            "en": "Thermal range",
+            "de": "Temperaturbereich"
+          },
+          "unit": {
+            "ru": "°C",
+            "en": "°C",
+            "de": "°C"
+          },
+          "values": [
+            0,
+            "-10/+35",
+            "-15/+40",
+            "-20/+45",
+            "-25/+50",
+            "-30/+55",
+            "-35/+60"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TECH_BIOFUEL_TANK",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 2,
+      "row": 1,
+      "level": 0,
+      "maxLevel": 5,
+      "discovered": true,
+      "image": "assets/textures/technologies/biofuel_tank.png",
+      "name": {
+        "ru": "Бак с биотопливом",
+        "en": "Biofuel tank",
+        "de": "Biokraftstofftank"
+      },
+      "description": {
+        "ru": "Специализированная ёмкость под биодизель, этанол или аналоги. Материалы и уплотнения устойчивы к химической агрессии возобновляемых топлив; конструкция сохраняет герметичность при перепадах температуры.",
+        "en": "Specialized vessel for biodiesel, ethanol or similar. Materials and seals resist chemical aggression of renewable fuels; design holds pressure integrity across temperature swings.",
+        "de": "Spezialbehälter für Biodiesel, Ethanol o. ä. Werkstoffe und Dichtungen widerstehen chemischer Belastung biogener Kraftstoffe."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          2
+        ],
+        "advanced": [
+          3,
+          3
+        ],
+        "super": [
+          4,
+          4
+        ],
+        "divine": [
+          5,
+          5
+        ]
+      },
+      "prerequisites": [
+        "TECH_BIOFUEL_ENGINE"
+      ],
+      "unlocks": [],
+      "levelCosts": [
+        30,
+        50,
+        85,
+        135,
+        210
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_BIOFUEL_ENGINE",
+            "level": 2
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_BIOFUEL_ENGINE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BIOFUEL_ENGINE",
+              "level": 2
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BIOFUEL_ENGINE",
+              "level": 3
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BIOFUEL_ENGINE",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BIOFUEL_ENGINE",
+              "level": 5
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_STEEL_CORD_WHEEL",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 2,
+      "row": 2,
+      "level": 0,
+      "maxLevel": 6,
+      "discovered": true,
+      "image": "assets/textures/technologies/steel_cord_wheel.png",
+      "name": {
+        "ru": "Металлокордное колесо",
+        "en": "Steel-cord wheel",
+        "de": "Stahlcord-Rad"
+      },
+      "description": {
+        "ru": "Колесо с металлокордным каркасом повышенной жёсткости. Рассчитано на луноходы и роверы внеземных миссий: держит нагрузку при низком давлении, перепадах температуры и абразивном грунте без привычной атмосферы.",
+        "en": "Wheel with high-stiffness steel-cord carcass. Built for lunar rovers and extraterrestrial missions: sustains load under low pressure, thermal extremes and abrasive regolith without a familiar atmosphere.",
+        "de": "Rad mit hochsteifem Stahlcord-Gewebe. Für Mondrover und außerirdische Missionen: hält Last bei niedrigem Druck, Temperaturextremen und abrasivem Regolith."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          3
+        ],
+        "advanced": [
+          4,
+          4
+        ],
+        "super": [
+          5,
+          5
+        ],
+        "divine": [
+          6,
+          6
+        ]
+      },
+      "prerequisites": [
+        "TECH_WHEEL"
+      ],
+      "unlocks": [
+        "TECH_NITINOL_TIRE"
+      ],
+      "levelCosts": [
+        60,
+        100,
+        160,
+        250,
+        380,
+        550
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_WHEEL",
+            "level": 4
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_WHEEL",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_WHEEL",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_WHEEL",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_WHEEL",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_WHEEL",
+              "level": 6
+            }
+          ],
+          [
+            {
+              "techId": "TECH_WHEEL",
+              "level": 7
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_BATTERY_QUANTUM",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 3,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 5,
+      "discovered": true,
+      "image": "assets/textures/technologies/quantum battery for transport.png",
+      "name": {
+        "ru": "Квантовый аккумулятор для транспорта",
+        "en": "Quantum transport battery",
+        "de": "Quanten-Fahrzeugbatterie"
+      },
+      "description": {
+        "ru": "Накопитель на принципах квантовой инженерии плотности энергии. Резко повышает ёмкость при умеренном весе и расширяет термостойкость — основа дальних автономных рейсов и тяжёлой электротранспортной техники.",
+        "en": "Storage based on quantum energy-density engineering. Sharply raises capacity at moderate mass and widens thermal tolerance — foundation for long autonomous runs and heavy electric vehicles.",
+        "de": "Speicher auf Basis quantentechnischer Energiedichte. Deutlich höhere Kapazität bei moderater Masse und erweitertem Temperaturbereich."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          2
+        ],
+        "advanced": [
+          3,
+          3
+        ],
+        "super": [
+          4,
+          4
+        ],
+        "divine": [
+          5,
+          5
+        ]
+      },
+      "prerequisites": [
+        "TECH_BATTERY_STD"
+      ],
+      "unlocks": [],
+      "levelCosts": [
+        120,
+        200,
+        320,
+        500,
+        750
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_BATTERY_STD",
+            "level": 5
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_BATTERY_STD",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BATTERY_STD",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BATTERY_STD",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BATTERY_STD",
+              "level": 6
+            }
+          ],
+          [
+            {
+              "techId": "TECH_BATTERY_STD",
+              "level": 7
+            }
+          ]
+        ]
+      },
+      "stats": [
+        {
+          "id": "STAT_BAT_Q_CAPACITY",
+          "polarity": "positive",
+          "name": {
+            "ru": "Энергоёмкость",
+            "en": "Energy capacity",
+            "de": "Energiekapazität"
+          },
+          "unit": {
+            "ru": "кВт·ч",
+            "en": "kWh",
+            "de": "kWh"
+          },
+          "values": [
+            0,
+            120,
+            180,
+            280,
+            420,
+            650
+          ]
+        },
+        {
+          "id": "STAT_BAT_Q_WEIGHT",
+          "polarity": "negative",
+          "name": {
+            "ru": "Вес",
+            "en": "Weight",
+            "de": "Gewicht"
+          },
+          "unit": {
+            "ru": "кг",
+            "en": "kg",
+            "de": "kg"
+          },
+          "values": [
+            0,
+            70,
+            78,
+            88,
+            100,
+            115
+          ]
+        },
+        {
+          "id": "STAT_BAT_Q_THERMAL",
+          "polarity": "positive",
+          "name": {
+            "ru": "Термостойкость",
+            "en": "Thermal range",
+            "de": "Temperaturbereich"
+          },
+          "unit": {
+            "ru": "°C",
+            "en": "°C",
+            "de": "°C"
+          },
+          "values": [
+            0,
+            "-40/+70",
+            "-50/+85",
+            "-60/+100",
+            "-70/+115",
+            "-80/+130"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TECH_NITINOL_TIRE",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 3,
+      "row": 2,
+      "level": 0,
+      "maxLevel": 5,
+      "discovered": true,
+      "image": "assets/textures/technologies/nitinol_tire.png",
+      "name": {
+        "ru": "Нитиноловая шина",
+        "en": "Nitinol tire",
+        "de": "Nitinol-Reifen"
+      },
+      "description": {
+        "ru": "Шина на основе нитинола — сплава с эффектом памяти формы. Сверхвысокая прочность, упругость и способность к самовосстановлению после деформаций повышают манёвренность и сцепление на экстремальных покрытиях и в вакууме.",
+        "en": "Tire based on nitinol — a shape-memory alloy. Extreme strength, elasticity and self-healing after deformation boost manoeuvrability and grip on extreme surfaces and in vacuum.",
+        "de": "Reifen auf Nitinol-Basis — Formgedächtnislegierung. Extreme Festigkeit, Elastizität und Selbstheilung verbessern Manövrierfähigkeit und Haftung."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          2
+        ],
+        "advanced": [
+          3,
+          3
+        ],
+        "super": [
+          4,
+          4
+        ],
+        "divine": [
+          5,
+          5
+        ]
+      },
+      "prerequisites": [
+        "TECH_STEEL_CORD_WHEEL"
+      ],
+      "unlocks": [],
+      "levelCosts": [
+        100,
+        170,
+        280,
+        420,
+        650
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_STEEL_CORD_WHEEL",
+            "level": 5
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_STEEL_CORD_WHEEL",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_STEEL_CORD_WHEEL",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_STEEL_CORD_WHEEL",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_STEEL_CORD_WHEEL",
+              "level": 6
+            }
+          ],
+          [
+            {
+              "techId": "TECH_STEEL_CORD_WHEEL",
+              "level": 7
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_PROPELLER_ENGINE",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 1,
+      "row": 5,
+      "level": 0,
+      "maxLevel": 6,
+      "discovered": true,
+      "image": "assets/textures/technologies/propeller engine.jpg",
+      "name": {
+        "ru": "Винтовой двигатель",
+        "en": "Propeller engine",
+        "de": "Propellerantrieb"
+      },
+      "description": {
+        "ru": "Силовая установка с воздушным (или водным) винтом: тяга за счёт отбрасывания массы рабочей среды. Эффективна на дозвуковых скоростях в атмосфере и у поверхности воды; требует зрелого двигателестроения и прокачанного ДВС как технологической базы.",
+        "en": "Powerplant with air (or water) propeller: thrust by accelerating a working medium. Efficient at subsonic speeds in atmosphere and near the water surface; needs mature propulsion engineering and a well-developed ICE as technical base.",
+        "de": "Antrieb mit Luft- oder Wasserpropeller: Schub durch Beschleunigung des Mediums. Effizient bei Unterschall in Atmosphäre und nahe der Wasseroberfläche."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          1
+        ],
+        "primitive": [
+          2,
+          3
+        ],
+        "advanced": [
+          4,
+          4
+        ],
+        "super": [
+          5,
+          5
+        ],
+        "divine": [
+          6,
+          6
+        ]
+      },
+      "prerequisites": [
+        "TECH_ICE",
+        "TECH_PROPULSION"
+      ],
+      "unlocks": [],
+      "levelCosts": [
+        80,
+        130,
+        210,
+        330,
+        500,
+        750
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_ICE",
+            "level": 6
+          },
+          {
+            "techId": "TECH_PROPULSION",
+            "level": 8
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 6
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 8
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 6
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 8
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 6
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 8
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 7
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 9
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 8
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 10
+            }
+          ],
+          [
+            {
+              "techId": "TECH_ICE",
+              "level": 9
+            },
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 11
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ROCKET_ENGINE",
+      "categoryId": "transport",
+      "groupId": "atmo_suborbit",
+      "column": 1,
+      "row": 7,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/rocket engine.jpg",
+      "name": {
+        "ru": "Ракетный двигатель",
+        "en": "Rocket engine",
+        "de": "Raketenantrieb"
+      },
+      "description": {
+        "ru": "Реактивный двигатель, несущий окислитель и горючее на борту. Тяга не зависит от внешней атмосферы — путь к суборбите, орбите и межпланетному перелёту. Критичны удельный импульс, теплозащита сопла и массовое совершенство конструкции.",
+        "en": "Reaction engine carrying both oxidizer and fuel onboard. Thrust independent of external atmosphere — path to suborbit, orbit and interplanetary flight. Specific impulse, nozzle thermal protection and structural mass ratio are critical.",
+        "de": "Reaktionsantrieb mit Oxidator und Treibstoff an Bord. Schub unabhängig von der Atmosphäre — Weg zu Suborbit, Orbit und interplanetaren Flügen."
+      },
+      "stageRanges": {
+        "none": [
+          0,
+          0
+        ],
+        "basic": [
+          1,
+          2
+        ],
+        "primitive": [
+          3,
+          4
+        ],
+        "advanced": [
+          5,
+          6
+        ],
+        "super": [
+          7,
+          7
+        ],
+        "divine": [
+          8,
+          8
+        ]
+      },
+      "prerequisites": [
+        "TECH_PROPULSION",
+        "TECH_ICE"
+      ],
+      "unlocks": [],
+      "levelCosts": [
+        90,
+        150,
+        240,
+        380,
+        580,
+        850,
+        1200,
+        1700
+      ],
+      "requirements": {
+        "unlockParents": [
+          {
+            "techId": "TECH_PROPULSION",
+            "level": 6
+          },
+          {
+            "techId": "TECH_ICE",
+            "level": 4
+          }
+        ],
+        "perLevel": [
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 6
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 6
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 6
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 4
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 7
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 5
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 8
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 6
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 9
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 7
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 10
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 8
+            }
+          ],
+          [
+            {
+              "techId": "TECH_PROPULSION",
+              "level": 11
+            },
+            {
+              "techId": "TECH_ICE",
+              "level": 9
+            }
+          ]
+        ]
+      },
+      "stats": [
+        {
+          "id": "STAT_ROCKET_THRUST",
+          "polarity": "positive",
+          "name": {
+            "ru": "Тяга",
+            "en": "Thrust",
+            "de": "Schub"
+          },
+          "unit": {
+            "ru": "кН",
+            "en": "kN",
+            "de": "kN"
+          },
+          "values": [
+            0,
+            25,
+            40,
+            65,
+            110,
+            180,
+            300,
+            480,
+            750
+          ]
+        },
+        {
+          "id": "STAT_ROCKET_WEIGHT",
+          "polarity": "negative",
+          "name": {
+            "ru": "Вес двигателя",
+            "en": "Engine weight",
+            "de": "Triebwerksmasse"
+          },
+          "unit": {
+            "ru": "кг",
+            "en": "kg",
+            "de": "kg"
+          },
+          "values": [
+            0,
+            180,
+            220,
+            280,
+            360,
+            470,
+            620,
+            820,
+            1100
+          ]
+        }
+      ]
+    }
+  ]
+}

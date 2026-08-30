@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "version": 2,
+    "description": "NPC-диалоги. Тексты — в questsLocalization.json → npc"
+  },
+  "dialogues": [
+    {
+      "id": "NPC_UNKNOWN_GENDER",
+      "priority": 20,
+      "once": true,
+      "triggers": [
+        {
+          "questId": "QST_INTRO_001",
+          "objectiveId": "OBJ_CHOOSE_GENDER",
+          "status": "completed"
+        }
+      ],
+      "npc": {
+        "avatar": "assets/textures/npc/unknown.png",
+        "avatarVideo": null,
+        "avatar_man": "assets/textures/npc/seleznev.png",
+        "avatar_woman": "assets/textures/npc/seleznev.png"
+      },
+      "ambient": null,
+      "voice": null
+    },
+    {
+      "id": "NPC_CREW_TUTORIAL_SPECIALISTS",
+      "priority": 30,
+      "once": true,
+      "triggers": [
+        {
+          "questId": "QST_INTRO_003",
+          "objectiveId": "OBJ_READ_CREW",
+          "status": "completed"
+        }
+      ],
+      "npc": {
+        "avatar": "assets/textures/npc/seleznev.png",
+        "avatar_man": "assets/textures/npc/seleznev.png",
+        "avatar_woman": "assets/textures/npc/seleznev.png",
+        "avatarVideo": null
+      },
+      "ambient": null,
+      "voice": null
+    },
+    {
+      "id": "NPC_CREW_TUTORIAL_SCHEMES",
+      "priority": 25,
+      "once": true,
+      "triggers": [
+        {
+          "questId": "QST_INTRO_003",
+          "objectiveId": "OBJ_HIRE_ONE_ENG",
+          "status": "completed"
+        }
+      ],
+      "npc": {
+        "avatar": "assets/textures/npc/seleznev.png",
+        "avatar_man": "assets/textures/npc/seleznev.png",
+        "avatar_woman": "assets/textures/npc/seleznev.png",
+        "avatarVideo": null
+      },
+      "ambient": null,
+      "voice": null
+    },
+    {
+      "id": "NPC_CH3_CARTOGRAPHY",
+      "priority": 40,
+      "once": true,
+      "triggers": [
+        {
+          "questId": "QST_INTRO_004",
+          "objectiveId": "OBJ_READ_CH3",
+          "status": "completed"
+        }
+      ],
+      "npc": {
+        "avatar": "assets/textures/npc/seleznev.png",
+        "avatar_man": "assets/textures/npc/seleznev.png",
+        "avatar_woman": "assets/textures/npc/seleznev.png",
+        "avatarVideo": null
+      },
+      "ambient": null,
+      "voice": null
+    }
+  ]
+}

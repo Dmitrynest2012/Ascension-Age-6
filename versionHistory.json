@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "currentBuild": "0.1.7",
+    "previewAvatar": "assets/textures/npc/seleznev.png"
+  },
+  "typeImages": {
+    "patch": "assets/textures/icons/version_patch.png",
+    "update": "assets/textures/icons/version_update.png",
+    "major": "assets/textures/icons/version_major.png"
+  },
+  "builds": [
+    {
+      "id": "b017",
+      "build": "0.1.7",
+      "date": "2026-08-30",
+      "type": "update",
+      "title": {
+        "ru": "Галактика, обзор космоса и третья глава",
+        "en": "The galaxy, space vision and Chapter Three",
+        "de": "Die Galaxie, Raumsicht und das dritte Kapitel"
+      },
+      "description": {
+        "ru": "Карта теперь уходит дальше звёздной системы: можно подняться к Местной туманности, увидеть Млечный Путь целиком, заглянуть к Андромеде и даже выйти за край вселенной — к соседнему «пузырю». Чтобы не теряться в этом масштабе, справа появился Навигатор: дерево миров от звезды до луны, одним щелчком — к нужному телу.\n\nКосмос больше не открыт целиком. Обсерватория даёт область обзора: ближний круг показывает детали, дальний — силуэты далёких систем. Неизвестное остаётся неизвестным, пока его не увидели.\n\nНа земле — третья глава поручений: лёд, вода, теплица и ремонт базы к вечеру. Ранняя колония стала строже по еде и воде, зато один специалист может делить время между несколькими работами. «Новая игра» из меню всегда начинает историю заново, даже если до этого было загружено сохранение.",
+        "en": "The map now goes far beyond a single star system. You can rise into the Local Cloud, see the whole Milky Way, visit Andromeda, and even step outside the universe to a neighbouring bubble. To keep your bearings at that scale, a Navigator sits on the right: a tree of worlds from star to moon, one click from here to there.\n\nSpace is no longer fully revealed. An Observatory opens a vision range: the inner ring shows detail, the outer ring only distant silhouettes. What you have not scanned stays unknown.\n\nOn the ground, Chapter Three begins: ice, water, the greenhouse, and sealing the base before nightfall. The early colony is tighter on food and water, but one specialist can split time across several jobs. “New Game” from the menu always starts a fresh story — even if you had just loaded a save.",
+        "de": "Die Karte reicht nun weit über ein Sternsystem hinaus. Ihr steigt in die lokale Wolke auf, seht die Milchstraße als Ganzes, erreicht Andromeda und könnt sogar aus dem Universum in eine benachbarte Blase treten. Damit ihr den Maßstab nicht verliert, sitzt rechts der Navigator: ein Baum der Welten von Stern bis Mond, ein Klick zum Ziel.\n\nDer Weltraum ist nicht mehr vollständig sichtbar. Das Observatorium öffnet ein Sichtfeld: der innere Ring zeigt Details, der äußere nur ferne Umrisse. Ungesehenes bleibt unbekannt.\n\nAm Boden beginnt das dritte Kapitel: Eis, Wasser, Gewächshaus und die Basis vor der Nacht abdichten. Die frühe Kolonie ist bei Essen und Wasser knapper, dafür kann ein Spezialist seine Zeit auf mehrere Arbeiten teilen. „Neues Spiel“ im Menü startet die Geschichte immer neu — auch nach einem geladenen Spielstand."
+      }
+    },
+    {
+      "id": "b016",
+      "build": "0.1.6",
+      "date": "2026-08-23",
+      "type": "update",
+      "title": {
+        "ru": "Цепочки производства и кодекс",
+        "en": "Production chains and the Codex",
+        "de": "Produktionsketten und der Kodex"
+      },
+      "description": {
+        "ru": "Появилось окно цепочек производства: на одном поле видно, из чего делается железо, медь, дерево, уголь и нефть — и где цепочка стоит, если не хватает сырья или склад забит. Рядом выросли карьер, дробилка, литейная, заводы деталей, лесопилка и угольная станция.\n\nКодекс собрал здания и технологии в одну справочную книгу с поиском. Из окна здания или науки можно сразу открыть нужную статью.\n\nВ ресурсной полоске появились графики: запас, добыча и расход за часы и дни. Энергосеть честнее считает, сколько ещё продержатся аккумуляторы и как здания делят мощность, когда ток идёт только с батарей. На гео-разведке залежи лежат плоскими пятнами на поверхности, а сканер и зонд рисуют волны по планете.",
+        "en": "A production-chains view is in: one board shows how iron, copper, wood, coal and oil are made — and where the line stops if feedstock runs out or the warehouse is full. The quarry, crusher, foundry, parts plants, sawmill and coal plant grew up around it.\n\nThe Codex gathers buildings and technologies into one searchable book. From a building or science window you can jump straight to the matching article.\n\nThe resource bar now has charts: stock, output and use over hours and days. The power grid is more honest about how long batteries last and how buildings share power when only the cells are feeding the net. On geo-survey, deposits sit as flat marks on the surface, and the scanner and probe send waves across the planet.",
+        "de": "Es gibt eine Ansicht der Produktionsketten: auf einem Feld seht ihr, wie Eisen, Kupfer, Holz, Kohle und Öl entstehen — und wo die Kette stockt, wenn Rohstoff fehlt oder das Lager voll ist. Steinbruch, Brecher, Gießerei, Teilewerke, Sägewerk und Kohlekraftwerk gehören dazu.\n\nDer Kodex sammelt Gebäude und Technologien in einem durchsuchbaren Buch. Aus dem Gebäude- oder Wissenschaftsfenster springt ihr direkt zum passenden Artikel.\n\nDie Ressourcenleiste hat Diagramme: Bestand, Erzeugung und Verbrauch über Stunden und Tage. Das Stromnetz sagt ehrlicher, wie lange die Akkus reichen und wie Gebäude die Leistung teilen, wenn nur die Batterien speisen. In der Geo-Erkundung liegen Lagerstätten flach auf der Oberfläche, Scanner und Sonde zeichnen Wellen über den Planeten."
+      }
+    },
+    {
+      "id": "b015",
+      "build": "0.1.5",
+      "date": "2026-08-21",
+      "type": "update",
+      "title": {
+        "ru": "Наука, карта планеты и план стройки",
+        "en": "Science, the planet map and construction plans",
+        "de": "Wissenschaft, Planetenkarte und Baupläne"
+      },
+      "description": {
+        "ru": "Открылось дерево наук: физика, двигатели и то, что из них вырастает. Исследование идёт из общего потока «технологий в минуту», ребёнок не обгоняет родителя, а закрытые ветки выглядят как неизвестные карточки.\n\nНа планете появились геоданные, гео-разведка и плоская карта. С базы Космистов можно слать несколько отрядов: разведка, возврат, добыча льда. Туман войны закрывает ещё не пройденные километры.\n\nЗдания теперь требуют материалы на постройку и улучшение и возвращают часть при разборе. Во вкладке «Уровни» видно, что даёт каждый ранг. Если на теле разрешено плановое строительство, можно сразу задать целевой уровень или число корпусов. В шапке — блокнот и калькулятор, небесному телу можно дать своё имя.",
+        "en": "The science tree is open: physics, engines, and what grows from them. Research draws from a shared stream of technology per minute. A child field cannot outpace its parent, and locked branches show as unknown cards.\n\nOn the planet you now have geodata, geo-survey and a flat map. From the Cosmists’ base you can send several squads at once: scout, return, mine ice. Fog of war hides the kilometres you have not walked.\n\nBuildings spend materials to raise and upgrade, and give some back when torn down. The Levels tab shows what each rank is worth. Where planned construction is allowed, you can set a target level or count in one step. The header has a notepad and a calculator, and a world can take a name of your own.",
+        "de": "Der Wissenschaftsbaum ist offen: Physik, Antriebe und was daraus erwächst. Forschung speist sich aus einem gemeinsamen Strom an Technologie pro Minute. Ein Kindfeld überholt den Elternzweig nicht, gesperrte Äste erscheinen als unbekannte Karten.\n\nAuf dem Planeten gibt es Geodaten, Geo-Erkundung und eine flache Karte. Von der Kosmisten-Basis schickt ihr mehrere Trupps zugleich: Aufklärung, Rückkehr, Eisabbau. Der Nebel des Krieges verdeckt die ungelaufenen Kilometer.\n\nGebäude verbrauchen Material für Bau und Ausbau und geben einen Teil beim Abriss zurück. Die Registerkarte „Stufen“ zeigt, was jeder Rang bringt. Wo geplante Bauweise erlaubt ist, setzt ihr Zielstufe oder Stückzahl in einem Schritt. Im Kopfzeilenbereich liegen Notizblock und Rechner, und ein Himmelskörper darf einen eigenen Namen tragen."
+      }
+    },
+    {
+      "id": "b013",
+      "build": "0.1.3",
+      "date": "2026-08-07",
+      "type": "update",
+      "title": {
+        "ru": "Технопорт и полёты",
+        "en": "Technoport and flight",
+        "de": "Technoport und Flug"
+      },
+      "description": {
+        "ru": "На Святой Руси можно построить Технопорт. Пока стоит хотя бы один корпус, открывается ангар: космические корабли, позже — воздух и земля. Первый корабль — «Буран»: он взлетает, садится и занимает место на площадке.\n\nВ гравитационном колодце корабль летает по выбранной точке и огибает планету, если путь через неё не проходит. Зелёное кольцо у поверхности — зона посадки, жёлтое у края колодца — выход в систему. Из жёлтой зоны можно лететь к другому телу системы и прибыть с той стороны, откуда держали курс. Сесть без технопорта нельзя.",
+        "en": "Holy Rus can now host a Technoport. One building is enough to open the hangar: spacecraft first, air and ground later. The first ship is the Buran: it launches, lands and takes a pad.\n\nInside the gravity well the ship flies to a point you pick and curves around the world if the straight path would hit it. A green ring at the surface is the landing zone; a yellow ring at the well’s edge is the way out into the system. From that yellow band you can fly to another body and arrive on the side you came from. There is no landing without a technoport.",
+        "de": "Auf der Heiligen Rus könnt ihr einen Technoport bauen. Ein Gebäude reicht, und die Halle öffnet sich: zuerst Raumschiffe, später Luft und Boden. Das erste Schiff ist die Buran: sie startet, landet und belegt einen Standplatz.\n\nIm Schwerefeld fliegt das Schiff zu einem gewählten Punkt und biegt um die Welt, wenn der direkte Weg durch sie ginge. Ein grüner Ring an der Oberfläche ist die Landezone, ein gelber am Feldrand der Ausgang ins System. Aus diesem gelben Band fliegt ihr zu einem anderen Körper und kommt von der Seite an, aus der ihr kamt. Ohne Technoport gibt es keine Landung."
+      }
+    },
+    {
+      "id": "b012",
+      "build": "0.1.2",
+      "date": "2026-08-06",
+      "type": "update",
+      "title": {
+        "ru": "Туманность и живые планеты",
+        "en": "The nebula and living worlds",
+        "de": "Der Nebel und lebendige Welten"
+      },
+      "description": {
+        "ru": "Отдалив камеру, выходите на уровень межзвёздной туманности: Местная туманность лежит за системами Солнца и Альфы Центавра, далёкие звёзды становятся маленькими восьмиконечными знаками.\n\nСами миры ожили. У планет с атмосферой дымка тает в космос и слушает день и ночь. Где есть облака — они крутятся вместе с телом. На колонизированной ночной стороне зажигаются города. Над магнитным полем играет северное сияние. Заставка ведёт камеру над Солнцем к Земле с теми же приёмами света.",
+        "en": "Pull the camera back and you reach the interstellar cloud: the Local Nebula sits behind the Sun and Alpha Centauri, and distant stars shrink to small eight-pointed marks.\n\nThe worlds themselves woke up. Bodies with an atmosphere wear a haze that fades into space and follows day and night. Clouds, where they exist, turn with the planet. On a colonised night side the cities light up. Over a magnetic field the aurora moves. The intro flies the camera over the Sun toward Earth with the same light.",
+        "de": "Zieht die Kamera zurück, erreicht ihr die interstellare Wolke: der lokale Nebel liegt hinter Sonne und Alpha Centauri, ferne Sterne werden zu kleinen achtzackigen Zeichen.\n\nDie Welten selbst sind erwacht. Körper mit Atmosphäre tragen einen Dunst, der ins All verläuft und Tag und Nacht folgt. Wolken drehen sich mit dem Körper. Auf der kolonisierten Nachtseite gehen Städte an. Über einem Magnetfeld wandert das Polarlicht. Das Intro führt die Kamera über die Sonne zur Erde mit demselben Licht."
+      }
+    },
+    {
+      "id": "b011",
+      "build": "0.1.1",
+      "date": "2026-08-05",
+      "type": "update",
+      "title": {
+        "ru": "Сохранения и досье командира",
+        "en": "Saves and the commander’s dossier",
+        "de": "Spielstände und das Dossier des Kommandanten"
+      },
+      "description": {
+        "ru": "Игру можно сохранять и загружать слотами: имя сессии, несколько карт, автосохранение рядом с основной. В слот пишутся время, камера, поручения, здания, склады и орбиты.\n\nПоявилось окно героя: досье, возраст по внутриигровой дате и лента поручений. Склады ограничивают сырьё, материалы и еду. Пока сюжет не открыл главу, часть цифр остаётся под маской «неизвестно». Интерфейс, здания и небесные тела говорят на русском, английском и немецком.",
+        "en": "You can save and load in slots: a session name, several cards, and an autosave beside the main one. A slot keeps time, camera, contracts, buildings, stockpiles and orbits.\n\nA hero window is in: dossier, age from the in-game date, and a ribbon of contracts. Warehouses cap raw goods, materials and food. Until the story opens the chapter, some figures stay behind an “unknown” mask. The interface, buildings and worlds speak Russian, English and German.",
+        "de": "Ihr speichert und ladet in Slots: Sitzungsname, mehrere Karten und ein Autosave neben dem Hauptstand. Ein Slot hält Zeit, Kamera, Aufträge, Gebäude, Lager und Bahnen.\n\nEin Heldenfenster ist da: Dossier, Alter nach Spieldatum und eine Leiste der Aufträge. Lager begrenzen Rohstoffe, Materialien und Nahrung. Bis die Geschichte das Kapitel öffnet, bleiben manche Zahlen hinter der Maske „unbekannt“. Oberfläche, Gebäude und Welten sprechen Russisch, Englisch und Deutsch."
+      }
+    },
+    {
+      "id": "b010",
+      "build": "0.1.0",
+      "date": "2026-08-02",
+      "type": "major",
+      "title": {
+        "ru": "Первая сборка «Вознесение: Эпоха-6»",
+        "en": "First build of Ascension: Epoch-6",
+        "de": "Erste Fassung von Aufstieg: Epoche-6"
+      },
+      "description": {
+        "ru": "Первая открытая сборка. Главное меню, настройки языка, графики и звука, поручения с диалогами, строительство на Святой Руси и первая жизнь колонии: люди, склады, свет.",
+        "en": "The first public build. A main menu, language, graphics and sound settings, contracts with dialogue, construction on Holy Rus, and the first life of the colony: people, stockpiles, light.",
+        "de": "Die erste öffentliche Fassung. Hauptmenü, Sprache, Grafik und Ton, Aufträge mit Dialogen, Bau auf der Heiligen Rus und das erste Leben der Kolonie: Menschen, Lager, Licht."
+      }
+    },
+    {
+      "id": "b009",
+      "build": "0.0.9",
+      "date": "2026-07-20",
+      "type": "update",
+      "title": {
+        "ru": "Схемы зданий и электричество",
+        "en": "Building schemes and electricity",
+        "de": "Gebäudeschemata und Strom"
+      },
+      "description": {
+        "ru": "У зданий появились схемы: производство, ремонт, выращивание. Электроэнергия вырабатывается, тратится и копится на подстанциях — без тока часть работ встаёт.",
+        "en": "Buildings gained schemes: production, repair, growing food. Power is made, spent and stored at substations — without current, some work stops.",
+        "de": "Gebäude haben Schemata: Produktion, Reparatur, Anbau. Strom wird erzeugt, verbraucht und in Unterstationen gespeichert — ohne Spannung steht ein Teil der Arbeit."
+      }
+    },
+    {
+      "id": "b008",
+      "build": "0.0.8",
+      "date": "2026-07-05",
+      "type": "patch",
+      "title": {
+        "ru": "Чище интерфейс",
+        "en": "A cleaner interface",
+        "de": "Eine klarere Oberfläche"
+      },
+      "description": {
+        "ru": "Поправлены окна, подписи ресурсов и маска «неизвестно», чтобы цифры колонии читались спокойнее.",
+        "en": "Windows, resource labels and the “unknown” mask were tightened so the colony’s numbers read more calmly.",
+        "de": "Fenster, Ressourcenbeschriftungen und die Maske „unbekannt“ wurden nachgezogen, damit die Zahlen der Kolonie ruhiger lesbar sind."
+      }
+    }
+  ],
+  "currentBuild": "0.1.7"
+}

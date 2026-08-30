@@ -1,0 +1,343 @@
+/* ===== Экран Интро + окно имени сессии ===== */
+
+/* Модалка имени сессии поверх главного меню */
+#session-name-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10080;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    font-family: 'Play', sans-serif;
+}
+
+#session-name-modal.open {
+    display: flex;
+}
+
+.session-name-panel {
+    width: min(420px, 90vw);
+    background: radial-gradient(circle at center, rgba(50, 50, 50, 0.92), rgba(20, 20, 20, 0.95) 70%);
+    border: 1px solid rgba(70, 70, 70, 0.55);
+    clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+    padding: 18px 20px 16px;
+    color: #fff;
+}
+
+.session-name-header {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: rgba(180, 255, 255, 0.9);
+}
+
+.session-name-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(90, 90, 90, 0.5);
+    color: #e8e8e8;
+    font-family: 'Play', sans-serif;
+    font-size: 15px;
+    outline: none;
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+
+.session-name-input:focus {
+    border-color: rgba(0, 200, 220, 0.65);
+}
+
+.session-name-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    justify-content: flex-end;
+}
+
+.session-name-btn {
+    padding: 8px 16px;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid rgba(70, 70, 70, 0.55);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    transition: background 0.25s, border-color 0.25s, opacity 0.25s;
+}
+
+.session-name-btn:hover:not(:disabled) {
+    border-bottom-color: rgba(0, 180, 220, 0.95);
+    background: rgba(60, 60, 60, 0.55);
+}
+
+.session-name-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
+
+.session-name-btn.primary {
+    background: rgba(0, 80, 90, 0.45);
+}
+
+/* ===== Полноэкранный слой интро ===== */
+#intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10200;
+    display: none;
+    background: #000;
+    overflow: hidden;
+    font-family: 'Play', sans-serif;
+}
+
+#intro-screen.active {
+    display: block;
+}
+
+#intro-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: opacity 2.8s ease;
+}
+
+/* После старта видео: космос полностью скрыт */
+#intro-screen.video-focus #intro-canvas {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+/* Подписи слева сверху */
+.intro-caption {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    z-index: 5;
+    color: rgba(200, 255, 255, 0.88);
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 2.8s ease;
+    pointer-events: none;
+}
+
+.intro-caption.visible {
+    opacity: 1;
+}
+
+#intro-screen.video-focus .intro-caption {
+    opacity: 0 !important;
+}
+
+/* Видеоплеер 1:1, почти на весь экран, без контролов */
+.intro-video-frame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.96);
+    z-index: 6;
+    width: min(92vmin, 92vw);
+    height: min(92vmin, 92vw);
+    max-width: 96vw;
+    max-height: 96vh;
+    background: #000;
+    border: 1px solid rgba(80, 80, 80, 0.5);
+    clip-path: polygon(28px 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%, 0 28px);
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.9s ease, border-color 2.8s ease, background-color 2.8s ease, clip-path 2.8s ease;
+}
+
+.intro-video-frame.visible {
+    opacity: 1;
+}
+
+/* Гасим только «хром» рамки — само видео остаётся */
+.intro-video-frame.fade-chrome {
+    border-color: transparent;
+    background-color: transparent;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.intro-video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+}
+
+/* Название игры: две строки с разных сторон */
+.intro-title-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 8;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.intro-title-line {
+    position: absolute;
+    top: 58%;
+    font-size: clamp(28px, 6vw, 64px);
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    color: #fff;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.intro-title-line.line1 {
+    left: 0;
+    transform: translateX(-110%);
+    background: linear-gradient(to bottom, #fff 0%, #fff 45%, #7a7a7a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-title-line.line2 {
+    top: 68%;
+    right: 0;
+    transform: translateX(110%);
+    background: linear-gradient(to bottom, #fff 0%, #c8f7ff 55%, #00c8e0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-title-line.animate-in.line1 {
+    animation: introTitleFromLeft 1.4s cubic-bezier(0.16, 0.84, 0.28, 1) forwards;
+}
+
+.intro-title-line.animate-in.line2 {
+    animation: introTitleFromRight 1.4s cubic-bezier(0.16, 0.84, 0.28, 1) forwards;
+}
+
+@keyframes introTitleFromLeft {
+    0% { opacity: 0; transform: translateX(-110%); }
+    15% { opacity: 1; }
+    100% { opacity: 1; transform: translateX(18vw); }
+}
+
+@keyframes introTitleFromRight {
+    0% { opacity: 0; transform: translateX(110%); }
+    15% { opacity: 1; }
+    100% { opacity: 1; transform: translateX(-18vw); }
+}
+
+/* Затемнение / загрузка */
+.intro-fade {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease;
+}
+
+.intro-fade.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.intro-loading {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    z-index: 13;
+    width: min(360px, 70vw);
+    text-align: center;
+    color: rgba(220, 220, 220, 0.9);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.intro-loading.visible {
+    opacity: 1;
+}
+
+.intro-loading-bar {
+    margin-top: 12px;
+    height: 6px;
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(80, 80, 80, 0.5);
+    overflow: hidden;
+    clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%, 0 6px);
+}
+
+.intro-loading-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, rgba(0, 160, 180, 0.7), rgba(0, 230, 255, 0.95));
+    transition: width 0.2s ease-out;
+}
+
+.intro-loading-pct {
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(180, 255, 255, 0.75);
+}
+
+
+/* ===== Кнопка «Пропустить заставку» ===== */
+.intro-skip-btn {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    z-index: 14;
+    padding: 8px 16px;
+    font-family: 'Play', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: rgba(220, 220, 220, 0.9);
+    background: rgba(30, 30, 30, 0.4);
+    border: 1px solid rgba(70, 70, 70, 0.55);
+    border-bottom-color: rgba(70, 70, 70, 0.55);
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease, background 0.25s, border-color 0.25s, border-bottom-color 0.25s;
+}
+
+.intro-skip-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.intro-skip-btn:hover {
+    background: rgba(50, 50, 50, 0.5);
+    border-color: rgba(70, 70, 70, 0.55);
+    border-bottom-color: rgba(0, 180, 220, 0.95);
+    color: #fff;
+}
+
+/* Синхронно с гашением космоса / подписи */
+#intro-screen.video-focus .intro-skip-btn {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 2.8s ease;
+}
+
+/* При скипе — без долгого fade, кнопка уже скрыта до прогрессбара */
+#intro-screen.intro-skipping .intro-skip-btn {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: none !important;
+}

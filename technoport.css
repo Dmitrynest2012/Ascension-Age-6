@@ -1,0 +1,513 @@
+/* ======================================================================
+   technoport.css — панель Технопорта, модалка юнита, мини-панель космоса
+   ====================================================================== */
+
+#technoport-panel {
+    position: absolute;
+    top: 310px;
+    left: 10px;
+    z-index: 905;
+    display: none;
+    flex-direction: column;
+    font-family: 'Play', sans-serif;
+}
+
+.technoport-header {
+    width: 530px;
+    height: 20px;
+    background: rgba(17, 17, 17, 0.432);
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+.technoport-body {
+    width: 510px;
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.5),
+        rgba(36, 36, 36, 0.425) 70%
+    );
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+.technoport-categories {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 4px;
+}
+
+.technoport-cat-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 11px;
+    padding: 6px 4px;
+    cursor: pointer;
+    flex: 1;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+    transition: all 0.3s;
+}
+
+.technoport-cat-btn:hover:not(.locked) {
+    color: rgba(0, 238, 255, 0.966);
+    background-color: rgba(104, 104, 104, 0.322);
+}
+
+.technoport-cat-btn.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+    box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5);
+    background-color: rgba(104, 104, 104, 0.122);
+}
+
+.technoport-cat-btn.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.technoport-cat-btn.locked {
+    opacity: 0.35;
+    cursor: not-allowed;
+    color: #888;
+}
+
+.technoport-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 130px;
+}
+
+.technoport-slot {
+    width: 120px;
+    height: 125px;
+    background: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.technoport-slot:hover {
+    background-color: rgba(104, 104, 104, 0.322);
+}
+
+.technoport-slot.dragging {
+    opacity: 0.55;
+}
+
+.technoport-slot.drag-over {
+    outline: 1px solid rgba(0, 192, 206, 0.85);
+}
+
+.technoport-slot img {
+    width: 88px;
+    height: 72px;
+    object-fit: contain;
+    margin-top: 8px;
+    pointer-events: none;
+}
+
+.technoport-slot img.grayscale,
+.technoport-slot.grayscale img {
+    filter: grayscale(100%);
+}
+
+.technoport-slot p {
+    margin: 4px 4px 0;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.15;
+}
+
+.technoport-slot span {
+    font-size: 11px;
+    color: rgba(180, 230, 255, 0.9);
+}
+
+.technoport-slot-empty {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 28px;
+}
+
+.technoport-footer {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: rgba(0, 0, 0, 0.35);
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    border-top: 1px solid rgba(70, 70, 70, 0.5);
+}
+
+.technoport-cap-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+    font-size: 12px;
+    color: #ddd;
+}
+
+#technoport-cap-values {
+    color: #fff;
+}
+
+#technoport-cap-pct {
+    color: rgba(0, 220, 240, 0.9);
+}
+
+/* ----- Модалка юнита в технопорте ----- */
+#unit-tech-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 960;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
+}
+
+.unit-tech-modal-inner {
+    width: min(640px, 92vw);
+    max-height: 85vh;
+    overflow: auto;
+    background: radial-gradient(circle at 30% 20%, rgba(50, 55, 60, 0.92), rgba(20, 20, 22, 0.95));
+    clip-path: polygon(28px 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%, 0 28px);
+    border: 1px solid rgba(70, 70, 70, 0.55);
+    backdrop-filter: blur(10px);
+    font-family: 'Play', sans-serif;
+    color: #eee;
+}
+
+.unit-tech-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(80, 80, 80, 0.5);
+}
+
+#unit-tech-modal-title {
+    font-size: 15px;
+    flex: 1;
+}
+
+.unit-tech-modal-tabs {
+    display: flex;
+    gap: 6px;
+}
+
+.unit-tech-tab {
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.unit-tech-tab.active {
+    color: #fff;
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+}
+
+.unit-tech-modal-close {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+}
+.unit-tech-modal-close:hover { color: #fff; }
+
+.unit-tech-modal-body {
+    padding: 14px;
+}
+
+.unit-tech-main-row {
+    display: flex;
+    gap: 16px;
+}
+
+.unit-tech-avatar-wrap {
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.4);
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.unit-tech-avatar-wrap img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.unit-tech-avatar-wrap img.grayscale {
+    filter: grayscale(100%);
+}
+
+.unit-tech-stats {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.unit-tech-stats strong {
+    color: rgba(180, 220, 240, 0.85);
+}
+
+.unit-tech-quick {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(70, 70, 70, 0.45);
+}
+
+.unit-tech-launch-btn {
+    background: rgba(0, 80, 100, 0.55);
+    border: 1px solid rgba(0, 180, 210, 0.55);
+    color: #e8ffff;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px);
+    transition: background 0.2s;
+}
+.unit-tech-launch-btn:hover:not(:disabled) {
+    background: rgba(0, 120, 140, 0.65);
+}
+.unit-tech-launch-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.unit-tech-launch-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.unit-tech-launch-bar {
+    flex: 1;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+
+.unit-tech-launch-mover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    animation: unit-tech-launch-slide 1.6s linear infinite;
+}
+
+.unit-tech-launch-fill {
+    flex: 1;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 200, 160, 0.45));
+}
+
+.unit-tech-launch-arrows {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 22px;
+    letter-spacing: -4px;
+    padding: 0 6px;
+    transform: rotate(-90deg);
+}
+
+.unit-tech-launch-timer {
+    min-width: 48px;
+    font-variant-numeric: tabular-nums;
+    color: #9ef;
+}
+
+@keyframes unit-tech-launch-slide {
+    0% { transform: translateY(60%); opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-60%); opacity: 0.4; }
+}
+
+/* ----- Мини-панель в космосе (правый низ, над кнопкой сборки) ----- */
+#unit-space-panel {
+    position: fixed;
+    right: 16px;
+    bottom: 72px;
+    z-index: 920;
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    align-items: stretch;
+    min-width: 200px;
+    max-width: 280px;
+    padding: 8px;
+    background: rgba(18, 18, 20, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 14px);
+    border: 1px solid rgba(70, 70, 70, 0.55);
+    border-bottom-color: rgba(0, 180, 220, 0.55);
+    font-family: 'Play', sans-serif;
+    color: #eee;
+}
+
+.unit-space-avatar-wrap {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 0, 0, 0.4);
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.unit-space-avatar-wrap img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.unit-space-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.unit-space-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.unit-space-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.unit-space-land-btn {
+    background: rgba(0, 70, 90, 0.5);
+    border: 1px solid rgba(0, 180, 210, 0.45);
+    color: #bff;
+    width: 36px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+.unit-space-land-btn:hover:not(:disabled) {
+    background: rgba(0, 120, 140, 0.6);
+}
+.unit-space-land-btn:disabled,
+.unit-space-land-btn.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    color: #789;
+}
+
+.unit-space-land-btn.landing-active {
+    opacity: 1;
+    cursor: default;
+    color: #e8ffff;
+    border-color: rgba(0, 220, 255, 0.85);
+    background: linear-gradient(
+        110deg,
+        rgba(0, 70, 90, 0.55) 0%,
+        rgba(0, 160, 200, 0.75) 45%,
+        rgba(0, 70, 90, 0.55) 90%
+    );
+    background-size: 200% 100%;
+    animation: unit-land-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes unit-land-shimmer {
+    0% { background-position: 100% 0; filter: brightness(1); }
+    50% { background-position: 0% 0; filter: brightness(1.25); }
+    100% { background-position: 100% 0; filter: brightness(1); }
+}
+
+.unit-space-flight-btn {
+    background: rgba(0, 70, 90, 0.5);
+    border: 1px solid rgba(0, 180, 210, 0.45);
+    color: #bff;
+    width: 36px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+.unit-space-flight-btn:hover:not(:disabled) {
+    background: rgba(0, 120, 140, 0.6);
+}
+.unit-space-flight-btn:disabled,
+.unit-space-flight-btn.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    color: #789;
+}
+.unit-space-flight-btn.active {
+    border-color: rgba(0, 220, 255, 0.95);
+    color: #e8ffff;
+    background: rgba(0, 140, 180, 0.55);
+    box-shadow: 0 0 8px rgba(0, 200, 255, 0.35);
+}
+
+.unit-space-sysflight-btn {
+    background: rgba(60, 40, 90, 0.55);
+    border: 1px solid rgba(180, 140, 255, 0.45);
+    color: #e0d0ff;
+    width: 36px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+.unit-space-sysflight-btn:hover:not(:disabled) {
+    background: rgba(100, 70, 160, 0.65);
+}
+.unit-space-sysflight-btn:disabled,
+.unit-space-sysflight-btn.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    color: #789;
+}
+.unit-space-sysflight-btn.active {
+    border-color: rgba(200, 160, 255, 0.95);
+    color: #fff;
+    background: rgba(120, 80, 200, 0.55);
+    box-shadow: 0 0 8px rgba(180, 120, 255, 0.4);
+}

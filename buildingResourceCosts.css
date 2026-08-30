@@ -1,0 +1,156 @@
+/* ======================================================================
+   buildingResourceCosts.css — панель стоимости/возврата ресурсов в модалке
+   ====================================================================== */
+
+#building-controls-container.building-controls-container {
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.building-resource-costs {
+    flex: 1 1 100%;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition:
+        max-height 0.38s cubic-bezier(0.22, 0.9, 0.3, 1),
+        opacity 0.28s ease,
+        margin 0.28s ease,
+        padding 0.28s ease;
+    margin: 0;
+    padding: 0 0;
+    border: 0 solid transparent;
+}
+
+.building-resource-costs.open {
+    max-height: 168px; /* до 3 рядов карточек */
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 8px;
+    padding: 8px 6px 6px;
+    border-top: 1px solid rgba(50, 70, 80, 0.45);
+}
+
+.building-resource-costs-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    align-content: flex-start;
+    max-height: 152px;
+    overflow: hidden;
+}
+
+.brc-empty {
+    font-size: 11px;
+    color: rgba(180, 190, 200, 0.55);
+    padding: 4px 6px;
+}
+
+.brc-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    min-width: 148px;
+    max-width: 220px;
+    flex: 0 1 auto;
+    padding: 5px 8px 5px 6px;
+    background: linear-gradient(180deg, rgba(10, 12, 14, 0.92) 0%, rgba(18, 22, 26, 0.88) 100%);
+    border: 1px solid rgba(55, 65, 70, 0.55);
+    border-bottom-color: rgba(0, 160, 180, 0.28);
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    box-sizing: border-box;
+}
+
+.brc-card.state-lack {
+    border-color: rgba(140, 40, 40, 0.75);
+    border-bottom-color: rgba(160, 50, 50, 0.85);
+    background: linear-gradient(180deg, rgba(28, 10, 12, 0.94) 0%, rgba(22, 12, 14, 0.9) 100%);
+}
+
+.brc-card.state-lack .brc-name {
+    color: #e06060;
+}
+
+.brc-card.state-missing {
+    opacity: 0.42;
+    border-color: rgba(70, 75, 80, 0.4);
+}
+
+.brc-card.state-missing .brc-name,
+.brc-card.state-missing .brc-amt {
+    color: rgba(160, 165, 170, 0.75);
+}
+
+.brc-tri {
+    flex: 0 0 auto;
+    font-size: 10px;
+    line-height: 1;
+    width: 12px;
+    text-align: center;
+}
+
+.brc-tri.cost {
+    color: #e05555;
+}
+
+.brc-tri.refund {
+    color: #4cce7a;
+}
+
+.brc-icon-wrap {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(60, 70, 75, 0.6);
+    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brc-icon-wrap img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
+}
+
+.brc-text {
+    min-width: 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.brc-name {
+    font-size: 11px;
+    color: rgba(230, 235, 240, 0.92);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.brc-amt {
+    font-size: 10px;
+    color: rgba(170, 190, 200, 0.85);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+
+.brc-empty.brc-hint {
+    color: #d8c48a;
+    font-size: 12px;
+    line-height: 1.35;
+    padding: 8px 10px;
+    text-align: left;
+    opacity: 0.95;
+}

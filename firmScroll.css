@@ -1,0 +1,94 @@
+/* Нативный скроллбар скрыт у подключённых viewport */
+.firm-scroll-viewport,
+.firm-scroll-inner {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.firm-scroll-viewport::-webkit-scrollbar,
+.firm-scroll-inner::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+.firm-scroll-host {
+    position: relative;
+}
+
+.firm-scroll-track {
+    position: absolute;
+    z-index: 20;
+    pointer-events: auto;
+    background: rgba(10, 12, 14, 0.55);
+    border: 1px solid rgba(50, 60, 70, 0.4);
+}
+.firm-scroll-track.firm-scroll-hidden {
+    display: none;
+}
+
+/* Вертикальный трек справа — скосы слева (эталон) */
+.firm-scroll-track-v {
+    top: 4px;
+    right: 3px;
+    bottom: 18px;
+    width: 12px;
+    margin-left: 2px;
+    clip-path: polygon(6px 0, 100% 0, 100% 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+}
+.firm-scroll-track-v.firm-scroll-track-v-only {
+    bottom: 4px;
+}
+/* Зеркало по горизонтали: скосы справа */
+.firm-scroll-mirror-v .firm-scroll-track-v {
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+}
+
+/* Горизонтальный трек снизу — скосы сверху (верх уже низа) */
+.firm-scroll-track-h {
+    left: 4px;
+    right: 18px;
+    bottom: 3px;
+    height: 12px;
+    clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 100%, 0 100%);
+}
+
+.firm-scroll-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(180deg, rgba(70, 95, 110, 0.9), rgba(45, 60, 72, 0.9));
+    border: 1px solid rgba(0, 170, 185, 0.35);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+.firm-scroll-thumb:hover,
+.firm-scroll-thumb.firm-scroll-dragging {
+    background: linear-gradient(180deg, rgba(90, 120, 140, 0.95), rgba(55, 75, 90, 0.95));
+    border-color: rgba(0, 210, 220, 0.55);
+}
+
+/* Вертикальный бегунок: скосы слева */
+.firm-scroll-thumb-v {
+    width: 100%;
+    min-height: 28px;
+    clip-path: polygon(7px 0, 100% 0, 100% 100%, 7px 100%, 0 calc(100% - 7px), 0 7px);
+}
+.firm-scroll-mirror-v .firm-scroll-thumb-v {
+    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%);
+}
+
+/* Горизонтальный бегунок: скосы сверху */
+.firm-scroll-thumb-h {
+    height: 100%;
+    min-width: 28px;
+    clip-path: polygon(7px 0, calc(100% - 7px) 0, 100% 100%, 0 100%);
+}
+
+/* Запас под треки у self-host */
+.firm-scroll-host.firm-scroll-has-v > .firm-scroll-inner {
+    padding-right: 16px; /* +2px слева от вертикального бегунка */
+}
+.firm-scroll-host.firm-scroll-has-h > .firm-scroll-inner {
+    padding-bottom: 14px;
+}

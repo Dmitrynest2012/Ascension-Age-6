@@ -1,0 +1,383 @@
+/* ===== Поручения: список слева внизу ===== */
+#quests-panel {
+    position: absolute;
+    left: 10px;
+    bottom: 78px; /* над #camera-height */
+    z-index: 901;
+    width: 260px;
+    max-height: 42vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Play', sans-serif;
+    pointer-events: auto;
+}
+
+.quests-panel-header {
+    padding: 6px 12px;
+    background: rgba(17, 17, 17, 0.55);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    /* скос: правый-верхний */
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    border: 1px solid rgba(50, 50, 50, 0.45);
+    border-bottom: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.quests-panel-header span {
+    background: linear-gradient(to right, #c8c8c8, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#quests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+    overflow-y: auto;
+    max-height: 36vh;
+    background: rgba(28, 28, 28, 0.5);
+    border: 1px solid rgba(50, 50, 50, 0.45);
+    border-top: none;
+    /* скос: только левый-нижний */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    backdrop-filter: blur(6px);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(160,160,160,0.45) rgba(20,20,20,0.45);
+}
+
+
+.quest-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    font-family: inherit;
+    font-size: 12px;
+    background: linear-gradient(to right, rgba(0, 192, 206, 0.12), rgba(60, 60, 60, 0.35));
+    /* скос: правый-верхний + левый-нижний */
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: background 0.2s, transform 0.2s;
+}
+
+.quest-card:hover {
+    background: linear-gradient(to right, rgba(0, 192, 206, 0.22), rgba(80, 80, 80, 0.4));
+}
+
+/* Открытое в модалке поручение — в мини-списке */
+.quest-card-active {
+    background: linear-gradient(to right, rgba(0, 192, 206, 0.28), rgba(95, 95, 95, 0.52));
+    border: 1px solid rgba(70, 70, 70, 0.55);
+    border-bottom-color: rgba(0, 180, 220, 0.95);
+    box-sizing: border-box;
+}
+.quest-card-active:hover {
+    background: linear-gradient(to right, rgba(0, 192, 206, 0.32), rgba(100, 100, 100, 0.55));
+    border-bottom-color: rgba(0, 200, 230, 1);
+}
+
+.quest-card-enter {
+    animation: quest-slide-in 0.55s ease-out both;
+}
+
+@keyframes quest-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.quest-card-title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== Модалка квеста ===== */
+#quest-modal {
+    position: fixed;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1100;
+    display: none;
+    flex-direction: column;
+    font-family: 'Play', sans-serif;
+    width: 700px;
+    /* фикс. высота ~+20% к прежнему визуальному объёму */
+    height: 740px;
+    max-height: 86vh;
+    box-sizing: border-box;
+}
+
+.quest-modal-header {
+    width: 100%;
+    height: 28px;
+    flex-shrink: 0;
+    background: rgba(17, 17, 17, 0.55);
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px 0 28px;
+    box-sizing: border-box;
+    border: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: none;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.quest-modal-close {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(139, 139, 139, 0.3);
+    color: #fff;
+    font-size: 13px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.quest-modal-close:hover { color: rgba(0, 192, 206, 0.9); }
+
+.quest-modal-body {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 12px;
+    background: radial-gradient(circle at center, rgba(60,60,60,0.55), rgba(36,36,36,0.45) 70%);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: none;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.quest-modal-top {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.quest-media-box {
+    width: 260px;
+    height: 260px;
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(24px 0, 100% 0, 100% 100%, 0 100%, 0 24px);
+    overflow: hidden;
+}
+
+.quest-media-el {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.quest-info-box {
+    flex: 1;
+    min-width: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.92), rgba(13,13,13,0.88));
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.quest-info-box .qi-label {
+    font-weight: 600;
+    background: linear-gradient(to right, rgba(183,244,255,0.95), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#quest-objectives {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.quest-objective {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.quest-obj-mark {
+    flex-shrink: 0;
+    width: 14px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.quest-objective.obj-pending { color: rgba(180, 180, 180, 0.85); }
+.quest-objective.obj-done { color: #7dce6a; }
+.quest-objective.obj-fail { color: #e06666; }
+
+.quest-page-text {
+    margin-top: 8px;
+    padding: 0;
+    flex: 1 1 auto;
+    min-height: 120px;
+    max-height: none;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.35);
+    clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px);
+    font-size: 14.5px;
+    line-height: 1.45;
+    position: relative;
+}
+.quest-page-text.firm-scroll-host > .firm-scroll-inner {
+    height: 100%;
+    max-height: inherit;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.quest-line { margin: 0 0 6px 0; }
+.quest-speaker {
+    color: rgba(183, 244, 255, 0.95);
+    font-weight: 600;
+}
+
+.quest-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.quest-nav-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 6px 16px;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+.quest-nav-btn:hover:not(:disabled) {
+    color: rgba(0, 238, 255, 0.95);
+    background: rgba(104, 104, 104, 0.35);
+}
+.quest-nav-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+#quest-choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.quest-choice-btn {
+    background: linear-gradient(to right, rgba(0, 192, 206, 0.2), rgba(60, 60, 60, 0.4));
+    border: 1px solid rgba(0, 192, 206, 0.35);
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    padding: 8px 14px;
+    cursor: pointer;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+.quest-choice-btn:hover {
+    background: linear-gradient(to right, rgba(0, 192, 206, 0.35), rgba(80, 80, 80, 0.5));
+}
+
+
+.quest-choice-btn.active {
+    border-color: rgba(0, 238, 255, 0.85);
+    background: linear-gradient(to right, rgba(0, 192, 206, 0.45), rgba(40, 80, 90, 0.55));
+    box-shadow: 0 0 8px rgba(0, 192, 206, 0.45);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Градиент для любых qi-label (Глава, Страница, Название…) */
+.qi-label {
+    font-weight: 600;
+    background: linear-gradient(to right, rgba(183,244,255,0.95), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+/* ===== Подсказки (^^текст^^ [[id]]) ===== */
+.quest-hint-link,
+.npc-hint-link {
+    color: #ffb84d;
+    cursor: pointer;
+    text-decoration: underline dotted rgba(255, 184, 77, 0.7);
+    text-underline-offset: 2px;
+    font-weight: 600;
+}
+.quest-hint-link:hover,
+.npc-hint-link:hover {
+    color: #ffcf7a;
+}
+
+/* Overlay-подсветка: 1px, не трогает layout / clip-path целевого элемента */
+@keyframes ui-hint-overlay-pulse {
+    0%, 100% {
+        border-color: rgba(255, 184, 77, 0.25);
+        box-shadow: 0 0 0 0 rgba(255, 160, 40, 0);
+    }
+    50% {
+        border-color: rgba(255, 184, 77, 1);
+        box-shadow: 0 0 6px 1px rgba(255, 160, 40, 0.55);
+    }
+}
+.ui-hint-overlay {
+    position: fixed;
+    pointer-events: none;
+    z-index: 20000;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 184, 77, 0.9);
+    border-radius: 2px;
+    background: transparent;
+    animation: ui-hint-overlay-pulse 1s ease-in-out infinite;
+    /* не расширяем документ */
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+
+.quest-em {
+    font-style: italic;
+    color: rgba(230, 240, 255, 0.92);
+}

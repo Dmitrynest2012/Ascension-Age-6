@@ -1,0 +1,30 @@
+[
+  {
+    "id": "UNIT_BURAN_T1",
+    "name": {
+      "ru": "Буран Т1",
+      "en": "Buran T1",
+      "de": "Buran T1"
+    },
+    "description": {
+      "ru": "Многоразовый орбитальный корабль. Базовая модификация для испытаний вывода на орбиту и посадки.",
+      "en": "Reusable orbital shuttle. Basic variant for launch and landing tests.",
+      "de": "Wiederverwendbares Orbitalschiff. Basisvariante für Start- und Landetests."
+    },
+    "category": "space",
+    "avatar": "assets/textures/units/buran_t1.png",
+    "tacticalAvatar": "assets/textures/units/buran_t1_tac.png",
+    "length": 36,
+    "width": 24,
+    "lengthUnit": "m",
+    "widthUnit": "m",
+    "launchTimeSec": 12,
+    "landTimeSec": 12,
+    "flightSpeed": 0.0004375,
+    "systemFlightSpeed": 0.005625,
+    "engineType": "rocket",
+    "engineTechId": "TECH_ROCKET_ENGINE",
+    "engineStatId": "STAT_ROCKET_THRUST",
+    "dryMassKg": 62000
+  }
+]

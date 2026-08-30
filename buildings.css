@@ -1,0 +1,1140 @@
+/* ======================================================================
+   buildings.css — список зданий, модальное окно, строительство, мощность
+   Подключается после styles.css
+   ====================================================================== */
+
+#building-list {
+    position: absolute;
+    top: 310px;
+    left: 10px;
+    z-index: 905;
+    display: none;
+    flex-direction: column;
+    font-family: 'Play', sans-serif;
+}
+
+.building-list-header {
+    width: 530px;
+    height: 20px;
+    background: rgba(17, 17, 17, 0.432);
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+     border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+.building-list-body {
+    width: 510px;
+    box-sizing: content-box; /* padding снаружи: внутри ровно 510px под 4×120 */
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.5), /* светлее по центру */
+        rgba(36, 36, 36, 0.425) 70%
+    );
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+.building-list-categories {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.building-category-button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 12px;
+    padding: 6px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 2px;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+    transition: all 0.3s;
+}
+
+.building-category-button:hover {
+    color: rgba(0, 238, 255, 0.966);
+    background-color: rgba(104, 104, 104, 0.322);
+}
+
+.building-category-button.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+    box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5);
+    background-color: rgba(104, 104, 104, 0.122);
+}
+
+.building-category-button.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0 2px 2px rgba(128, 128, 128, 0.2);
+}
+
+.building-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.building-item {
+    width: 120px; /* Увеличено с 80px до 100px (25% увеличение) */
+    height: 125px; /* Увеличено с 100px до 125px (25% увеличение) */
+    background: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.building-item:hover {
+    background-color: rgba(104, 104, 104, 0.322);
+}
+
+.building-item.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1) !important;
+}
+
+.building-item.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.building-item img {
+    width: 100%;
+    height: 90px; /* Увеличено с 60px до 75px (25% увеличение) */
+    object-fit: cover;
+    pointer-events: none;
+    transition: filter 0.3s ease;
+}
+
+.building-item p {
+    margin: 1px 0 0 0;
+    color: white;
+    font-size: 10px; /* Увеличено с 10px до 12px для пропорциональности */
+    text-align: center;
+    flex-grow: 1;
+    pointer-events: none;
+}
+
+.building-item span {
+    color: rgba(183, 244, 255, 0.9);
+    font-size: 9px; /* Увеличено с 10px до 12px для пропорциональности */
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Стили для модального окна */
+#building-modal {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    font-family: 'Play', sans-serif;
+    width: 760px; /* шире: кнопки+инпут и таймер в один ряд */
+    height: 770px; /* +70px под панель ResourceCosts */
+    box-sizing: border-box;
+}
+#building-modal .modal-header,
+#building-modal .modal-tabs,
+#building-modal .modal-body {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    width: 100%;
+    height: 20px;
+    background: rgba(17, 17, 17, 0.432);
+    clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-top: 1px solid rgba(50, 50, 50, 0.4);
+}
+
+.modal-close-button {
+    position: absolute;
+    cursor: pointer;
+    margin-right: 1px;
+    margin-top: 0px;
+
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(139, 139, 139, 0.277);
+    color: white;
+    font-size: 13px;
+    font-family: 'Play', sans-serif;
+    padding: 0px 10px;
+   
+ 
+    border-radius: 3px;
+    z-index: 925;
+}
+
+.modal-close-button:hover {
+    color: rgba(0, 192, 206, 0.8);
+}
+
+.modal-tabs {
+    width: 100%;
+    height: 30px;
+    background: rgba(17, 17, 17, 0.432);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    
+}
+
+.modal-tab-button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 12px;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: 0 2px;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+    transition: all 0.3s;
+}
+
+.modal-tab-button:hover {
+    color: rgba(0, 238, 255, 0.966);
+    background-color: rgba(104, 104, 104, 0.322);
+}
+
+.modal-tab-button.active {
+    border-bottom: 1px solid rgba(0, 192, 206, 1);
+    box-shadow: 0 2px 4px rgba(0, 192, 206, 0.5);
+    background-color: rgba(104, 104, 104, 0.122);
+}
+
+.modal-tab-button.inactive {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0 2px 2px rgba(128, 128, 128, 0.2);
+}
+
+.modal-body {
+    width: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(60, 60, 60, 0.5), /* светлее по центру */
+        rgba(36, 36, 36, 0.425) 70%
+    );
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    flex-grow: 1;
+    min-height: auto;
+    border-left: 1px solid rgba(50, 50, 50, 0.4);
+    border-right: 1px solid rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+    overflow: visible !important;
+
+    /* Срезанный правый-нижний угол */
+    clip-path: polygon(
+        0 0, 
+        100% 0, 
+        100% calc(100% - 20px), 
+        calc(100% - 20px) 100%, 
+        0 100%
+    );
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-avatar-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    background: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(30px 0, 100% 0, 100% 100%, 0 100%, 0 30px);
+    overflow: hidden;
+}
+
+.modal-avatar.grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease; /* Плавный переход для модального аватара */
+}
+
+.modal-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: filter 0.3s ease;
+}
+
+.modal-avatar-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    display: none;
+    background: #000;
+}
+
+.modal-avatar-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-avatar-container.has-video .modal-avatar {
+    display: none;
+}
+
+.modal-avatar-container.has-video .modal-avatar-video {
+    display: block;
+}
+
+
+
+
+.modal-avatar.alarm::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 0, 0.5) 10px,
+        rgba(255, 255, 0, 0.5) 20px
+    );
+}
+
+.modal-info-container {
+    flex-grow: 1;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95) 0%,   /* почти черный сверху — сохранено */
+        rgba(13, 13, 13, 0.9) 100% /* слегка серый снизу — сохранено */
+    );
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Плотное размещение текста — сохранено */
+    width: 300px;
+}
+
+.modal-info-container p {
+    margin: 0;
+    font-size: 14px;  /* Сохранено */
+}
+
+.modal-info-container strong {
+    font-weight: bold;  /* Сохранено */
+    /* Градиент: от текущего бирюзового к белому */
+    background: linear-gradient(to right, 
+        rgba(183, 244, 255, 0.9) 0%,  /* Текущий цвет слева */
+        rgb(255, 255, 255) 100%   /* Белый справа */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  /* Для WebKit (Chrome/Safari) */
+    background-clip: text;  /* Стандарт для Firefox (с v68+) */
+    color: transparent;     /* Fallback: прозрачный текст с градиентом */
+    display: inline-block;  /* Чтобы градиент работал на inline-элементе */
+}
+
+/* Fallback для старых браузеров (если градиент не поддерживается) */
+@supports not (background-clip: text) {
+    .modal-info-container strong {
+        background: none;
+        color: rgba(183, 244, 255, 0.9);  /* Текущий цвет как fallback */
+    }
+}
+
+.modal-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(128, 128, 128, 0);
+    margin: 10px 0;
+}
+
+
+
+.modal-info-container span {
+    font-size: 14px;
+}
+
+
+.modal-description-value {
+    color: rgba(255, 255, 255, 1);
+    opacity: 0.8;
+    font-size: 10px;
+    font-style: italic;
+}
+
+
+
+
+/* Стили для серых аватарок и линий аларма в списке зданий */
+.building-item.grayscale img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease; /* Добавляем плавный переход */
+}
+
+
+
+.building-item.alarm {
+    position: relative;
+}
+
+.building-item.alarm::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px; /* Высота изображения в building-item */
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 0, 0.5) 10px,
+        rgba(255, 255, 0, 0.5) 20px
+    );
+}
+
+
+/* Основной контейнер под power-container */
+.building-controls-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+    background: rgba(36, 36, 36, 0.425);
+    border-radius: 5px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+/* Левый блок: кнопки (по 2 на строку) */
+.building-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+}
+
+/* Общий стиль для кнопок строительства */
+.building-button {
+    flex: 1 1 auto;
+    min-width: 0;
+    background: rgba(0, 0, 0, 0.5); /* Тёмный фон */
+    border: none;
+    border-bottom: 1px solid gray; /* Нижний бордер серый по умолчанию */
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease; /* Плавная анимация */
+   clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px); /* Скошен левый-верхний угол */
+}
+
+/* Анимация при наведении */
+.building-button:hover {
+    
+    box-shadow: 0 0 5px rgba(0, 192, 206, 0.3);
+
+    color: rgba(0, 238, 255, 0.966);
+    background-color: rgba(104, 104, 104, 0.322); /* Добавляем фон при наведении для лучшей видимости */
+}
+
+/* Active: яркий бирюзовый бордер при наведении */
+.building-button.active:hover {
+    border-bottom: 1px solid rgba(0, 192, 206, 1); /* Ярко-бирюзовый */
+}
+
+/* Inactive: стандартный серый */
+.building-button.inactive {
+    border-bottom: 1px solid gray;
+}
+
+/* Locked: прозрачная и тёмная */
+.building-button.locked {
+    opacity: 0.5; /* Более прозрачная */
+    background: rgba(0, 0, 0, 0.8); /* Темнее */
+    cursor: not-allowed;
+}
+
+/* Unavailable: жёлто-чёрные полоски аларма под наклоном */
+.building-button.unavailable {
+    background: repeating-linear-gradient(-45deg, 
+        rgba(255, 255, 0, 0.1), 
+        rgba(255, 255, 0, 0.1) 10px, 
+        rgba(0, 0, 0, 0.1) 10px, 
+        black 20px
+    ); /* Желто-черные полоски под обратным углом */
+    cursor: not-allowed;
+    color: #ccc; /* Текст тусклый */
+}
+
+/* Правый блок: требования + таймер строительства */
+.requirements-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    flex: 0 0 280px;
+    width: 280px;
+    min-width: 260px;
+    min-height: 72px;
+    height: auto;
+    background: linear-gradient(to right, rgba(3, 3, 3, 0.3), rgba(0, 0, 0, 0.5));
+    padding: 10px 12px;
+    border-radius: 3px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    color: white;
+    font-size: 12px;
+    overflow: hidden; /* прогрессбар не вылезает за скос */
+}
+
+/* Полноразмерный слой прогресса (под иконкой и текстом) */
+.construction-progress-bar {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: none;
+    overflow: hidden;
+    pointer-events: none;
+    background: transparent;
+}
+
+.construction-progress-bar.forward,
+.construction-progress-bar.backward {
+    display: block;
+}
+
+/*
+ * Один «состав» едет целиком: [градиент][бордер][gap][стрелки].
+ * flex + align-items:center → вертикальный центр по контейнеру.
+ * gap: 14px → одинаковый отступ у прогресса и дегресса.
+ */
+.construction-progress-mover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* fill/edge/slot на всю высоту бара */
+    gap: 10px;
+    width: max-content;
+    will-change: left, transform;
+}
+
+.construction-progress-bar.forward .construction-progress-mover {
+    animation: construction-slide-forward 12.8s linear infinite;
+}
+
+.construction-progress-bar.backward .construction-progress-mover {
+    flex-direction: row-reverse;
+    animation: construction-slide-backward 12.8s linear infinite;
+}
+
+/* Полоса градиента */
+.construction-progress-fill {
+    position: relative;
+    flex: 0 0 130px;
+    height: 100%;
+    width: 130px;
+    box-sizing: border-box;
+}
+
+.construction-progress-bar.forward .construction-progress-fill {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(34, 170, 34, 0.05) 25%,
+        rgba(42, 170, 42, 0.35) 55%,
+        rgba(102, 255, 102, 0.55) 85%,
+        rgba(102, 255, 102, 0.7) 100%
+    );
+}
+
+.construction-progress-bar.backward .construction-progress-fill {
+    background: linear-gradient(
+        270deg,
+        transparent 0%,
+        rgba(204, 102, 0, 0.05) 25%,
+        rgba(204, 102, 0, 0.35) 55%,
+        rgba(255, 170, 85, 0.55) 85%,
+        rgba(255, 170, 85, 0.7) 100%
+    );
+}
+
+/* Бордер 1px — на всю высоту */
+.construction-progress-edge {
+    flex: 0 0 1px;
+    align-self: stretch;
+    width: 1px;
+}
+
+.construction-progress-bar.forward .construction-progress-edge {
+    background: rgba(102, 255, 102, 0.75);
+    box-shadow: 0 0 6px rgba(102, 255, 102, 0.55);
+}
+
+.construction-progress-bar.backward .construction-progress-edge {
+    background: rgba(255, 170, 85, 0.75);
+    box-shadow: 0 0 6px rgba(255, 170, 85, 0.5);
+}
+
+/*
+ * Слот на всю высоту контейнера → стрелки центрируются относительно
+ * .requirements-container / .construction-progress-bar, а не line-box глифа.
+ */
+.construction-progress-arrows-slot {
+    flex: 0 0 auto;
+    align-self: stretch;
+    display: flex;
+    align-items: center;   /* вертикальный центр по родителю-бару */
+    justify-content: center;
+    height: auto;
+}
+
+/*
+ * Размер как раньше (scale 2×4 от 28px).
+ * origin center — scale растёт симметрично от центра слота.
+ * translateY(-8%) — оптическая поправка: глиф › сидит ниже середины em-box.
+ */
+.construction-progress-arrows {
+    position: relative;
+    top: -7px;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -4px;
+    color: rgba(255, 255, 255, 0.22);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+    user-select: none;
+    white-space: nowrap;
+    display: block;
+    transform: translateY(-8%) scale(2, 4);
+    transform-origin: center center;
+}
+
+.construction-progress-bar.backward .construction-progress-arrows {
+    transform: translateY(-8%) scale(-2, 4);
+    transform-origin: center center;
+}
+
+/* left = позиция в баре; translateX(-100%) = спрятать на ширину самого состава */
+@keyframes construction-slide-forward {
+    from {
+        left: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        left: 100%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes construction-slide-backward {
+    from {
+        left: 100%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.build-power-icon {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    width: 108px;  /* 72 * 1.5 */
+    height: 108px;
+    opacity: 0.28;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Текст статуса + таймер поверх всего */
+.construction-timer-wrap {
+    position: relative;
+    display: none; /* JS → flex */
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    min-height: 52px;
+    padding-left: 100px; /* место под увеличенную иконку */
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.construction-timer-text {
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.4px;
+    color: #eee;
+    text-shadow: 0 1px 3px #000, 0 0 8px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+.construction-action-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #cfe;
+    text-shadow: 0 1px 3px #000, 0 0 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.construction-timer-wrap.is-preview {
+    opacity: 0.85;
+}
+.construction-timer-wrap.is-preview .construction-action-label {
+    color: #bcd;
+    font-weight: 500;
+}
+.construction-timer-wrap.is-active .construction-action-label {
+    color: #e8fff0;
+}
+
+
+
+
+
+
+
+
+/* Нижняя плашка */
+.bottom-plate {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 0px;
+    width: 380px;
+    height: 18px;
+    background: linear-gradient(
+  to right,
+  rgba(128, 128, 128, 0.175),
+  rgba(128, 128, 128, 0.1)
+);
+    clip-path: polygon(0% 0%, 94% 0%, 100% 100%, 0% 100%); /* острый правый угол */
+    margin-top: 6px; /* небольшой отступ от верхней плашки */
+    z-index: 900;
+}
+
+
+
+
+/* Контейнер мощности */
+/* Контейнер мощности */
+.power-container {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, 
+        rgba(0, 192, 206, 0.1) 0%,    /* Слева: слегка бирюзовый, прозрачный */
+        rgba(82, 82, 82, 0.185) 100%  /* Вправо: текущий серый фон */
+    );
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 1000;
+    overflow: visible;
+    height: auto;
+    min-height: 115px;
+    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);  /* Существующий скос сохранён */
+}
+
+/* Контейнер для label + slider + value */
+.power-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; /* Небольшой отступ */
+}
+
+/* Лейбл */
+.power-label {
+    font-size: 14px;
+    color: white;
+    white-space: nowrap; /* Без переноса */
+}
+
+/* Контейнер для слайдера */
+.power-slider-container {
+    display: flex;
+    align-items: center; /* Центрируем по вертикали */
+    width: 200px;
+    height: 45px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+}
+
+.custom-track {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: linear-gradient(to right, rgba(0, 192, 206, 0) 0%, rgba(0, 192, 206, 0.8) 100%);
+    clip-path: polygon(
+        0 100%,                   /* Левый нижний: сохранён оригинал */
+        0 90%,                    /* Левый скос: сохранён оригинал (небольшой подъём слева) */
+        calc(100% - 4px) 0,       /* Правый верхний: начало лёгкого скоса на 4px (новое) */
+        100% 4px,                 /* Переход скоса правого верхнего (новое) */
+        100% calc(100% - 4px),    /* Правый нижний: конец лёгкого скоса на 4px (новое) */
+        calc(100% - 4px) 100%,    /* Переход скоса правого нижнего (новое) */
+        0 100%                    /* Закрытие: сохранён оригинал */
+    );
+    border-radius: 5px;           /* Сохранён оригинал — закругляет несскошенные углы */
+    z-index: 1;
+}
+
+#power-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: transparent;
+    outline: none;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    z-index: 3;
+}
+
+#power-slider:hover {
+    background: transparent;
+}
+
+/* Трек */
+#power-slider::-webkit-slider-runnable-track {
+    height: 35px;
+    background: transparent;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+#power-slider::-moz-range-track {
+    height: 35px;
+    background: transparent;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+/* Ползунок */
+#power-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 37px;
+    background: rgba(0, 238, 255, 0.966);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 192, 206, 0.3);
+    cursor: pointer;
+    border-radius: 0;  /* Убираем закругления */
+    position: relative;
+    z-index: 4;
+    transform: translateY(-5px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    clip-path: polygon(
+        8px 0,                      /* Левый верхний: сильный скос на 8px */
+        calc(100% - 2px) 0,         /* Правый верхний: лёгкий скос на 2px (новый) */
+        100% 2px,                   /* Переход для правого верхнего */
+        100% calc(100% - 2px),      /* Правый нижний: лёгкий скос на 2px (новый) */
+        calc(100% - 2px) 100%,      /* Переход для правого нижнего */
+        4px 100%,                   /* Левый нижний: лёгкий скос на 4px */
+        0 calc(100% - 4px),         /* Переход для левого нижнего */
+        0 8px                       /* Переход для левого верхнего */
+    );
+}
+
+#power-slider::-webkit-slider-thumb:hover {
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 192, 206, 0.5);
+}
+
+#power-slider::-moz-range-thumb {
+    width: 12px;
+    height: 37px;
+    background: rgba(0, 238, 255, 0.966);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 192, 206, 0.3);
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+    z-index: 4;
+    transform: translateY(-5px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#power-slider::-moz-range-thumb:hover {
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 192, 206, 0.5);
+}
+
+/* Значение мощности */
+.power-value-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 5px;
+    min-width: 80px; /* Чтобы значение было шире */
+}
+
+#power-value {
+    font-size: 14px;
+    color: rgba(183, 244, 255, 0.9);
+    white-space: nowrap; /* Без переноса */
+    text-align: left;
+}
+
+/* Специалисты справа */
+.specialists {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 240px;
+    min-height: 64px;
+    margin-left: auto; /* Уводим вправо */
+    
+}
+
+.specialist {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, rgba(3, 3, 3, 0.3), rgba(0, 0, 0, 0.5));
+    padding: 1px;
+    border-radius: 3px;
+    width: 240px;
+    min-height: 20px;
+    overflow: visible;
+    /* Срезанный правый-нижний угол */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%,  0 100%);
+}
+
+.specialist img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.specialist span {
+    font-size: 12px;
+    color: white;
+}
+
+
+/* Подсказка разряда аккумуляторов в ресурсном баре */
+.energy-battery-hint {
+    color: #6cf;
+    font-weight: 600;
+}
+
+/* Стили окна специалистов — в specialists.css */
+
+
+/* Вкладка Уровни — панель на всю высоту тела модалки */
+#building-modal.levels-open .modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 20px);
+}
+#building-modal.levels-open #levels-panel {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+
+/* Вкладка Схемы — та же высота области, что у Уровней */
+#building-modal.schemes-open .modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 20px);
+}
+#building-modal.schemes-open #schemes-panel {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+}
+
+
+/* ? и ✖ рядом справа, без наложения (close больше не absolute) */
+#building-modal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    padding-right: 4px;
+    box-sizing: border-box;
+}
+#building-modal .modal-close-button {
+    position: static;
+    margin: 0;
+    padding: 0 8px;
+    height: 18px;
+    line-height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: auto;
+    flex-shrink: 0;
+}
+#building-modal .modal-codex-btn {
+    position: static;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(139, 139, 139, 0.277);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    clip-path: none;
+}
+#building-modal .modal-codex-btn:hover {
+    color: rgba(0, 192, 206, 0.8);
+    border-color: rgba(0, 192, 206, 0.45);
+}
+
+
+/* --- Список строительства: viewport 2/3 строки + тёмно-серый firmScroll --- */
+#building-list {
+    overflow: visible; /* чтобы трек скролла мог выйти за правый край */
+}
+#building-list .building-list-body {
+    overflow: visible;
+}
+/* Обёртка-viewport: высота 2/3 ряда; контент клипается на inner */
+#building-grid-scroll,
+#building-list .building-grid-scroll {
+    position: relative;
+    width: 100%;
+    max-height: 260px; /* 2×125 + 10; JS → 3 ряда в fullscreen */
+    box-sizing: border-box;
+}
+/* host не клипает трек — overflow только у inner */
+#building-list .building-list-scroll.firm-scroll-host {
+    overflow: visible !important;
+}
+#building-grid-scroll.firm-scroll-host > .firm-scroll-inner {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* Сетка: строго flex-wrap, 4 карточки в ряд (4×120 + 3×10 = 510) */
+#building-list .building-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* без внутреннего padding — ряд на 4 карточки */
+#building-list .building-list-scroll.firm-scroll-has-v > .firm-scroll-inner {
+    padding-right: 0 !important;
+}
+/* Скроллбар вынесен вправо за край окна, небольшой зазор */
+#building-list .building-list-scroll .firm-scroll-track-v {
+    right: -28px;
+    left: auto;
+    z-index: 6;
+}
+#building-list .building-list-scroll .firm-scroll-track {
+    background: rgba(18, 18, 20, 0.75);
+    border-color: rgba(55, 55, 60, 0.55);
+}
+#building-list .building-list-scroll .firm-scroll-thumb {
+    background: linear-gradient(180deg, rgba(70, 70, 74, 0.95), rgba(42, 42, 46, 0.95));
+    border-color: rgba(90, 90, 96, 0.55);
+}
+#building-list .building-list-scroll .firm-scroll-thumb:hover,
+#building-list .building-list-scroll .firm-scroll-thumb.firm-scroll-dragging {
+    background: linear-gradient(180deg, rgba(95, 95, 100, 0.98), rgba(58, 58, 62, 0.98));
+    border-color: rgba(130, 130, 138, 0.7);
+}

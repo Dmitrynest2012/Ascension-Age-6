@@ -1,0 +1,1160 @@
+/* ===== Панель технологий (раздел Наука) ===== */
+
+#tech-panel {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1100;
+    display: none;
+    pointer-events: none;
+}
+#tech-panel.open {
+    display: block;
+    pointer-events: auto;
+}
+
+.tech-panel-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 8, 18, 0.62);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.tech-panel-window {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse at 22% 12%, rgba(28, 70, 110, 0.55), transparent 55%),
+        radial-gradient(ellipse at 80% 90%, rgba(12, 40, 70, 0.4), transparent 50%),
+        linear-gradient(160deg, rgba(12, 22, 36, 0.97), rgba(8, 14, 24, 0.98));
+    border: 1px solid rgba(60, 150, 210, 0.4);
+    clip-path: polygon(
+        16px 0, calc(100% - 16px) 0, 100% 16px,
+        100% calc(100% - 16px), calc(100% - 16px) 100%,
+        16px 100%, 0 calc(100% - 16px), 0 16px
+    );
+    box-shadow:
+        0 0 40px rgba(0, 60, 120, 0.45),
+        inset 0 0 60px rgba(20, 80, 140, 0.08);
+    overflow: hidden;
+}
+
+/* --- Верхний мини-хэдер --- */
+.tech-panel-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px 8px 18px;
+    border-bottom: 1px solid rgba(50, 130, 190, 0.3);
+    flex-shrink: 0;
+    background: linear-gradient(90deg, rgba(20, 50, 80, 0.35), transparent 60%);
+}
+.tech-panel-title {
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(180, 220, 255, 0.95);
+    font-weight: 600;
+}
+.tech-panel-rate {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px 3px 8px;
+    background: linear-gradient(90deg, rgba(20, 90, 160, 0.45), rgba(10, 40, 80, 0.35));
+    border: 1px solid rgba(80, 180, 255, 0.45);
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+    color: #7ec8ff;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+}
+.tech-panel-rate img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 3px rgba(100, 200, 255, 0.6));
+}
+.tech-panel-rate-value {
+    color: #b8e4ff;
+    font-weight: 600;
+}
+.tech-panel-spacer { flex: 1; }
+.tech-panel-close {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(80, 140, 180, 0.4);
+    background: rgba(0, 10, 24, 0.45);
+    color: #9ab;
+    font-size: 18px;
+    cursor: pointer;
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+.tech-panel-close:hover {
+    border-color: #4af;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(40, 160, 255, 0.35);
+}
+
+/* --- Тело: сайдбар + дерево --- */
+.tech-panel-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 0;
+}
+
+/* Левый сайдбар категорий */
+.tech-nav {
+    border-right: 1px solid rgba(50, 130, 190, 0.28);
+    padding: 12px 10px;
+    overflow-y: auto;
+    background: rgba(0, 8, 18, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.tech-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    padding: 11px 12px;
+    border: 1px solid rgba(70, 90, 110, 0.35);
+    background: rgba(6, 10, 16, 0.88);
+    color: rgba(170, 190, 210, 0.85);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: background 0.18s, border-color 0.18s, color 0.18s, box-shadow 0.18s;
+    position: relative;
+}
+.tech-nav-item:hover {
+    border-color: rgba(80, 160, 220, 0.45);
+    color: #def;
+    background: rgba(12, 28, 48, 0.9);
+}
+.tech-nav-item.active {
+    background: linear-gradient(90deg, rgba(20, 70, 120, 0.65), rgba(12, 36, 64, 0.75));
+    border-color: rgba(70, 180, 255, 0.55);
+    color: #e8f6ff;
+    box-shadow: 0 0 14px rgba(30, 120, 220, 0.25);
+}
+/* нижний бордер-перелив у активной */
+.tech-nav-item.active::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(80, 200, 255, 0.15) 15%,
+        rgba(140, 230, 255, 0.95) 50%,
+        rgba(80, 200, 255, 0.15) 85%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: tech-nav-shimmer 2.4s linear infinite;
+}
+@keyframes tech-nav-shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+.tech-nav-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    object-fit: contain;
+    opacity: 0.75;
+    filter: drop-shadow(0 0 2px rgba(100, 180, 255, 0.3));
+}
+.tech-nav-item.active .tech-nav-icon {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(100, 200, 255, 0.7));
+}
+.tech-nav-label {
+    flex: 1;
+    line-height: 1.2;
+}
+
+.tech-nav::-webkit-scrollbar { width: 5px; }
+.tech-nav::-webkit-scrollbar-thumb {
+    background: rgba(60, 140, 200, 0.45);
+    border-radius: 2px;
+}
+.tech-nav { scrollbar-width: thin; scrollbar-color: rgba(60, 140, 200, 0.45) transparent; }
+
+/* --- Окно дерева --- */
+.tech-tree-host {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    background: #050b14;
+}
+
+/* Фиксированный фон: сетка + блики НЕ ездят со скроллом и не раздувают scroll-area */
+.tech-tree-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.tech-tree-grid {
+    position: absolute;
+    inset: 0;
+    background-color: #071018;
+    background-image:
+        linear-gradient(rgba(40, 90, 140, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(40, 90, 140, 0.14) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0;
+}
+
+/* Блики только внутри viewport-слоя фона — не влияют на scrollWidth/Height */
+.tech-tree-shimmer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+.tech-tree-shimmer::before,
+.tech-tree-shimmer::after {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform, opacity;
+    background: radial-gradient(circle, rgba(70, 170, 240, 0.16) 0%, rgba(30, 100, 180, 0.05) 42%, transparent 70%);
+    filter: blur(10px);
+}
+.tech-tree-shimmer::before {
+    left: 8%;
+    top: 12%;
+    animation: tech-blob-a 18s ease-in-out infinite;
+}
+.tech-tree-shimmer::after {
+    left: 55%;
+    top: 40%;
+    width: 320px;
+    height: 320px;
+    animation: tech-blob-b 22s ease-in-out infinite;
+}
+@keyframes tech-blob-a {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0; }
+    12%  { opacity: 0.85; }
+    50%  { transform: translate(28vw, 18vh) scale(1.15); opacity: 1; }
+    88%  { opacity: 0.75; }
+    100% { transform: translate(8vw, 42vh) scale(0.95); opacity: 0; }
+}
+@keyframes tech-blob-b {
+    0%   { transform: translate(0, 0) scale(1.05); opacity: 0; }
+    15%  { opacity: 0.7; }
+    55%  { transform: translate(-22vw, -12vh) scale(1.2); opacity: 0.95; }
+    90%  { opacity: 0.55; }
+    100% { transform: translate(10vw, 20vh) scale(1); opacity: 0; }
+}
+
+.tech-tree-viewport {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: auto;
+    cursor: grab;
+    background: transparent;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(40, 120, 180, 0.55) rgba(0, 10, 20, 0.4);
+}
+.tech-tree-viewport.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+.tech-tree-viewport::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.tech-tree-viewport::-webkit-scrollbar-track {
+    background: rgba(0, 12, 24, 0.5);
+}
+.tech-tree-viewport::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(50, 140, 210, 0.55), rgba(30, 90, 150, 0.55));
+    border-radius: 3px;
+    border: 1px solid rgba(80, 160, 220, 0.25);
+}
+.tech-tree-viewport::-webkit-scrollbar-corner {
+    background: rgba(0, 12, 24, 0.5);
+}
+
+/* Только контент (карточки/связи) — ездит со скроллом; фон остаётся */
+.tech-tree-world {
+    position: relative;
+    z-index: 2;
+    min-width: 1800px;
+    min-height: 1200px;
+}
+
+/* Подпись группы + градиентная линия вправо */
+.tech-group-label {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    pointer-events: none;
+    max-width: calc(100% - 80px);
+}
+.tech-group-label-text {
+    flex-shrink: 0;
+    padding: 5px 14px 5px 12px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: rgba(180, 220, 255, 0.95);
+    background: linear-gradient(90deg, rgba(20, 60, 100, 0.85), rgba(12, 30, 55, 0.65));
+    border: 1px solid rgba(70, 150, 210, 0.5);
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    white-space: nowrap;
+    box-shadow: 0 0 12px rgba(30, 100, 180, 0.22);
+}
+.tech-group-label-line {
+    display: block;
+    height: 1px;
+    width: min(520px, 42vw);
+    margin-left: 2px;
+    background: linear-gradient(
+        90deg,
+        rgba(90, 180, 240, 0.65) 0%,
+        rgba(60, 140, 200, 0.35) 35%,
+        rgba(40, 100, 160, 0.12) 70%,
+        transparent 100%
+    );
+    box-shadow: 0 0 6px rgba(60, 160, 220, 0.25);
+}
+
+/* SVG-связи между карточками */
+.tech-links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Обёртка: drop-shadow работает с clip-path дочерней карточки */
+.tech-card-wrap {
+    position: absolute;
+    overflow: visible;
+    z-index: 4;
+    width: 132px;
+    height: 148px;
+    filter:
+        drop-shadow(0 6px 14px rgba(0, 12, 28, 0.65))
+        drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+    transition: transform 0.18s ease, filter 0.18s ease;
+    transform-origin: center center;
+    cursor: default;
+}
+.tech-card-wrap:hover {
+    transform: scale(1.07);
+    filter:
+        drop-shadow(0 10px 22px rgba(20, 80, 140, 0.55))
+        drop-shadow(0 0 12px rgba(60, 160, 220, 0.35));
+    z-index: 6;
+}
+
+/* Карточка: выраженный скос ЛВ + ПН */
+.tech-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(8, 16, 28, 0.95);
+    border: 1px solid rgba(70, 140, 190, 0.5);
+    /* скос левый-верхний и правый-нижний — крупнее */
+    clip-path: polygon(
+        18px 0,
+        100% 0,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        0 100%,
+        0 18px
+    );
+    overflow: hidden;
+    transition: border-color 0.15s;
+}
+.tech-card-wrap:hover .tech-card {
+    border-color: rgba(110, 210, 255, 0.85);
+}
+
+/* Угловой таргет-мишень (4 угла) — виден на hover */
+/* Угловые мишени на обёртке (не внутри clip-path карточки) */
+.tech-card-aim {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    z-index: 12;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    box-sizing: border-box;
+    /* явный цвет — shorthand border-* без цвета брал currentColor (чёрный) */
+    --aim: rgba(64, 220, 230, 0.95);
+    filter: drop-shadow(0 0 3px rgba(40, 200, 220, 0.55));
+}
+.tech-card-aim.tl {
+    top: -5px;
+    left: -5px;
+    border-top: 2px solid var(--aim);
+    border-left: 2px solid var(--aim);
+}
+.tech-card-aim.tr {
+    top: -5px;
+    right: -5px;
+    border-top: 2px solid var(--aim);
+    border-right: 2px solid var(--aim);
+}
+.tech-card-aim.bl {
+    bottom: -5px;
+    left: -5px;
+    border-bottom: 2px solid var(--aim);
+    border-left: 2px solid var(--aim);
+}
+.tech-card-aim.br {
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 2px solid var(--aim);
+    border-right: 2px solid var(--aim);
+}
+.tech-card-wrap:hover .tech-card-aim,
+.tech-card-wrap.selected .tech-card-aim {
+    opacity: 1;
+}
+
+
+.tech-card-img {
+    flex: 1;
+    min-height: 0;
+    background: #0a1520 center/cover no-repeat;
+    position: relative;
+}
+.tech-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(4, 10, 18, 0.85) 100%);
+    pointer-events: none;
+}
+.tech-card-level {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    z-index: 2;
+    padding: 2px 7px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: #d8eefc;
+    background: rgba(8, 20, 36, 0.82);
+    border: 1px solid rgba(90, 160, 210, 0.4);
+    clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+.tech-card-name {
+    flex-shrink: 0;
+    padding: 6px 8px 8px;
+    font-size: 12px;
+    text-align: center;
+    color: rgba(210, 230, 250, 0.95);
+    line-height: 1.25;
+    background: rgba(6, 14, 24, 0.95);
+    border-top: 1px solid rgba(50, 100, 150, 0.3);
+}
+
+/* Неизвестная / заблокированная карточка */
+.tech-card.unknown {
+    border-color: rgba(120, 100, 40, 0.45);
+}
+.tech-card.unknown .tech-card-img {
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(30, 28, 12, 0.95) 0 8px,
+            rgba(50, 45, 18, 0.95) 8px 16px
+        );
+}
+.tech-card.unknown .tech-card-img::before {
+    content: '?';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: rgba(220, 200, 80, 0.55);
+    z-index: 1;
+    text-shadow: 0 0 12px rgba(180, 150, 40, 0.3);
+}
+.tech-card.unknown .tech-card-img::after { display: none; }
+.tech-card.unknown .tech-card-name {
+    color: rgba(200, 180, 100, 0.75);
+    font-size: 11px;
+}
+.tech-card-wrap:hover .tech-card.unknown {
+    border-color: rgba(180, 150, 50, 0.6);
+}
+
+.tech-tree-empty {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    color: rgba(140, 170, 200, 0.55);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* ===== Модальное окно технологии ===== */
+
+/* Затемнение + blur только дерева (сайдбар категорий не трогаем) */
+.tech-panel-window.detail-open .tech-tree-host {
+    filter: blur(2.5px) brightness(0.55);
+}
+.tech-tree-host {
+    transition: filter 0.45s ease;
+}
+
+.tech-detail-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -48%) scale(0.94);
+    width: min(940px, calc(100% - 220px));
+    max-width: 980px;
+    height: min(640px, calc(100% - 56px));
+    max-height: calc(100% - 56px);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.42s ease,
+        transform 0.48s cubic-bezier(0.22, 0.82, 0.28, 1),
+        visibility 0.42s;
+}
+.tech-detail-modal.open {
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.tech-detail-grid-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    clip-path: polygon(
+        16px 0, calc(100% - 16px) 0, 100% 16px,
+        100% calc(100% - 16px), calc(100% - 16px) 100%,
+        16px 100%, 0 calc(100% - 16px), 0 16px
+    );
+    background: linear-gradient(145deg, rgba(10, 20, 36, 0.96), rgba(6, 12, 22, 0.97));
+}
+.tech-detail-grid-bg::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0;
+    background-image:
+        linear-gradient(rgba(70, 150, 210, 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(70, 150, 210, 0.28) 1px, transparent 1px);
+    background-size: 26px 26px;
+    /* ровная сетка без наклона; дрейф BR → TL */
+    animation: tech-detail-grid-drift 30s linear infinite, tech-detail-grid-pulse 6.5s ease-in-out infinite;
+}
+@keyframes tech-detail-grid-drift {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-26px, -26px); }
+}
+@keyframes tech-detail-grid-pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 0.95; }
+}
+
+.tech-detail-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+    border: 1px solid rgba(70, 150, 210, 0.42);
+    clip-path: polygon(
+        16px 0, calc(100% - 16px) 0, 100% 16px,
+        100% calc(100% - 16px), calc(100% - 16px) 100%,
+        16px 100%, 0 calc(100% - 16px), 0 16px
+    );
+    background: linear-gradient(165deg, rgba(14, 26, 42, 0.55), rgba(8, 16, 28, 0.65));
+    box-shadow:
+        0 0 48px rgba(0, 40, 90, 0.5),
+        inset 0 0 50px rgba(20, 70, 120, 0.07);
+    overflow: hidden;
+}
+
+/* === Хэдер с тёмной рамкой вокруг аватара + названия === */
+.tech-detail-header {
+    display: flex;
+    gap: 0;
+    flex-shrink: 0;
+    align-items: stretch;
+    background:
+        linear-gradient(180deg, rgba(6, 12, 22, 0.92), rgba(8, 16, 28, 0.78));
+    border-bottom: 1px solid rgba(50, 110, 160, 0.28);
+    /* тёмная «рамка-хром» как на референсе */
+    box-shadow:
+        inset 0 1px 0 rgba(80, 140, 190, 0.12),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.tech-detail-avatar-frame {
+    flex-shrink: 0;
+    width: 198px;   /* ~1.5× от 132 */
+    height: 198px;
+    margin: 12px 0 12px 12px;
+    padding: 4px;
+    background:
+        linear-gradient(145deg, rgba(30, 50, 70, 0.95), rgba(12, 22, 36, 0.98));
+    border: 1px solid rgba(40, 70, 100, 0.7);
+    clip-path: polygon(
+        18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px
+    );
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(0, 20, 40, 0.4);
+    position: relative;
+}
+/* внутренний обод рамки */
+.tech-detail-avatar-frame::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(55, 95, 130, 0.45);
+    clip-path: polygon(
+        12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+.tech-detail-avatar {
+    width: 100%;
+    height: 100%;
+    background: #0a1520 center/cover no-repeat;
+    clip-path: polygon(
+        16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px
+    );
+}
+.tech-detail-avatar.empty {
+    background: repeating-linear-gradient(-45deg, #1a1810 0 8px, #2a2614 8px 16px);
+}
+
+.tech-detail-header-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 14px 12px 14px;
+    /* продолжение тёмной рамки-хрома на зону названия */
+    background:
+        linear-gradient(90deg, rgba(8, 14, 24, 0.55), transparent 40%),
+        linear-gradient(180deg, rgba(10, 18, 30, 0.5), transparent 70%);
+    border-left: 1px solid rgba(40, 70, 100, 0.35);
+}
+
+.tech-detail-header-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(50, 100, 150, 0.22);
+}
+.tech-detail-title {
+    flex: 1;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(220, 238, 255, 0.98);
+    line-height: 1.2;
+    text-shadow: 0 0 14px rgba(40, 120, 200, 0.3);
+}
+.tech-detail-close {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(80, 140, 180, 0.45);
+    background: rgba(0, 10, 24, 0.55);
+    color: #9ab;
+    font-size: 18px;
+    cursor: pointer;
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+.tech-detail-close:hover {
+    color: #e8f4ff;
+    border-color: rgba(120, 200, 255, 0.7);
+    background: rgba(20, 60, 100, 0.45);
+}
+
+/* Под названием: уровень слева, описание справа */
+.tech-detail-header-main {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+}
+.tech-detail-left-col {
+    flex-shrink: 0;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tech-detail-stage {
+    --stage-color: #8b6914;
+    padding: 11px 13px;
+    border: 1px solid color-mix(in srgb, var(--stage-color) 70%, #fff 8%);
+    background:
+        linear-gradient(135deg,
+            color-mix(in srgb, var(--stage-color) 38%, transparent),
+            rgba(8, 14, 22, 0.88));
+    clip-path: polygon(
+        11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px
+    );
+    box-shadow:
+        0 0 12px color-mix(in srgb, var(--stage-color) 30%, transparent),
+        inset 0 0 16px color-mix(in srgb, var(--stage-color) 12%, transparent);
+}
+.tech-detail-stage-level {
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: rgba(240, 230, 200, 0.95);
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+}
+.tech-detail-stage-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 0 8px color-mix(in srgb, var(--stage-color) 50%, transparent);
+    letter-spacing: 0.03em;
+}
+
+.tech-detail-upgrade {
+    position: relative;
+    flex: 1;
+    min-height: 128px;
+    border: 1px solid rgba(60, 130, 180, 0.38);
+    background: rgba(6, 14, 26, 0.78);
+    clip-path: polygon(
+        11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px
+    );
+    overflow: hidden;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.tech-detail-upgrade:hover {
+    border-color: rgba(100, 190, 255, 0.65);
+    box-shadow: 0 0 14px rgba(40, 120, 200, 0.25);
+}
+.tech-detail-upgrade.is-researching {
+    border-color: rgba(80, 200, 255, 0.7);
+}
+.tech-detail-upgrade.is-max {
+    cursor: default;
+    opacity: 0.75;
+}
+.tech-detail-upgrade.is-blocked {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.tech-detail-upgrade-art {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 58%;
+    background: right center / cover no-repeat;
+    opacity: 0.55;
+    filter: saturate(0.85);
+    pointer-events: none;
+}
+.tech-detail-upgrade-art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(6, 14, 26, 0.95) 0%, rgba(6, 14, 26, 0.55) 45%, rgba(6, 14, 26, 0.2) 100%);
+}
+.tech-detail-upgrade-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 7px 9px 8px;
+    height: 100%;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+.tech-detail-upgrade-label {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: rgba(200, 225, 250, 0.95);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.25;
+}
+.tech-detail-upgrade-status {
+    font-size: 11px;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+.tech-detail-upgrade-status[data-status="idle"] { color: rgba(160, 170, 180, 0.85); }
+.tech-detail-upgrade-status[data-status="researching"] { color: rgba(120, 210, 255, 0.95); }
+.tech-detail-upgrade-status[data-status="max"] { color: rgba(140, 220, 160, 0.9); }
+.tech-detail-upgrade-status[data-status="reqs"] { color: rgba(255, 170, 90, 0.92); }
+
+.tech-detail-upgrade-bar {
+    position: relative;
+    height: 6px;
+    margin-top: 2px;
+    border-radius: 2px;
+    background: rgba(0, 12, 24, 0.65);
+    border: 1px solid rgba(60, 120, 170, 0.35);
+    overflow: hidden;
+}
+.tech-detail-upgrade-bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(180, 230, 255, 0.95),
+        rgba(80, 180, 255, 0.95),
+        rgba(200, 240, 255, 0.95),
+        rgba(60, 160, 240, 0.95)
+    );
+    background-size: 200% 100%;
+    box-shadow: 0 0 8px rgba(80, 180, 255, 0.55);
+    transition: width 0.25s ease;
+}
+.tech-detail-upgrade-bar.active .tech-detail-upgrade-bar-fill {
+    animation: tech-research-shimmer 2.2s linear infinite;
+}
+@keyframes tech-research-shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+.tech-detail-upgrade-eta,
+.tech-detail-upgrade-pts {
+    font-size: 10px;
+    line-height: 1.3;
+    color: rgba(170, 200, 230, 0.85);
+    letter-spacing: 0.02em;
+}
+.tech-detail-upgrade-pts {
+    margin-top: auto;
+    color: rgba(190, 215, 240, 0.88);
+}
+
+.tech-detail-desc {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: rgba(200, 220, 240, 0.9);
+    background: rgba(4, 12, 22, 0.55);
+    border: 1px solid rgba(50, 110, 160, 0.28);
+    clip-path: polygon(
+        10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px
+    );
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(40, 120, 180, 0.55) rgba(0, 10, 20, 0.4);
+}
+.tech-detail-desc::-webkit-scrollbar { width: 7px; }
+.tech-detail-desc::-webkit-scrollbar-track { background: rgba(0, 12, 24, 0.45); }
+.tech-detail-desc::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(50, 140, 210, 0.55), rgba(30, 90, 150, 0.55));
+    border-radius: 3px;
+}
+
+/* Нижняя зона: требования/разблокировки — до низа модалки */
+.tech-detail-bottom {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 52%;
+    max-width: 52%;
+    padding: 12px 14px 14px;
+    border-top: 1px solid rgba(50, 110, 160, 0.22);
+    background: linear-gradient(180deg, rgba(6, 14, 26, 0.35), rgba(4, 10, 20, 0.25));
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(40, 120, 180, 0.5) transparent;
+}
+.tech-detail-rel {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+}
+.tech-detail-rel-block {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex-shrink: 0;
+}
+.tech-detail-rel-title {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(140, 180, 220, 0.75);
+    margin-bottom: 8px;
+    flex-shrink: 0;
+    /* как табличка подраздела в дереве */
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 4px 12px 4px 10px;
+    background: linear-gradient(90deg, rgba(20, 60, 100, 0.75), rgba(12, 30, 55, 0.45));
+    border: 1px solid rgba(70, 150, 210, 0.4);
+    clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+}
+.tech-detail-rel-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow: auto;
+    min-height: 0;
+}
+.tech-detail-rel-empty {
+    font-size: 13px;
+    color: rgba(120, 140, 160, 0.55);
+    padding: 8px 4px;
+}
+
+/* Горизонтальная мини-карточка: ширина по контенту, с max */
+.tech-mini-card {
+    width: max-content;
+    max-width: 280px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    background: rgba(8, 16, 28, 0.92);
+    border: 1px solid rgba(70, 140, 190, 0.4);
+    clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+    overflow: hidden;
+    transition: border-color 0.15s, background 0.15s;
+}
+.tech-mini-card:hover {
+    border-color: rgba(110, 200, 255, 0.75);
+    background: rgba(14, 28, 48, 0.95);
+}
+.tech-mini-card-img {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: #0a1520 center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: rgba(220, 200, 80, 0.55);
+    border-right: 1px solid rgba(50, 100, 150, 0.3);
+}
+.tech-mini-card-text {
+    flex: 1;
+    min-width: 0;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1px;
+}
+.tech-mini-card-name {
+    font-size: 12px;
+    text-align: left;
+    color: rgba(200, 220, 240, 0.95);
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tech-mini-card-level {
+    font-size: 10px;
+    color: rgba(150, 190, 230, 0.75);
+    line-height: 1.1;
+}
+.tech-mini-card.locked,
+.tech-mini-card:disabled {
+    cursor: default;
+    opacity: 0.85;
+}
+.tech-mini-card.locked:hover {
+    border-color: rgba(70, 140, 190, 0.4);
+    background: rgba(8, 16, 28, 0.92);
+}
+.tech-mini-card.unknown {
+    border-color: rgba(120, 100, 40, 0.4);
+}
+.tech-mini-card.unknown .tech-mini-card-img {
+    background: repeating-linear-gradient(-45deg, #1a1810 0 5px, #2a2614 5px 10px);
+}
+
+.tech-card-wrap.selected {
+    z-index: 7;
+}
+.tech-card-wrap.selected .tech-card {
+    border-color: rgba(110, 210, 255, 0.9);
+}
+
+/* Заблокированная / неизвестная карточка на дереве */
+.tech-card-wrap.is-locked {
+    cursor: default;
+}
+.tech-card-wrap.is-locked:hover {
+    transform: none;
+    filter:
+        drop-shadow(0 6px 14px rgba(0, 12, 28, 0.65))
+        drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+}
+.tech-card-wrap.is-locked .tech-card-aim { opacity: 0 !important; }
+.tech-card.locked,
+.tech-card.unknown.locked {
+    border-color: rgba(180, 150, 40, 0.55);
+    pointer-events: none;
+}
+.tech-card.unknown.locked .tech-card-img {
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(18, 16, 8, 0.98) 0 7px,
+            rgba(55, 48, 12, 0.95) 7px 14px
+        ) !important;
+}
+.tech-card-unknown-mark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(230, 200, 70, 0.7);
+    z-index: 2;
+    text-shadow: 0 0 14px rgba(180, 150, 40, 0.35);
+    pointer-events: none;
+}
+.tech-detail-upgrade-eta-remain {
+    font-variant-numeric: tabular-nums;
+}
+.tech-detail-upgrade-eta-ready {
+    opacity: 0.9;
+}
+
+/* Подсветка невыполненных требований при hover на «Улучшить» */
+.tech-mini-card.req-unmet-hl {
+    border-color: rgba(240, 190, 50, 0.95) !important;
+    box-shadow: 0 0 10px rgba(220, 170, 40, 0.35);
+    background: rgba(40, 32, 8, 0.92) !important;
+}
+.tech-mini-card.req-unmet-hl .tech-mini-card-level {
+    color: rgba(255, 210, 70, 0.98) !important;
+}
+.tech-mini-card.req-unmet-hl .tech-mini-card-name {
+    color: rgba(255, 230, 160, 0.95);
+}
+
+
+/* Индикатор активного исследования на мини-карточке дерева */
+.tech-card-research-tri {
+    position: absolute;
+    right: 6px;
+    bottom: 5px;
+    z-index: 3;
+    font-size: 11px;
+    line-height: 1;
+    color: #3dff7a;
+    text-shadow: 0 0 6px rgba(40, 255, 120, 0.65);
+    pointer-events: none;
+    animation: tech-research-rise 1.55s ease-in-out infinite;
+}
+@keyframes tech-research-rise {
+    0%   { opacity: 0;    transform: translateY(9px); }
+    12%  { opacity: 0.95; transform: translateY(6px); }
+    70%  { opacity: 0.85; transform: translateY(-7px); }
+    100% { opacity: 0;    transform: translateY(-12px); }
+}
+
+
+.tech-detail-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+}
+.tech-detail-codex-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(120, 150, 180, 0.4);
+    background: rgba(0, 0, 0, 0.35);
+    color: #cde;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.tech-detail-codex-btn:hover {
+    border-color: #6af;
+    color: #fff;
+}

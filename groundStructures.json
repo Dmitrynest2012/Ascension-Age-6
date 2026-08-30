@@ -1,0 +1,19 @@
+[
+  {
+    "id": "GSTRUCT_COSMISTS_BASE",
+    "name": {
+      "ru": "База Космистов",
+      "en": "Cosmists Base",
+      "de": "Kosmist-Basis"
+    },
+    "type": "base",
+    "icon": "assets/textures/icons/struct_cosmists_base.svg",
+    "iconSize": 64,
+    "actionRadiusKm": 300,
+    "description": {
+      "ru": "Главная наземная база Космистов. Отсюда отправляются экспедиции.",
+      "en": "Main Cosmists surface base. Expeditions are launched from here.",
+      "de": "Hauptbasis der Kosmisten an der Oberfläche. Von hier starten Expeditionen."
+    }
+  }
+]

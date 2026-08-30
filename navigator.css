@@ -1,0 +1,232 @@
+/* Навигатор небесных тел — правый верх, под хэдером и ресурсной полоской */
+#navigator {
+    position: absolute;
+    top: 88px;
+    right: 10px;
+    z-index: 850;
+    pointer-events: none;
+    font-family: inherit;
+    color: #d8e8ef;
+    user-select: none;
+}
+body.main-menu-active #navigator,
+body.intro-active #navigator,
+#intro-screen.active ~ #navigator {
+    display: none !important;
+}
+#navigator.nav-off { display: none !important; }
+
+#navigator .nav-shell {
+    pointer-events: auto;
+    position: relative;
+    min-width: 310px;
+    width: 310px;
+    padding: 8px 8px 12px 10px;
+    background: linear-gradient(180deg, rgba(10, 14, 18, 0.62) 0%, rgba(8, 10, 14, 0.48) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    border: 1px solid rgba(80, 96, 110, 0.45);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+#navigator .nav-title {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(170, 210, 220, 0.72);
+    margin: 0 0 8px 8px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+#navigator .nav-tree {
+    position: relative;
+    min-height: 108px;
+    max-height: 398px;
+    transition: height 0.35s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-right: 18px;
+}
+#navigator .nav-tree > .firm-scroll-inner {
+    position: relative;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+#navigator .nav-scroll-pad {
+    width: 1px;
+    pointer-events: none;
+}
+
+#navigator .nav-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.28s ease;
+}
+#navigator.nav-morph .nav-svg {
+    opacity: 0;
+}
+
+/* графы как в дереве технологий */
+#navigator .nav-link-base,
+#navigator .nav-link-core,
+#navigator .nav-link-flow {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+#navigator .nav-link-base {
+    stroke: rgba(30, 120, 150, 0.32);
+    stroke-width: 5;
+    filter: url(#nav-link-glow);
+}
+#navigator .nav-link-core {
+    stroke: url(#nav-link-grad);
+    stroke-width: 1.9;
+}
+#navigator .nav-link-flow {
+    stroke: rgba(170, 245, 255, 0.7);
+    stroke-width: 2.1;
+    stroke-dasharray: 7 16;
+    animation: nav-link-conveyor 2.6s linear infinite;
+}
+
+@keyframes nav-link-conveyor {
+    to { stroke-dashoffset: -23; }
+}
+
+#navigator .nav-node {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    z-index: 1;
+    transform-origin: right center;
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+#navigator.nav-morph .nav-node {
+    opacity: 0;
+    transform: translateX(14px) scale(0.86);
+}
+
+#navigator .nav-orb {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow:
+        inset -10px 0 14px rgba(0, 0, 0, 0.55),
+        inset 8px 0 10px rgba(255, 245, 210, 0.22),
+        0 0 0 1px rgba(140, 180, 200, 0.28),
+        0 4px 10px rgba(0, 0, 0, 0.45);
+    background: #0a0c10 center / cover no-repeat;
+}
+#navigator .nav-parent .nav-orb {
+    width: 56px;
+    height: 56px;
+}
+#navigator .nav-orb canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#navigator .nav-orb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        rgba(255, 236, 190, 0.38) 0%,
+        rgba(255, 236, 190, 0.05) 42%,
+        rgba(0, 0, 0, 0.18) 58%,
+        rgba(0, 0, 0, 0.72) 100%);
+}
+#navigator .nav-orb.is-star {
+    box-shadow:
+        inset 0 0 8px rgba(255, 220, 140, 0.35),
+        0 0 16px rgba(255, 180, 70, 0.55),
+        0 0 0 1px rgba(255, 210, 120, 0.4);
+}
+#navigator .nav-orb.is-star::after {
+    background: radial-gradient(circle at 35% 40%, rgba(255, 255, 230, 0.35), transparent 55%);
+}
+#navigator .nav-orb.is-unknown {
+    background: #050508 !important;
+    box-shadow:
+        inset 0 0 10px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(60, 60, 70, 0.5);
+}
+#navigator .nav-orb.is-unknown::after {
+    background: linear-gradient(90deg, rgba(30, 30, 36, 0.35) 0%, rgba(0, 0, 0, 0.85) 100%);
+}
+#navigator .nav-orb.is-nebula {
+    box-shadow: 0 0 14px rgba(90, 160, 200, 0.35), 0 0 0 1px rgba(120, 170, 200, 0.25);
+}
+
+/* мини-карточка названия: скосы, тёмный фон, до 2 строк */
+#navigator .nav-card {
+    max-width: 148px;
+    min-width: 72px;
+    padding: 3px 8px 4px;
+    background: rgba(6, 8, 11, 0.82);
+    border: 1px solid rgba(70, 90, 104, 0.5);
+    clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+#navigator .nav-parent .nav-card {
+    max-width: 158px;
+    background: rgba(4, 7, 10, 0.88);
+    border-color: rgba(80, 140, 160, 0.4);
+}
+#navigator .nav-label {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 1.22;
+    text-align: right;
+    text-shadow: 0 0 4px #000, 0 1px 2px #000;
+    color: #dce8ee;
+    word-break: break-word;
+}
+#navigator .nav-parent .nav-label {
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: #eef6f8;
+}
+
+#navigator .nav-node.is-here .nav-card {
+    border-color: rgba(70, 210, 230, 0.55);
+    box-shadow: 0 0 10px rgba(40, 180, 200, 0.22);
+}
+#navigator .nav-node:hover .nav-orb {
+    box-shadow:
+        inset -10px 0 14px rgba(0, 0, 0, 0.5),
+        inset 8px 0 10px rgba(255, 245, 210, 0.28),
+        0 0 0 1px rgba(90, 220, 230, 0.75),
+        0 0 12px rgba(40, 200, 220, 0.35);
+}
+#navigator .nav-node:hover .nav-card {
+    border-color: rgba(80, 210, 220, 0.55);
+}
+#navigator .nav-node:hover .nav-label {
+    color: #ffffff;
+}
+
+#navigator .firm-scroll-track-v {
+    right: 3px;
+    top: 6px;
+    bottom: 6px;
+}

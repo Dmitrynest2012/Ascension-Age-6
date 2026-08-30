@@ -1,0 +1,68 @@
+{
+  "bodies": [
+    {
+      "id": 1,
+      "name": ["Солнце", "Солнце"],
+      "parent": null,
+      "children": [2, 3, 4],
+      "texture": "assets/textures/planets/sun.jpg",
+      "distanceFromParent": 0,
+      "size": 5,
+      "dayLength": 2160000,
+      "yearLength": 0,
+      "isStar": true
+    },
+    {
+      "id": 2,
+      "name": ["Меркурий", "Меркурий"],
+      "parent": 1,
+      "children": [],
+      "texture": "assets/textures/planets/mercury.jpg",
+      "distanceFromParent": 15,
+      "size": 1,
+      "dayLength": 5068800,
+      "yearLength": 7603200,
+      "initialOrbitAngle": 0.48568728760917285,
+      "isStar": false
+    },
+    {
+      "id": 3,
+      "name": ["Венера", "Венера"],
+      "parent": 1,
+      "children": [],
+      "texture": "assets/textures/planets/venus.jpg",
+      "distanceFromParent": 30,
+      "size": 0.8,
+      "dayLength": 20995200,
+      "yearLength": 19440000,
+      "initialOrbitAngle": 0.16147585393818287,
+      "isStar": false
+    },
+    {
+      "id": 4,
+      "name": ["Земля", "Земля"],
+      "parent": 1,
+      "children": [5],
+      "texture": "assets/textures/planets/earth.jpg",
+      "distanceFromParent": 35,
+      "size": 1,
+      "dayLength": 86400,
+      "yearLength": 31557600,
+      "initialOrbitAngle": 2.1391668966540625,
+      "isStar": false
+    },
+    {
+      "id": 5,
+      "name": ["Луна", "Луна"],
+      "parent": 4,
+      "children": [],
+      "texture": "assets/textures/planets/moon.jpg",
+      "distanceFromParent": 5,
+      "size": 0.5,
+      "dayLength": 2360591,
+      "yearLength": 2360591,
+      "initialOrbitAngle": 3.3482023116405566,
+      "isStar": false
+    }
+  ]
+}

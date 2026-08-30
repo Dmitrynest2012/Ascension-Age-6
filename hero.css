@@ -1,0 +1,376 @@
+/* Кликабельная аватарка в хэдере */
+#header-left .header-icon-frame {
+    cursor: pointer;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== Окно управления героем ===== */
+#hero-panel {
+    position: fixed;
+    top: 48px; /* под хэдером */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1100; /* выше building-modal/specialists; ниже сборки (10050) */
+    display: none;
+    pointer-events: none;
+}
+#hero-panel.open {
+    display: block;
+    pointer-events: auto;
+}
+
+.hero-panel-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-panel-window {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(ellipse at 30% 20%, rgba(50, 60, 75, 0.92), rgba(18, 20, 26, 0.96) 70%);
+    border: 1px solid rgba(120, 150, 180, 0.35);
+    clip-path: polygon(
+        16px 0, calc(100% - 16px) 0, 100% 16px,
+        100% calc(100% - 16px), calc(100% - 16px) 100%,
+        16px 100%, 0 calc(100% - 16px), 0 16px
+    );
+    box-shadow: 0 0 40px rgba(0, 40, 80, 0.45);
+    overflow: hidden;
+}
+
+.hero-panel-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px 8px 18px;
+    border-bottom: 1px solid rgba(100, 130, 160, 0.25);
+    flex-shrink: 0;
+}
+.hero-panel-title {
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(200, 220, 240, 0.95);
+}
+.hero-panel-close {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(140, 140, 140, 0.4);
+    background: rgba(0, 0, 0, 0.35);
+    color: #ccc;
+    font-size: 18px;
+    cursor: pointer;
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+.hero-panel-close:hover {
+    border-color: #6af;
+    color: #fff;
+}
+
+.hero-panel-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 200px minmax(280px, 1fr) minmax(300px, 1.15fr);
+    gap: 0;
+    min-height: 0;
+}
+
+/* Левый список разделов */
+.hero-nav {
+    border-right: 1px solid rgba(100, 130, 160, 0.22);
+    padding: 12px 8px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.2);
+}
+.hero-nav-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 12px;
+    margin-bottom: 4px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: rgba(180, 190, 200, 0.9);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+.hero-nav-item:hover {
+    background: rgba(80, 120, 160, 0.15);
+    color: #fff;
+}
+.hero-nav-item.active {
+    background: linear-gradient(90deg, rgba(40, 100, 160, 0.35), rgba(40, 100, 160, 0.08));
+    border-color: rgba(80, 160, 220, 0.35);
+    border-bottom-color: #4af;
+    color: #e8f4ff;
+}
+.hero-nav-item.locked {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Середина */
+.hero-mid {
+    padding: 16px 18px;
+    overflow-y: auto;
+    border-right: 1px solid rgba(100, 130, 160, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+.hero-avatar-lg {
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(120, 150, 180, 0.4);
+    clip-path: polygon(
+        20px 0, calc(100% - 20px) 0, 100% 20px,
+        100% calc(100% - 20px), calc(100% - 20px) 100%,
+        20px 100%, 0 calc(100% - 20px), 0 20px
+    );
+}
+.hero-mid-data {
+    width: 100%;
+    max-width: 420px;
+}
+.hero-field {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(80, 90, 100, 0.35);
+    font-size: 13px;
+}
+.hero-field-label {
+    color: rgba(150, 165, 180, 0.95);
+    flex-shrink: 0;
+}
+.hero-field-value {
+    color: #e8eef5;
+    text-align: right;
+}
+
+.hero-quest-tabs {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 4px;
+}
+.hero-quest-tabs-stack {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 24px;
+    max-width: 360px;
+}
+.hero-quest-tab {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-family: inherit;
+    border: 1px solid rgba(100, 120, 140, 0.4);
+    background: rgba(0, 0, 0, 0.32);
+    color: #9ab;
+    cursor: pointer;
+    text-align: center;
+    /* фирменные скосы */
+    clip-path: polygon(
+        10px 0, calc(100% - 10px) 0, 100% 10px,
+        100% calc(100% - 10px), calc(100% - 10px) 100%,
+        10px 100%, 0 calc(100% - 10px), 0 10px
+    );
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.hero-quest-tab:hover {
+    color: #e8f4ff;
+    background: rgba(50, 90, 130, 0.28);
+    border-color: rgba(80, 160, 220, 0.45);
+}
+.hero-quest-tab.active {
+    border-color: rgba(80, 160, 220, 0.5);
+    border-bottom: 2px solid #4af;
+    color: #e8f4ff;
+    background: linear-gradient(180deg, rgba(40, 100, 160, 0.35), rgba(20, 40, 60, 0.35));
+}
+.hero-quest-list {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.hero-quest-list-item {
+    padding: 8px 10px;
+    font-size: 12px;
+    border: 1px solid rgba(80, 90, 100, 0.4);
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: #ccd;
+}
+.hero-quest-list-item:hover { background: rgba(60, 80, 100, 0.25); }
+.hero-quest-list-item.active { border-color: rgba(80, 160, 220, 0.5); }
+.hero-quest-list-item.st-active { color: #7cf; }
+.hero-quest-list-item.st-completed { color: #6d6; }
+.hero-quest-list-item.st-failed { color: #f86; }
+.hero-side-stub {
+    padding: 12px;
+    color: rgba(160, 170, 180, 0.75);
+    font-size: 13px;
+    font-style: italic;
+    border: 1px dashed rgba(100, 110, 120, 0.4);
+}
+
+/* Правая колонка — глубина */
+.hero-deep {
+    padding: 16px 18px;
+    overflow-y: auto;
+    min-height: 0;
+}
+.hero-deep-title {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(160, 180, 200, 0.9);
+    margin-bottom: 12px;
+}
+.hero-bio-text {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(210, 220, 230, 0.95);
+    white-space: pre-wrap;
+}
+
+/* Цепочка квестов */
+.hero-chain {
+    position: relative;
+    padding-left: 28px;
+}
+.hero-chain::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(80, 160, 220, 0.7), rgba(60, 80, 100, 0.25));
+}
+.hero-chain-node {
+    position: relative;
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(90, 110, 130, 0.35);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+/* Миниатюра-маркер на хронолинии: квадрат со скошенными углами */
+.hero-chain-node::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 12px;
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    background: linear-gradient(145deg, rgba(140, 190, 230, 0.95), rgba(40, 90, 150, 0.9));
+    box-shadow: 0 0 8px rgba(80, 160, 220, 0.45);
+    border: 1px solid rgba(180, 220, 255, 0.55);
+    clip-path: polygon(
+        3px 0, calc(100% - 3px) 0, 100% 3px,
+        100% calc(100% - 3px), calc(100% - 3px) 100%,
+        3px 100%, 0 calc(100% - 3px), 0 3px
+    );
+}
+.hero-chain-node.st-active::before {
+    background: linear-gradient(145deg, rgba(160, 210, 255, 1), rgba(40, 120, 220, 0.95));
+    box-shadow: 0 0 12px rgba(60, 160, 255, 0.7);
+    border-color: rgba(180, 230, 255, 0.75);
+}
+.hero-chain-node.st-completed::before {
+    background: linear-gradient(145deg, rgba(160, 230, 180, 0.95), rgba(40, 140, 80, 0.9));
+    box-shadow: 0 0 10px rgba(80, 200, 120, 0.5);
+    border-color: rgba(160, 230, 180, 0.55);
+}
+.hero-chain-node.st-failed::before {
+    background: linear-gradient(145deg, rgba(255, 160, 150, 0.95), rgba(160, 40, 40, 0.9));
+    box-shadow: 0 0 10px rgba(255, 80, 80, 0.45);
+    border-color: rgba(255, 160, 150, 0.5);
+}
+.hero-chain-node.st-active { border-color: rgba(70, 150, 230, 0.55); }
+.hero-chain-node.st-completed { border-color: rgba(70, 180, 100, 0.45); }
+.hero-chain-node.st-failed { border-color: rgba(220, 80, 80, 0.45); }
+
+.hero-chain-title {
+    font-size: 13px;
+    color: #e8f0f8;
+    margin-bottom: 4px;
+}
+.hero-chain-meta {
+    font-size: 11px;
+    color: rgba(150, 165, 180, 0.9);
+    margin-bottom: 6px;
+}
+.hero-chain-objs {
+    font-size: 11px;
+    color: rgba(170, 180, 190, 0.9);
+    padding-left: 4px;
+}
+.hero-chain-objs li {
+    margin: 2px 0;
+    list-style: none;
+}
+.hero-chain-objs li::before {
+    content: '▸ ';
+    opacity: 0.6;
+}
+.hero-chain-objs li.done { color: #8d8; }
+.hero-chain-objs li.fail { color: #f88; }
+.hero-chain-objs li.pend { color: #99a; }
+
+.hero-empty {
+    color: rgba(140, 150, 160, 0.8);
+    font-size: 13px;
+    padding: 20px 8px;
+}
+
+/* Скроллбары как у здания */
+.hero-nav, .hero-mid, .hero-deep {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 140, 180, 0.45) transparent;
+}
+.hero-nav::-webkit-scrollbar,
+.hero-mid::-webkit-scrollbar,
+.hero-deep::-webkit-scrollbar { width: 5px; }
+.hero-nav::-webkit-scrollbar-thumb,
+.hero-mid::-webkit-scrollbar-thumb,
+.hero-deep::-webkit-scrollbar-thumb {
+    background: rgba(100, 140, 180, 0.45);
+    border-radius: 3px;
+}
+
+@media (max-width: 1100px) {
+    .hero-panel-body {
+        grid-template-columns: 160px 1fr 1fr;
+    }
+    .hero-avatar-lg {
+        width: 280px;
+        height: 280px;
+    }
+}

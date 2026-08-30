@@ -1,0 +1,24 @@
+[
+  {
+    "id": "GMAP_ICE",
+    "name": {
+      "ru": "Лёд",
+      "en": "Ice",
+      "de": "Eis"
+    },
+    "icon": "assets/textures/icons/res_ice.png",
+    "iconSize": 64,
+    "isDeposit": true,
+    "linkedGeoResourceId": "GEO_ICE",
+    "stockResourceId": "RES_ICE",
+    "complexity": 1.2,
+    "baseYieldKgPerPerson": 80,
+    "mineHoursBase": 0.4166666667,
+    "revealQuestId": null,
+    "description": {
+      "ru": "Поверхностные и приповерхностные скопления льда.",
+      "en": "Surface and near-surface ice accumulations.",
+      "de": "Oberflächen- und oberflächennahe Eisvorkommen."
+    }
+  }
+]

@@ -1,0 +1,77 @@
+/* Импорт шрифта Play из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+/* Глобальные переменные */
+:root {
+    --primary-color: #000000;
+    --planet-scale: 1;
+    --distance-scale: 1;
+    --menu-bg: rgba(0, 0, 0, 0.7);
+    --menu-text: #cccccc;
+    --menu-border: #333333;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    font-family: 'Play', sans-serif;
+}
+
+#info-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--menu-bg);
+    color: var(--menu-text);
+    padding: 8px 12px;
+    border: 1px solid var(--menu-border);
+    border-radius: 3px;
+    clip-path: polygon(5% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%, 0 5%);
+    font-size: 14px;
+    line-height: 1.2;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+#info-panel p {
+    margin: 2px 0;
+}
+
+#time-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--menu-bg);
+    color: var(--menu-text);
+    padding: 8px 12px;
+    border: 1px solid var(--menu-border);
+    border-radius: 3px;
+    clip-path: polygon(5% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%, 0 5%);
+    font-size: 14px;
+    line-height: 1.2;
+    z-index: 10;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#time-panel button {
+    background-color: var(--menu-border);
+    color: var(--menu-text);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'Play', sans-serif;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+#time-panel button:hover {
+    background-color: #555555;
+}
+
+#speed-indicator, #current-time {
+    margin: 0;
+}

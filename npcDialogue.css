@@ -1,0 +1,101 @@
+/* Внешний диалог NPC — правый нижний угол */
+#npc-dialogue-panel {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1200;
+    display: none;
+    flex-direction: row-reverse; /* аватар справа, текст слева */
+    align-items: flex-end;
+    gap: 0;
+    max-width: min(640px, 98vw);
+    font-family: 'Play', sans-serif;
+    pointer-events: auto;
+}
+
+#npc-dialogue-avatar {
+    width: 192px;   /* 160 * 1.2 */
+    height: 240px;  /* 200 * 1.2 */
+    flex-shrink: 0;
+    background: transparent; /* без фона */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.npc-avatar-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+.npc-dialogue-box {
+    position: relative;
+    min-width: 260px;
+    max-width: 360px;
+    margin-right: -10px; /* чуть под аватаром ~10px */
+    margin-bottom: 12px;
+    background: radial-gradient(circle at center, rgba(55,55,55,0.72), rgba(28,28,28,0.78) 70%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(60, 60, 60, 0.5);
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+    padding: 12px 14px 14px 14px;
+    color: #eee;
+    z-index: 1;
+}
+
+#npc-dialogue-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(120, 120, 120, 0.35);
+    color: #fff;
+    font-size: 12px;
+    padding: 0 8px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+#npc-dialogue-close:hover { color: rgba(0, 192, 206, 0.95); }
+
+#npc-dialogue-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    padding-right: 28px;
+    background: linear-gradient(to right, rgba(183,244,255,0.95), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.npc-speaker {
+    font-weight: 600;
+    background: linear-gradient(to right, rgba(183,244,255,0.95), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#npc-dialogue-text {
+    font-size: 12px;
+    line-height: 1.45;
+    max-height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+#npc-dialogue-text p {
+    margin: 0 0 6px 0;
+}
+#npc-dialogue-text.firm-scroll-host > .firm-scroll-inner {
+    max-height: 160px;
+    height: 100%;
+    box-sizing: border-box;
+    /* зазор слева от скроллбара, чтобы текст не заезжал под бегунок */
+    padding: 0 22px 2px 2px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
