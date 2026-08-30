@@ -65,6 +65,23 @@ const SECTION_CLASS = {
     'Население': 'section-population'
 };
 
+/**
+ * Путь к ассету так же, как в попапе: относительный `assets/...`,
+ * но резолвим от URL этого модуля — тогда работает и в Live Preview
+ * (корень сайта), и на GitHub Pages (/имя-репо/), даже без / в конце URL.
+ */
+function assetUrl(rel) {
+    const raw = String(rel || '').trim();
+    if (!raw) return '';
+    if (/^(?:https?:|data:|blob:)/i.test(raw)) return raw;
+    const clean = raw.replace(/^\.\//, '').replace(/^\/+/, '');
+    try {
+        return new URL(clean, import.meta.url).href;
+    } catch (_) {
+        return clean;
+    }
+}
+
 /** Плейсхолдеры иконок параметров (локальные пути — замените сами) */
 const POPUP_ICONS = {
     balance: 'assets/textures/icons/energy_balance.png',
@@ -88,6 +105,47 @@ const POPUP_ICONS = {
     popExpeditioners: 'assets/textures/icons/pop_expeditioners.png'
 };
 
+/** Иконки кнопок-разделов ресурсной полоски — те же локальные файлы, что в HTML */
+const SECTION_ICONS = {
+    'Население':      ['assets/textures/icons/population.png', 'assets/textures/icons/pop_total.png'],
+    'Сырье':          ['assets/textures/icons/raw.png', 'assets/textures/icons/res_iron_mineral.png'],
+    'Материалы':      ['assets/textures/icons/materials.png'],
+    'Компоненты':     ['assets/textures/icons/components.png'],
+    'Продукция':      ['assets/textures/icons/products.png', 'assets/textures/icons/res_repair_kit.png'],
+    'Продовольствие': ['assets/textures/icons/food.png', 'assets/textures/icons/res_field_ration.png'],
+    'Энергия':        ['assets/textures/icons/energy.png', 'assets/textures/icons/res_electricity.png'],
+    'Технологии':     ['assets/textures/icons/technologies.png']
+};
+
+function bindIconFallbacks(img, paths) {
+    if (!img || !paths || !paths.length) return;
+    const list = paths.map(assetUrl).filter(Boolean);
+    if (!list.length) return;
+    let i = 0;
+    img.src = list[0];
+    img.onerror = () => {
+        i += 1;
+        if (i < list.length) img.src = list[i];
+        else img.style.opacity = '0.25';
+    };
+}
+
+function applyBarSectionIcons() {
+    document.querySelectorAll('#resource-bar .resource-container').forEach(container => {
+        const id = container.dataset.resourceId;
+        const paths = SECTION_ICONS[id];
+        if (!paths) return;
+        let img = container.querySelector('img.resource-icon');
+        if (!img) {
+            img = document.createElement('img');
+            img.className = 'resource-icon';
+            img.alt = '';
+            container.insertBefore(img, container.firstChild);
+        }
+        bindIconFallbacks(img, paths);
+    });
+}
+
 const SECTION_I18N = {
     'Энергия': 'res.section.energy',
     'Технологии': 'res.section.technologies',
@@ -110,7 +168,7 @@ function popupRowHtml(iconSrc, label, valueHtml, opts = {}) {
     const extra = opts.resource ? ' is-resource' : (opts.extraClass ? ` ${opts.extraClass}` : '');
     const ridAttr = opts.rid ? ` data-rid="${opts.rid}"` : '';
     return `<div class="popup-row${extra}"${ridAttr}>
-        <img class="popup-row-icon" src="${iconSrc}" alt="" onerror="this.style.opacity='0.25'">
+        <img class="popup-row-icon" src="${assetUrl(iconSrc)}" alt="" onerror="this.style.opacity='0.25'">
         <span class="popup-row-label">${label}</span>
         <span class="popup-row-value">${valueHtml}</span>
     </div>`;
@@ -172,7 +230,7 @@ function formatEnergyReserveRemain(storedWh, consumptionW, productionW, maxDisch
 
 function energyRowHtml(key, iconSrc, label, valueHtml) {
     return `<div class="popup-row is-hoverable" data-energy-key="${key}">
-        <img class="popup-row-icon" src="${iconSrc}" alt="" onerror="this.style.opacity='0.25'">
+        <img class="popup-row-icon" src="${assetUrl(iconSrc)}" alt="" onerror="this.style.opacity='0.25'">
         <span class="popup-row-label">${label}</span>
         <span class="popup-row-value">${valueHtml}</span>
     </div>`;
@@ -274,7 +332,7 @@ function dynamicsHtml(dynamics) {
 
 function popRowHtml(key, iconSrc, label, valueHtml) {
     return `<div class="popup-row is-hoverable" data-pop-key="${key}">
-        <img class="popup-row-icon" src="${iconSrc}" alt="" onerror="this.style.opacity='0.25'">
+        <img class="popup-row-icon" src="${assetUrl(iconSrc)}" alt="" onerror="this.style.opacity='0.25'">
         <span class="popup-row-label">${label}</span>
         <span class="popup-row-value">${valueHtml}</span>
     </div>`;
@@ -769,6 +827,7 @@ function renderStockSectionPopup(resourceId, bodyData, popup) {
 export function updateResourceBar(currentLocation) {
     const bar = document.getElementById('resource-bar');
     if (!bar) return;
+    applyBarSectionIcons();
 
     const colonized = !!(currentLocation && currentLocation.data && currentLocation.data.colonized);
     globalThis.__currentBodyData = currentLocation?.data || null;
