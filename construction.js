@@ -3,6 +3,27 @@ import { getLocationBuildingData, updateLocationBuildingData, getStructureMax, g
 import { t } from './settings.js';
 import { refundActionResources, refundEntries } from './buildingResourceCosts.js';
 
+/** Как иконки попапа: путь от модуля, с кодированием пробелов/кириллицы (GitHub Pages). */
+const BUILD_POWER_ICON = 'assets/textures/icons/ChatGPT Image 7 окт. 2025 г., 16_55_23.png';
+function assetUrl(rel) {
+    const raw = String(rel || '').trim();
+    if (!raw) return '';
+    if (/^(?:https?:|data:|blob:)/i.test(raw)) return raw;
+    const clean = raw.replace(/^\.\//, '').replace(/^\/+/, '');
+    try {
+        return new URL(clean, import.meta.url).href;
+    } catch (_) {
+        return clean.split('/').map(encodeURIComponent).join('/');
+    }
+}
+function applyBuildPowerIcon() {
+    const img = document.getElementById('build-power-icon')
+        || document.querySelector('#requirements-container img.build-power-icon');
+    if (!img) return;
+    const url = assetUrl(BUILD_POWER_ICON);
+    if (url && img.getAttribute('src') !== url) img.src = url;
+}
+
 export const FORWARD_ACTIONS = new Set(['build', 'upgrade']);
 export const BACKWARD_ACTIONS = new Set(['dismantle', 'downgrade']);
 
@@ -307,6 +328,7 @@ export function getConstructionPreview() {
 }
 
 export function updateConstructionUI(gameNowMs, locationId, buildingId) {
+    applyBuildPowerIcon();
     const els = getTimerEls();
     const wrap = els.wrap, textEl = els.textEl, bar = els.bar, labelEl = els.labelEl;
     if (!wrap || !textEl || !bar) return;

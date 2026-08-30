@@ -30,11 +30,19 @@ function openPopulationPopup() {
     if (!el.classList.contains('active')) el.click();
 }
 
-function ensureBuildingModalOpen() {
+function isBuildingModalOpen() {
     const modal = document.getElementById('building-modal');
-    if (modal && getComputedStyle(modal).display !== 'none') return true;
+    return !!(modal && getComputedStyle(modal).display !== 'none');
+}
+
+function ensureBuildingModalOpen() {
+    if (isBuildingModalOpen()) return true;
     const item = document.querySelector('.building-item[data-building-id="CONSTRC001"]');
-    if (item) item.click();
+    if (item) {
+        // клик по уже активной карточке закрывает модалку — сначала снимем active
+        if (item.classList.contains('active')) item.classList.replace('active', 'inactive');
+        item.click();
+    }
     return false;
 }
 
@@ -45,7 +53,8 @@ function clickIfEnabled(sel) {
     el.click();
 }
 
-/** Строительство → Наземное → Инфраструктура → База Космистов, затем callback. */
+/** Строительство → Наземное → Инфраструктура → База Космистов, затем callback.
+ *  Не закрывает уже открытую модалку базы (повторный клик по активной карточке — toggle). */
 function openCosmistsBaseThen(thenFn) {
     clickIfEnabled('#MB3');
     setTimeout(() => {
@@ -54,8 +63,17 @@ function openCosmistsBaseThen(thenFn) {
             clickIfEnabled('#COP01');
             setTimeout(() => {
                 const item = document.querySelector('.building-item[data-building-id="CONSTRC001"]');
-                if (item) item.click();
-                else ensureBuildingModalOpen();
+                if (item) {
+                    const alreadyOpen = item.classList.contains('active') && isBuildingModalOpen();
+                    if (!alreadyOpen) {
+                        if (item.classList.contains('active')) {
+                            item.classList.replace('active', 'inactive');
+                        }
+                        item.click();
+                    }
+                } else {
+                    ensureBuildingModalOpen();
+                }
                 if (typeof thenFn === 'function') {
                     setTimeout(thenFn, 80);
                 }
@@ -166,12 +184,18 @@ const HINT_TARGETS = {
     'modal-tab-schemes': {
         selector: '#modal-tab-schemes',
         altSelectors: ['#schemes-panel'],
-        open: () => openCosmistsBaseThen(() => clickIfEnabled('#modal-tab-schemes'))
+        open: () => openCosmistsBaseThen(() => {
+            clickIfEnabled('#modal-tab-schemes');
+            setTimeout(() => clickIfEnabled('#modal-tab-schemes'), 120);
+        })
     },
     'schemes-panel': {
         selector: '#schemes-panel',
         altSelectors: ['#modal-tab-schemes'],
-        open: () => openCosmistsBaseThen(() => clickIfEnabled('#modal-tab-schemes'))
+        open: () => openCosmistsBaseThen(() => {
+            clickIfEnabled('#modal-tab-schemes');
+            setTimeout(() => clickIfEnabled('#modal-tab-schemes'), 120);
+        })
     },
     'recipe-photosynthesis': {
         // несколько возможных селекторов (карточка / рычаг)
