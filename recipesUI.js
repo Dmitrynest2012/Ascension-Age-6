@@ -161,10 +161,13 @@ function bindRecipeResourceTips(root) {
 const DEFAULT_GRADIENT = ['rgba(0, 192, 206, 0.14)', 'rgba(82, 82, 82, 0.28)'];
 
 function formatRate(n, isEnergy, isInfinite, unitLabel = '') {
-    if (isInfinite) return '∞' + (unitLabel ? ' ' + unitLabel : '') + t('recipes.perMin');
+    const perMin = t('recipes.perMin') || '/мин';
+    const alreadyPerMin = /\/\s*(мин|min)\b/i.test(String(unitLabel || ''));
+    const suffix = alreadyPerMin ? '' : perMin;
+    if (isInfinite) return '∞' + (unitLabel ? ' ' + unitLabel : '') + suffix;
     const v = Number(n) || 0;
     if (isEnergy) {
-        return formatEnergy(v, { withUnit: true }).text + t('recipes.perMin');
+        return formatEnergy(v, { withUnit: true }).text + suffix;
     }
     let num;
     if (v >= 100) num = `${Math.round(v)}`;
@@ -174,7 +177,7 @@ function formatRate(n, isEnergy, isInfinite, unitLabel = '') {
     else if (v > 0) num = `${v.toFixed(4)}`;
     else num = '0';
     const u = unitLabel ? ` ${unitLabel}` : '';
-    return num + u + t('recipes.perMin');
+    return num + u + suffix;
 }
 
 /** Единица для потока рецепта: вода → л, твёрдое → кг, иначе unit ресурса. */
@@ -183,11 +186,17 @@ function rateUnitForResource(resourceId) {
     if (resourceId === 'RES_WATER' || resourceId === 'RES_PACKED_WATER') {
         return t('unit.L') || 'л';
     }
+    if (resourceId === 'RES_TECH_OUTPUT' || resourceId === 'RES_INFO_INSIGHT') {
+        return t('unit.tech') || 'тех.';
+    }
     const res = getResource(resourceId);
     if (!res) return t('unit.kg') || 'кг';
+    if (res.form === 'tech' || res.form === 'info') return t('unit.tech') || 'тех.';
     if (res.form === 'liquid') return t('unit.L') || res.unit || 'л';
     if (res.form === 'solid' || res.form === 'gas') return t('unit.kg') || res.unit || 'кг';
-    return res.unit || (t('unit.kg') || 'кг');
+    const rawUnit = String(res.unit || '');
+    if (/\/\s*(мин|min)\b/i.test(rawUnit)) return t('unit.tech') || rawUnit.replace(/\/\s*(мин|min)\b/ig, '').trim();
+    return rawUnit || (t('unit.kg') || 'кг');
 }
 
 function rateUnitForGeo(geoId) {
