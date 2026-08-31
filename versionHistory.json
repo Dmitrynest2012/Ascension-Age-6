@@ -1,6 +1,6 @@
 {
   "meta": {
-    "currentBuild": "0.1.7",
+    "currentBuild": "0.1.8",
     "previewAvatar": "assets/textures/npc/seleznev.png"
   },
   "typeImages": {
@@ -9,6 +9,22 @@
     "major": "assets/textures/icons/version_major.png"
   },
   "builds": [
+    {
+      "id": "b018",
+      "build": "0.1.8",
+      "date": "2026-08-31",
+      "type": "patch",
+      "title": {
+        "ru": "Новая игра, звук и титры",
+        "en": "New Game, sound and credits",
+        "de": "Neues Spiel, Ton und Abspann"
+      },
+      "description": {
+        "ru": "«Новая игра» из меню во время сессии снова начинает историю с нуля, а не поднимает прошлое сохранение.\n\nВернулись иконки и картинки, которые раньше пропадали. Обновлён копирайт. В настройках звука голос стал громче, музыка — тише по умолчанию. Ползунки в дереве наук читаются яснее.\n\nВ меню появились титры с авторами проекта.",
+        "en": "“New Game” from the menu during a session now starts a fresh story instead of loading the last save.\n\nIcons and images that had gone missing are back. The copyright line is updated. Default sound balance raises the voice and softens the music. Technology-tree sliders are clearer.\n\nCredits with the project authors are in the menu.",
+        "de": "„Neues Spiel“ im Menü während einer Sitzung startet die Geschichte wieder von vorn und lädt nicht den letzten Spielstand.\n\nFehlende Icons und Bilder sind zurück. Der Copyright-Text ist aktualisiert. Die Standard-Lautstärke hebt die Stimme und dämpft die Musik. Die Regler im Wissenschaftsbaum sind klarer.\n\nIm Menü gibt es den Abspann mit den Autoren des Projekts."
+      }
+    },
     {
       "id": "b017",
       "build": "0.1.7",
@@ -154,5 +170,5 @@
       }
     }
   ],
-  "currentBuild": "0.1.7"
+  "currentBuild": "0.1.8"
 }
