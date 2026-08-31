@@ -1063,7 +1063,7 @@ html, body {
 }
 
 /* ===== ГЛАВНОЕ МЕНЮ ===== */
-body.main-menu-active > *:not(#main-menu):not(#social-panel):not(#social-poster):not(#vh-build-btn):not(#vh-preview-wrap):not(#vh-history-modal):not(#session-name-modal):not(#intro-screen) {
+body.main-menu-active > *:not(#main-menu):not(#social-panel):not(#social-poster):not(#vh-build-btn):not(#vh-preview-wrap):not(#vh-history-modal):not(#session-name-modal):not(#intro-screen):not(#credits-screen) {
     visibility: hidden !important;
     pointer-events: none !important;
 }
@@ -1074,7 +1074,8 @@ body.main-menu-active #social-poster,
 body.main-menu-active #vh-build-btn,
 body.main-menu-active #vh-preview-wrap,
 body.main-menu-active #vh-history-modal,
-body.main-menu-active #session-name-modal {
+body.main-menu-active #session-name-modal,
+body.main-menu-active #credits-screen {
     visibility: visible !important;
     pointer-events: auto !important;
 }

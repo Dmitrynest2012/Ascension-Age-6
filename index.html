@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="trendCharts.css">
     <link rel="stylesheet" href="saveSystem.css">
     <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="credits.css">
     <link rel="stylesheet" href="buildings.css">
     <link rel="stylesheet" href="buildingResourceCosts.css">
     <link rel="stylesheet" href="buildingLevels.css">
@@ -57,6 +58,7 @@
                 <button id="btn-load-game" class="main-menu-btn" data-i18n="mainMenu.loadGame">Загрузить игру</button>
                 <button id="btn-save-game" class="main-menu-btn" data-i18n="mainMenu.saveGame" style="display:none;">Сохранить игру</button>
                 <button id="btn-settings" class="main-menu-btn" data-i18n="mainMenu.settings">Настройки</button>
+                <button id="btn-credits" class="main-menu-btn" data-i18n="mainMenu.credits">Авторы</button>
                 <button id="btn-exit" class="main-menu-btn" data-i18n="mainMenu.exit">Выход</button>
             </div>
         </div>
@@ -191,6 +193,26 @@
         </div>
     </div>
     <!-- ===== КОНЕЦ ГЛАВНОГО МЕНЮ ===== -->
+
+    <div id="credits-screen" aria-hidden="true">
+        <div class="credits-roll" id="credits-roll">
+            <div class="credits-game-title" id="credits-title">ВОЗНЕСЕНИЕ</div>
+            <div class="credits-game-sub" id="credits-sub">ЭПОХА-6</div>
+            <div class="credits-block">
+                <div class="credits-role" id="credits-role-code">Код и геймдизайн</div>
+                <div class="credits-name" id="credits-name-code">Нестеров Дмитрий</div>
+            </div>
+            <div class="credits-block">
+                <div class="credits-role" id="credits-role-music">Музыка</div>
+                <div class="credits-name" id="credits-name-music">создано в Suno</div>
+            </div>
+            <div class="credits-block">
+                <div class="credits-role" id="credits-role-graphics">Графика</div>
+                <div class="credits-name" id="credits-name-graphics">создано в ChatGPT, Grok, Kandinsky</div>
+            </div>
+        </div>
+        <div class="credits-hint" id="credits-hint">Esc — выход</div>
+    </div>
 
     <div id="header" data-ui="true">
         <!-- Левый блок: иконка + кнопки Карта / Наука -->

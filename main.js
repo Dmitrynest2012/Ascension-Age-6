@@ -36,6 +36,7 @@ import { initTrendChartsUI, tickTrendHistory } from './trendCharts.js';
 import { beginNewSession, resetLiveGameToDefaults, applySessionSnapshot, getSession, listSessions, tickAutosave, startAutosaveTimer, pausePlayClock, resumePlayClock, initPlayClockListeners } from './saveSystem.js';
 import { initSaveUI, setLoadSessionHandler, updateMenuButtonsForGameState, closeLoadPanel, closeSavePanel } from './saveUI.js';
 import { openSessionNameModal, initIntroUI, cleanupIntro } from './intro.js';
+import { initCreditsUI } from './credits.js';
 import {
     loadUiLocalization,
     loadAndApplySystemSettings,
@@ -526,6 +527,7 @@ function setupMainMenu() {
 loadAndApplySystemSettings();
 loadUiLocalization().then(async () => {
     initSettings();
+    initCreditsUI();
     setupMainMenu();
     ensureBuildingGridSlots();
     initSaveUI();

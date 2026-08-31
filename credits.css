@@ -1,0 +1,105 @@
+/* ===== Титры / Авторы ===== */
+
+#credits-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: none;
+    align-items: stretch;
+    justify-content: center;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    font-family: 'Play', sans-serif;
+    color: rgba(230, 236, 242, 0.95);
+}
+
+#credits-screen.open {
+    display: flex;
+    pointer-events: auto;
+}
+
+#credits-screen.fading-in {
+    animation: credits-fade-in 0.85s ease forwards;
+}
+
+#credits-screen.fading-out {
+    animation: credits-fade-out 0.8s ease forwards;
+}
+
+@keyframes credits-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes credits-fade-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+.credits-roll {
+    position: absolute;
+    left: 50%;
+    width: min(640px, 88vw);
+    transform: translate(-50%, 110vh);
+    text-align: center;
+    pointer-events: none;
+}
+
+#credits-screen.rolling .credits-roll {
+    animation: credits-scroll 18s linear forwards;
+}
+
+@keyframes credits-scroll {
+    0%   { transform: translate(-50%, 110vh); opacity: 0; }
+    6%   { opacity: 1; }
+    82%  { opacity: 1; }
+    100% { transform: translate(-50%, -130%); opacity: 0; }
+}
+
+.credits-game-title {
+    font-size: 28px;
+    letter-spacing: 6px;
+    font-weight: 600;
+    color: rgba(0, 228, 245, 0.92);
+    text-shadow: 0 0 18px rgba(0, 160, 190, 0.35);
+    margin-bottom: 6px;
+}
+
+.credits-game-sub {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: rgba(180, 200, 210, 0.7);
+    margin-bottom: 56px;
+}
+
+.credits-block {
+    margin: 0 auto 48px;
+}
+
+.credits-role {
+    font-size: 13px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: rgba(140, 165, 180, 0.78);
+    margin-bottom: 10px;
+}
+
+.credits-name {
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    color: rgba(245, 248, 252, 0.96);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+    line-height: 1.45;
+}
+
+.credits-hint {
+    position: absolute;
+    right: 22px;
+    bottom: 18px;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    color: rgba(160, 175, 185, 0.45);
+    pointer-events: none;
+}
