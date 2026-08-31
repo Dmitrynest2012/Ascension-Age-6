@@ -83,15 +83,24 @@ export function openCredits() {
     el.classList.add('open', 'fading-in');
     el.setAttribute('aria-hidden', 'false');
 
+    const roll = document.getElementById('credits-roll');
+    if (roll) {
+        roll.style.animation = 'none';
+        void roll.offsetWidth;
+        roll.style.animation = '';
+    }
+
+    // чёрный экран уже держит opacity:1 через .open; fading-in только на вход
+    requestAnimationFrame(() => {
+        el.classList.add('rolling');
+    });
+
     phaseTimer = window.setTimeout(() => {
         el.classList.remove('fading-in');
-        el.classList.add('rolling');
-        phaseTimer = window.setTimeout(() => {
-            el.classList.remove('rolling');
-            el.classList.add('fading-out');
-            fadeOutTimer = window.setTimeout(finishCredits, FADE_OUT_MS);
-        }, ROLL_MS);
-    }, FADE_IN_MS);
+        el.classList.remove('rolling');
+        el.classList.add('fading-out');
+        fadeOutTimer = window.setTimeout(finishCredits, FADE_OUT_MS);
+    }, FADE_IN_MS + ROLL_MS);
 }
 
 export function initCreditsUI() {

@@ -18,6 +18,7 @@
 #credits-screen.open {
     display: flex;
     pointer-events: auto;
+    opacity: 1;
 }
 
 #credits-screen.fading-in {
@@ -42,9 +43,10 @@
     position: absolute;
     left: 50%;
     width: min(640px, 88vw);
-    transform: translate(-50%, 110vh);
+    transform: translate(-50%, 70vh);
     text-align: center;
     pointer-events: none;
+    will-change: transform, opacity;
 }
 
 #credits-screen.rolling .credits-roll {
@@ -52,10 +54,10 @@
 }
 
 @keyframes credits-scroll {
-    0%   { transform: translate(-50%, 110vh); opacity: 0; }
-    6%   { opacity: 1; }
-    82%  { opacity: 1; }
-    100% { transform: translate(-50%, -130%); opacity: 0; }
+    0%   { transform: translate(-50%, 70vh); opacity: 0; }
+    8%   { opacity: 1; }
+    86%  { opacity: 1; }
+    100% { transform: translate(-50%, -120%); opacity: 0; }
 }
 
 .credits-game-title {
