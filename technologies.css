@@ -278,27 +278,33 @@
     overflow: auto;
     cursor: grab;
     background: transparent;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(40, 120, 180, 0.55) rgba(0, 10, 20, 0.4);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.tech-tree-viewport::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
 }
 .tech-tree-viewport.dragging {
     cursor: grabbing;
     user-select: none;
 }
-.tech-tree-viewport::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+
+/* Фирменный скролл дерева — форма как у цепочек, цвет как у старого tech-скролла */
+.tech-tree-host > .firm-scroll-track {
+    background: rgba(0, 12, 24, 0.55);
+    border-color: rgba(40, 90, 140, 0.4);
+    z-index: 6;
 }
-.tech-tree-viewport::-webkit-scrollbar-track {
-    background: rgba(0, 12, 24, 0.5);
+.tech-tree-host > .firm-scroll-track .firm-scroll-thumb {
+    background: linear-gradient(180deg, rgba(50, 140, 210, 0.7), rgba(30, 90, 150, 0.7));
+    border-color: rgba(80, 160, 220, 0.35);
 }
-.tech-tree-viewport::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(50, 140, 210, 0.55), rgba(30, 90, 150, 0.55));
-    border-radius: 3px;
-    border: 1px solid rgba(80, 160, 220, 0.25);
-}
-.tech-tree-viewport::-webkit-scrollbar-corner {
-    background: rgba(0, 12, 24, 0.5);
+.tech-tree-host > .firm-scroll-track .firm-scroll-thumb:hover,
+.tech-tree-host > .firm-scroll-track .firm-scroll-thumb.firm-scroll-dragging {
+    background: linear-gradient(180deg, rgba(70, 170, 240, 0.85), rgba(40, 110, 180, 0.85));
+    border-color: rgba(120, 200, 255, 0.55);
 }
 
 /* Только контент (карточки/связи) — ездит со скроллом; фон остаётся */

@@ -9,6 +9,22 @@ import { calcLocationTechProduction } from './recipes.js';
 import { startTime, formatTime } from './ui.js';
 import { initTechExtras, tickTechExtras, setTechFuturePreview, refreshTechExtras } from './technologiesExtras.js';
 import { buildTechLinksSvg, refreshTechLinkStates } from './technologiesGraph.js';
+import { attachFirmScroll } from './firmScroll.js';
+
+let firmScrollApi = null;
+function refreshTechFirmScroll() {
+    try { firmScrollApi?.update(); } catch (_) {}
+}
+function ensureTechFirmScroll() {
+    const vp = document.getElementById('tech-tree-viewport');
+    if (!vp) return;
+    try {
+        firmScrollApi = attachFirmScroll(vp, { axis: 'both' });
+        refreshTechFirmScroll();
+    } catch (e) {
+        console.warn('tech firmScroll', e);
+    }
+}
 
 let catalog = null;
 let open = false;
@@ -28,10 +44,12 @@ function restoreCategoryScroll(catId) {
     if (!s) {
         vp.scrollLeft = 0;
         vp.scrollTop = 0;
+        refreshTechFirmScroll();
         return;
     }
     vp.scrollLeft = s.left || 0;
     vp.scrollTop = s.top || 0;
+    refreshTechFirmScroll();
 }
 let pan = { active: false, x: 0, y: 0, sl: 0, st: 0 };
 /** Открытая в детальном модальном окне технология */
@@ -573,6 +591,7 @@ function panViewportToCard(techId) {
         const e = ease(u);
         vp.scrollLeft = startL + dL * e;
         vp.scrollTop = startT + dT * e;
+        refreshTechFirmScroll();
         if (u < 1) panAnim = requestAnimationFrame(step);
         else {
             panAnim = null;
@@ -783,6 +802,8 @@ export function openTechPanel() {
         panel.style.pointerEvents = 'auto';
     }
     renderTechPanel();
+    ensureTechFirmScroll();
+    requestAnimationFrame(() => refreshTechFirmScroll());
     try { refreshTechExtras(); } catch (_) {}
     return true;
 }
@@ -1099,6 +1120,7 @@ function renderTree() {
     });
 
     if (selectedTechId) setSelectedCardHighlight(selectedTechId);
+    refreshTechFirmScroll();
 }
 
 export function renderTechPanel() {
@@ -1142,6 +1164,7 @@ function bindPan() {
         const dy = e.clientY - pan.y;
         vp.scrollLeft = pan.sl - dx;
         vp.scrollTop = pan.st - dy;
+        refreshTechFirmScroll();
     });
     window.addEventListener('mouseup', () => {
         if (!pan.active) return;
@@ -1158,6 +1181,7 @@ function bindPan() {
         vp.scrollTop += e.deltaY;
         vp.scrollLeft += e.deltaX;
         saveCategoryScroll(activeCategory);
+        refreshTechFirmScroll();
     };
     vp.addEventListener('wheel', blockWheel, { passive: false, capture: true });
     const panel = document.getElementById('tech-panel');
@@ -1246,6 +1270,8 @@ export function initTechUI() {
             closeTechDetail();
         }
     });
+
+    ensureTechFirmScroll();
 
     const sciBtn = document.getElementById('header-btn-science');
     if (sciBtn && !sciBtn.dataset.techBound) {

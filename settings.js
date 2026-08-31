@@ -12,9 +12,9 @@ let currentLang = 'ru';
 /** Каналы громкости 0–100. Итоговый уровень канала = master * channel / 100 */
 let volumes = {
     master: 70,
-    music: 70,
-    voice: 70,
-    ambient: 70,
+    music: 50,
+    voice: 80,
+    ambient: 50,
     sfx: 70
 };
 let quality = 'medium';
