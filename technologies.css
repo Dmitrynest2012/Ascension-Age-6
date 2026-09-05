@@ -291,6 +291,30 @@
     user-select: none;
 }
 
+/* Фирменный скролл модалки технологии (требует / характеристики) */
+.tech-detail-rel.firm-scroll-host,
+.tech-detail-stats.firm-scroll-host {
+    position: relative;
+}
+.tech-detail-rel > .firm-scroll-track,
+.tech-detail-stats > .firm-scroll-track {
+    background: rgba(0, 12, 24, 0.55);
+    border-color: rgba(40, 90, 140, 0.4);
+    z-index: 6;
+}
+.tech-detail-rel > .firm-scroll-track .firm-scroll-thumb,
+.tech-detail-stats > .firm-scroll-track .firm-scroll-thumb {
+    background: linear-gradient(180deg, rgba(50, 140, 210, 0.7), rgba(30, 90, 150, 0.7));
+    border-color: rgba(80, 160, 220, 0.35);
+}
+.tech-detail-rel > .firm-scroll-track .firm-scroll-thumb:hover,
+.tech-detail-rel > .firm-scroll-track .firm-scroll-thumb.firm-scroll-dragging,
+.tech-detail-stats > .firm-scroll-track .firm-scroll-thumb:hover,
+.tech-detail-stats > .firm-scroll-track .firm-scroll-thumb.firm-scroll-dragging {
+    background: linear-gradient(180deg, rgba(70, 170, 240, 0.85), rgba(40, 110, 180, 0.85));
+    border-color: rgba(120, 200, 255, 0.55);
+}
+
 /* Фирменный скролл дерева — форма как у цепочек, цвет как у старого tech-скролла */
 .tech-tree-host > .firm-scroll-track {
     background: rgba(0, 12, 24, 0.55);
@@ -930,21 +954,34 @@
     padding: 12px 14px 14px;
     border-top: 1px solid rgba(50, 110, 160, 0.22);
     background: linear-gradient(180deg, rgba(6, 14, 26, 0.35), rgba(4, 10, 20, 0.25));
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(40, 120, 180, 0.5) transparent;
+    overflow: hidden;
+    scrollbar-width: none;
 }
 .tech-detail-rel {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 0;
     height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+.tech-detail-rel > .firm-scroll-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    min-height: 0;
+    box-sizing: border-box;
 }
 .tech-detail-rel-block {
     display: flex;
     flex-direction: column;
     min-height: 0;
     flex-shrink: 0;
+}
+.tech-detail-rel-block + .tech-detail-rel-block {
+    margin-top: 4px;
 }
 .tech-detail-rel-title {
     font-size: 11px;
@@ -968,7 +1005,7 @@
     gap: 6px 8px;
     align-items: flex-start;
     align-content: flex-start;
-    overflow: auto;
+    overflow: visible;
     min-height: 0;
 }
 .tech-detail-rel-empty {

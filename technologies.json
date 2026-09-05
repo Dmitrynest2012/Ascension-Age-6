@@ -15,56 +15,32 @@
     {
       "id": "none",
       "color": "#6a6a6a",
-      "name": {
-        "ru": "Не изучена",
-        "en": "Unresearched",
-        "de": "Unerforscht"
-      }
+      "name": {"ru": "Не изучена", "en": "Unresearched", "de": "Unerforscht"}
     },
     {
       "id": "basic",
       "color": "#8b6914",
-      "name": {
-        "ru": "Базовая",
-        "en": "Basic",
-        "de": "Basis"
-      }
+      "name": {"ru": "Базовая", "en": "Basic", "de": "Basis"}
     },
     {
       "id": "primitive",
       "color": "#c9a227",
-      "name": {
-        "ru": "Примитивная",
-        "en": "Primitive",
-        "de": "Primitiv"
-      }
+      "name": {"ru": "Примитивная", "en": "Primitive", "de": "Primitiv"}
     },
     {
       "id": "advanced",
       "color": "#3a9e5a",
-      "name": {
-        "ru": "Продвинутая",
-        "en": "Advanced",
-        "de": "Fortgeschritten"
-      }
+      "name": {"ru": "Продвинутая", "en": "Advanced", "de": "Fortgeschritten"}
     },
     {
       "id": "super",
       "color": "#2a7ec8",
-      "name": {
-        "ru": "Сверхпродвинутая",
-        "en": "Superior",
-        "de": "Überlegen"
-      }
+      "name": {"ru": "Сверхпродвинутая", "en": "Superior", "de": "Überlegen"}
     },
     {
       "id": "divine",
       "color": "#9b7ec8",
-      "name": {
-        "ru": "Божественная",
-        "en": "Divine",
-        "de": "Göttlich"
-      }
+      "name": {"ru": "Божественная", "en": "Divine", "de": "Göttlich"}
     }
   ],
   "categories": [
@@ -72,71 +48,43 @@
       "id": "fundamental",
       "order": 0,
       "icon": "assets/textures/icons/tech_cat_fundamental.svg",
-      "name": {
-        "ru": "Фундаментальные",
-        "en": "Fundamental",
-        "de": "Fundamental"
-      }
+      "name": {"ru": "Фундаментальные", "en": "Fundamental", "de": "Fundamental"}
     },
     {
       "id": "infrastructure",
       "order": 1,
       "icon": "assets/textures/icons/tech_cat_infrastructure.svg",
-      "name": {
-        "ru": "Инфраструктурные",
-        "en": "Infrastructure",
-        "de": "Infrastruktur"
-      }
+      "name": {"ru": "Инфраструктурные", "en": "Infrastructure", "de": "Infrastruktur"}
     },
     {
       "id": "transport",
       "order": 2,
       "icon": "assets/textures/icons/tech_cat_transport.svg",
-      "name": {
-        "ru": "Транспортные",
-        "en": "Transport",
-        "de": "Transport"
-      }
+      "name": {"ru": "Транспортные", "en": "Transport", "de": "Transport"}
     },
     {
       "id": "raw",
       "order": 3,
       "icon": "assets/textures/icons/tech_cat_raw.svg",
-      "name": {
-        "ru": "Сырьевые",
-        "en": "Resource",
-        "de": "Rohstoffe"
-      }
+      "name": {"ru": "Сырьевые", "en": "Resource", "de": "Rohstoffe"}
     },
     {
       "id": "production",
       "order": 4,
       "icon": "assets/textures/icons/tech_cat_production.svg",
-      "name": {
-        "ru": "Производственные",
-        "en": "Production",
-        "de": "Produktion"
-      }
+      "name": {"ru": "Производственные", "en": "Production", "de": "Produktion"}
     },
     {
       "id": "energy",
       "order": 5,
       "icon": "assets/textures/icons/tech_cat_energy.svg",
-      "name": {
-        "ru": "Энергетические",
-        "en": "Energy",
-        "de": "Energie"
-      }
+      "name": {"ru": "Энергетические", "en": "Energy", "de": "Energie"}
     },
     {
       "id": "military",
       "order": 6,
       "icon": "assets/textures/icons/tech_cat_military.svg",
-      "name": {
-        "ru": "Военные",
-        "en": "Military",
-        "de": "Militär"
-      }
+      "name": {"ru": "Военные", "en": "Military", "de": "Militär"}
     }
   ],
   "groups": [
@@ -146,11 +94,39 @@
       "order": 0,
       "column": 0,
       "row": 0,
-      "name": {
-        "ru": "Базовое",
-        "en": "Basics",
-        "de": "Grundlagen"
-      }
+      "name": {"ru": "Базовое", "en": "Basics", "de": "Grundlagen"}
+    },
+    {
+      "id": "advanced",
+      "categoryId": "fundamental",
+      "order": 1,
+      "column": 0,
+      "row": 1,
+      "name": {"ru": "Продвинутое", "en": "Advanced", "de": "Fortgeschritten"}
+    },
+    {
+      "id": "settlement",
+      "categoryId": "infrastructure",
+      "order": 0,
+      "column": 0,
+      "row": 0,
+      "name": {"ru": "Поселения", "en": "Settlements", "de": "Siedlungen"}
+    },
+    {
+      "id": "energy_sources",
+      "categoryId": "energy",
+      "order": 0,
+      "column": 0,
+      "row": 0,
+      "name": {"ru": "Источники энергии", "en": "Energy sources", "de": "Energiequellen"}
+    },
+    {
+      "id": "energy_plants",
+      "categoryId": "energy",
+      "order": 1,
+      "column": 0,
+      "row": 1,
+      "name": {"ru": "Электростанции", "en": "Power plants", "de": "Kraftwerke"}
     },
     {
       "id": "atmo_suborbit",
@@ -158,11 +134,7 @@
       "order": 0,
       "column": 0,
       "row": 0,
-      "name": {
-        "ru": "Атмосферное / суборбитальное",
-        "en": "Atmospheric / suborbital",
-        "de": "Atmosphärisch / suborbital"
-      }
+      "name": {"ru": "Атмосферное / суборбитальное", "en": "Atmospheric / suborbital", "de": "Atmosphärisch / suborbital"}
     },
     {
       "id": "sublight",
@@ -170,11 +142,7 @@
       "order": 1,
       "column": 2,
       "row": 0,
-      "name": {
-        "ru": "Субсветовое",
-        "en": "Sublight",
-        "de": "Unterlicht"
-      }
+      "name": {"ru": "Субсветовое", "en": "Sublight", "de": "Unterlicht"}
     },
     {
       "id": "ftl",
@@ -182,11 +150,7 @@
       "order": 2,
       "column": 4,
       "row": 0,
-      "name": {
-        "ru": "Сверхсветовое",
-        "en": "Faster-than-light",
-        "de": "Überlicht"
-      }
+      "name": {"ru": "Сверхсветовое", "en": "Faster-than-light", "de": "Überlicht"}
     },
     {
       "id": "exotic_drive",
@@ -194,81 +158,36 @@
       "order": 3,
       "column": 6,
       "row": 0,
-      "name": {
-        "ru": "Экзотическое",
-        "en": "Exotic",
-        "de": "Exotisch"
-      }
+      "name": {"ru": "Экзотическое", "en": "Exotic", "de": "Exotisch"}
     }
   ],
   "technologies": [
     {
-      "id": "TECH_PHYSICS",
+      "id": "TECH_SURVIVAL",
       "categoryId": "fundamental",
       "groupId": "base",
       "column": 0,
       "row": 0,
       "level": 0,
-      "maxLevel": 10,
+      "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/physics.png",
-      "name": {
-        "ru": "Физика",
-        "en": "Physics",
-        "de": "Physik"
-      },
-      "description": {
-        "ru": "Основы классической и современной физики. База для прикладных исследований: механика, термодинамика, электромагнетизм и квантовые эффекты в инженерных масштабах. Без этой дисциплины невозможны дальнейшие ветки двигателестроения и материаловедения.",
-        "en": "Foundations of classical and modern physics. Base for applied research: mechanics, thermodynamics, electromagnetism and quantum effects at engineering scales. Further propulsion and materials branches depend on it.",
-        "de": "Grundlagen der klassischen und modernen Physik. Basis für angewandte Forschung: Mechanik, Thermodynamik, Elektromagnetismus und Quanteneffekte im technischen Maßstab."
-      },
+      "image": "assets/textures/technologies/survival.png",
+      "name": {"ru": "Выживание", "en": "Survival", "de": "Überleben"},
+      "description": {"ru": "Практики сохранения жизни в чужой среде: тепло, вода, укрытие, первая помощь. Без этой дисциплины колония не удерживает даже первый лагерь.", "en": "Practices that keep people alive in a hostile place: heat, water, shelter, first aid. Without it a colony cannot hold even the first camp.", "de": "Praktiken, die das Leben in feindlicher Umgebung sichern: Wärme, Wasser, Unterkunft, Erste Hilfe."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          2
-        ],
-        "primitive": [
-          3,
-          4
-        ],
-        "advanced": [
-          5,
-          6
-        ],
-        "super": [
-          7,
-          8
-        ],
-        "divine": [
-          9,
-          10
-        ]
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
       },
       "prerequisites": [],
-      "unlocks": [
-        "TECH_PROPULSION"
-      ],
-      "levelCosts": [
-        50,
-        80,
-        120,
-        180,
-        250,
-        350,
-        500,
-        700,
-        950,
-        1300
-      ],
+      "unlocks": [],
+      "levelCosts": [25, 40, 65, 100, 150, 220, 320, 460],
       "requirements": {
         "unlockParents": [],
         "perLevel": [
-          [],
-          [],
           [],
           [],
           [],
@@ -281,137 +200,1190 @@
       }
     },
     {
-      "id": "TECH_PROPULSION",
+      "id": "TECH_SCIENTIFIC_METHOD",
+      "categoryId": "fundamental",
+      "groupId": "base",
+      "column": 1,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/scientific_method.png",
+      "name": {"ru": "Научный подход", "en": "Scientific approach", "de": "Wissenschaftlicher Ansatz"},
+      "description": {"ru": "Метод наблюдения, гипотезы, опыта и проверки. Превращает догадку в знание, которое можно передать и повторить.", "en": "Observation, hypothesis, experiment and proof. Turns a guess into knowledge that can be shared and repeated.", "de": "Beobachtung, Hypothese, Versuch und Prüfung. Macht aus Vermutung wiederholbares Wissen."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": [],
+      "unlocks": ["TECH_PHYSICS", "TECH_CHEMISTRY", "TECH_SOCIOLOGY"],
+      "levelCosts": [25, 40, 65, 100, 150, 220, 320, 460],
+      "requirements": {
+        "unlockParents": [],
+        "perLevel": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    {
+      "id": "TECH_PHILOSOPHY",
       "categoryId": "fundamental",
       "groupId": "base",
       "column": 2,
       "row": 0,
       "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/philosophy.png",
+      "name": {"ru": "Философия", "en": "Philosophy", "de": "Philosophie"},
+      "description": {"ru": "Вопросы смысла, права, этики и устройства общества. Даёт язык, на котором колония договаривается, зачем она живёт и как судит себя.", "en": "Questions of meaning, law, ethics and the shape of a society. Gives the colony a language for why it lives and how it judges itself.", "de": "Fragen nach Sinn, Recht, Ethik und Gesellschaft. Gibt der Kolonie die Sprache, warum sie lebt und wie sie sich richtet."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": [],
+      "unlocks": ["TECH_BIOLOGY", "TECH_SOCIOLOGY", "TECH_ECONOMICS"],
+      "levelCosts": [25, 40, 65, 100, 150, 220, 320, 460],
+      "requirements": {
+        "unlockParents": [],
+        "perLevel": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    {
+      "id": "TECH_MATHEMATICS",
+      "categoryId": "fundamental",
+      "groupId": "base",
+      "column": 3,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/mathematics.png",
+      "name": {"ru": "Математика", "en": "Mathematics", "de": "Mathematik"},
+      "description": {"ru": "Язык величин, форм и доказательств. Без него физика, химия, экономика и инженерия остаются описанием, а не расчётом.", "en": "The language of quantity, form and proof. Without it physics, chemistry, economics and engineering stay description, not calculation.", "de": "Sprache der Größen, Formen und Beweise. Ohne sie bleiben Physik, Chemie, Ökonomie und Technik Beschreibung statt Rechnung."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": [],
+      "unlocks": ["TECH_PHYSICS", "TECH_CHEMISTRY", "TECH_ECONOMICS", "TECH_ENGINEERING"],
+      "levelCosts": [25, 40, 65, 100, 150, 220, 320, 460],
+      "requirements": {
+        "unlockParents": [],
+        "perLevel": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    {
+      "id": "TECH_PHYSICS",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 1,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 10,
+      "discovered": true,
+      "image": "assets/textures/technologies/physics.png",
+      "name": {"ru": "Физика", "en": "Physics", "de": "Physik"},
+      "description": {"ru": "Основы классической и современной физики. Механика, термодинамика, электромагнетизм и квантовые эффекты в инженерных масштабах.", "en": "Foundations of classical and modern physics. Mechanics, thermodynamics, electromagnetism and quantum effects at engineering scale.", "de": "Grundlagen der klassischen und modernen Physik. Mechanik, Thermodynamik, Elektromagnetismus und Quanteneffekte im technischen Maßstab."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 8],
+        "divine": [9, 10]
+      },
+      "prerequisites": ["TECH_MATHEMATICS", "TECH_SCIENTIFIC_METHOD"],
+      "unlocks": ["TECH_PROPULSION", "TECH_GEOLOGY", "TECH_ASTROPHYSICS", "TECH_ENERGETICS"],
+      "levelCosts": [50, 80, 120, 180, 250, 350, 500, 700, 950, 1300],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_MATHEMATICS", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_MATHEMATICS", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+          [{"techId": "TECH_MATHEMATICS", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+          [{"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 2}],
+          [{"techId": "TECH_MATHEMATICS", "level": 3}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 3}],
+          [{"techId": "TECH_MATHEMATICS", "level": 4}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 4}],
+          [{"techId": "TECH_MATHEMATICS", "level": 5}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 5}],
+          [{"techId": "TECH_MATHEMATICS", "level": 6}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 6}],
+          [{"techId": "TECH_MATHEMATICS", "level": 7}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 7}],
+          [{"techId": "TECH_MATHEMATICS", "level": 8}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 8}],
+          [{"techId": "TECH_MATHEMATICS", "level": 9}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 9}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_CHEMISTRY",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 2,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/chemistry.png",
+      "name": {"ru": "Химия", "en": "Chemistry", "de": "Chemie"},
+      "description": {"ru": "Строение вещества, связи и превращения. Открывает путь к топливу, сплавам, удобрениям и всем последующим материалам колонии.", "en": "Structure of matter, bonds and transformations. Opens the way to fuels, alloys, fertilizers and every later colony material.", "de": "Aufbau der Materie, Bindungen und Umwandlungen. Öffnet den Weg zu Kraftstoffen, Legierungen und Düngern."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_MATHEMATICS", "TECH_SCIENTIFIC_METHOD"],
+      "unlocks": ["TECH_BIOLOGY", "TECH_GEOLOGY", "TECH_ENERGETICS"],
+      "levelCosts": [45, 70, 110, 170, 250, 360, 520, 750],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_MATHEMATICS", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_MATHEMATICS", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+          [{"techId": "TECH_MATHEMATICS", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+          [{"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 2}],
+          [{"techId": "TECH_MATHEMATICS", "level": 3}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 3}],
+          [{"techId": "TECH_MATHEMATICS", "level": 4}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 4}],
+          [{"techId": "TECH_MATHEMATICS", "level": 5}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 5}],
+          [{"techId": "TECH_MATHEMATICS", "level": 6}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 6}],
+          [{"techId": "TECH_MATHEMATICS", "level": 7}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_BIOLOGY",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 2,
+      "row": 1,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/biology.png",
+      "name": {"ru": "Биология", "en": "Biology", "de": "Biologie"},
+      "description": {"ru": "Живые системы: клетка, организм, популяция. Нужна, чтобы кормить людей, лечить их и понимать чужие биосферы.", "en": "Living systems: cell, organism, population. Needed to feed people, treat them and read alien biospheres.", "de": "Lebende Systeme: Zelle, Organismus, Population. Nötig, um Menschen zu ernähren, zu heilen und fremde Biosphären zu lesen."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_CHEMISTRY", "TECH_PHILOSOPHY"],
+      "unlocks": [],
+      "levelCosts": [45, 70, 110, 170, 250, 360, 520, 750],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_CHEMISTRY", "level": 1}, {"techId": "TECH_PHILOSOPHY", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_CHEMISTRY", "level": 1}, {"techId": "TECH_PHILOSOPHY", "level": 1}],
+          [{"techId": "TECH_CHEMISTRY", "level": 1}, {"techId": "TECH_PHILOSOPHY", "level": 1}],
+          [{"techId": "TECH_CHEMISTRY", "level": 2}, {"techId": "TECH_PHILOSOPHY", "level": 2}],
+          [{"techId": "TECH_CHEMISTRY", "level": 3}, {"techId": "TECH_PHILOSOPHY", "level": 3}],
+          [{"techId": "TECH_CHEMISTRY", "level": 4}, {"techId": "TECH_PHILOSOPHY", "level": 4}],
+          [{"techId": "TECH_CHEMISTRY", "level": 5}, {"techId": "TECH_PHILOSOPHY", "level": 5}],
+          [{"techId": "TECH_CHEMISTRY", "level": 6}, {"techId": "TECH_PHILOSOPHY", "level": 6}],
+          [{"techId": "TECH_CHEMISTRY", "level": 7}, {"techId": "TECH_PHILOSOPHY", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_GEOLOGY",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 1,
+      "row": 1,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/geology.png",
+      "name": {"ru": "Геология", "en": "Geology", "de": "Geologie"},
+      "description": {"ru": "Кора, породы, тектоника и залежи. Без неё разведка недр и добыча остаются слепым копанием.", "en": "Crust, rock, tectonics and deposits. Without it survey and extraction stay blind digging.", "de": "Kruste, Gestein, Tektonik und Lagerstätten. Ohne sie bleiben Erkundung und Abbau blindes Graben."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_PHYSICS", "TECH_CHEMISTRY"],
+      "unlocks": ["TECH_ASTROPHYSICS", "TECH_MATERIALS"],
+      "levelCosts": [45, 70, 110, 170, 250, 360, 520, 750],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_PHYSICS", "level": 1}, {"techId": "TECH_CHEMISTRY", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_PHYSICS", "level": 1}, {"techId": "TECH_CHEMISTRY", "level": 1}],
+          [{"techId": "TECH_PHYSICS", "level": 1}, {"techId": "TECH_CHEMISTRY", "level": 1}],
+          [{"techId": "TECH_PHYSICS", "level": 2}, {"techId": "TECH_CHEMISTRY", "level": 2}],
+          [{"techId": "TECH_PHYSICS", "level": 3}, {"techId": "TECH_CHEMISTRY", "level": 3}],
+          [{"techId": "TECH_PHYSICS", "level": 4}, {"techId": "TECH_CHEMISTRY", "level": 4}],
+          [{"techId": "TECH_PHYSICS", "level": 5}, {"techId": "TECH_CHEMISTRY", "level": 5}],
+          [{"techId": "TECH_PHYSICS", "level": 6}, {"techId": "TECH_CHEMISTRY", "level": 6}],
+          [{"techId": "TECH_PHYSICS", "level": 7}, {"techId": "TECH_CHEMISTRY", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_SOCIOLOGY",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 3,
+      "row": 1,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/sociology.png",
+      "name": {"ru": "Социология", "en": "Sociology", "de": "Soziologie"},
+      "description": {"ru": "Как устроены группы людей: нормы, власть, доверие, конфликт. Без неё поселение растёт быстрее, чем умеет себя держать.", "en": "How groups of people work: norms, power, trust, conflict. Without it a settlement grows faster than it can hold itself.", "de": "Wie Menschengruppen funktionieren: Normen, Macht, Vertrauen, Konflikt."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_PHILOSOPHY", "TECH_SCIENTIFIC_METHOD"],
+      "unlocks": ["TECH_ECONOMICS", "TECH_CAMP"],
+      "levelCosts": [45, 70, 110, 170, 250, 360, 520, 750],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_PHILOSOPHY", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_PHILOSOPHY", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+          [{"techId": "TECH_PHILOSOPHY", "level": 1}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 1}],
+          [{"techId": "TECH_PHILOSOPHY", "level": 2}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 2}],
+          [{"techId": "TECH_PHILOSOPHY", "level": 3}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 3}],
+          [{"techId": "TECH_PHILOSOPHY", "level": 4}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 4}],
+          [{"techId": "TECH_PHILOSOPHY", "level": 5}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 5}],
+          [{"techId": "TECH_PHILOSOPHY", "level": 6}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 6}],
+          [{"techId": "TECH_PHILOSOPHY", "level": 7}, {"techId": "TECH_SCIENTIFIC_METHOD", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ASTROPHYSICS",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 1,
+      "row": 2,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/astrophysics.png",
+      "name": {"ru": "Астрофизика", "en": "Astrophysics", "de": "Astrophysik"},
+      "description": {"ru": "Звёзды, орбиты, излучение и вещество космоса. Связывает физику тела с физикой неба — от местного светила до туманности.", "en": "Stars, orbits, radiation and the matter of space. Ties the physics of a world to the physics of the sky.", "de": "Sterne, Bahnen, Strahlung und Materie des Alls. Verbindet die Physik der Welt mit der Physik des Himmels."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_PHYSICS", "TECH_GEOLOGY"],
+      "unlocks": [],
+      "levelCosts": [45, 70, 110, 170, 250, 360, 520, 750],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_PHYSICS", "level": 2}, {"techId": "TECH_GEOLOGY", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_PHYSICS", "level": 2}, {"techId": "TECH_GEOLOGY", "level": 1}],
+          [{"techId": "TECH_PHYSICS", "level": 2}, {"techId": "TECH_GEOLOGY", "level": 1}],
+          [{"techId": "TECH_PHYSICS", "level": 3}, {"techId": "TECH_GEOLOGY", "level": 2}],
+          [{"techId": "TECH_PHYSICS", "level": 4}, {"techId": "TECH_GEOLOGY", "level": 3}],
+          [{"techId": "TECH_PHYSICS", "level": 5}, {"techId": "TECH_GEOLOGY", "level": 4}],
+          [{"techId": "TECH_PHYSICS", "level": 6}, {"techId": "TECH_GEOLOGY", "level": 5}],
+          [{"techId": "TECH_PHYSICS", "level": 7}, {"techId": "TECH_GEOLOGY", "level": 6}],
+          [{"techId": "TECH_PHYSICS", "level": 8}, {"techId": "TECH_GEOLOGY", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_MATERIALS",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 2,
+      "row": 2,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/materials.png",
+      "name": {"ru": "Материаловедение", "en": "Materials science", "de": "Werkstoffkunde"},
+      "description": {"ru": "Почему один камень держит нагрузку, а другой сыплется. От руды и сплава до композита — карта свойств вещества.", "en": "Why one stone bears a load and another crumbles. From ore and alloy to composite — a map of what matter can do.", "de": "Warum ein Stein trägt und ein anderer bröckelt. Von Erz und Legierung zum Verbundwerkstoff."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_GEOLOGY"],
+      "unlocks": ["TECH_ENGINEERING", "TECH_ENERGETICS"],
+      "levelCosts": [45, 70, 110, 170, 250, 360, 520, 750],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_GEOLOGY", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_GEOLOGY", "level": 1}],
+          [{"techId": "TECH_GEOLOGY", "level": 1}],
+          [{"techId": "TECH_GEOLOGY", "level": 2}],
+          [{"techId": "TECH_GEOLOGY", "level": 3}],
+          [{"techId": "TECH_GEOLOGY", "level": 4}],
+          [{"techId": "TECH_GEOLOGY", "level": 5}],
+          [{"techId": "TECH_GEOLOGY", "level": 6}],
+          [{"techId": "TECH_GEOLOGY", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ECONOMICS",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 3,
+      "row": 2,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/economics.png",
+      "name": {"ru": "Экономика", "en": "Economics", "de": "Ökonomie"},
+      "description": {"ru": "Учёт редкости: труд, склад, обмен, цена времени. Учит колонию не съесть завтрашний день ради сегодняшнего.", "en": "Accounting for scarcity: labour, stock, exchange, the price of time. Teaches a colony not to eat tomorrow for today.", "de": "Rechnung der Knappheit: Arbeit, Lager, Tausch, Preis der Zeit."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_SOCIOLOGY", "TECH_MATHEMATICS", "TECH_PHILOSOPHY"],
+      "unlocks": [],
+      "levelCosts": [45, 70, 110, 170, 250, 360, 520, 750],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_SOCIOLOGY", "level": 1}, {"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_PHILOSOPHY", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_SOCIOLOGY", "level": 1}, {"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_PHILOSOPHY", "level": 1}],
+          [{"techId": "TECH_SOCIOLOGY", "level": 1}, {"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_PHILOSOPHY", "level": 1}],
+          [{"techId": "TECH_SOCIOLOGY", "level": 2}, {"techId": "TECH_MATHEMATICS", "level": 3}, {"techId": "TECH_PHILOSOPHY", "level": 2}],
+          [{"techId": "TECH_SOCIOLOGY", "level": 3}, {"techId": "TECH_MATHEMATICS", "level": 4}, {"techId": "TECH_PHILOSOPHY", "level": 3}],
+          [{"techId": "TECH_SOCIOLOGY", "level": 4}, {"techId": "TECH_MATHEMATICS", "level": 5}, {"techId": "TECH_PHILOSOPHY", "level": 4}],
+          [{"techId": "TECH_SOCIOLOGY", "level": 5}, {"techId": "TECH_MATHEMATICS", "level": 6}, {"techId": "TECH_PHILOSOPHY", "level": 5}],
+          [{"techId": "TECH_SOCIOLOGY", "level": 6}, {"techId": "TECH_MATHEMATICS", "level": 7}, {"techId": "TECH_PHILOSOPHY", "level": 6}],
+          [{"techId": "TECH_SOCIOLOGY", "level": 7}, {"techId": "TECH_MATHEMATICS", "level": 8}, {"techId": "TECH_PHILOSOPHY", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ENGINEERING",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 2,
+      "row": 3,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/engineering.png",
+      "name": {"ru": "Инженерия", "en": "Engineering", "de": "Ingenieurwesen"},
+      "description": {"ru": "Превращает расчёт и материал в машину, здание, сеть. Мост между наукой и тем, что можно построить руками.", "en": "Turns calculation and material into a machine, a building, a grid. The bridge between science and what hands can raise.", "de": "Macht aus Rechnung und Stoff Maschine, Bau, Netz. Brücke zwischen Wissenschaft und dem, was Hände errichten."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_MATHEMATICS", "TECH_MATERIALS"],
+      "unlocks": ["TECH_CAMP", "TECH_VILLAGE", "TECH_CITY", "TECH_METROPOLIS"],
+      "levelCosts": [55, 90, 140, 210, 310, 450, 650, 920],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_MATERIALS", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_MATERIALS", "level": 1}],
+          [{"techId": "TECH_MATHEMATICS", "level": 2}, {"techId": "TECH_MATERIALS", "level": 1}],
+          [{"techId": "TECH_MATHEMATICS", "level": 3}, {"techId": "TECH_MATERIALS", "level": 2}],
+          [{"techId": "TECH_MATHEMATICS", "level": 4}, {"techId": "TECH_MATERIALS", "level": 3}],
+          [{"techId": "TECH_MATHEMATICS", "level": 5}, {"techId": "TECH_MATERIALS", "level": 4}],
+          [{"techId": "TECH_MATHEMATICS", "level": 6}, {"techId": "TECH_MATERIALS", "level": 5}],
+          [{"techId": "TECH_MATHEMATICS", "level": 7}, {"techId": "TECH_MATERIALS", "level": 6}],
+          [{"techId": "TECH_MATHEMATICS", "level": 8}, {"techId": "TECH_MATERIALS", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ENERGETICS",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 3,
+      "row": 3,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/energetics.png",
+      "name": {"ru": "Энергетика", "en": "Energetics", "de": "Energetik"},
+      "description": {"ru": "Откуда берётся работа: тепло, свет, ядро, аннигиляция. Общая теория источников, без которой станции остаются чертежом.", "en": "Where work comes from: heat, light, the nucleus, annihilation. The common theory of sources, without which a plant stays a drawing.", "de": "Woher Arbeit kommt: Wärme, Licht, Kern, Annihilation. Gemeinsame Theorie der Quellen."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_CHEMISTRY", "TECH_PHYSICS", "TECH_MATERIALS"],
+      "unlocks": ["TECH_SOLAR_POWER", "TECH_COAL_POWER", "TECH_HYDRO_POWER", "TECH_GEOTHERMAL_POWER", "TECH_NUCLEAR_POWER", "TECH_FUSION_POWER", "TECH_ANNIHILATION_POWER"],
+      "levelCosts": [55, 90, 140, 210, 310, 450, 650, 920],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_CHEMISTRY", "level": 2}, {"techId": "TECH_PHYSICS", "level": 2}, {"techId": "TECH_MATERIALS", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_CHEMISTRY", "level": 2}, {"techId": "TECH_PHYSICS", "level": 2}, {"techId": "TECH_MATERIALS", "level": 1}],
+          [{"techId": "TECH_CHEMISTRY", "level": 2}, {"techId": "TECH_PHYSICS", "level": 2}, {"techId": "TECH_MATERIALS", "level": 1}],
+          [{"techId": "TECH_CHEMISTRY", "level": 3}, {"techId": "TECH_PHYSICS", "level": 3}, {"techId": "TECH_MATERIALS", "level": 2}],
+          [{"techId": "TECH_CHEMISTRY", "level": 4}, {"techId": "TECH_PHYSICS", "level": 4}, {"techId": "TECH_MATERIALS", "level": 3}],
+          [{"techId": "TECH_CHEMISTRY", "level": 5}, {"techId": "TECH_PHYSICS", "level": 5}, {"techId": "TECH_MATERIALS", "level": 4}],
+          [{"techId": "TECH_CHEMISTRY", "level": 6}, {"techId": "TECH_PHYSICS", "level": 6}, {"techId": "TECH_MATERIALS", "level": 5}],
+          [{"techId": "TECH_CHEMISTRY", "level": 7}, {"techId": "TECH_PHYSICS", "level": 7}, {"techId": "TECH_MATERIALS", "level": 6}],
+          [{"techId": "TECH_CHEMISTRY", "level": 8}, {"techId": "TECH_PHYSICS", "level": 8}, {"techId": "TECH_MATERIALS", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_PROPULSION",
+      "categoryId": "fundamental",
+      "groupId": "advanced",
+      "column": 0,
+      "row": 1,
+      "level": 0,
       "maxLevel": 10,
       "discovered": true,
       "image": "assets/textures/technologies/propulsion.png",
-      "name": {
-        "ru": "Двигателестроение",
-        "en": "Propulsion Engineering",
-        "de": "Antriebstechnik"
-      },
-      "description": {
-        "ru": "Теория и практика силовых установок: от тепловых машин до перспективных схем. Охватывает КПД, тягу, ресурс и интеграцию с корпусом аппарата. Открывает ветку атмосферных и суборбитальных двигателей.",
-        "en": "Theory and practice of powerplants: from heat engines to advanced schemes. Covers efficiency, thrust, lifetime and airframe integration. Unlocks atmospheric and suborbital drive branches.",
-        "de": "Theorie und Praxis von Antrieben: von Wärmekraftmaschinen bis zu Zukunftskonzepten. Wirkungsgrad, Schub, Lebensdauer und Integration."
-      },
+      "name": {"ru": "Двигателестроение", "en": "Propulsion Engineering", "de": "Antriebstechnik"},
+      "description": {"ru": "Теория и практика силовых установок: от тепловых машин до перспективных схем. КПД, тяга, ресурс и связь с корпусом аппарата.", "en": "Theory and practice of powerplants: from heat engines to later schemes. Efficiency, thrust, lifetime and airframe integration.", "de": "Theorie und Praxis von Antrieben: von Wärmekraftmaschinen bis zu Zukunftskonzepten."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          2
-        ],
-        "primitive": [
-          3,
-          4
-        ],
-        "advanced": [
-          5,
-          7
-        ],
-        "super": [
-          8,
-          9
-        ],
-        "divine": [
-          10,
-          10
-        ]
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 8],
+        "divine": [9, 10]
       },
-      "prerequisites": [
-        "TECH_PHYSICS"
-      ],
-      "unlocks": [
-        "TECH_ICE"
-      ],
-      "levelCosts": [
-        60,
-        100,
-        150,
-        220,
-        320,
-        450,
-        650,
-        900,
-        1200,
-        1600
-      ],
+      "prerequisites": ["TECH_PHYSICS"],
+      "unlocks": ["TECH_ICE"],
+      "levelCosts": [60, 100, 150, 220, 320, 450, 650, 900, 1200, 1600],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_PHYSICS",
-            "level": 1
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_PHYSICS", "level": 1}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 6
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 7
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 8
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PHYSICS",
-              "level": 9
-            }
-          ]
+          [{"techId": "TECH_PHYSICS", "level": 1}],
+          [{"techId": "TECH_PHYSICS", "level": 1}],
+          [{"techId": "TECH_PHYSICS", "level": 2}],
+          [{"techId": "TECH_PHYSICS", "level": 3}],
+          [{"techId": "TECH_PHYSICS", "level": 4}],
+          [{"techId": "TECH_PHYSICS", "level": 5}],
+          [{"techId": "TECH_PHYSICS", "level": 6}],
+          [{"techId": "TECH_PHYSICS", "level": 7}],
+          [{"techId": "TECH_PHYSICS", "level": 8}],
+          [{"techId": "TECH_PHYSICS", "level": 9}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_CAMP",
+      "categoryId": "infrastructure",
+      "groupId": "settlement",
+      "column": 0,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/camp.png",
+      "name": {"ru": "Лагерь выживальщиков", "en": "Survival camp", "de": "Überlebenslager"},
+      "description": {"ru": "Минимальный порядок жилья: палатка, очаг, периметр. Первая ступень оседлости на чужом теле.", "en": "The least order of dwelling: tent, hearth, perimeter. First step of staying put on a strange world.", "de": "Geringste Ordnung des Wohnens: Zelt, Herd, Perimeter."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENGINEERING", "TECH_SOCIOLOGY"],
+      "unlocks": ["TECH_VILLAGE"],
+      "levelCosts": [40, 65, 100, 155, 230, 340, 500, 720],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENGINEERING", "level": 1}, {"techId": "TECH_SOCIOLOGY", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_ENGINEERING", "level": 1}, {"techId": "TECH_SOCIOLOGY", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 1}, {"techId": "TECH_SOCIOLOGY", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 2}, {"techId": "TECH_SOCIOLOGY", "level": 2}],
+          [{"techId": "TECH_ENGINEERING", "level": 3}, {"techId": "TECH_SOCIOLOGY", "level": 3}],
+          [{"techId": "TECH_ENGINEERING", "level": 4}, {"techId": "TECH_SOCIOLOGY", "level": 4}],
+          [{"techId": "TECH_ENGINEERING", "level": 5}, {"techId": "TECH_SOCIOLOGY", "level": 5}],
+          [{"techId": "TECH_ENGINEERING", "level": 6}, {"techId": "TECH_SOCIOLOGY", "level": 6}],
+          [{"techId": "TECH_ENGINEERING", "level": 7}, {"techId": "TECH_SOCIOLOGY", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_VILLAGE",
+      "categoryId": "infrastructure",
+      "groupId": "settlement",
+      "column": 1,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/village.png",
+      "name": {"ru": "Посёлок", "en": "Settlement", "de": "Siedlung"},
+      "description": {"ru": "Улицы, общие склады, постоянные дома. Люди перестают быть отрядом и становятся жителями.", "en": "Streets, shared stores, lasting houses. People stop being a squad and become residents.", "de": "Gassen, gemeinsame Lager, dauerhafte Häuser."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENGINEERING", "TECH_SOCIOLOGY", "TECH_CAMP"],
+      "unlocks": ["TECH_CITY"],
+      "levelCosts": [40, 65, 100, 155, 230, 340, 500, 720],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENGINEERING", "level": 2}, {"techId": "TECH_SOCIOLOGY", "level": 2}, {"techId": "TECH_CAMP", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_ENGINEERING", "level": 2}, {"techId": "TECH_SOCIOLOGY", "level": 2}, {"techId": "TECH_CAMP", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 2}, {"techId": "TECH_SOCIOLOGY", "level": 2}, {"techId": "TECH_CAMP", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 3}, {"techId": "TECH_SOCIOLOGY", "level": 3}, {"techId": "TECH_CAMP", "level": 2}],
+          [{"techId": "TECH_ENGINEERING", "level": 4}, {"techId": "TECH_SOCIOLOGY", "level": 4}, {"techId": "TECH_CAMP", "level": 3}],
+          [{"techId": "TECH_ENGINEERING", "level": 5}, {"techId": "TECH_SOCIOLOGY", "level": 5}, {"techId": "TECH_CAMP", "level": 4}],
+          [{"techId": "TECH_ENGINEERING", "level": 6}, {"techId": "TECH_SOCIOLOGY", "level": 6}, {"techId": "TECH_CAMP", "level": 5}],
+          [{"techId": "TECH_ENGINEERING", "level": 7}, {"techId": "TECH_SOCIOLOGY", "level": 7}, {"techId": "TECH_CAMP", "level": 6}],
+          [{"techId": "TECH_ENGINEERING", "level": 8}, {"techId": "TECH_SOCIOLOGY", "level": 8}, {"techId": "TECH_CAMP", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_CITY",
+      "categoryId": "infrastructure",
+      "groupId": "settlement",
+      "column": 2,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/city.png",
+      "name": {"ru": "Города", "en": "Cities", "de": "Städte"},
+      "description": {"ru": "Кварталы, сети, управление потоками людей и грузов. Город держит плотность, которую лагерь не переживёт.", "en": "Districts, grids, the steering of people and freight. A city holds a density no camp survives.", "de": "Viertel, Netze, Lenkung von Menschen und Lasten."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENGINEERING", "TECH_SOCIOLOGY", "TECH_VILLAGE"],
+      "unlocks": ["TECH_METROPOLIS"],
+      "levelCosts": [40, 65, 100, 155, 230, 340, 500, 720],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENGINEERING", "level": 3}, {"techId": "TECH_SOCIOLOGY", "level": 3}, {"techId": "TECH_VILLAGE", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_ENGINEERING", "level": 3}, {"techId": "TECH_SOCIOLOGY", "level": 3}, {"techId": "TECH_VILLAGE", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 3}, {"techId": "TECH_SOCIOLOGY", "level": 3}, {"techId": "TECH_VILLAGE", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 4}, {"techId": "TECH_SOCIOLOGY", "level": 4}, {"techId": "TECH_VILLAGE", "level": 2}],
+          [{"techId": "TECH_ENGINEERING", "level": 5}, {"techId": "TECH_SOCIOLOGY", "level": 5}, {"techId": "TECH_VILLAGE", "level": 3}],
+          [{"techId": "TECH_ENGINEERING", "level": 6}, {"techId": "TECH_SOCIOLOGY", "level": 6}, {"techId": "TECH_VILLAGE", "level": 4}],
+          [{"techId": "TECH_ENGINEERING", "level": 7}, {"techId": "TECH_SOCIOLOGY", "level": 7}, {"techId": "TECH_VILLAGE", "level": 5}],
+          [{"techId": "TECH_ENGINEERING", "level": 8}, {"techId": "TECH_SOCIOLOGY", "level": 8}, {"techId": "TECH_VILLAGE", "level": 6}],
+          [{"techId": "TECH_ENGINEERING", "level": 9}, {"techId": "TECH_SOCIOLOGY", "level": 9}, {"techId": "TECH_VILLAGE", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_METROPOLIS",
+      "categoryId": "infrastructure",
+      "groupId": "settlement",
+      "column": 3,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/metropolis.png",
+      "name": {"ru": "Мегаполисы", "en": "Megacities", "de": "Megastädte"},
+      "description": {"ru": "Слой над городом: несколько ядер, сквозные магистрали, непрерывная жизнь. Требует зрелой инженерии и общества, которое умеет жить вместе вплотную.", "en": "A layer above the city: several cores, through-routes, unbroken life. Needs mature engineering and a society that can live packed together.", "de": "Schicht über der Stadt: mehrere Kerne, durchgehende Achsen, ununterbrochenes Leben."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENGINEERING", "TECH_SOCIOLOGY", "TECH_CITY"],
+      "unlocks": [],
+      "levelCosts": [40, 65, 100, 155, 230, 340, 500, 720],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENGINEERING", "level": 4}, {"techId": "TECH_SOCIOLOGY", "level": 4}, {"techId": "TECH_CITY", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_ENGINEERING", "level": 4}, {"techId": "TECH_SOCIOLOGY", "level": 4}, {"techId": "TECH_CITY", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 4}, {"techId": "TECH_SOCIOLOGY", "level": 4}, {"techId": "TECH_CITY", "level": 1}],
+          [{"techId": "TECH_ENGINEERING", "level": 5}, {"techId": "TECH_SOCIOLOGY", "level": 5}, {"techId": "TECH_CITY", "level": 2}],
+          [{"techId": "TECH_ENGINEERING", "level": 6}, {"techId": "TECH_SOCIOLOGY", "level": 6}, {"techId": "TECH_CITY", "level": 3}],
+          [{"techId": "TECH_ENGINEERING", "level": 7}, {"techId": "TECH_SOCIOLOGY", "level": 7}, {"techId": "TECH_CITY", "level": 4}],
+          [{"techId": "TECH_ENGINEERING", "level": 8}, {"techId": "TECH_SOCIOLOGY", "level": 8}, {"techId": "TECH_CITY", "level": 5}],
+          [{"techId": "TECH_ENGINEERING", "level": 9}, {"techId": "TECH_SOCIOLOGY", "level": 9}, {"techId": "TECH_CITY", "level": 6}],
+          [{"techId": "TECH_ENGINEERING", "level": 10}, {"techId": "TECH_SOCIOLOGY", "level": 10}, {"techId": "TECH_CITY", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_SOLAR_POWER",
+      "categoryId": "energy",
+      "groupId": "energy_sources",
+      "column": 0,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/solar_power.png",
+      "name": {"ru": "Солнечная энергетика", "en": "Solar energetics", "de": "Sonnenenergetik"},
+      "description": {"ru": "Сбор потока звезды: панели, концентраторы, суточный цикл. Чистый, но зависимый от неба источник.", "en": "Gathering a star’s flux: panels, concentrators, the day cycle. Clean, but bound to the sky.", "de": "Sammeln des Sternenflusses: Paneele, Konzentratoren, Tageszyklus."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENERGETICS"],
+      "unlocks": ["TECH_SOLAR_PLANT"],
+      "levelCosts": [50, 80, 125, 190, 280, 410, 600, 860],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENERGETICS", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_ENERGETICS", "level": 1}],
+          [{"techId": "TECH_ENERGETICS", "level": 1}],
+          [{"techId": "TECH_ENERGETICS", "level": 2}],
+          [{"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_ENERGETICS", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_SOLAR_PLANT",
+      "categoryId": "energy",
+      "groupId": "energy_plants",
+      "column": 0,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/solar_plant.png",
+      "name": {"ru": "Солнечная электростанция", "en": "Solar power plant", "de": "Solarkraftwerk"},
+      "description": {"ru": "Промышленная площадка преобразования света в ток. Масштаб, который уже кормит сеть, а не одну крышу.", "en": "An industrial yard that turns light into current. A scale that feeds a grid, not one roof.", "de": "Industrieanlage, die Licht in Strom wandelt."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_SOLAR_POWER", "TECH_ENERGETICS"],
+      "unlocks": [],
+      "levelCosts": [60, 95, 150, 230, 340, 500, 730, 1050],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_SOLAR_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 1}],
+        "perLevel": [
+          [{"techId": "TECH_SOLAR_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 1}],
+          [{"techId": "TECH_SOLAR_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 1}],
+          [{"techId": "TECH_SOLAR_POWER", "level": 2}, {"techId": "TECH_ENERGETICS", "level": 2}],
+          [{"techId": "TECH_SOLAR_POWER", "level": 3}, {"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_SOLAR_POWER", "level": 4}, {"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_SOLAR_POWER", "level": 5}, {"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_SOLAR_POWER", "level": 6}, {"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_SOLAR_POWER", "level": 7}, {"techId": "TECH_ENERGETICS", "level": 7}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_COAL_POWER",
+      "categoryId": "energy",
+      "groupId": "energy_sources",
+      "column": 1,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/coal_power.png",
+      "name": {"ru": "Угольная энергетика", "en": "Coal energetics", "de": "Kohlenenergetik"},
+      "description": {"ru": "Тепло из углерода: топка, пар, дым. Грубый и понятный путь, пока есть порода и воздух.", "en": "Heat from carbon: furnace, steam, smoke. A blunt and clear path while rock and air last.", "de": "Wärme aus Kohlenstoff: Feuerung, Dampf, Rauch."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENERGETICS"],
+      "unlocks": ["TECH_COAL_PLANT"],
+      "levelCosts": [50, 80, 125, 190, 280, 410, 600, 860],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENERGETICS", "level": 2}],
+        "perLevel": [
+          [{"techId": "TECH_ENERGETICS", "level": 2}],
+          [{"techId": "TECH_ENERGETICS", "level": 2}],
+          [{"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ENERGETICS", "level": 8}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_COAL_PLANT",
+      "categoryId": "energy",
+      "groupId": "energy_plants",
+      "column": 1,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/coal_plant.png",
+      "name": {"ru": "Угольная электростанция", "en": "Coal power plant", "de": "Kohlekraftwerk"},
+      "description": {"ru": "Станция на грубом угле. Держит базу, когда солнца мало, и платит за это выхлопом и складом топлива.", "en": "A plant on rough coal. Holds a base when the sun is thin, and pays in exhaust and a fuel store.", "de": "Kraftwerk auf Rohkohle. Hält die Basis, wenn die Sonne fehlt."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_COAL_POWER", "TECH_ENERGETICS"],
+      "unlocks": [],
+      "levelCosts": [60, 95, 150, 230, 340, 500, 730, 1050],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_COAL_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 2}],
+        "perLevel": [
+          [{"techId": "TECH_COAL_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 2}],
+          [{"techId": "TECH_COAL_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 2}],
+          [{"techId": "TECH_COAL_POWER", "level": 2}, {"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_COAL_POWER", "level": 3}, {"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_COAL_POWER", "level": 4}, {"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_COAL_POWER", "level": 5}, {"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_COAL_POWER", "level": 6}, {"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_COAL_POWER", "level": 7}, {"techId": "TECH_ENERGETICS", "level": 8}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_HYDRO_POWER",
+      "categoryId": "energy",
+      "groupId": "energy_sources",
+      "column": 2,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/hydro_power.png",
+      "name": {"ru": "Гидроэнергетика", "en": "Hydro energetics", "de": "Wasserenergetik"},
+      "description": {"ru": "Работа падающей воды. Нужны рельеф, поток и право перекрыть русло.", "en": "The work of falling water. Needs relief, a flow, and the right to dam a course.", "de": "Arbeit fallenden Wassers. Braucht Relief, Strom und das Recht, ein Bett zu sperren."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENERGETICS"],
+      "unlocks": ["TECH_HYDRO_PLANT"],
+      "levelCosts": [50, 80, 125, 190, 280, 410, 600, 860],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENERGETICS", "level": 3}],
+        "perLevel": [
+          [{"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_ENERGETICS", "level": 9}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_HYDRO_PLANT",
+      "categoryId": "energy",
+      "groupId": "energy_plants",
+      "column": 2,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/hydro_plant.png",
+      "name": {"ru": "Гидроэлектростанция", "en": "Hydroelectric plant", "de": "Wasserkraftwerk"},
+      "description": {"ru": "Плотина или поток, турбина и генератор. Стабильный ток там, где тело даёт воду с высоты.", "en": "Dam or run-of-river, turbine and generator. Steady current where a world gives water from height.", "de": "Damm oder Laufwasser, Turbine und Generator."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_HYDRO_POWER", "TECH_ENERGETICS"],
+      "unlocks": [],
+      "levelCosts": [60, 95, 150, 230, 340, 500, 730, 1050],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_HYDRO_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 3}],
+        "perLevel": [
+          [{"techId": "TECH_HYDRO_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_HYDRO_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 3}],
+          [{"techId": "TECH_HYDRO_POWER", "level": 2}, {"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_HYDRO_POWER", "level": 3}, {"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_HYDRO_POWER", "level": 4}, {"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_HYDRO_POWER", "level": 5}, {"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_HYDRO_POWER", "level": 6}, {"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_HYDRO_POWER", "level": 7}, {"techId": "TECH_ENERGETICS", "level": 9}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_GEOTHERMAL_POWER",
+      "categoryId": "energy",
+      "groupId": "energy_sources",
+      "column": 3,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/geothermal_power.png",
+      "name": {"ru": "Геотермальная энергетика", "en": "Geothermal energetics", "de": "Geothermie"},
+      "description": {"ru": "Тепло недр: пар из скважины, цикл на градиенте коры. Работает ночью так же, как днём.", "en": "Heat of the crust: steam from a well, a cycle on the rock gradient. Works at night as it does by day.", "de": "Wärme der Kruste: Dampf aus der Bohrung, Kreis auf dem Gesteinsgradienten."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENERGETICS"],
+      "unlocks": ["TECH_GEOTHERMAL_PLANT"],
+      "levelCosts": [50, 80, 125, 190, 280, 410, 600, 860],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENERGETICS", "level": 4}],
+        "perLevel": [
+          [{"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_ENERGETICS", "level": 10}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_GEOTHERMAL_PLANT",
+      "categoryId": "energy",
+      "groupId": "energy_plants",
+      "column": 3,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/geothermal_plant.png",
+      "name": {"ru": "Геотермальная электростанция", "en": "Geothermal power plant", "de": "Geothermiekraftwerk"},
+      "description": {"ru": "Площадка на горячей точке коры. Тихий источник, если разведка нашла верный градиент.", "en": "A yard on a hot point of the crust. A quiet source if the survey found the right gradient.", "de": "Anlage auf einem heißen Punkt der Kruste."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_GEOTHERMAL_POWER", "TECH_ENERGETICS"],
+      "unlocks": [],
+      "levelCosts": [60, 95, 150, 230, 340, 500, 730, 1050],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_GEOTHERMAL_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 4}],
+        "perLevel": [
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 4}],
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 2}, {"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 3}, {"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 4}, {"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 5}, {"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 6}, {"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_GEOTHERMAL_POWER", "level": 7}, {"techId": "TECH_ENERGETICS", "level": 10}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_NUCLEAR_POWER",
+      "categoryId": "energy",
+      "groupId": "energy_sources",
+      "column": 4,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/nuclear_power.png",
+      "name": {"ru": "Атомная энергетика", "en": "Nuclear energetics", "de": "Kernenergetik"},
+      "description": {"ru": "Деление тяжёлых ядер. Много работы с одного склада топлива и строгий контур безопасности.", "en": "Fission of heavy nuclei. Much work from one fuel store, and a strict safety loop.", "de": "Spaltung schwerer Kerne. Viel Arbeit aus einem Brennstofflager."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENERGETICS"],
+      "unlocks": ["TECH_NUCLEAR_PLANT"],
+      "levelCosts": [50, 80, 125, 190, 280, 410, 600, 860],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENERGETICS", "level": 5}],
+        "perLevel": [
+          [{"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_ENERGETICS", "level": 10}],
+          [{"techId": "TECH_ENERGETICS", "level": 11}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_NUCLEAR_PLANT",
+      "categoryId": "energy",
+      "groupId": "energy_plants",
+      "column": 4,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/nuclear_plant.png",
+      "name": {"ru": "Атомная электростанция", "en": "Nuclear power plant", "de": "Kernkraftwerk"},
+      "description": {"ru": "Реактор, контуры и защита. Плотность энергии, которой хватает на город — и цена ошибки выше угля.", "en": "Reactor, loops and shielding. Energy dense enough for a city — and a dearer price for error than coal.", "de": "Reaktor, Kreise und Abschirmung."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_NUCLEAR_POWER", "TECH_ENERGETICS"],
+      "unlocks": [],
+      "levelCosts": [60, 95, 150, 230, 340, 500, 730, 1050],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_NUCLEAR_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 5}],
+        "perLevel": [
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 5}],
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 2}, {"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 3}, {"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 4}, {"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 5}, {"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 6}, {"techId": "TECH_ENERGETICS", "level": 10}],
+          [{"techId": "TECH_NUCLEAR_POWER", "level": 7}, {"techId": "TECH_ENERGETICS", "level": 11}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_FUSION_POWER",
+      "categoryId": "energy",
+      "groupId": "energy_sources",
+      "column": 5,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/fusion_power.png",
+      "name": {"ru": "Термоядерная энергетика", "en": "Fusion energetics", "de": "Fusionsenergetik"},
+      "description": {"ru": "Слияние лёгких ядер. Звезда, собранная в кольце: высокие пороги, почти без долгого пепла.", "en": "Fusion of light nuclei. A star held in a ring: high thresholds, almost no lasting ash.", "de": "Verschmelzung leichter Kerne. Ein Stern im Ring: hohe Schwellen, kaum bleibende Asche."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENERGETICS"],
+      "unlocks": ["TECH_FUSION_PLANT"],
+      "levelCosts": [50, 80, 125, 190, 280, 410, 600, 860],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENERGETICS", "level": 6}],
+        "perLevel": [
+          [{"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_ENERGETICS", "level": 10}],
+          [{"techId": "TECH_ENERGETICS", "level": 11}],
+          [{"techId": "TECH_ENERGETICS", "level": 12}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_FUSION_PLANT",
+      "categoryId": "energy",
+      "groupId": "energy_plants",
+      "column": 5,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/fusion_plant.png",
+      "name": {"ru": "Термоядерная электростанция", "en": "Fusion power plant", "de": "Fusionskraftwerk"},
+      "description": {"ru": "Камера удержания и съём тепла. Когда кольцо держит плазму, сеть получает ток без дыма топки.", "en": "A confinement chamber and a heat take-off. When the ring holds plasma, the grid takes current without furnace smoke.", "de": "Einschlusskammer und Wärmeabnahme."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_FUSION_POWER", "TECH_ENERGETICS"],
+      "unlocks": [],
+      "levelCosts": [60, 95, 150, 230, 340, 500, 730, 1050],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_FUSION_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 6}],
+        "perLevel": [
+          [{"techId": "TECH_FUSION_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_FUSION_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 6}],
+          [{"techId": "TECH_FUSION_POWER", "level": 2}, {"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_FUSION_POWER", "level": 3}, {"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_FUSION_POWER", "level": 4}, {"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_FUSION_POWER", "level": 5}, {"techId": "TECH_ENERGETICS", "level": 10}],
+          [{"techId": "TECH_FUSION_POWER", "level": 6}, {"techId": "TECH_ENERGETICS", "level": 11}],
+          [{"techId": "TECH_FUSION_POWER", "level": 7}, {"techId": "TECH_ENERGETICS", "level": 12}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ANNIHILATION_POWER",
+      "categoryId": "energy",
+      "groupId": "energy_sources",
+      "column": 6,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/annihilation_power.png",
+      "name": {"ru": "Аннигиляционная энергетика", "en": "Annihilation energetics", "de": "Annihilationsenergetik"},
+      "description": {"ru": "Встреча вещества и антивещества. Предел плотности: почти вся масса становится излучением.", "en": "Matter meeting antimatter. The density limit: almost all mass becomes radiation.", "de": "Begegnung von Materie und Antimaterie. Dichtegrenze: fast alle Masse wird Strahlung."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ENERGETICS"],
+      "unlocks": ["TECH_ANNIHILATION_PLANT"],
+      "levelCosts": [50, 80, 125, 190, 280, 410, 600, 860],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ENERGETICS", "level": 7}],
+        "perLevel": [
+          [{"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_ENERGETICS", "level": 10}],
+          [{"techId": "TECH_ENERGETICS", "level": 11}],
+          [{"techId": "TECH_ENERGETICS", "level": 12}],
+          [{"techId": "TECH_ENERGETICS", "level": 13}]
+        ]
+      }
+    },
+    {
+      "id": "TECH_ANNIHILATION_PLANT",
+      "categoryId": "energy",
+      "groupId": "energy_plants",
+      "column": 6,
+      "row": 0,
+      "level": 0,
+      "maxLevel": 8,
+      "discovered": true,
+      "image": "assets/textures/technologies/annihilation_plant.png",
+      "name": {"ru": "Аннигиляционная электростанция", "en": "Annihilation power plant", "de": "Annihilationskraftwerk"},
+      "description": {"ru": "Станция на контролируемой аннигиляции. Чудовищный выход при ничтожном расходе массы — и нулевая терпимость к утечке.", "en": "A plant on governed annihilation. Monstrous yield from a trace of mass — and no tolerance for a leak.", "de": "Anlage gesteuerter Annihilation. Ungeheurer Ertrag bei winziger Masse."},
+      "stageRanges": {
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
+      },
+      "prerequisites": ["TECH_ANNIHILATION_POWER", "TECH_ENERGETICS"],
+      "unlocks": [],
+      "levelCosts": [60, 95, 150, 230, 340, 500, 730, 1050],
+      "requirements": {
+        "unlockParents": [{"techId": "TECH_ANNIHILATION_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 7}],
+        "perLevel": [
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 1}, {"techId": "TECH_ENERGETICS", "level": 7}],
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 2}, {"techId": "TECH_ENERGETICS", "level": 8}],
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 3}, {"techId": "TECH_ENERGETICS", "level": 9}],
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 4}, {"techId": "TECH_ENERGETICS", "level": 10}],
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 5}, {"techId": "TECH_ENERGETICS", "level": 11}],
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 6}, {"techId": "TECH_ENERGETICS", "level": 12}],
+          [{"techId": "TECH_ANNIHILATION_POWER", "level": 7}, {"techId": "TECH_ENERGETICS", "level": 13}]
         ]
       }
     },
@@ -425,220 +1397,60 @@
       "maxLevel": 8,
       "discovered": true,
       "image": "assets/textures/technologies/internal combustion engine.png",
-      "name": {
-        "ru": "ДВС",
-        "en": "ICE",
-        "de": "Verbrennungsmotor"
-      },
-      "description": {
-        "ru": "Двигатель внутреннего сгорания — надёжная атмосферная тяга для наземной и воздушной техники. Простая конструкция, доступное топливо, ограниченный потолок по высоте и скорости. Стартовая точка транспортной ветки.",
-        "en": "Internal combustion engine — reliable atmospheric thrust for ground and air vehicles. Simple design, available fuel, limited ceiling in altitude and speed. Entry point of the transport branch.",
-        "de": "Verbrennungsmotor — zuverlässiger atmosphärischer Antrieb für Boden- und Luftfahrzeuge. Einfache Bauweise, begrenzte Höhen- und Geschwindigkeitsgrenze."
-      },
+      "name": {"ru": "ДВС", "en": "ICE", "de": "Verbrennungsmotor"},
+      "description": {"ru": "Двигатель внутреннего сгорания — надёжная атмосферная тяга для наземной и воздушной техники. Простая конструкция, доступное топливо, ограниченный потолок по высоте и скорости. Стартовая точка транспортной ветки.", "en": "Internal combustion engine — reliable atmospheric thrust for ground and air vehicles. Simple design, available fuel, limited ceiling in altitude and speed. Entry point of the transport branch.", "de": "Verbrennungsmotor — zuverlässiger atmosphärischer Antrieb für Boden- und Luftfahrzeuge. Einfache Bauweise, begrenzte Höhen- und Geschwindigkeitsgrenze."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          2
-        ],
-        "primitive": [
-          3,
-          4
-        ],
-        "advanced": [
-          5,
-          6
-        ],
-        "super": [
-          7,
-          7
-        ],
-        "divine": [
-          8,
-          8
-        ]
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
       },
-      "prerequisites": [
-        "TECH_PROPULSION"
-      ],
-      "unlocks": [
-        "TECH_ELECTRIC_MOTOR",
-        "TECH_BIOFUEL_ENGINE",
-        "TECH_WHEEL",
-        "TECH_GAS_TANK",
-        "TECH_BATTERY_STD"
-      ],
-      "levelCosts": [
-        40,
-        70,
-        110,
-        170,
-        250,
-        360,
-        520,
-        750
-      ],
+      "prerequisites": ["TECH_PROPULSION"],
+      "unlocks": ["TECH_ELECTRIC_MOTOR", "TECH_BIOFUEL_ENGINE", "TECH_WHEEL", "TECH_GAS_TANK", "TECH_BATTERY_STD"],
+      "levelCosts": [40, 70, 110, 170, 250, 360, 520, 750],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_PROPULSION",
-            "level": 1
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_PROPULSION", "level": 1}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 6
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 7
-            }
-          ]
+          [{"techId": "TECH_PROPULSION", "level": 1}],
+          [{"techId": "TECH_PROPULSION", "level": 1}],
+          [{"techId": "TECH_PROPULSION", "level": 2}],
+          [{"techId": "TECH_PROPULSION", "level": 3}],
+          [{"techId": "TECH_PROPULSION", "level": 4}],
+          [{"techId": "TECH_PROPULSION", "level": 5}],
+          [{"techId": "TECH_PROPULSION", "level": 6}],
+          [{"techId": "TECH_PROPULSION", "level": 7}]
         ]
       },
       "stats": [
         {
           "id": "STAT_ICE_HP",
           "polarity": "positive",
-          "name": {
-            "ru": "Мощность",
-            "en": "Horsepower",
-            "de": "Leistung"
-          },
-          "unit": {
-            "ru": "л.с.",
-            "en": "hp",
-            "de": "PS"
-          },
-          "values": [
-            0,
-            45,
-            60,
-            78,
-            100,
-            125,
-            155,
-            195,
-            240
-          ]
+          "name": {"ru": "Мощность", "en": "Horsepower", "de": "Leistung"},
+          "unit": {"ru": "л.с.", "en": "hp", "de": "PS"},
+          "values": [0, 45, 60, 78, 100, 125, 155, 195, 240]
         },
         {
           "id": "STAT_ICE_POWER_DRAW",
           "polarity": "negative",
-          "name": {
-            "ru": "Энергопотребление",
-            "en": "Power draw",
-            "de": "Leistungsaufnahme"
-          },
-          "unit": {
-            "ru": "Вт",
-            "en": "W",
-            "de": "W"
-          },
-          "values": [
-            0,
-            420,
-            510,
-            620,
-            750,
-            900,
-            1080,
-            1300,
-            1550
-          ]
+          "name": {"ru": "Энергопотребление", "en": "Power draw", "de": "Leistungsaufnahme"},
+          "unit": {"ru": "Вт", "en": "W", "de": "W"},
+          "values": [0, 420, 510, 620, 750, 900, 1080, 1300, 1550]
         },
         {
           "id": "STAT_ICE_WEIGHT",
           "polarity": "negative",
-          "name": {
-            "ru": "Вес двигателя",
-            "en": "Engine weight",
-            "de": "Motorgewicht"
-          },
-          "unit": {
-            "ru": "кг",
-            "en": "kg",
-            "de": "kg"
-          },
-          "values": [
-            0,
-            180,
-            195,
-            210,
-            230,
-            250,
-            275,
-            300,
-            330
-          ]
+          "name": {"ru": "Вес двигателя", "en": "Engine weight", "de": "Motorgewicht"},
+          "unit": {"ru": "кг", "en": "kg", "de": "kg"},
+          "values": [0, 180, 195, 210, 230, 250, 275, 300, 330]
         },
         {
           "id": "STAT_ICE_EFFICIENCY",
           "polarity": "positive",
-          "name": {
-            "ru": "КПД",
-            "en": "Efficiency",
-            "de": "Wirkungsgrad"
-          },
-          "unit": {
-            "ru": "%",
-            "en": "%",
-            "de": "%"
-          },
-          "values": [
-            0,
-            28,
-            31,
-            34,
-            37,
-            40,
-            43,
-            46,
-            50
-          ]
+          "name": {"ru": "КПД", "en": "Efficiency", "de": "Wirkungsgrad"},
+          "unit": {"ru": "%", "en": "%", "de": "%"},
+          "values": [0, 28, 31, 34, 37, 40, 43, 46, 50]
         }
       ]
     },
@@ -652,127 +1464,28 @@
       "maxLevel": 6,
       "discovered": true,
       "image": "assets/textures/technologies/electric engine.png",
-      "name": {
-        "ru": "Электродвигатель",
-        "en": "Electric motor",
-        "de": "Elektromotor"
-      },
-      "description": {
-        "ru": "Электрическая тяга для наземного и лёгкого воздушного транспорта. Высокий КПД, тихая работа, зависимость от ёмкости накопителей и сети зарядки.",
-        "en": "Electric traction for ground and light air vehicles. High efficiency, quiet operation, depends on storage capacity and charging grid.",
-        "de": "Elektrischer Antrieb für Boden- und leichte Luftfahrzeuge. Hoher Wirkungsgrad, leiser Betrieb."
-      },
+      "name": {"ru": "Электродвигатель", "en": "Electric motor", "de": "Elektromotor"},
+      "description": {"ru": "Электрическая тяга для наземного и лёгкого воздушного транспорта. Высокий КПД, тихая работа, зависимость от ёмкости накопителей и сети зарядки.", "en": "Electric traction for ground and light air vehicles. High efficiency, quiet operation, depends on storage capacity and charging grid.", "de": "Elektrischer Antrieb für Boden- und leichte Luftfahrzeuge. Hoher Wirkungsgrad, leiser Betrieb."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          3
-        ],
-        "advanced": [
-          4,
-          4
-        ],
-        "super": [
-          5,
-          5
-        ],
-        "divine": [
-          6,
-          6
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 3],
+        "advanced": [4, 4],
+        "super": [5, 5],
+        "divine": [6, 6]
       },
-      "prerequisites": [
-        "TECH_ICE",
-        "TECH_PROPULSION"
-      ],
+      "prerequisites": ["TECH_ICE", "TECH_PROPULSION"],
       "unlocks": [],
-      "levelCosts": [
-        45,
-        75,
-        120,
-        180,
-        260,
-        380
-      ],
+      "levelCosts": [45, 75, 120, 180, 260, 380],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_ICE",
-            "level": 1
-          },
-          {
-            "techId": "TECH_PROPULSION",
-            "level": 1
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_ICE", "level": 1}, {"techId": "TECH_PROPULSION", "level": 1}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 1
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 1
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 3
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 5
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 5
-            }
-          ]
+          [{"techId": "TECH_ICE", "level": 1}, {"techId": "TECH_PROPULSION", "level": 1}],
+          [{"techId": "TECH_ICE", "level": 1}, {"techId": "TECH_PROPULSION", "level": 1}],
+          [{"techId": "TECH_ICE", "level": 2}, {"techId": "TECH_PROPULSION", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 3}, {"techId": "TECH_PROPULSION", "level": 3}],
+          [{"techId": "TECH_ICE", "level": 4}, {"techId": "TECH_PROPULSION", "level": 4}],
+          [{"techId": "TECH_ICE", "level": 5}, {"techId": "TECH_PROPULSION", "level": 5}]
         ]
       }
     },
@@ -786,129 +1499,28 @@
       "maxLevel": 6,
       "discovered": true,
       "image": "assets/textures/technologies/biofuel_engine.png",
-      "name": {
-        "ru": "Биотопливный двигатель",
-        "en": "Biofuel engine",
-        "de": "Biokraftstoffmotor"
-      },
-      "description": {
-        "ru": "Тепловой двигатель на возобновляемом биотопливе. Компромисс между доступностью сырья и выбросами; мост между классическим ДВС и более чистыми схемами.",
-        "en": "Heat engine on renewable biofuel. Trade-off between feedstock availability and emissions; bridge from classic ICE to cleaner schemes.",
-        "de": "Wärmekraftmaschine mit biogenem Kraftstoff. Kompromiss zwischen Rohstoffverfügbarkeit und Emissionen."
-      },
+      "name": {"ru": "Биотопливный двигатель", "en": "Biofuel engine", "de": "Biokraftstoffmotor"},
+      "description": {"ru": "Тепловой двигатель на возобновляемом биотопливе. Компромисс между доступностью сырья и выбросами; мост между классическим ДВС и более чистыми схемами.", "en": "Heat engine on renewable biofuel. Trade-off between feedstock availability and emissions; bridge from classic ICE to cleaner schemes.", "de": "Wärmekraftmaschine mit biogenem Kraftstoff. Kompromiss zwischen Rohstoffverfügbarkeit und Emissionen."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          3
-        ],
-        "advanced": [
-          4,
-          4
-        ],
-        "super": [
-          5,
-          5
-        ],
-        "divine": [
-          6,
-          6
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 3],
+        "advanced": [4, 4],
+        "super": [5, 5],
+        "divine": [6, 6]
       },
-      "prerequisites": [
-        "TECH_ICE",
-        "TECH_PROPULSION"
-      ],
-      "unlocks": [
-        "TECH_BIOFUEL_TANK"
-      ],
-      "levelCosts": [
-        45,
-        75,
-        120,
-        180,
-        260,
-        380
-      ],
+      "prerequisites": ["TECH_ICE", "TECH_PROPULSION"],
+      "unlocks": ["TECH_BIOFUEL_TANK"],
+      "levelCosts": [45, 75, 120, 180, 260, 380],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_ICE",
-            "level": 1
-          },
-          {
-            "techId": "TECH_PROPULSION",
-            "level": 1
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_ICE", "level": 1}, {"techId": "TECH_PROPULSION", "level": 1}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 1
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 1
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 1
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 3
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 5
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 5
-            }
-          ]
+          [{"techId": "TECH_ICE", "level": 1}, {"techId": "TECH_PROPULSION", "level": 1}],
+          [{"techId": "TECH_ICE", "level": 1}, {"techId": "TECH_PROPULSION", "level": 1}],
+          [{"techId": "TECH_ICE", "level": 2}, {"techId": "TECH_PROPULSION", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 3}, {"techId": "TECH_PROPULSION", "level": 3}],
+          [{"techId": "TECH_ICE", "level": 4}, {"techId": "TECH_PROPULSION", "level": 4}],
+          [{"techId": "TECH_ICE", "level": 5}, {"techId": "TECH_PROPULSION", "level": 5}]
         ]
       }
     },
@@ -922,100 +1534,28 @@
       "maxLevel": 6,
       "discovered": true,
       "image": "assets/textures/technologies/standard modern wheel.png",
-      "name": {
-        "ru": "Стандартное современное колесо",
-        "en": "Standard modern wheel",
-        "de": "Modernes Standardrad"
-      },
-      "description": {
-        "ru": "Пневматическое колесо с резиновым протектором и металлическим ободом. Базовый узел шасси: сцепление, амортизация ударов и распределение нагрузки. От него зависят проходимость и управляемость наземной техники.",
-        "en": "Pneumatic wheel with rubber tread and metal rim. Basic chassis unit: grip, shock absorption and load distribution. Ground vehicle mobility and handling depend on it.",
-        "de": "Luftreifen mit Gummiprofil und Metallfelge. Basis des Fahrwerks: Haftung, Dämpfung und Lastverteilung."
-      },
+      "name": {"ru": "Стандартное современное колесо", "en": "Standard modern wheel", "de": "Modernes Standardrad"},
+      "description": {"ru": "Пневматическое колесо с резиновым протектором и металлическим ободом. Базовый узел шасси: сцепление, амортизация ударов и распределение нагрузки. От него зависят проходимость и управляемость наземной техники.", "en": "Pneumatic wheel with rubber tread and metal rim. Basic chassis unit: grip, shock absorption and load distribution. Ground vehicle mobility and handling depend on it.", "de": "Luftreifen mit Gummiprofil und Metallfelge. Basis des Fahrwerks: Haftung, Dämpfung und Lastverteilung."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          3
-        ],
-        "advanced": [
-          4,
-          4
-        ],
-        "super": [
-          5,
-          5
-        ],
-        "divine": [
-          6,
-          6
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 3],
+        "advanced": [4, 4],
+        "super": [5, 5],
+        "divine": [6, 6]
       },
-      "prerequisites": [
-        "TECH_ICE"
-      ],
-      "unlocks": [
-        "TECH_STEEL_CORD_WHEEL"
-      ],
-      "levelCosts": [
-        35,
-        55,
-        90,
-        140,
-        210,
-        320
-      ],
+      "prerequisites": ["TECH_ICE"],
+      "unlocks": ["TECH_STEEL_CORD_WHEEL"],
+      "levelCosts": [35, 55, 90, 140, 210, 320],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_ICE",
-            "level": 2
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_ICE", "level": 2}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 6
-            }
-          ]
+          [{"techId": "TECH_ICE", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 3}],
+          [{"techId": "TECH_ICE", "level": 4}],
+          [{"techId": "TECH_ICE", "level": 5}],
+          [{"techId": "TECH_ICE", "level": 6}]
         ]
       }
     },
@@ -1029,91 +1569,27 @@
       "maxLevel": 5,
       "discovered": true,
       "image": "assets/textures/technologies/gas tank.png",
-      "name": {
-        "ru": "Бак с бензином",
-        "en": "Gasoline tank",
-        "de": "Benzintank"
-      },
-      "description": {
-        "ru": "Ёмкость для хранения жидкого углеводородного топлива. Конструкция учитывает герметичность, вентиляцию паров и защиту от ударов. Без надёжного бака дальность ДВС-техники остаётся символической.",
-        "en": "Vessel for storing liquid hydrocarbon fuel. Design covers sealing, vapour venting and impact protection. Without a reliable tank ICE range stays symbolic.",
-        "de": "Behälter für flüssigen Kohlenwasserstoffkraftstoff. Dichtheit, Entlüftung und Aufprallschutz bestimmen die Reichweite."
-      },
+      "name": {"ru": "Бак с бензином", "en": "Gasoline tank", "de": "Benzintank"},
+      "description": {"ru": "Ёмкость для хранения жидкого углеводородного топлива. Конструкция учитывает герметичность, вентиляцию паров и защиту от ударов. Без надёжного бака дальность ДВС-техники остаётся символической.", "en": "Vessel for storing liquid hydrocarbon fuel. Design covers sealing, vapour venting and impact protection. Without a reliable tank ICE range stays symbolic.", "de": "Behälter für flüssigen Kohlenwasserstoffkraftstoff. Dichtheit, Entlüftung und Aufprallschutz bestimmen die Reichweite."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          2
-        ],
-        "advanced": [
-          3,
-          3
-        ],
-        "super": [
-          4,
-          4
-        ],
-        "divine": [
-          5,
-          5
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 2],
+        "advanced": [3, 3],
+        "super": [4, 4],
+        "divine": [5, 5]
       },
-      "prerequisites": [
-        "TECH_ICE"
-      ],
+      "prerequisites": ["TECH_ICE"],
       "unlocks": [],
-      "levelCosts": [
-        30,
-        50,
-        80,
-        130,
-        200
-      ],
+      "levelCosts": [30, 50, 80, 130, 200],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_ICE",
-            "level": 2
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_ICE", "level": 2}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 5
-            }
-          ]
+          [{"techId": "TECH_ICE", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 3}],
+          [{"techId": "TECH_ICE", "level": 4}],
+          [{"techId": "TECH_ICE", "level": 5}]
         ]
       }
     },
@@ -1127,171 +1603,51 @@
       "maxLevel": 6,
       "discovered": true,
       "image": "assets/textures/technologies/standard battery for transport.png",
-      "name": {
-        "ru": "Стандартный аккумулятор для транспорта",
-        "en": "Standard transport battery",
-        "de": "Standard-Fahrzeugbatterie"
-      },
-      "description": {
-        "ru": "Литий-ионный или свинцово-кислотный накопитель энергии для электротранспорта и бортовых систем. Ёмкость, вес и рабочий температурный диапазон задают реальный запас хода и надёжность в полевых условиях.",
-        "en": "Li-ion or lead-acid energy storage for electric vehicles and onboard systems. Capacity, mass and operating temperature range set real range and field reliability.",
-        "de": "Li-Ionen- oder Blei-Säure-Speicher für Elektrofahrzeuge und Bordsysteme. Kapazität, Masse und Temperaturbereich bestimmen Reichweite und Zuverlässigkeit."
-      },
+      "name": {"ru": "Стандартный аккумулятор для транспорта", "en": "Standard transport battery", "de": "Standard-Fahrzeugbatterie"},
+      "description": {"ru": "Литий-ионный или свинцово-кислотный накопитель энергии для электротранспорта и бортовых систем. Ёмкость, вес и рабочий температурный диапазон задают реальный запас хода и надёжность в полевых условиях.", "en": "Li-ion or lead-acid energy storage for electric vehicles and onboard systems. Capacity, mass and operating temperature range set real range and field reliability.", "de": "Li-Ionen- oder Blei-Säure-Speicher für Elektrofahrzeuge und Bordsysteme. Kapazität, Masse und Temperaturbereich bestimmen Reichweite und Zuverlässigkeit."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          3
-        ],
-        "advanced": [
-          4,
-          4
-        ],
-        "super": [
-          5,
-          5
-        ],
-        "divine": [
-          6,
-          6
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 3],
+        "advanced": [4, 4],
+        "super": [5, 5],
+        "divine": [6, 6]
       },
-      "prerequisites": [
-        "TECH_ICE"
-      ],
-      "unlocks": [
-        "TECH_BATTERY_QUANTUM"
-      ],
-      "levelCosts": [
-        50,
-        80,
-        130,
-        200,
-        300,
-        450
-      ],
+      "prerequisites": ["TECH_ICE"],
+      "unlocks": ["TECH_BATTERY_QUANTUM"],
+      "levelCosts": [50, 80, 130, 200, 300, 450],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_ICE",
-            "level": 2
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_ICE", "level": 2}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 5
-            }
-          ]
+          [{"techId": "TECH_ICE", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 2}],
+          [{"techId": "TECH_ICE", "level": 3}],
+          [{"techId": "TECH_ICE", "level": 4}],
+          [{"techId": "TECH_ICE", "level": 5}]
         ]
       },
       "stats": [
         {
           "id": "STAT_BAT_STD_CAPACITY",
           "polarity": "positive",
-          "name": {
-            "ru": "Энергоёмкость",
-            "en": "Energy capacity",
-            "de": "Energiekapazität"
-          },
-          "unit": {
-            "ru": "кВт·ч",
-            "en": "kWh",
-            "de": "kWh"
-          },
-          "values": [
-            0,
-            12,
-            18,
-            28,
-            42,
-            60,
-            85
-          ]
+          "name": {"ru": "Энергоёмкость", "en": "Energy capacity", "de": "Energiekapazität"},
+          "unit": {"ru": "кВт·ч", "en": "kWh", "de": "kWh"},
+          "values": [0, 12, 18, 28, 42, 60, 85]
         },
         {
           "id": "STAT_BAT_STD_WEIGHT",
           "polarity": "negative",
-          "name": {
-            "ru": "Вес",
-            "en": "Weight",
-            "de": "Gewicht"
-          },
-          "unit": {
-            "ru": "кг",
-            "en": "kg",
-            "de": "kg"
-          },
-          "values": [
-            0,
-            95,
-            110,
-            130,
-            155,
-            185,
-            220
-          ]
+          "name": {"ru": "Вес", "en": "Weight", "de": "Gewicht"},
+          "unit": {"ru": "кг", "en": "kg", "de": "kg"},
+          "values": [0, 95, 110, 130, 155, 185, 220]
         },
         {
           "id": "STAT_BAT_STD_THERMAL",
           "polarity": "positive",
-          "name": {
-            "ru": "Термостойкость",
-            "en": "Thermal range",
-            "de": "Temperaturbereich"
-          },
-          "unit": {
-            "ru": "°C",
-            "en": "°C",
-            "de": "°C"
-          },
-          "values": [
-            0,
-            "-10/+35",
-            "-15/+40",
-            "-20/+45",
-            "-25/+50",
-            "-30/+55",
-            "-35/+60"
-          ]
+          "name": {"ru": "Термостойкость", "en": "Thermal range", "de": "Temperaturbereich"},
+          "unit": {"ru": "°C", "en": "°C", "de": "°C"},
+          "values": [0, "-10/+35", "-15/+40", "-20/+45", "-25/+50", "-30/+55", "-35/+60"]
         }
       ]
     },
@@ -1305,91 +1661,27 @@
       "maxLevel": 5,
       "discovered": true,
       "image": "assets/textures/technologies/biofuel_tank.png",
-      "name": {
-        "ru": "Бак с биотопливом",
-        "en": "Biofuel tank",
-        "de": "Biokraftstofftank"
-      },
-      "description": {
-        "ru": "Специализированная ёмкость под биодизель, этанол или аналоги. Материалы и уплотнения устойчивы к химической агрессии возобновляемых топлив; конструкция сохраняет герметичность при перепадах температуры.",
-        "en": "Specialized vessel for biodiesel, ethanol or similar. Materials and seals resist chemical aggression of renewable fuels; design holds pressure integrity across temperature swings.",
-        "de": "Spezialbehälter für Biodiesel, Ethanol o. ä. Werkstoffe und Dichtungen widerstehen chemischer Belastung biogener Kraftstoffe."
-      },
+      "name": {"ru": "Бак с биотопливом", "en": "Biofuel tank", "de": "Biokraftstofftank"},
+      "description": {"ru": "Специализированная ёмкость под биодизель, этанол или аналоги. Материалы и уплотнения устойчивы к химической агрессии возобновляемых топлив; конструкция сохраняет герметичность при перепадах температуры.", "en": "Specialized vessel for biodiesel, ethanol or similar. Materials and seals resist chemical aggression of renewable fuels; design holds pressure integrity across temperature swings.", "de": "Spezialbehälter für Biodiesel, Ethanol o. ä. Werkstoffe und Dichtungen widerstehen chemischer Belastung biogener Kraftstoffe."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          2
-        ],
-        "advanced": [
-          3,
-          3
-        ],
-        "super": [
-          4,
-          4
-        ],
-        "divine": [
-          5,
-          5
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 2],
+        "advanced": [3, 3],
+        "super": [4, 4],
+        "divine": [5, 5]
       },
-      "prerequisites": [
-        "TECH_BIOFUEL_ENGINE"
-      ],
+      "prerequisites": ["TECH_BIOFUEL_ENGINE"],
       "unlocks": [],
-      "levelCosts": [
-        30,
-        50,
-        85,
-        135,
-        210
-      ],
+      "levelCosts": [30, 50, 85, 135, 210],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_BIOFUEL_ENGINE",
-            "level": 2
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_BIOFUEL_ENGINE", "level": 2}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_BIOFUEL_ENGINE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BIOFUEL_ENGINE",
-              "level": 2
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BIOFUEL_ENGINE",
-              "level": 3
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BIOFUEL_ENGINE",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BIOFUEL_ENGINE",
-              "level": 5
-            }
-          ]
+          [{"techId": "TECH_BIOFUEL_ENGINE", "level": 2}],
+          [{"techId": "TECH_BIOFUEL_ENGINE", "level": 2}],
+          [{"techId": "TECH_BIOFUEL_ENGINE", "level": 3}],
+          [{"techId": "TECH_BIOFUEL_ENGINE", "level": 4}],
+          [{"techId": "TECH_BIOFUEL_ENGINE", "level": 5}]
         ]
       }
     },
@@ -1403,100 +1695,28 @@
       "maxLevel": 6,
       "discovered": true,
       "image": "assets/textures/technologies/steel_cord_wheel.png",
-      "name": {
-        "ru": "Металлокордное колесо",
-        "en": "Steel-cord wheel",
-        "de": "Stahlcord-Rad"
-      },
-      "description": {
-        "ru": "Колесо с металлокордным каркасом повышенной жёсткости. Рассчитано на луноходы и роверы внеземных миссий: держит нагрузку при низком давлении, перепадах температуры и абразивном грунте без привычной атмосферы.",
-        "en": "Wheel with high-stiffness steel-cord carcass. Built for lunar rovers and extraterrestrial missions: sustains load under low pressure, thermal extremes and abrasive regolith without a familiar atmosphere.",
-        "de": "Rad mit hochsteifem Stahlcord-Gewebe. Für Mondrover und außerirdische Missionen: hält Last bei niedrigem Druck, Temperaturextremen und abrasivem Regolith."
-      },
+      "name": {"ru": "Металлокордное колесо", "en": "Steel-cord wheel", "de": "Stahlcord-Rad"},
+      "description": {"ru": "Колесо с металлокордным каркасом повышенной жёсткости. Рассчитано на луноходы и роверы внеземных миссий: держит нагрузку при низком давлении, перепадах температуры и абразивном грунте без привычной атмосферы.", "en": "Wheel with high-stiffness steel-cord carcass. Built for lunar rovers and extraterrestrial missions: sustains load under low pressure, thermal extremes and abrasive regolith without a familiar atmosphere.", "de": "Rad mit hochsteifem Stahlcord-Gewebe. Für Mondrover und außerirdische Missionen: hält Last bei niedrigem Druck, Temperaturextremen und abrasivem Regolith."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          3
-        ],
-        "advanced": [
-          4,
-          4
-        ],
-        "super": [
-          5,
-          5
-        ],
-        "divine": [
-          6,
-          6
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 3],
+        "advanced": [4, 4],
+        "super": [5, 5],
+        "divine": [6, 6]
       },
-      "prerequisites": [
-        "TECH_WHEEL"
-      ],
-      "unlocks": [
-        "TECH_NITINOL_TIRE"
-      ],
-      "levelCosts": [
-        60,
-        100,
-        160,
-        250,
-        380,
-        550
-      ],
+      "prerequisites": ["TECH_WHEEL"],
+      "unlocks": ["TECH_NITINOL_TIRE"],
+      "levelCosts": [60, 100, 160, 250, 380, 550],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_WHEEL",
-            "level": 4
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_WHEEL", "level": 4}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_WHEEL",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_WHEEL",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_WHEEL",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_WHEEL",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_WHEEL",
-              "level": 6
-            }
-          ],
-          [
-            {
-              "techId": "TECH_WHEEL",
-              "level": 7
-            }
-          ]
+          [{"techId": "TECH_WHEEL", "level": 4}],
+          [{"techId": "TECH_WHEEL", "level": 4}],
+          [{"techId": "TECH_WHEEL", "level": 4}],
+          [{"techId": "TECH_WHEEL", "level": 5}],
+          [{"techId": "TECH_WHEEL", "level": 6}],
+          [{"techId": "TECH_WHEEL", "level": 7}]
         ]
       }
     },
@@ -1510,159 +1730,50 @@
       "maxLevel": 5,
       "discovered": true,
       "image": "assets/textures/technologies/quantum battery for transport.png",
-      "name": {
-        "ru": "Квантовый аккумулятор для транспорта",
-        "en": "Quantum transport battery",
-        "de": "Quanten-Fahrzeugbatterie"
-      },
-      "description": {
-        "ru": "Накопитель на принципах квантовой инженерии плотности энергии. Резко повышает ёмкость при умеренном весе и расширяет термостойкость — основа дальних автономных рейсов и тяжёлой электротранспортной техники.",
-        "en": "Storage based on quantum energy-density engineering. Sharply raises capacity at moderate mass and widens thermal tolerance — foundation for long autonomous runs and heavy electric vehicles.",
-        "de": "Speicher auf Basis quantentechnischer Energiedichte. Deutlich höhere Kapazität bei moderater Masse und erweitertem Temperaturbereich."
-      },
+      "name": {"ru": "Квантовый аккумулятор для транспорта", "en": "Quantum transport battery", "de": "Quanten-Fahrzeugbatterie"},
+      "description": {"ru": "Накопитель на принципах квантовой инженерии плотности энергии. Резко повышает ёмкость при умеренном весе и расширяет термостойкость — основа дальних автономных рейсов и тяжёлой электротранспортной техники.", "en": "Storage based on quantum energy-density engineering. Sharply raises capacity at moderate mass and widens thermal tolerance — foundation for long autonomous runs and heavy electric vehicles.", "de": "Speicher auf Basis quantentechnischer Energiedichte. Deutlich höhere Kapazität bei moderater Masse und erweitertem Temperaturbereich."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          2
-        ],
-        "advanced": [
-          3,
-          3
-        ],
-        "super": [
-          4,
-          4
-        ],
-        "divine": [
-          5,
-          5
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 2],
+        "advanced": [3, 3],
+        "super": [4, 4],
+        "divine": [5, 5]
       },
-      "prerequisites": [
-        "TECH_BATTERY_STD"
-      ],
+      "prerequisites": ["TECH_BATTERY_STD"],
       "unlocks": [],
-      "levelCosts": [
-        120,
-        200,
-        320,
-        500,
-        750
-      ],
+      "levelCosts": [120, 200, 320, 500, 750],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_BATTERY_STD",
-            "level": 5
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_BATTERY_STD", "level": 5}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_BATTERY_STD",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BATTERY_STD",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BATTERY_STD",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BATTERY_STD",
-              "level": 6
-            }
-          ],
-          [
-            {
-              "techId": "TECH_BATTERY_STD",
-              "level": 7
-            }
-          ]
+          [{"techId": "TECH_BATTERY_STD", "level": 5}],
+          [{"techId": "TECH_BATTERY_STD", "level": 5}],
+          [{"techId": "TECH_BATTERY_STD", "level": 5}],
+          [{"techId": "TECH_BATTERY_STD", "level": 6}],
+          [{"techId": "TECH_BATTERY_STD", "level": 7}]
         ]
       },
       "stats": [
         {
           "id": "STAT_BAT_Q_CAPACITY",
           "polarity": "positive",
-          "name": {
-            "ru": "Энергоёмкость",
-            "en": "Energy capacity",
-            "de": "Energiekapazität"
-          },
-          "unit": {
-            "ru": "кВт·ч",
-            "en": "kWh",
-            "de": "kWh"
-          },
-          "values": [
-            0,
-            120,
-            180,
-            280,
-            420,
-            650
-          ]
+          "name": {"ru": "Энергоёмкость", "en": "Energy capacity", "de": "Energiekapazität"},
+          "unit": {"ru": "кВт·ч", "en": "kWh", "de": "kWh"},
+          "values": [0, 120, 180, 280, 420, 650]
         },
         {
           "id": "STAT_BAT_Q_WEIGHT",
           "polarity": "negative",
-          "name": {
-            "ru": "Вес",
-            "en": "Weight",
-            "de": "Gewicht"
-          },
-          "unit": {
-            "ru": "кг",
-            "en": "kg",
-            "de": "kg"
-          },
-          "values": [
-            0,
-            70,
-            78,
-            88,
-            100,
-            115
-          ]
+          "name": {"ru": "Вес", "en": "Weight", "de": "Gewicht"},
+          "unit": {"ru": "кг", "en": "kg", "de": "kg"},
+          "values": [0, 70, 78, 88, 100, 115]
         },
         {
           "id": "STAT_BAT_Q_THERMAL",
           "polarity": "positive",
-          "name": {
-            "ru": "Термостойкость",
-            "en": "Thermal range",
-            "de": "Temperaturbereich"
-          },
-          "unit": {
-            "ru": "°C",
-            "en": "°C",
-            "de": "°C"
-          },
-          "values": [
-            0,
-            "-40/+70",
-            "-50/+85",
-            "-60/+100",
-            "-70/+115",
-            "-80/+130"
-          ]
+          "name": {"ru": "Термостойкость", "en": "Thermal range", "de": "Temperaturbereich"},
+          "unit": {"ru": "°C", "en": "°C", "de": "°C"},
+          "values": [0, "-40/+70", "-50/+85", "-60/+100", "-70/+115", "-80/+130"]
         }
       ]
     },
@@ -1676,91 +1787,27 @@
       "maxLevel": 5,
       "discovered": true,
       "image": "assets/textures/technologies/nitinol_tire.png",
-      "name": {
-        "ru": "Нитиноловая шина",
-        "en": "Nitinol tire",
-        "de": "Nitinol-Reifen"
-      },
-      "description": {
-        "ru": "Шина на основе нитинола — сплава с эффектом памяти формы. Сверхвысокая прочность, упругость и способность к самовосстановлению после деформаций повышают манёвренность и сцепление на экстремальных покрытиях и в вакууме.",
-        "en": "Tire based on nitinol — a shape-memory alloy. Extreme strength, elasticity and self-healing after deformation boost manoeuvrability and grip on extreme surfaces and in vacuum.",
-        "de": "Reifen auf Nitinol-Basis — Formgedächtnislegierung. Extreme Festigkeit, Elastizität und Selbstheilung verbessern Manövrierfähigkeit und Haftung."
-      },
+      "name": {"ru": "Нитиноловая шина", "en": "Nitinol tire", "de": "Nitinol-Reifen"},
+      "description": {"ru": "Шина на основе нитинола — сплава с эффектом памяти формы. Сверхвысокая прочность, упругость и способность к самовосстановлению после деформаций повышают манёвренность и сцепление на экстремальных покрытиях и в вакууме.", "en": "Tire based on nitinol — a shape-memory alloy. Extreme strength, elasticity and self-healing after deformation boost manoeuvrability and grip on extreme surfaces and in vacuum.", "de": "Reifen auf Nitinol-Basis — Formgedächtnislegierung. Extreme Festigkeit, Elastizität und Selbstheilung verbessern Manövrierfähigkeit und Haftung."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          2
-        ],
-        "advanced": [
-          3,
-          3
-        ],
-        "super": [
-          4,
-          4
-        ],
-        "divine": [
-          5,
-          5
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 2],
+        "advanced": [3, 3],
+        "super": [4, 4],
+        "divine": [5, 5]
       },
-      "prerequisites": [
-        "TECH_STEEL_CORD_WHEEL"
-      ],
+      "prerequisites": ["TECH_STEEL_CORD_WHEEL"],
       "unlocks": [],
-      "levelCosts": [
-        100,
-        170,
-        280,
-        420,
-        650
-      ],
+      "levelCosts": [100, 170, 280, 420, 650],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_STEEL_CORD_WHEEL",
-            "level": 5
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_STEEL_CORD_WHEEL", "level": 5}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_STEEL_CORD_WHEEL",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_STEEL_CORD_WHEEL",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_STEEL_CORD_WHEEL",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_STEEL_CORD_WHEEL",
-              "level": 6
-            }
-          ],
-          [
-            {
-              "techId": "TECH_STEEL_CORD_WHEEL",
-              "level": 7
-            }
-          ]
+          [{"techId": "TECH_STEEL_CORD_WHEEL", "level": 5}],
+          [{"techId": "TECH_STEEL_CORD_WHEEL", "level": 5}],
+          [{"techId": "TECH_STEEL_CORD_WHEEL", "level": 5}],
+          [{"techId": "TECH_STEEL_CORD_WHEEL", "level": 6}],
+          [{"techId": "TECH_STEEL_CORD_WHEEL", "level": 7}]
         ]
       }
     },
@@ -1774,127 +1821,28 @@
       "maxLevel": 6,
       "discovered": true,
       "image": "assets/textures/technologies/propeller engine.jpg",
-      "name": {
-        "ru": "Винтовой двигатель",
-        "en": "Propeller engine",
-        "de": "Propellerantrieb"
-      },
-      "description": {
-        "ru": "Силовая установка с воздушным (или водным) винтом: тяга за счёт отбрасывания массы рабочей среды. Эффективна на дозвуковых скоростях в атмосфере и у поверхности воды; требует зрелого двигателестроения и прокачанного ДВС как технологической базы.",
-        "en": "Powerplant with air (or water) propeller: thrust by accelerating a working medium. Efficient at subsonic speeds in atmosphere and near the water surface; needs mature propulsion engineering and a well-developed ICE as technical base.",
-        "de": "Antrieb mit Luft- oder Wasserpropeller: Schub durch Beschleunigung des Mediums. Effizient bei Unterschall in Atmosphäre und nahe der Wasseroberfläche."
-      },
+      "name": {"ru": "Винтовой двигатель", "en": "Propeller engine", "de": "Propellerantrieb"},
+      "description": {"ru": "Силовая установка с воздушным (или водным) винтом: тяга за счёт отбрасывания массы рабочей среды. Эффективна на дозвуковых скоростях в атмосфере и у поверхности воды; требует зрелого двигателестроения и прокачанного ДВС как технологической базы.", "en": "Powerplant with air (or water) propeller: thrust by accelerating a working medium. Efficient at subsonic speeds in atmosphere and near the water surface; needs mature propulsion engineering and a well-developed ICE as technical base.", "de": "Antrieb mit Luft- oder Wasserpropeller: Schub durch Beschleunigung des Mediums. Effizient bei Unterschall in Atmosphäre und nahe der Wasseroberfläche."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          1
-        ],
-        "primitive": [
-          2,
-          3
-        ],
-        "advanced": [
-          4,
-          4
-        ],
-        "super": [
-          5,
-          5
-        ],
-        "divine": [
-          6,
-          6
-        ]
+        "none": [0, 0],
+        "basic": [1, 1],
+        "primitive": [2, 3],
+        "advanced": [4, 4],
+        "super": [5, 5],
+        "divine": [6, 6]
       },
-      "prerequisites": [
-        "TECH_ICE",
-        "TECH_PROPULSION"
-      ],
+      "prerequisites": ["TECH_ICE", "TECH_PROPULSION"],
       "unlocks": [],
-      "levelCosts": [
-        80,
-        130,
-        210,
-        330,
-        500,
-        750
-      ],
+      "levelCosts": [80, 130, 210, 330, 500, 750],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_ICE",
-            "level": 6
-          },
-          {
-            "techId": "TECH_PROPULSION",
-            "level": 8
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_ICE", "level": 6}, {"techId": "TECH_PROPULSION", "level": 8}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 6
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 8
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 6
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 8
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 6
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 8
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 7
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 9
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 8
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 10
-            }
-          ],
-          [
-            {
-              "techId": "TECH_ICE",
-              "level": 9
-            },
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 11
-            }
-          ]
+          [{"techId": "TECH_ICE", "level": 6}, {"techId": "TECH_PROPULSION", "level": 8}],
+          [{"techId": "TECH_ICE", "level": 6}, {"techId": "TECH_PROPULSION", "level": 8}],
+          [{"techId": "TECH_ICE", "level": 6}, {"techId": "TECH_PROPULSION", "level": 8}],
+          [{"techId": "TECH_ICE", "level": 7}, {"techId": "TECH_PROPULSION", "level": 9}],
+          [{"techId": "TECH_ICE", "level": 8}, {"techId": "TECH_PROPULSION", "level": 10}],
+          [{"techId": "TECH_ICE", "level": 9}, {"techId": "TECH_PROPULSION", "level": 11}]
         ]
       }
     },
@@ -1908,201 +1856,46 @@
       "maxLevel": 8,
       "discovered": true,
       "image": "assets/textures/technologies/rocket engine.jpg",
-      "name": {
-        "ru": "Ракетный двигатель",
-        "en": "Rocket engine",
-        "de": "Raketenantrieb"
-      },
-      "description": {
-        "ru": "Реактивный двигатель, несущий окислитель и горючее на борту. Тяга не зависит от внешней атмосферы — путь к суборбите, орбите и межпланетному перелёту. Критичны удельный импульс, теплозащита сопла и массовое совершенство конструкции.",
-        "en": "Reaction engine carrying both oxidizer and fuel onboard. Thrust independent of external atmosphere — path to suborbit, orbit and interplanetary flight. Specific impulse, nozzle thermal protection and structural mass ratio are critical.",
-        "de": "Reaktionsantrieb mit Oxidator und Treibstoff an Bord. Schub unabhängig von der Atmosphäre — Weg zu Suborbit, Orbit und interplanetaren Flügen."
-      },
+      "name": {"ru": "Ракетный двигатель", "en": "Rocket engine", "de": "Raketenantrieb"},
+      "description": {"ru": "Реактивный двигатель, несущий окислитель и горючее на борту. Тяга не зависит от внешней атмосферы — путь к суборбите, орбите и межпланетному перелёту. Критичны удельный импульс, теплозащита сопла и массовое совершенство конструкции.", "en": "Reaction engine carrying both oxidizer and fuel onboard. Thrust independent of external atmosphere — path to suborbit, orbit and interplanetary flight. Specific impulse, nozzle thermal protection and structural mass ratio are critical.", "de": "Reaktionsantrieb mit Oxidator und Treibstoff an Bord. Schub unabhängig von der Atmosphäre — Weg zu Suborbit, Orbit und interplanetaren Flügen."},
       "stageRanges": {
-        "none": [
-          0,
-          0
-        ],
-        "basic": [
-          1,
-          2
-        ],
-        "primitive": [
-          3,
-          4
-        ],
-        "advanced": [
-          5,
-          6
-        ],
-        "super": [
-          7,
-          7
-        ],
-        "divine": [
-          8,
-          8
-        ]
+        "none": [0, 0],
+        "basic": [1, 2],
+        "primitive": [3, 4],
+        "advanced": [5, 6],
+        "super": [7, 7],
+        "divine": [8, 8]
       },
-      "prerequisites": [
-        "TECH_PROPULSION",
-        "TECH_ICE"
-      ],
+      "prerequisites": ["TECH_PROPULSION", "TECH_ICE"],
       "unlocks": [],
-      "levelCosts": [
-        90,
-        150,
-        240,
-        380,
-        580,
-        850,
-        1200,
-        1700
-      ],
+      "levelCosts": [90, 150, 240, 380, 580, 850, 1200, 1700],
       "requirements": {
-        "unlockParents": [
-          {
-            "techId": "TECH_PROPULSION",
-            "level": 6
-          },
-          {
-            "techId": "TECH_ICE",
-            "level": 4
-          }
-        ],
+        "unlockParents": [{"techId": "TECH_PROPULSION", "level": 6}, {"techId": "TECH_ICE", "level": 4}],
         "perLevel": [
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 6
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 6
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 6
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 4
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 7
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 5
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 8
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 6
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 9
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 7
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 10
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 8
-            }
-          ],
-          [
-            {
-              "techId": "TECH_PROPULSION",
-              "level": 11
-            },
-            {
-              "techId": "TECH_ICE",
-              "level": 9
-            }
-          ]
+          [{"techId": "TECH_PROPULSION", "level": 6}, {"techId": "TECH_ICE", "level": 4}],
+          [{"techId": "TECH_PROPULSION", "level": 6}, {"techId": "TECH_ICE", "level": 4}],
+          [{"techId": "TECH_PROPULSION", "level": 6}, {"techId": "TECH_ICE", "level": 4}],
+          [{"techId": "TECH_PROPULSION", "level": 7}, {"techId": "TECH_ICE", "level": 5}],
+          [{"techId": "TECH_PROPULSION", "level": 8}, {"techId": "TECH_ICE", "level": 6}],
+          [{"techId": "TECH_PROPULSION", "level": 9}, {"techId": "TECH_ICE", "level": 7}],
+          [{"techId": "TECH_PROPULSION", "level": 10}, {"techId": "TECH_ICE", "level": 8}],
+          [{"techId": "TECH_PROPULSION", "level": 11}, {"techId": "TECH_ICE", "level": 9}]
         ]
       },
       "stats": [
         {
           "id": "STAT_ROCKET_THRUST",
           "polarity": "positive",
-          "name": {
-            "ru": "Тяга",
-            "en": "Thrust",
-            "de": "Schub"
-          },
-          "unit": {
-            "ru": "кН",
-            "en": "kN",
-            "de": "kN"
-          },
-          "values": [
-            0,
-            25,
-            40,
-            65,
-            110,
-            180,
-            300,
-            480,
-            750
-          ]
+          "name": {"ru": "Тяга", "en": "Thrust", "de": "Schub"},
+          "unit": {"ru": "кН", "en": "kN", "de": "kN"},
+          "values": [0, 25, 40, 65, 110, 180, 300, 480, 750]
         },
         {
           "id": "STAT_ROCKET_WEIGHT",
           "polarity": "negative",
-          "name": {
-            "ru": "Вес двигателя",
-            "en": "Engine weight",
-            "de": "Triebwerksmasse"
-          },
-          "unit": {
-            "ru": "кг",
-            "en": "kg",
-            "de": "kg"
-          },
-          "values": [
-            0,
-            180,
-            220,
-            280,
-            360,
-            470,
-            620,
-            820,
-            1100
-          ]
+          "name": {"ru": "Вес двигателя", "en": "Engine weight", "de": "Triebwerksmasse"},
+          "unit": {"ru": "кг", "en": "kg", "de": "kg"},
+          "values": [0, 180, 220, 280, 360, 470, 620, 820, 1100]
         }
       ]
     }

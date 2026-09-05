@@ -34,6 +34,10 @@
     border-color: rgba(120, 210, 255, 0.85);
     box-shadow: 0 0 12px rgba(40, 140, 220, 0.35);
     background: linear-gradient(90deg, rgba(18, 55, 95, 0.92), rgba(10, 32, 60, 0.85));
+    transform: translateY(-1px);
+}
+.tech-active-card {
+    will-change: transform, box-shadow, border-color, background;
 }
 
 .tech-active-card-img {
@@ -95,9 +99,18 @@
     flex: 0 0 48%;
     max-width: 48%;
     min-width: 0;
-    height: auto;
+    min-height: 0;
+    height: 100%;
+    align-self: stretch;
     padding-right: 8px;
-    overflow: auto;
+    overflow: hidden;
+}
+.tech-detail-stats > .firm-scroll-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    box-sizing: border-box;
 }
 
 .tech-detail-stats {
@@ -108,9 +121,9 @@
     padding: 4px 6px 4px 12px;
     border-left: 1px solid rgba(50, 110, 160, 0.28);
     background: linear-gradient(180deg, rgba(8, 18, 32, 0.4), rgba(6, 12, 22, 0.3));
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(40, 120, 180, 0.5) transparent;
+    overflow: hidden;
+    scrollbar-width: none;
+    position: relative;
 }
 
 .tech-detail-stats[hidden] {
@@ -201,9 +214,9 @@
     color: #e66;
 }
 
-.tech-detail-stats::-webkit-scrollbar { width: 7px; }
-.tech-detail-stats::-webkit-scrollbar-track { background: rgba(0, 12, 24, 0.45); }
-.tech-detail-stats::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(50, 140, 200, 0.55), rgba(30, 90, 150, 0.45));
-    border-radius: 3px;
+.tech-detail-stats::-webkit-scrollbar,
+.tech-detail-rel::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
 }

@@ -9,7 +9,7 @@ import { calcLocationTechProduction } from './recipes.js';
 import { startTime, formatTime } from './ui.js';
 import { initTechExtras, tickTechExtras, setTechFuturePreview, refreshTechExtras } from './technologiesExtras.js';
 import { buildTechLinksSvg, refreshTechLinkStates } from './technologiesGraph.js';
-import { attachFirmScroll } from './firmScroll.js';
+import { attachFirmScroll, updateFirmScroll } from './firmScroll.js';
 
 let firmScrollApi = null;
 function refreshTechFirmScroll() {
@@ -24,6 +24,25 @@ function ensureTechFirmScroll() {
     } catch (e) {
         console.warn('tech firmScroll', e);
     }
+}
+
+const DETAIL_SCROLL_OPTS = { axis: 'y', host: 'self', fillHost: true, mirrorV: true };
+function ensureTechModalScrolls() {
+    const rel = document.querySelector('.tech-detail-rel');
+    const stats = document.getElementById('tech-detail-stats');
+    try {
+        if (rel) attachFirmScroll(rel, DETAIL_SCROLL_OPTS);
+        if (stats) attachFirmScroll(stats, DETAIL_SCROLL_OPTS);
+    } catch (e) {
+        console.warn('tech modal firmScroll', e);
+    }
+    refreshTechModalScrolls();
+}
+function refreshTechModalScrolls() {
+    try {
+        updateFirmScroll(document.querySelector('.tech-detail-rel'));
+        updateFirmScroll(document.getElementById('tech-detail-stats'));
+    } catch (_) {}
 }
 
 let catalog = null;
@@ -700,6 +719,7 @@ function renderTechDetail(tech) {
 
     renderUpgradePanel(tech);
     renderTechRelations(tech);
+    ensureTechModalScrolls();
 }
 
 /** Требует / Открывает — можно вызывать каждый тик при открытой модалке */
@@ -766,6 +786,8 @@ function renderTechRelations(tech) {
     if (bottom) {
         bottom.style.display = (reqEntries.length || unlockEntries.length) ? '' : 'none';
     }
+
+    refreshTechModalScrolls();
 
     if (relRoot && relRoot.dataset.relClickBound !== '1') {
         relRoot.dataset.relClickBound = '1';
@@ -1189,15 +1211,32 @@ function bindPan() {
         panel.dataset.wheelBound = '1';
         panel.addEventListener('wheel', (e) => {
             if (!open) return;
-            // сайдбар категорий — свой скролл, не трогаем
+            // сайдбар категорий — свой скролл
             if (e.target.closest('.tech-nav')) return;
+            // модалка технологии: крутим её колонки, не дерево сзади
+            const modal = e.target.closest('#tech-detail-modal');
+            if (modal) {
+                e.preventDefault();
+                e.stopPropagation();
+                const inner = e.target.closest('.firm-scroll-inner')
+                    || e.target.closest('.tech-detail-rel')?.querySelector('.firm-scroll-inner')
+                    || e.target.closest('.tech-detail-stats')?.querySelector('.firm-scroll-inner')
+                    || e.target.closest('.tech-detail-desc');
+                if (inner) {
+                    inner.scrollTop += e.deltaY;
+                    inner.scrollLeft += e.deltaX;
+                    const host = inner.parentElement;
+                    try { updateFirmScroll(host); } catch (_) {}
+                }
+                return;
+            }
             e.preventDefault();
             e.stopPropagation();
-            // если колесо над панелью, но не над nav — крутим viewport дерева
             if (!e.target.closest('#tech-tree-viewport')) {
                 vp.scrollTop += e.deltaY;
                 vp.scrollLeft += e.deltaX;
             }
+            refreshTechFirmScroll();
         }, { passive: false, capture: true });
     }
 }
@@ -1224,8 +1263,18 @@ export function initTechUI() {
     detailModal?.addEventListener('click', (e) => e.stopPropagation());
     detailModal?.addEventListener('mousedown', (e) => e.stopPropagation());
     detailModal?.addEventListener('wheel', (e) => {
+        e.preventDefault();
         e.stopPropagation();
-    }, { passive: true });
+        const inner = e.target.closest('.firm-scroll-inner')
+            || e.target.closest('.tech-detail-rel')?.querySelector('.firm-scroll-inner')
+            || e.target.closest('.tech-detail-stats')?.querySelector('.firm-scroll-inner')
+            || e.target.closest('.tech-detail-desc');
+        if (inner) {
+            inner.scrollTop += e.deltaY;
+            inner.scrollLeft += e.deltaX;
+            try { updateFirmScroll(inner.parentElement); } catch (_) {}
+        }
+    }, { passive: false });
 
     // старт / пауза исследования + подсветка невыполненных «Требует»
     const upgradeBtn = document.getElementById('tech-detail-upgrade');
@@ -1272,6 +1321,7 @@ export function initTechUI() {
     });
 
     ensureTechFirmScroll();
+    ensureTechModalScrolls();
 
     const sciBtn = document.getElementById('header-btn-science');
     if (sciBtn && !sciBtn.dataset.techBound) {

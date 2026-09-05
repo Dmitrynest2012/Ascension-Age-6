@@ -1,6 +1,6 @@
 {
   "meta": {
-    "currentBuild": "0.1.8",
+    "currentBuild": "0.1.81",
     "previewAvatar": "assets/textures/npc/seleznev.png"
   },
   "typeImages": {
@@ -9,6 +9,22 @@
     "major": "assets/textures/icons/version_major.png"
   },
   "builds": [
+    {
+      "id": "b0181",
+      "build": "0.1.81",
+      "date": "2026-09-05",
+      "type": "patch",
+      "title": {
+        "ru": "Больше наук и поселений",
+        "en": "More sciences and settlements",
+        "de": "Mehr Wissenschaften und Siedlungen"
+      },
+      "description": {
+        "ru": "В окне «Наука» появилось много новых карточек. Сначала изучаются простые вещи: выживание, научный подход, философия и математика. Потом открываются физика, химия, биология и другие науки.\n\nМожно исследовать поселения — от лагеря до большого города — и разные электростанции, от солнечной до самой мощной.\n\nВ карточке технологии колёсико крутит списки «что нужно» и «что открывается», а не карту наук сзади. Карточки текущих исследований вверху больше не мигают, когда на них наводишься.",
+        "en": "The Science screen now has many new cards. You start with simple fields: survival, the scientific approach, philosophy and mathematics. Later you unlock physics, chemistry, biology and the rest.\n\nYou can also research settlements — from a camp to a big city — and power plants from solar yards to the strongest kind.\n\nInside a technology card the mouse wheel now scrolls “what it needs” and “what it unlocks”, not the tree behind it. The small research cards at the top no longer flicker when you point at them.",
+        "de": "Im Fenster „Wissenschaft“ gibt es viele neue Karten. Zuerst kommen einfache Felder: Überleben, wissenschaftlicher Ansatz, Philosophie und Mathematik. Später öffnen sich Physik, Chemie, Biologie und die übrigen Wissenschaften.\n\nDazu kommen Siedlungen — vom Lager bis zur großen Stadt — und Kraftwerke von der Sonnenanlage bis zur stärksten Art.\n\nIn der Technologiekarte dreht das Mausrad jetzt die Listen „was nötig ist“ und „was sich öffnet“, nicht den Baum dahinter. Die kleinen Forschungskarten oben flackern nicht mehr, wenn man darauf zeigt."
+      }
+    },
     {
       "id": "b018",
       "build": "0.1.8",
@@ -170,5 +186,5 @@
       }
     }
   ],
-  "currentBuild": "0.1.8"
+  "currentBuild": "0.1.81"
 }

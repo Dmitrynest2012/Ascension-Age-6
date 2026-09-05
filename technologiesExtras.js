@@ -14,9 +14,11 @@ import {
     listResearchingTechIds
 } from './technologies.js';
 import { t, getLang } from './settings.js';
+import { updateFirmScroll } from './firmScroll.js';
 
 let futurePreview = false; // hover на «Улучшить»
 let lastActiveSig = '';
+let lastActiveIds = '';
 let lastStatsSig = '';
 let bound = false;
 
@@ -125,6 +127,7 @@ function renderActiveResearch() {
         });
     }
 
+    const idsSig = rows.map(r => r.id).join('|');
     const sig = JSON.stringify(rows);
     if (sig === lastActiveSig) return;
     lastActiveSig = sig;
@@ -132,24 +135,73 @@ function renderActiveResearch() {
     if (!rows.length) {
         host.innerHTML = '';
         host.hidden = true;
+        lastActiveIds = '';
         return;
     }
     host.hidden = false;
-    host.innerHTML = rows.map(r => {
-        const img = r.image
-            ? `style="background-image:url('${r.image}')"`
-            : '';
-        return `<button type="button" class="tech-active-card" data-active-tech="${r.id}" title="${r.name}">
+
+    const lvlLabel = t('techTree.levelShort') || 'Ур.';
+    const cardHtml = (r) => {
+        const img = r.image ? `style="background-image:url('${r.image}')"` : '';
+        const safe = String(r.name).replace(/"/g, '&quot;');
+        return `<button type="button" class="tech-active-card" data-active-tech="${r.id}" data-tip-pos="bottom">
             <div class="tech-active-card-img" ${img}></div>
             <div class="tech-active-card-body">
-                <div class="tech-active-card-name">${r.name}</div>
+                <div class="tech-active-card-name" data-full-name="${safe}">${r.name}</div>
                 <div class="tech-active-card-meta">
-                    <span class="tech-active-card-lvl">${t('techTree.levelShort') || 'Ур.'} ${r.from} &gt; ${r.to}</span>
+                    <span class="tech-active-card-lvl">${lvlLabel} ${r.from} &gt; ${r.to}</span>
                     <span class="tech-active-card-pct">[${r.pct}/100%]</span>
                 </div>
             </div>
         </button>`;
-    }).join('');
+    };
+
+    if (idsSig !== lastActiveIds) {
+        lastActiveIds = idsSig;
+        host.innerHTML = rows.map(cardHtml).join('');
+        requestAnimationFrame(() => bindActiveCardNameTips(host));
+        return;
+    }
+
+    // тот же набор карточек — только цифры, DOM не трогаем (ховер не сбрасывается)
+    for (const r of rows) {
+        const card = host.querySelector(`[data-active-tech="${r.id}"]`);
+        if (!card) continue;
+        const nameEl = card.querySelector('.tech-active-card-name');
+        const lvlEl = card.querySelector('.tech-active-card-lvl');
+        const pctEl = card.querySelector('.tech-active-card-pct');
+        if (nameEl) {
+            if (nameEl.textContent !== r.name) nameEl.textContent = r.name;
+            nameEl.setAttribute('data-full-name', r.name);
+        }
+        if (lvlEl) lvlEl.textContent = `${lvlLabel} ${r.from} > ${r.to}`;
+        if (pctEl) pctEl.textContent = `[${r.pct}/100%]`;
+    }
+    bindActiveCardNameTips(host);
+}
+
+function bindActiveCardNameTips(host) {
+    if (!host) return;
+    host.querySelectorAll('.tech-active-card').forEach(card => {
+        const nameEl = card.querySelector('.tech-active-card-name');
+        if (!nameEl) return;
+        const full = (nameEl.getAttribute('data-full-name') || nameEl.textContent || '').trim();
+        if (!full) return;
+        const truncated = nameEl.scrollWidth > nameEl.clientWidth + 1;
+        if (truncated) {
+            card.setAttribute('data-tip-pos', 'bottom');
+            if (typeof window.setTip === 'function') window.setTip(card, full);
+            else {
+                card.setAttribute('data-tip', full);
+                card.removeAttribute('title');
+            }
+        } else if (typeof window.clearTip === 'function') {
+            window.clearTip(card);
+        } else {
+            card.removeAttribute('data-tip');
+            card.removeAttribute('title');
+        }
+    });
 }
 
 /* ========== Характеристики в модалке ========== */
@@ -168,6 +220,7 @@ function renderTechStats(tech, force = false) {
         box.hidden = true;
         list.innerHTML = '';
         lastStatsSig = '';
+        try { updateFirmScroll(box); } catch (_) {}
         return;
     }
 
@@ -176,6 +229,7 @@ function renderTechStats(tech, force = false) {
         box.hidden = true;
         list.innerHTML = '';
         lastStatsSig = '';
+        try { updateFirmScroll(box); } catch (_) {}
         return;
     }
 
@@ -216,4 +270,5 @@ function renderTechStats(tech, force = false) {
             ${futureHtml}
         </div>`;
     }).join('');
+    try { updateFirmScroll(box); } catch (_) {}
 }
