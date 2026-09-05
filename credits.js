@@ -7,6 +7,7 @@ import { t, onLanguageChange, closeSettingsPanel } from './settings.js';
 
 const FADE_IN_MS = 850;
 const ROLL_MS = 18000;
+const TEXT_FADE_MS = 700;
 const FADE_OUT_MS = 800;
 
 let running = false;
@@ -48,22 +49,82 @@ function clearTimers() {
     }
 }
 
+function resetCreditsInline() {
+    const roll = document.getElementById('credits-roll');
+    const hint = document.getElementById('credits-hint');
+    if (roll) {
+        roll.style.animation = '';
+        roll.style.animationPlayState = '';
+        roll.style.transform = '';
+        roll.style.opacity = '';
+        roll.style.transition = '';
+        roll.style.left = '';
+        roll.style.top = '';
+        roll.style.width = '';
+    }
+    if (hint) {
+        hint.style.opacity = '';
+        hint.style.transition = '';
+    }
+}
+
 function finishCredits() {
     const el = screenEl();
     running = false;
     clearTimers();
     if (!el) return;
-    el.classList.remove('open', 'fading-in', 'fading-out', 'rolling');
+    el.classList.remove('open', 'fading-in', 'fading-out', 'rolling', 'text-out');
     el.setAttribute('aria-hidden', 'true');
+    resetCreditsInline();
+}
+
+function fadeCreditsTextThenScreen() {
+    const el = screenEl();
+    if (!el) return;
+    clearTimers();
+    el.classList.remove('fading-in', 'fading-out');
+
+    const roll = document.getElementById('credits-roll');
+    const hint = document.getElementById('credits-hint');
+    let alreadyGone = true;
+    if (roll) {
+        const cs = getComputedStyle(roll);
+        const op = parseFloat(cs.opacity);
+        if (Number.isFinite(op) && op > 0.04) alreadyGone = false;
+        const hostBox = el.getBoundingClientRect();
+        const box = roll.getBoundingClientRect();
+        roll.style.animationPlayState = 'paused';
+        roll.style.left = (box.left - hostBox.left) + 'px';
+        roll.style.top = (box.top - hostBox.top) + 'px';
+        roll.style.width = box.width + 'px';
+        roll.style.transform = 'none';
+        roll.style.opacity = String(Number.isFinite(op) ? op : 1);
+        roll.style.animation = 'none';
+        void roll.offsetWidth;
+        roll.style.transition = `opacity ${TEXT_FADE_MS}ms ease`;
+        roll.style.opacity = '0';
+    }
+    if (hint) {
+        const hop = parseFloat(getComputedStyle(hint).opacity);
+        if (Number.isFinite(hop) && hop > 0.04) alreadyGone = false;
+        hint.style.transition = `opacity ${TEXT_FADE_MS}ms ease`;
+        hint.style.opacity = '0';
+    }
+    el.classList.remove('rolling');
+    el.classList.add('text-out');
+
+    const wait = alreadyGone ? 80 : TEXT_FADE_MS;
+    phaseTimer = window.setTimeout(() => {
+        el.classList.add('fading-out');
+        fadeOutTimer = window.setTimeout(finishCredits, FADE_OUT_MS);
+    }, wait);
 }
 
 export function closeCredits() {
     const el = screenEl();
     if (!el || !running) return;
-    clearTimers();
-    el.classList.remove('fading-in', 'rolling');
-    el.classList.add('fading-out');
-    fadeOutTimer = window.setTimeout(finishCredits, FADE_OUT_MS);
+    if (el.classList.contains('text-out') || el.classList.contains('fading-out')) return;
+    fadeCreditsTextThenScreen();
 }
 
 export function openCredits() {
@@ -79,7 +140,8 @@ export function openCredits() {
         }).catch(() => {});
     } catch (_) {}
 
-    el.classList.remove('fading-out', 'rolling');
+    resetCreditsInline();
+    el.classList.remove('fading-out', 'rolling', 'text-out');
     el.classList.add('open', 'fading-in');
     el.setAttribute('aria-hidden', 'false');
 
@@ -96,10 +158,7 @@ export function openCredits() {
     });
 
     phaseTimer = window.setTimeout(() => {
-        el.classList.remove('fading-in');
-        el.classList.remove('rolling');
-        el.classList.add('fading-out');
-        fadeOutTimer = window.setTimeout(finishCredits, FADE_OUT_MS);
+        fadeCreditsTextThenScreen();
     }, FADE_IN_MS + ROLL_MS);
 }
 

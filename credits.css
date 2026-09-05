@@ -25,6 +25,14 @@
     animation: credits-fade-in 0.85s ease forwards;
 }
 
+#credits-screen.text-out {
+    opacity: 1;
+}
+#credits-screen.text-out .credits-roll,
+#credits-screen.text-out .credits-hint {
+    opacity: 0;
+}
+
 #credits-screen.fading-out {
     animation: credits-fade-out 0.8s ease forwards;
 }

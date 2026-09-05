@@ -730,7 +730,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/camp.png",
+      "image": "assets/textures/buildings/Infrastructure/camp.png",
       "name": {"ru": "Лагерь выживальщиков", "en": "Survival camp", "de": "Überlebenslager"},
       "description": {"ru": "Минимальный порядок жилья: палатка, очаг, периметр. Первая ступень оседлости на чужом теле.", "en": "The least order of dwelling: tent, hearth, perimeter. First step of staying put on a strange world.", "de": "Geringste Ordnung des Wohnens: Zelt, Herd, Perimeter."},
       "stageRanges": {
@@ -767,7 +767,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/village.png",
+      "image": "assets/textures/buildings/Infrastructure/village.png",
       "name": {"ru": "Посёлок", "en": "Settlement", "de": "Siedlung"},
       "description": {"ru": "Улицы, общие склады, постоянные дома. Люди перестают быть отрядом и становятся жителями.", "en": "Streets, shared stores, lasting houses. People stop being a squad and become residents.", "de": "Gassen, gemeinsame Lager, dauerhafte Häuser."},
       "stageRanges": {
@@ -804,7 +804,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/city.png",
+      "image": "assets/textures/buildings/Infrastructure/city.png",
       "name": {"ru": "Города", "en": "Cities", "de": "Städte"},
       "description": {"ru": "Кварталы, сети, управление потоками людей и грузов. Город держит плотность, которую лагерь не переживёт.", "en": "Districts, grids, the steering of people and freight. A city holds a density no camp survives.", "de": "Viertel, Netze, Lenkung von Menschen und Lasten."},
       "stageRanges": {
@@ -841,7 +841,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/metropolis.png",
+      "image": "assets/textures/buildings/Infrastructure/metropolis.png",
       "name": {"ru": "Мегаполисы", "en": "Megacities", "de": "Megastädte"},
       "description": {"ru": "Слой над городом: несколько ядер, сквозные магистрали, непрерывная жизнь. Требует зрелой инженерии и общества, которое умеет жить вместе вплотную.", "en": "A layer above the city: several cores, through-routes, unbroken life. Needs mature engineering and a society that can live packed together.", "de": "Schicht über der Stadt: mehrere Kerne, durchgehende Achsen, ununterbrochenes Leben."},
       "stageRanges": {
@@ -915,7 +915,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/solar_plant.png",
+      "image": "assets/textures/buildings/Energy/solar.png",
       "name": {"ru": "Солнечная электростанция", "en": "Solar power plant", "de": "Solarkraftwerk"},
       "description": {"ru": "Промышленная площадка преобразования света в ток. Масштаб, который уже кормит сеть, а не одну крышу.", "en": "An industrial yard that turns light into current. A scale that feeds a grid, not one roof.", "de": "Industrieanlage, die Licht in Strom wandelt."},
       "stageRanges": {
@@ -989,7 +989,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/coal_plant.png",
+      "image": "assets/textures/buildings/Energy/coal-fired power plant.png",
       "name": {"ru": "Угольная электростанция", "en": "Coal power plant", "de": "Kohlekraftwerk"},
       "description": {"ru": "Станция на грубом угле. Держит базу, когда солнца мало, и платит за это выхлопом и складом топлива.", "en": "A plant on rough coal. Holds a base when the sun is thin, and pays in exhaust and a fuel store.", "de": "Kraftwerk auf Rohkohle. Hält die Basis, wenn die Sonne fehlt."},
       "stageRanges": {
@@ -1063,7 +1063,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/hydro_plant.png",
+      "image": "assets/textures/buildings/Energy/hydro power plant.png",
       "name": {"ru": "Гидроэлектростанция", "en": "Hydroelectric plant", "de": "Wasserkraftwerk"},
       "description": {"ru": "Плотина или поток, турбина и генератор. Стабильный ток там, где тело даёт воду с высоты.", "en": "Dam or run-of-river, turbine and generator. Steady current where a world gives water from height.", "de": "Damm oder Laufwasser, Turbine und Generator."},
       "stageRanges": {
@@ -1137,7 +1137,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/geothermal_plant.png",
+      "image": "assets/textures/buildings/Energy/geothermal power plant.png",
       "name": {"ru": "Геотермальная электростанция", "en": "Geothermal power plant", "de": "Geothermiekraftwerk"},
       "description": {"ru": "Площадка на горячей точке коры. Тихий источник, если разведка нашла верный градиент.", "en": "A yard on a hot point of the crust. A quiet source if the survey found the right gradient.", "de": "Anlage auf einem heißen Punkt der Kruste."},
       "stageRanges": {
@@ -1211,7 +1211,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/nuclear_plant.png",
+      "image": "assets/textures/buildings/Energy/nuclear power plant.png",
       "name": {"ru": "Атомная электростанция", "en": "Nuclear power plant", "de": "Kernkraftwerk"},
       "description": {"ru": "Реактор, контуры и защита. Плотность энергии, которой хватает на город — и цена ошибки выше угля.", "en": "Reactor, loops and shielding. Energy dense enough for a city — and a dearer price for error than coal.", "de": "Reaktor, Kreise und Abschirmung."},
       "stageRanges": {
@@ -1285,7 +1285,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/fusion_plant.png",
+      "image": "assets/textures/buildings/Energy/fusion power plant.png",
       "name": {"ru": "Термоядерная электростанция", "en": "Fusion power plant", "de": "Fusionskraftwerk"},
       "description": {"ru": "Камера удержания и съём тепла. Когда кольцо держит плазму, сеть получает ток без дыма топки.", "en": "A confinement chamber and a heat take-off. When the ring holds plasma, the grid takes current without furnace smoke.", "de": "Einschlusskammer und Wärmeabnahme."},
       "stageRanges": {
@@ -1359,7 +1359,7 @@
       "level": 0,
       "maxLevel": 8,
       "discovered": true,
-      "image": "assets/textures/technologies/annihilation_plant.png",
+      "image": "assets/textures/buildings/Energy/annihilation power plant.png",
       "name": {"ru": "Аннигиляционная электростанция", "en": "Annihilation power plant", "de": "Annihilationskraftwerk"},
       "description": {"ru": "Станция на контролируемой аннигиляции. Чудовищный выход при ничтожном расходе массы — и нулевая терпимость к утечке.", "en": "A plant on governed annihilation. Monstrous yield from a trace of mass — and no tolerance for a leak.", "de": "Anlage gesteuerter Annihilation. Ungeheurer Ertrag bei winziger Masse."},
       "stageRanges": {
