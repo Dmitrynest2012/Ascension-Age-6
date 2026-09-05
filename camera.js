@@ -10,7 +10,7 @@ import {
 import { locName } from './settings.js';
 import { GALAXY_HEIGHT_MIN } from './galaxy.js';
 import { UNIVERSE_HEIGHT_MIN, UNIVERSE_BUBBLE_RADIUS, findNearestGalaxy, isCameraOutsideUniverseBubble, getUniverseBubbleCenterDisplay } from './universe.js';
-import { MULTIVERSE_HEIGHT_MIN, findUniverseBody } from './multiverse.js';
+import { MULTIVERSE_HEIGHT_MIN, findUniverseBody, findMultiverseBody } from './multiverse.js';
 import { isMultiverseCameraUnlocked } from './opticalScan.js';
 
 
@@ -532,11 +532,20 @@ export function initCamera(scene) {
                 applyLocationToUI(selectedBody);
                 console.log(`Double-click selected (5ZC, nebula): ${locName(selectedBody.data.name)}`);
             }
-            // Уровень 4ZC: только звезды, переход на высоту 3ZC (17)
-            else if (currentLevelId === '4ZC' && selectedBody.data.type === 'star') {
-                let px = selectedBody.mesh.position.x, pz = selectedBody.mesh.position.z;
+            // Уровень 4ZC: звезда или табличка системы → спуск на 3ZC внутрь системы
+            else if (currentLevelId === '4ZC' && (selectedBody.data.type === 'star' || selectedBody.data.type === 'starSystem')) {
+                let diveBody = selectedBody;
+                if (selectedBody.data.type === 'starSystem') {
+                    const ch = selectedBody.data.children || [];
+                    for (const cid of ch) {
+                        const e = state.celestialBodies[cid] || state.celestialBodies[String(cid)];
+                        if (e?.data?.type === 'star' && e.mesh) { diveBody = e; break; }
+                    }
+                }
+                const anchor = (diveBody && diveBody.mesh) ? diveBody : selectedBody;
+                let px = anchor.mesh.position.x, pz = anchor.mesh.position.z;
                 try {
-                    const fo = recenterFloatingOriginToBody(selectedBody);
+                    const fo = recenterFloatingOriginToBody(anchor);
                     if (fo) { px = fo.x; pz = fo.z; }
                 } catch (e) { console.warn('4ZC FO', e); }
                 transition = {
@@ -547,12 +556,12 @@ export function initCamera(scene) {
                     startY: camera.position.y,
                     targetY: heightLevels['3ZC'].min
                 };
-                trackedBody = selectedBody;
+                trackedBody = diveBody;
                 trackedOffset.set(0, 0, 0);
-                currentLocation = selectedBody;
+                currentLocation = diveBody;
                 syncWindowCurrentLocation();
-                applyLocationToUI(selectedBody);
-                console.log(`Double-click selected (4ZC, star): ${locName(selectedBody.data.name)}, colonized: ${selectedBody.data.colonized}, has_technoport: ${selectedBody.data.has_technoport}`);
+                applyLocationToUI(diveBody);
+                console.log(`Double-click selected (4ZC, ${selectedBody.data.type}): ${locName(diveBody.data.name)}`);
             }
             // Уровень 3ZC, высота > 90, звезда, планета или луна: переход на высоту 90
             else if (currentLevelId === '3ZC' && height > 90) {
@@ -857,11 +866,16 @@ export function updateCurrentLocation() {
             if (dist < UNIVERSE_BUBBLE_RADIUS * 2.2) {
                 closestBody = universe;
             } else {
-                closestBody = {
+                closestBody = findMultiverseBody() || {
                     data: {
-                        id: -512,
+                        id: 5000,
                         type: 'multiverse',
-                        name: { ru: 'Мультивселенная', en: 'Multiverse', de: 'Multiversum' }
+                        name: { ru: 'Мультивселенная', en: 'Multiverse', de: 'Multiversum' },
+                        description: {
+                            ru: 'Мультивселенная — высший доступный масштаб карты. Содержит множество вселенных-пузырей, соединённых потоками энергии.',
+                            en: 'The Multiverse is the highest map scale available. It contains many universe-bubbles linked by energy streams.',
+                            de: 'Das Multiversum ist die höchste verfügbare Kartenskala. Es enthält viele Universums-Blasen, verbunden durch Energieströme.'
+                        }
                     },
                     mesh: universe.mesh
                 };

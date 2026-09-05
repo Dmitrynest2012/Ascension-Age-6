@@ -1,6 +1,6 @@
 {
   "meta": {
-    "currentBuild": "0.1.81",
+    "currentBuild": "0.1.9",
     "previewAvatar": "assets/textures/npc/seleznev.png"
   },
   "typeImages": {
@@ -9,6 +9,22 @@
     "major": "assets/textures/icons/version_major.png"
   },
   "builds": [
+    {
+      "id": "b019",
+      "build": "0.1.9",
+      "date": "2026-09-05",
+      "type": "update",
+      "title": {
+        "ru": "Космос зазвучал и засветился",
+        "en": "Space has a voice and a glow",
+        "de": "Der Kosmos klingt und leuchtet"
+      },
+      "description": {
+        "ru": "Эта сборка про настроение. В меню и в самой колонии теперь играет музыка эпохи: она не обрывается на полуноте, когда вы заходите в игру или возвращаетесь в меню. Пока открыта вторая глава, звучит один спокойный мотив. Когда глава закрыта — песен становится больше.\n\nЗвёзды на карте тоже ожили. Издалека это уже не пятна, а острые восьмиконечные огни своего цвета. Если подлететь ближе, вокруг звезды появляется лёгкое гало, а к краю экрана уходит цепочка бликов — как на снимке настоящего солнца.\n\nЗаодно поправили названия миров, когда в настройках выбран другой язык.",
+        "en": "This build is about mood. The menu and the colony now carry the music of the epoch. It does not cut mid-note when you enter a session or return to the menu. While Chapter Two is still open, one quiet theme holds. After that chapter, more tracks join in.\n\nStars on the map woke up as well. From far away they are sharp eight-pointed lights in their own colour, not smudges. Fly closer and a soft halo sits around the disc, with a chain of flares reaching toward the edge of the screen — the way a real sun looks through a lens.\n\nWe also cleaned up world names when the interface is set to another language.",
+        "de": "Diese Version geht um Stimmung. Im Menü und in der Kolonie spielt nun die Musik der Epoche. Sie bricht nicht mitten im Takt ab, wenn ihr ins Spiel geht oder ins Menü zurückkehrt. Solange das zweite Kapitel offen ist, bleibt ein ruhiges Motiv. Ist das Kapitel geschlossen, kommen weitere Stücke dazu.\n\nAuch die Sterne auf der Karte sind lebendiger. Aus der Ferne sind es scharfe achtstrahlige Lichter in ihrer eigenen Farbe, keine Flecken. Fliegt ihr näher, liegt ein weiches Halo um die Scheibe, und eine Kette von Blendenflecken zieht zum Bildrand — wie bei einer Aufnahme der echten Sonne.\n\nAußerdem haben wir die Weltnamen korrigiert, wenn in den Einstellungen eine andere Sprache gewählt ist."
+      }
+    },
     {
       "id": "b0181",
       "build": "0.1.81",
@@ -186,5 +202,5 @@
       }
     }
   ],
-  "currentBuild": "0.1.81"
+  "currentBuild": "0.1.9"
 }

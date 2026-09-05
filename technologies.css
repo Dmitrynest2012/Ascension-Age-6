@@ -623,7 +623,7 @@
         linear-gradient(90deg, rgba(70, 150, 210, 0.28) 1px, transparent 1px);
     background-size: 26px 26px;
     /* ровная сетка без наклона; дрейф BR → TL */
-    animation: tech-detail-grid-drift 30s linear infinite, tech-detail-grid-pulse 6.5s ease-in-out infinite;
+    animation: tech-detail-grid-drift 15s linear infinite, tech-detail-grid-pulse 6.5s ease-in-out infinite;
 }
 @keyframes tech-detail-grid-drift {
     0%   { transform: translate(0, 0); }

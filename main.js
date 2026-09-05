@@ -36,6 +36,7 @@ import { initTrendChartsUI, tickTrendHistory } from './trendCharts.js';
 import { beginNewSession, resetLiveGameToDefaults, applySessionSnapshot, getSession, listSessions, tickAutosave, startAutosaveTimer, pausePlayClock, resumePlayClock, initPlayClockListeners } from './saveSystem.js';
 import { initSaveUI, setLoadSessionHandler, updateMenuButtonsForGameState, closeLoadPanel, closeSavePanel } from './saveUI.js';
 import { openSessionNameModal, initIntroUI, cleanupIntro } from './intro.js';
+import { initEpochalMusic, syncEpochalMusic } from './epochalMusic.js';
 import { initCreditsUI } from './credits.js';
 import {
     loadUiLocalization,
@@ -246,6 +247,7 @@ function hideMainMenu() {
     }
     document.body.classList.remove('main-menu-active');
     closeSettingsPanel();
+    try { syncEpochalMusic({ reason: 'hide-menu' }); } catch (_) {}
 }
 
 function showMainMenu() {
@@ -262,6 +264,7 @@ function showMainMenu() {
     document.body.classList.add('main-menu-active');
     updatePrimaryMenuButton(gameStarted);
     applyUiLocalization();
+    try { syncEpochalMusic({ reason: 'show-menu' }); } catch (_) {}
 }
 
 /** Загрузка основного экрана (без интро). report(pct) — прогресс 0..100 */
@@ -293,6 +296,7 @@ async function loadMainGame(report) {
     report?.(100);
     gameStarted = true;
     window.__gameStarted = true;
+    try { syncEpochalMusic({ reason: 'session-start' }); } catch (_) {}
     updatePrimaryMenuButton(true);
     updateMenuButtonsForGameState(true);
     try { startAutosaveTimer(); } catch (_) {}
@@ -405,6 +409,7 @@ async function loadSessionFromSave(sessionId) {
     } catch (err) {
         console.error('applySessionSnapshot failed:', err);
     }
+    try { syncEpochalMusic({ reason: 'session-loaded' }); } catch (_) {}
     report(92);
 
     // закрыть случайно открытую модалку квеста
@@ -542,6 +547,7 @@ loadUiLocalization().then(async () => {
             await loadMainGame(report);
         }
     });
+    initEpochalMusic();
     onLanguageChange((lang) => {
         // квесты / NPC — язык уже выставлен в setLanguage, просто перерисовываем
         import('./quests.js').then(mod => {

@@ -428,7 +428,12 @@ export function getOpticalBodyState(body, levelId) {
         if (a2) return 'detect';
         return 'hidden';
     }
-    // звезда / система / туманность / галактика — А2 достаточно для полной сводки
+    // Звезда / система: А1 или А2 → объект виден; без зон — «неизвестно» (не пропадает из бара/сводки)
+    if (tpe === 'star' || tpe === 'starSystem') {
+        if (a1 || a2) return 'full';
+        return 'detect';
+    }
+    // туманность / галактика — А2 достаточно для полной сводки
     if (a2 || a1) return 'full';
     return 'hidden';
 }
@@ -803,13 +808,14 @@ export function getOpticalUnknownName() {
     return t('optical.unknownBody');
 }
 
-/** Планета/луна в зоне только А2 — маскируем имя. */
+/** Тело не идентифицировано оптикой — маскируем имя в баре и сводке. */
 export function isOpticallyUnknownBody(body) {
     try {
         if (!isOpticalFogEnabled() || !body) return false;
         const tpe = body?.data?.type || body?.type;
-        if (tpe !== 'planet' && tpe !== 'moon') return false;
-        return getOpticalBodyState(body) === 'detect';
+        if (tpe !== 'planet' && tpe !== 'moon' && tpe !== 'star' && tpe !== 'starSystem') return false;
+        const st = getOpticalBodyState(body);
+        return st === 'detect' || st === 'hidden';
     } catch (_) {
         return false;
     }

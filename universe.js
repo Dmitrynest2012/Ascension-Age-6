@@ -179,29 +179,38 @@ function createUniverseBubbleMesh(radius, logicalX, logicalZ, bodyId) {
             varying vec3 vWorldPos;
             varying vec3 vN;
             void main() {
+                vec3 N = normalize(vN);
                 vec3 V = normalize(cameraPosition - vWorldPos);
-                float ndv = abs(dot(normalize(vN), V));
-                float edge = 1.0 - ndv;
+                float facing = dot(N, V);
+                // снаружи пузыря заднюю полусферу не рисуем — она даёт второе «кольцо» и лесенку
+                if (camOutside > 0.35 && facing < 0.0) discard;
 
-                // Узкий «обод» на границе силуэта (чёткий контур сферы)
-                float band = smoothstep(0.62, 0.78, edge) * (1.0 - smoothstep(0.86, 0.98, edge));
-                // ещё более тонкая яркая линия поверх
-                float line = exp(-pow((edge - 0.82) / 0.045, 2.0));
+                float ndv = clamp(abs(facing), 0.0, 1.0);
+                float fw = max(fwidth(ndv), 0.0015);
 
-                float a = (band * 0.55 + line * 0.95) * opacity * mix(0.7, 1.15, camOutside);
-                if (a < 0.01) discard;
-                gl_FragColor = vec4(colorRim, clamp(a, 0.0, 1.0));
+                // линия кольца: пик у лимба, сглаживание по пикселю
+                float line = 1.0 - smoothstep(0.0, 0.055 + fw * 3.0, ndv);
+
+                // фосфор внутрь: от кольца к центру диска, снаружи (ndv≈0 за лимбом) = 0
+                float inner = exp(-ndv * 7.5) - exp(-ndv * 22.0);
+                inner = max(inner, 0.0);
+                inner *= smoothstep(-fw * 2.0, fw * 4.0, ndv);
+
+                float a = (line * 1.35 + inner * 1.15) * opacity * mix(0.9, 1.35, camOutside);
+                if (a < 0.012) discard;
+                vec3 phosphor = mix(vec3(0.25, 0.95, 0.62), vec3(0.82, 1.0, 0.90), clamp(line, 0.0, 1.0));
+                gl_FragColor = vec4(phosphor, clamp(a, 0.0, 0.95));
             }
         `
     });
-    const contour = new THREE.Mesh(new THREE.SphereGeometry(radius * 1.002, 96, 64), contMat);
+    const contour = new THREE.Mesh(new THREE.SphereGeometry(radius, 128, 96), contMat);
     contour.frustumCulled = false;
     contour.renderOrder = -929;
     contour.name = 'universeBubbleContour';
     group.add(contour);
 
     // --- экваториальное кольцо (помогает читать сферу в плане) ---
-    const ringGeo = new THREE.TorusGeometry(radius * 0.998, radius * 0.0045, 8, 128);
+    const ringGeo = new THREE.TorusGeometry(radius * 0.998, radius * 0.0028, 24, 384);
     const ringMat = new THREE.MeshBasicMaterial({
         color: 0xffffff,
         transparent: true,
@@ -815,7 +824,7 @@ export function updateUniverseVisuals(currentLevelId, height) {
         }
         if (contMat?.uniforms) {
             // контур ярче снаружи и на 7ZC
-            const contT = targetB * (0.85 + outside * 0.35);
+            const contT = targetB * (1.15 + outside * 0.45);
             contMat.uniforms.opacity.value += (contT - contMat.uniforms.opacity.value) * 0.12;
             if (contMat.uniforms.camOutside)
                 contMat.uniforms.camOutside.value += (outside - contMat.uniforms.camOutside.value) * 0.12;

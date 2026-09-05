@@ -731,30 +731,33 @@ export function updateBodyMenu(currentLocation) {
         }
 
         try {
-            if (isOpticalFogEnabled() && getOpticalBodyState(currentLocation) === 'detect'
-                && (type === 'planet' || type === 'moon')) {
-                const unk = t('common.unknown');
-                setText('info-name', getOpticalUnknownName());
-                setText('info-type', t('optical.unknownType'));
-                setText('info-age', unk);
-                setText('info-day', unk);
-                setText('info-year', unk);
-                setText('info-description', unk);
-                setText('info-radius', unk);
-                setText('info-diameter', unk);
-                setText('info-surface-area', unk);
-                setText('info-gravity-well', unk);
-                setText('info-orbital-radius', unk);
-                setText('info-avg-temp', unk);
-                if (surfaceSection && surfaceBreakdown) {
-                    surfaceSection.style.display = '';
-                    const labels = Array.from(surfaceBreakdown.querySelectorAll('strong'));
-                    if (labels.length) {
-                        surfaceBreakdown.innerHTML = labels.map(l =>
-                            `<p><strong>${l.textContent}</strong> <span>${unk}</span></p>`
-                        ).join('');
-                    } else {
-                        surfaceBreakdown.innerHTML = `<p><span>${unk}</span></p>`;
+            if (isOpticalFogEnabled()
+                && (type === 'planet' || type === 'moon' || type === 'star' || type === 'starSystem')) {
+                const ost = getOpticalBodyState(currentLocation);
+                if (ost === 'detect' || ost === 'hidden') {
+                    const unk = t('common.unknown');
+                    setText('info-name', getOpticalUnknownName());
+                    setText('info-type', t('optical.unknownType'));
+                    setText('info-age', unk);
+                    setText('info-day', unk);
+                    setText('info-year', unk);
+                    setText('info-description', unk);
+                    setText('info-radius', unk);
+                    setText('info-diameter', unk);
+                    setText('info-surface-area', unk);
+                    setText('info-gravity-well', unk);
+                    setText('info-orbital-radius', unk);
+                    setText('info-avg-temp', unk);
+                    if (surfaceSection && surfaceBreakdown && (type === 'planet' || type === 'moon')) {
+                        surfaceSection.style.display = '';
+                        const labels = Array.from(surfaceBreakdown.querySelectorAll('strong'));
+                        if (labels.length) {
+                            surfaceBreakdown.innerHTML = labels.map(l =>
+                                `<p><strong>${l.textContent}</strong> <span>${unk}</span></p>`
+                            ).join('');
+                        } else {
+                            surfaceBreakdown.innerHTML = `<p><span>${unk}</span></p>`;
+                        }
                     }
                 }
             }

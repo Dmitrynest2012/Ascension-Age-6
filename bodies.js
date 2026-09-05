@@ -14,7 +14,9 @@ import {
     auroraVertexShader,
     auroraFragmentShader,
     nebulaVertexShader,
-    nebulaFragmentShader
+    nebulaFragmentShader,
+    starIconVertexShader,
+    starIconFragmentShader
 } from './shaders.js';
 import {
     createNebulaVisual,
@@ -40,7 +42,53 @@ import { getOpticalBodyState, applyOpticalMaterial, isOpticalFogEnabled, a2Reach
 import { state } from './state.js';
 import { heightLevels, CAMERA_Y_MAX } from './utils.js';
 import { locName } from './settings.js';
+import { createStarHaloFx, addStarHaloToScene, updateStarHaloFx } from './starHalo.js';
 
+
+function starIconColorFromBody(body, tex) {
+    const hex = body?.atmosphereColor;
+    if (typeof hex === 'string' && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(hex.trim())) {
+        return new THREE.Color(hex.trim());
+    }
+    try {
+        const img = tex && tex.image;
+        if (img && img.width) {
+            const c = document.createElement('canvas');
+            c.width = 8; c.height = 8;
+            const ctx = c.getContext('2d');
+            ctx.drawImage(img, 0, 0, 8, 8);
+            const d = ctx.getImageData(0, 0, 8, 8).data;
+            let r = 0, g = 0, b = 0, n = 0;
+            for (let i = 0; i < d.length; i += 4) {
+                r += d[i]; g += d[i + 1]; b += d[i + 2]; n++;
+            }
+            if (n > 0) return new THREE.Color(r / n / 255, g / n / 255, b / n / 255);
+        }
+    } catch (_) {}
+    return new THREE.Color(1.0, 0.78, 0.38);
+}
+
+function createStarIconMesh(starColor) {
+    const mat = new THREE.ShaderMaterial({
+        uniforms: {
+            starColor: { value: starColor.clone ? starColor.clone() : new THREE.Color(starColor) },
+            opacity: { value: 1 }
+        },
+        vertexShader: starIconVertexShader,
+        fragmentShader: starIconFragmentShader,
+        transparent: true,
+        depthWrite: false,
+        depthTest: false,
+        blending: THREE.AdditiveBlending,
+        side: THREE.DoubleSide
+    });
+    const icon = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), mat);
+    icon.name = 'starIcon8';
+    icon.frustumCulled = false;
+    icon.renderOrder = 120;
+    icon.visible = false;
+    return icon;
+}
 
 /** Парсинг цвета атмосферы: "#rrggbb" | "rgb(r,g,b)" | [r,g,b] (0–1 или 0–255) */
 function parseAtmosphereColor(raw, fallback = 0x88b7ff) {
@@ -662,12 +710,28 @@ export function createLabel(name, size) {
     return div;
 }
 
-export function updateLabel(label, obj, visible) {
+function labelDisplayName(entry) {
+    if (!entry?.data) return '';
+    try {
+        const custom = state.bodyCustomNames?.[String(entry.data.id)];
+        if (typeof custom === 'string' && custom.trim()) return custom.trim();
+    } catch (_) {}
+    return locName(entry.data.name, '');
+}
+
+export function updateLabel(label, obj, visible, levelId) {
     if (!label || !obj) return;
+    const entry = state.celestialBodies[obj.userData.id]
+        || state.celestialBodies[String(obj.userData.id)];
+    const bodyType = entry?.data?.type;
+    const camY = state.camera?.position?.y ?? 0;
+    const is4zc = levelId === '4ZC' || (camY >= 400 && camY < 6500);
+    const keep4zcStar = visible && is4zc && (bodyType === 'star' || bodyType === 'starSystem');
     if (!visible) {
         label.style.display = 'none';
         return;
     }
+
     const vector = new THREE.Vector3();
     obj.updateMatrixWorld();
     vector.setFromMatrixPosition(obj.matrixWorld);
@@ -684,36 +748,29 @@ export function updateLabel(label, obj, visible) {
     label.style.left = `${x}px`;
     label.style.top = `${y}px`;
 
-    const entry = state.celestialBodies[obj.userData.id];
-    const bodyType = entry?.data?.type;
+    let opt = 'full';
     try {
         if (isOpticalFogEnabled() && entry) {
-            const st = getOpticalBodyState(entry);
-            if (st === 'hidden') { label.style.display = 'none'; return; }
-            if (st === 'detect') label.textContent = getOpticalUnknownName();
+            opt = getOpticalBodyState(entry, levelId);
         }
-    } catch (_) {}
+    } catch (_) { opt = 'full'; }
 
-    // Текст лейбла каждый кадр — иначе «неизвестно» не появляется, пока не сменишь локацию
+    if (opt === 'hidden' && !keep4zcStar) {
+        label.style.display = 'none';
+        return;
+    }
+
     try {
-        if (entry) {
-            if (isOpticalFogEnabled() && getOpticalBodyState(entry) === 'detect'
-                && (bodyType === 'planet' || bodyType === 'moon')) {
-                label.textContent = getOpticalUnknownName();
-                label.dataset.optUnknown = '1';
-            } else if (label.dataset.optUnknown === '1') {
-                const n = entry.data?.name;
-                const lang = (state.settings && state.settings.language) || 'ru';
-                const custom = state.bodyCustomNames?.[String(entry.data?.id)];
-                label.textContent = (typeof custom === 'string' && custom.trim())
-                    ? custom.trim()
-                    : (typeof n === 'string' ? n : (n?.[lang] || n?.ru || n?.en || label.textContent));
-                delete label.dataset.optUnknown;
-            }
+        if (opt === 'detect' || (opt === 'hidden' && keep4zcStar)) {
+            label.textContent = getOpticalUnknownName();
+            label.dataset.optUnknown = '1';
+        } else {
+            const nm = labelDisplayName(entry);
+            if (nm) label.textContent = nm;
+            delete label.dataset.optUnknown;
         }
     } catch (_) {}
 
-    const camY = state.camera?.position?.y ?? 0;
     const dx = state.camera.position.x - obj.position.x;
     const dz = state.camera.position.z - obj.position.z;
     const horiz = Math.hypot(dx, dz);
@@ -737,9 +794,18 @@ export function updateLabel(label, obj, visible) {
         }
         return;
     }
-    // Звёзды / системы: на 4ZC (межзвёздная туманность) и ниже, НЕ по 3D-дистанции
-    if (bodyType === 'star' || bodyType === 'starSystem') {
-        if (camY >= 6500) {
+    // «Система такая-то» только на 4ZC. На 1–3ZC этой таблички нет.
+    if (bodyType === 'starSystem') {
+        if (!is4zc || camY >= 6500) {
+            label.style.display = 'none';
+            return;
+        }
+        label.style.display = horiz > 90000 ? 'none' : 'block';
+        return;
+    }
+    // Звезда: на 4ZC табличка системы уже есть — «Солнце» не дублируем.
+    if (bodyType === 'star') {
+        if (is4zc || camY >= 6500) {
             label.style.display = 'none';
         } else {
             const maxH = camY >= 260 ? 90000 : 800;
@@ -954,6 +1020,11 @@ export async function loadBodiesFromJSON(data, scene) {
             const light = new THREE.PointLight(0xfff0d8, STAR_LIGHT_INTENSITY, 0, 1);
             mesh.add(light);
             state.celestialBodies[id].light = light;
+            const iconCol = starIconColorFromBody(body, tex);
+            const starIcon = createStarIconMesh(iconCol);
+            state.celestialBodies[id].starIcon = starIcon;
+            state.celestialBodies[id].starIconColor = iconCol;
+            state.celestialBodies[id].starHaloFx = createStarHaloFx(iconCol);
         } else {
             // Планеты и луны: узкий блик, без пересвета дневной стороны
             mesh = new THREE.Mesh(
@@ -1053,6 +1124,7 @@ export async function loadBodiesFromJSON(data, scene) {
             mesh.userData.logicalZ = oz;
             scene.add(mesh);
             state.celestialBodies[id].mesh = mesh;
+            state.labels[id] = createLabel(locName(name), Math.max(Number(size) || 0.01, 1.2));
             continue;
         }
 
@@ -1272,6 +1344,14 @@ export async function loadBodiesFromJSON(data, scene) {
 
         scene.add(mesh);
         state.celestialBodies[id].mesh = mesh;
+        if (state.celestialBodies[id].starIcon) {
+            const icon = state.celestialBodies[id].starIcon;
+            icon.layers.set(0);
+            scene.add(icon);
+        }
+        if (state.celestialBodies[id].starHaloFx) {
+            addStarHaloToScene(scene, state.celestialBodies[id].starHaloFx);
+        }
         state.labels[id] = createLabel(locName(name), size);
     }
 
@@ -1484,7 +1564,15 @@ export function updateBodies(deltaTime, timeSpeed, currentLevelId) {
             } // end parentMesh ok
         }
 
-        updateLabel(state.labels[id], mesh, isBodyVisible && !state.geoSurveyBlocking);
+        let labelVisible = isBodyVisible && !state.geoSurveyBlocking;
+        if (currentLevelId === '4ZC' && !state.geoSurveyBlocking
+            && (body.data.type === 'star' || body.data.type === 'starSystem')) {
+            const nearestNebId = getNearestNebulaIdToCamera();
+            const nebId = body.data.nebulaId != null ? Number(body.data.nebulaId) : null;
+            const sameNeb = nearestNebId == null || nebId == null || nebId === Number(nearestNebId);
+            if (sameNeb) labelVisible = true;
+        }
+        updateLabel(state.labels[id], mesh, labelVisible, currentLevelId);
 
         if (body.data.type === 'star' && mesh.material?.uniforms) {
             mesh.material.uniforms.time.value = performance.now() * 0.001 * timeSpeed;
@@ -1496,22 +1584,39 @@ export function updateBodies(deltaTime, timeSpeed, currentLevelId) {
 
             const isInterstellar = currentLevelId === '4ZC';
             if (mesh.material.uniforms.interstellarMode) {
-                mesh.material.uniforms.interstellarMode.value = isInterstellar ? 1.0 : 0.0;
+                mesh.material.uniforms.interstellarMode.value = 0.0;
             }
             if (isInterstellar && cam) {
                 const vFOV = (cam.fov * Math.PI) / 180;
                 const worldPerPx = (2 * Math.max(dist, 1) * Math.tan(vFOV / 2)) / Math.max(window.innerHeight, 1);
-                const targetWorld = 14 * worldPerPx;
+                const coreWorld = 10 * worldPerPx;
+                const iconWorld = 86 * worldPerPx;
                 const baseDiam = Math.max((body.data.size || 2) * 2, 0.01);
-                let s = targetWorld / baseDiam;
+                let s = coreWorld / baseDiam;
                 if (!Number.isFinite(s) || s <= 0) s = 1;
                 mesh.scale.setScalar(s);
+
+                const icon = body.starIcon;
+                if (icon) {
+                    icon.position.copy(mesh.position);
+                    icon.quaternion.copy(cam.quaternion);
+                    icon.scale.setScalar(Math.max(iconWorld, 0.001));
+                    if (icon.material?.uniforms?.opacity) {
+                        icon.material.uniforms.opacity.value = 1.0;
+                    }
+                }
             } else {
                 mesh.scale.set(1, 1, 1);
             }
             mesh.layers.enable(0);
             // На 5ZC звёзды скрыты (isBodyVisible=false); иначе true
             if (currentLevelId !== '5ZC') mesh.visible = true;
+            if (body.starIcon) {
+                body.starIcon.visible = isInterstellar && !!mesh.visible && currentLevelId !== '5ZC';
+            }
+            if (body.starHaloFx) {
+                updateStarHaloFx(body, currentLevelId);
+            }
         }
 
         // Медленное вращение межзвёздных туманностей вокруг центра галактики (без отрисовки орбит)

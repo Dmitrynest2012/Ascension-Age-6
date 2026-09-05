@@ -27,7 +27,7 @@ export const INTRO_MEDIA = {
     music: 'assets/audio/intro/intro_space.mp3',
     voiceRu: 'assets/audio/intro/intro_voice_ru.mp3',
     voiceEn: 'assets/audio/intro/intro_voice_en.mp3',
-    video: 'assets/video/intro/intro_chronicles.webm',
+    video: 'assets/video/intro/intro_chronicles.mp4',
     sun: 'assets/textures/planets/sun.jpg',
     earth: 'assets/textures/planets/earth.jpg',
     earthSpecular: 'assets/textures/planets/earth_specular.jpg',
@@ -722,11 +722,17 @@ function hideCaption() {
 }
 
 /* ---------- Основной пайплайн ---------- */
+export function isIntroActive() {
+    return !!introActive;
+}
+
 export async function startIntroSequence({ onComplete } = {}) {
     if (introActive) return;
     introActive = true;
+    window.__introActive = true;
     introSkipRequested = false;
     onIntroComplete = onComplete || null;
+    import('./epochalMusic.js').then(m => m.pauseEpochalMusic?.()).catch(() => {});
 
     const screen = document.getElementById('intro-screen');
     const canvas = document.getElementById('intro-canvas');
@@ -741,6 +747,7 @@ export async function startIntroSequence({ onComplete } = {}) {
 
     if (!screen || !canvas) {
         introActive = false;
+        window.__introActive = false;
         onComplete?.();
         return;
     }
@@ -925,6 +932,8 @@ export async function startIntroSequence({ onComplete } = {}) {
 
 export function cleanupIntro() {
     introActive = false;
+    window.__introActive = false;
+    import('./epochalMusic.js').then(m => m.resumeEpochalMusic?.()).catch(() => {});
     cancelAnimationFrame(rafId);
     const canvas = document.getElementById('intro-canvas');
     if (canvas) { canvas.style.opacity = ''; canvas.style.transition = ''; }

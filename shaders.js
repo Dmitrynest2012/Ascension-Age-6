@@ -160,30 +160,118 @@ export const sunFragmentShader = `
                         - sunspots * detailVis
                         + flicker * detailVis;
 
-        // 4ZC: восьмиконечная звезда в view-space (UV сферы даёт швы)
-        float im = clamp(interstellarMode, 0.0, 1.0);
-        if (im > 0.001) {
-            vec3 vn = normalize(vNormal);
-            // диск «к камере»: xy — плоскость экрана
-            float facing = max(vn.z, 0.0);
-            vec2 p = vn.xy / max(facing, 0.08);
-            float r = length(p);
-            float ang = atan(p.y, p.x);
-            // 8 лучей
-            float spikes = pow(max(abs(cos(ang * 4.0)), 0.0), 4.5);
-            float core = exp(-r * r * 2.8);
-            float ray = spikes * exp(-r * 1.15) * facing;
-            vec3 whiteRay = vec3(1.0, 0.97, 0.92);
-            vec3 interstellarCol = finalBaseColor * (0.5 + core * 1.1);
-            interstellarCol += whiteRay * (ray * 1.35 + core * 0.25);
-            // за диском сферы — прозрачнее не делаем (opaque star mesh)
-            finalColor = mix(finalColor, interstellarCol, im * clamp(facing * 1.4, 0.0, 1.0));
-        }
-
+        // На 4ZC форма «8 лучей» рисуется отдельным билбордом (starIcon*),
+        // сфера остаётся цветным ядром без фейковых спайков на диске.
         gl_FragColor = vec4(finalColor, 1.0);
     }
 `;
 
+
+/**
+ * 4ZC — восьмиконечная звезда (билборд в плоскости экрана).
+ * Центр сохраняет цвет звезды с нижних масштабов; лучи белые с лёгким оттенком.
+ */
+export const starIconVertexShader = `
+    varying vec2 vUv;
+    void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+`;
+
+export const starIconFragmentShader = `
+    uniform vec3 starColor;
+    uniform float opacity;
+    varying vec2 vUv;
+
+    void main() {
+        vec2 p = vUv * 2.0 - 1.0;
+        float r = length(p);
+        if (r > 1.02) discard;
+
+        float ang = atan(p.y, p.x);
+        // 8 лепестков: 4 оси + 4 диагонали
+        float ray8 = pow(abs(cos(ang * 4.0)), 11.0);
+        float ray4 = pow(abs(cos(ang * 2.0)), 22.0);
+        float rays = max(ray8, ray4 * 0.72);
+        float rayMask = rays * exp(-r * 2.15) * (1.0 - smoothstep(0.42, 1.0, r));
+
+        float core = exp(-r * r * 32.0);
+        float halo = exp(-r * r * 8.5) * 0.55;
+
+        vec3 col = starColor * (core * 1.85 + halo);
+        vec3 rayCol = mix(vec3(1.0, 0.98, 0.94), starColor, 0.22);
+        col += rayCol * rayMask * 2.05;
+
+        float a = clamp(core * 1.35 + halo * 0.75 + rayMask * 1.25, 0.0, 1.0) * opacity;
+        if (a < 0.018) discard;
+        gl_FragColor = vec4(col, a);
+    }
+`;
+
+/**
+ * 3ZC — корона/гало звезды (билборд в плоскости экрана).
+ * Центр почти прозрачный (диск звезды не перекрываем), кольцо чуть снаружи сферы.
+ */
+export const starHaloVertexShader = `
+    varying vec2 vUv;
+    void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+`;
+
+export const starHaloFragmentShader = `
+    uniform vec3 starColor;
+    uniform float opacity;
+    uniform float innerRatio;
+    varying vec2 vUv;
+
+    void main() {
+        vec2 p = vUv * 2.0 - 1.0;
+        float r = length(p);
+        float inn = clamp(innerRatio, 0.15, 0.95);
+        if (r < inn || r > 1.0) discard;
+        float t = (r - inn) / max(1.0 - inn, 0.001);
+        float ring = smoothstep(0.0, 0.42, t) * (1.0 - smoothstep(0.58, 1.0, t));
+        float a = ring * opacity;
+        if (a < 0.006) discard;
+        vec3 col = mix(starColor, starColor * vec3(1.0, 0.78, 0.48), t);
+        gl_FragColor = vec4(col, clamp(a, 0.0, 1.0));
+    }
+`;
+
+/**
+ * 3ZC — блик линзы (цветной диск-призрак).
+ */
+export const starFlareVertexShader = `
+    varying vec2 vUv;
+    void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+`;
+
+export const starFlareFragmentShader = `
+    uniform vec3 flareColor;
+    uniform float opacity;
+    uniform float softness;
+    varying vec2 vUv;
+
+    void main() {
+        // слегка вытянутый блик, не круглая «копия звезды»
+        vec2 p = vUv * 2.0 - 1.0;
+        p.y *= 1.55;
+        float r = length(p);
+        if (r > 1.0) discard;
+        float s = max(0.18, softness);
+        float core = exp(-r * r * 7.5);
+        float disc = 1.0 - smoothstep(0.05, s, r);
+        float a = (core * 0.55 + disc * 0.35) * opacity;
+        if (a < 0.016) discard;
+        gl_FragColor = vec4(flareColor * (0.45 + core * 0.55), clamp(a, 0.0, 1.0));
+    }
+`;
 
 /**
  * СОЛНЦЕ — ИНТРО (intro.js)
