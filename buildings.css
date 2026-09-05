@@ -137,7 +137,7 @@
     position: fixed;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -48%) scale(0.94);
     z-index: 1000;
     display: none;
     flex-direction: column;
@@ -145,6 +145,25 @@
     width: 760px; /* шире: кнопки+инпут и таймер в один ряд */
     height: 770px; /* +70px под панель ResourceCosts */
     box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.42s ease,
+        transform 0.48s cubic-bezier(0.22, 0.82, 0.28, 1),
+        visibility 0.42s;
+}
+#building-modal.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+#building-modal.is-leaving {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, -48%) scale(0.94);
 }
 #building-modal .modal-header,
 #building-modal .modal-tabs,
@@ -1121,7 +1140,7 @@
 }
 /* Скроллбар вынесен вправо за край окна, небольшой зазор */
 #building-list .building-list-scroll .firm-scroll-track-v {
-    right: -28px;
+    right: -18px;
     left: auto;
     z-index: 6;
 }

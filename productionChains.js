@@ -1,4 +1,3 @@
-
 function bindPcCardNameTips(root) {
     if (!root) return;
     root.querySelectorAll('.pc-card').forEach(card => {
@@ -63,6 +62,7 @@ const ZOOM_MAX = 1;
 const ZOOM_STEP = 0.08;
 
 let open = false;
+let _pcAnimTok = 0;
 let pan = { active: false, x: 0, y: 0, sl: 0, st: 0 };
 let zoom = 1;
 let tickTimer = null;
@@ -311,7 +311,6 @@ function ensurePanel() {
         document.body.appendChild(panel);
     }
     panel.classList.add('pc-panel');
-    panel.removeAttribute('style');
 
     // пересобираем разметку если нет фикс-слоя фона
     if (!panel.dataset.pcReady || !panel.querySelector('.pc-tree-bg')) {
@@ -604,9 +603,33 @@ export function refreshProductionChainsPanel() {
 
 export function openProductionChains() {
     const panel = ensurePanel();
+    const already = open && panel.classList.contains('open') && panel.dataset.panelAnim !== 'leave';
+    _pcAnimTok += 1;
+    if (already) {
+        panel.classList.remove('is-leaving');
+        panel.classList.add('open');
+        panel.style.display = 'flex';
+        panel.dataset.panelAnim = 'stay';
+        return;
+    }
     open = true;
     zoom = 1;
-    panel.classList.add('open');
+    const tok = _pcAnimTok;
+    /* Стартовый кадр = то же состояние, что и при закрытии, иначе браузер
+       пропускает transition с display:none и окно вспыхивает сразу. */
+    panel.classList.remove('open');
+    panel.classList.add('is-leaving');
+    panel.style.display = 'flex';
+    panel.dataset.panelAnim = 'enter';
+    void panel.offsetWidth;
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            if (tok !== _pcAnimTok) return;
+            panel.classList.remove('is-leaving');
+            panel.classList.add('open');
+            panel.dataset.panelAnim = 'open';
+        });
+    });
     renderTree();
     if (tickTimer) clearInterval(tickTimer);
     tickTimer = setInterval(() => {
@@ -616,13 +639,36 @@ export function openProductionChains() {
 }
 
 export function closeProductionChains() {
-    open = false;
     const panel = document.getElementById('production-chains-panel');
-    if (panel) panel.classList.remove('open');
+    open = false;
     if (tickTimer) {
         clearInterval(tickTimer);
         tickTimer = null;
     }
+    if (!panel) return;
+    if (!panel.classList.contains('open') && panel.dataset.panelAnim !== 'open' && panel.dataset.panelAnim !== 'enter' && panel.dataset.panelAnim !== 'stay') {
+        panel.classList.remove('open', 'is-leaving');
+        panel.style.display = 'none';
+        panel.dataset.panelAnim = '';
+        return;
+    }
+    const tok = ++_pcAnimTok;
+    panel.dataset.panelAnim = 'leave';
+    panel.classList.remove('open');
+    panel.classList.add('is-leaving');
+    const finish = () => {
+        if (tok !== _pcAnimTok) return;
+        panel.style.display = 'none';
+        panel.classList.remove('open', 'is-leaving');
+        panel.dataset.panelAnim = '';
+    };
+    const onEnd = (e) => {
+        if (e.target !== panel) return;
+        panel.removeEventListener('transitionend', onEnd);
+        finish();
+    };
+    panel.addEventListener('transitionend', onEnd);
+    setTimeout(finish, 520);
 }
 
 export function toggleProductionChains() {

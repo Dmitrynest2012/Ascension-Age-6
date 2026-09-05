@@ -9,6 +9,7 @@ import { evaluateNpcTriggers } from './npcDialogue.js';
 import { tickQuests } from './quests.js';
 
 let listenersBound = false;
+let _specAnimTok = 0;
 
 export function refreshSpecialistsPanel(locationId) {
     const panel = document.getElementById('specialists-panel');
@@ -49,10 +50,53 @@ export function refreshSpecialistsPanel(locationId) {
 export function showSpecialistsPanel(show) {
     const panel = document.getElementById('specialists-panel');
     if (!panel) return;
-    panel.style.display = show ? 'flex' : 'none';
-    if (show && currentLocation?.data?.id != null) {
-        refreshSpecialistsPanel(currentLocation.data.id);
+    if (show) {
+        const already = panel.style.display === 'flex'
+            && panel.classList.contains('open')
+            && panel.dataset.panelAnim !== 'leave';
+        _specAnimTok += 1;
+        panel.classList.remove('is-leaving');
+        panel.style.display = 'flex';
+        if (!already) {
+            panel.dataset.panelAnim = 'enter';
+            panel.classList.remove('open');
+            void panel.offsetWidth;
+            requestAnimationFrame(() => {
+                panel.classList.add('open');
+                panel.dataset.panelAnim = 'open';
+            });
+        } else {
+            panel.classList.add('open');
+            panel.dataset.panelAnim = 'stay';
+        }
+        if (currentLocation?.data?.id != null) {
+            refreshSpecialistsPanel(currentLocation.data.id);
+        }
+        return;
     }
+    if (panel.style.display !== 'flex' || panel.dataset.panelAnim === 'leave') {
+        panel.style.display = 'none';
+        panel.classList.remove('open', 'is-leaving');
+        panel.dataset.panelAnim = '';
+        return;
+    }
+    const tok = ++_specAnimTok;
+    panel.dataset.panelAnim = 'leave';
+    panel.classList.remove('open');
+    panel.classList.add('is-leaving');
+    const finish = () => {
+        if (tok !== _specAnimTok) return;
+        panel.style.display = 'none';
+        panel.classList.remove('open', 'is-leaving');
+        panel.dataset.panelAnim = '';
+    };
+    const onEnd = (e) => {
+        if (e.target !== panel) return;
+        panel.removeEventListener('transitionend', onEnd);
+        finish();
+    };
+    panel.addEventListener('transitionend', onEnd);
+    setTimeout(finish, 520);
 }
 
 function onSliderInput(e) {

@@ -345,16 +345,28 @@ html, body {
         0% calc(100% - 4px),
         0% 6px
     );
-    transform: translateY(10px);
-    transition: opacity 0.25s ease;
+    opacity: 0;
+    transform: translateY(-18px);
+    transition: opacity 0.32s ease, transform 0.32s ease, left 0.28s ease, top 0.28s ease;
     box-sizing: border-box;
+    pointer-events: none;
 }
 
-#resource-popup.visible {
+#resource-popup.visible,
+#resource-popup.is-open {
     display: block;
     opacity: 1;
     z-index: 12000;
     transform: translateY(10px);
+    pointer-events: auto;
+}
+
+#resource-popup.is-leaving {
+    display: block;
+    opacity: 0;
+    z-index: 12000;
+    transform: translateY(-22px);
+    pointer-events: none;
 }
 #resource-popup.firm-scroll-host {
     overflow: hidden !important;

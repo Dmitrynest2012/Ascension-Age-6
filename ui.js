@@ -8,7 +8,7 @@ import { getMaxForLevel, parseDepartments, getLocationBuildingData, updateLocati
 import { updateResourceBar, initResourcePopup } from './resourceUI.js';
 import { initSpecialistsUI, showSpecialistsPanel, refreshSpecialistsPanel } from './specialistsUI.js';
 import { initProductionChainsUI, showProductionChainsPanel, refreshProductionChainsPanel } from './productionChains.js';
-import { renderBuildingSection } from './buildingUI.js';
+import { renderBuildingSection, hideBuildingModal } from './buildingUI.js';
 import { renderTechnoportSection } from './technoport.js';
 import { isTechnoportUnlocked } from './units.js';
 import { t, locName, onLanguageChange } from './settings.js';
@@ -386,7 +386,7 @@ export function initUI() {
         if (buildingItem.classList.contains('active')) {
             buildingItem.classList.replace('active', 'inactive');
             activeBuilding = null;
-            document.getElementById('building-modal').style.display = 'none';
+            hideBuildingModal();
             console.log(`Building ${buildingId} deactivated, activeBuilding: null, modal hidden`);
         } else {
             document.querySelectorAll('.building-item').forEach(item => item.classList.replace('active', 'inactive'));
@@ -425,7 +425,7 @@ export function initUI() {
 
     const modalCloseButton = document.querySelector('.modal-close-button');
     modalCloseButton.addEventListener('click', () => {
-        document.getElementById('building-modal').style.display = 'none';
+        hideBuildingModal();
         document.querySelectorAll('.building-item').forEach(item => item.classList.replace('active', 'inactive'));
         activeBuilding = null;
         console.log('Modal closed, active building items deactivated, activeBuilding: null');
@@ -466,7 +466,7 @@ export function resetActiveButtons() {
     activeSubmenuButton = null;
     activeBuildingCategory = 'COP01';
     activeBuilding = null;
-    document.getElementById('building-modal').style.display = 'none';
+    hideBuildingModal();
     showSpecialistsPanel(false);
     showProductionChainsPanel(false);
     console.log('resetActiveButtons called, activeMenuButton: MB1, activeSubmenuButton: null, activeBuildingCategory: COP01, activeBuilding: null, modal hidden');
@@ -510,7 +510,7 @@ export function updateBodyMenu(currentLocation) {
         if (submenu) submenu.style.display = 'none';
         if (bodyInfo) bodyInfo.style.display = 'none';
         if (buildingList) buildingList.style.display = 'none';
-        if (modal) modal.style.display = 'none';
+        hideBuildingModal();
         activeSubmenuButton = null;
         return;
     }
@@ -853,4 +853,3 @@ export function updateUI(height, currentLevelId) {
         heightDisplay.innerText = `${t('camera.height')} ${Math.round(height)}${levelText}`;
     }
 }
-

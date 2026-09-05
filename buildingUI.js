@@ -79,6 +79,67 @@ import {
     updateLevelsTabLock,
     isLevelsTabLocked
 } from './buildingLevels.js';
+
+let _buildingModalAnimTok = 0;
+
+export function isBuildingModalShown() {
+    const modal = document.getElementById('building-modal');
+    return !!(modal && modal.style.display === 'flex' && modal.dataset.modalAnim !== 'leave');
+}
+
+/** Открытие с анимацией как у модалки технологии. Повторный вызов на уже открытой — без анимации. */
+export function showBuildingModal() {
+    const modal = document.getElementById('building-modal');
+    if (!modal) return;
+    const already = modal.style.display === 'flex'
+        && modal.classList.contains('open')
+        && modal.dataset.modalAnim !== 'leave';
+    _buildingModalAnimTok += 1;
+    modal.classList.remove('is-leaving');
+    modal.style.display = 'flex';
+    if (already) {
+        modal.dataset.modalAnim = 'stay';
+        modal.classList.add('open');
+        return;
+    }
+    modal.dataset.modalAnim = 'enter';
+    modal.classList.remove('open');
+    void modal.offsetWidth;
+    requestAnimationFrame(() => {
+        modal.classList.add('open');
+        modal.dataset.modalAnim = 'open';
+    });
+}
+
+/** Закрытие с той же плавностью. */
+export function hideBuildingModal() {
+    const modal = document.getElementById('building-modal');
+    if (!modal) return;
+    if (modal.style.display !== 'flex' || modal.dataset.modalAnim === 'leave') {
+        modal.style.display = 'none';
+        modal.classList.remove('open', 'is-leaving');
+        modal.dataset.modalAnim = '';
+        return;
+    }
+    const tok = ++_buildingModalAnimTok;
+    modal.dataset.modalAnim = 'leave';
+    modal.classList.remove('open');
+    modal.classList.add('is-leaving');
+    const finish = () => {
+        if (tok !== _buildingModalAnimTok) return;
+        modal.style.display = 'none';
+        modal.classList.remove('open', 'is-leaving');
+        modal.dataset.modalAnim = '';
+    };
+    const onEnd = (e) => {
+        if (e.target !== modal) return;
+        modal.removeEventListener('transitionend', onEnd);
+        finish();
+    };
+    modal.addEventListener('transitionend', onEnd);
+    setTimeout(finish, 520);
+}
+
 /**
  * Список зданий + модалка (MB3). Вынесено из updateBodyMenu.
  */
@@ -238,7 +299,7 @@ export function renderBuildingSection(currentLocation, ctx = {}) {
             const building = state.buildings.find(b => b.id === getActiveBuilding());
             const locationData = getLocationBuildingData(currentLocation.data.id, getActiveBuilding());
             if (building && locationData) {
-                modal.style.display = 'flex';
+                showBuildingModal();
                 // сразу актуализировать lock вкладки «Уровни» (не ждать клика по Основное)
                 try { updateLevelsTabLock(); } catch (_) {}
                 const modalContent = document.querySelector('.modal-content');
@@ -990,14 +1051,14 @@ export function renderBuildingSection(currentLocation, ctx = {}) {
                     try { document.getElementById('building-modal')?.classList.remove('levels-open', 'schemes-open'); } catch (_) {}
                 }
             } else {
-                modal.style.display = 'none';
+                hideBuildingModal();
                 setActiveBuilding(null);
             }
         }
     } else {
         // Не режим строительства — скрываем список и модалку
         buildingList.style.display = 'none';
-        modal.style.display = 'none';
+        hideBuildingModal();
         const powerContainer = document.getElementById('power-container');
         if (powerContainer) powerContainer.style.display = 'none';
     }

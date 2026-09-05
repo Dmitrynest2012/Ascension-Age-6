@@ -1096,24 +1096,22 @@ function setResourcePopupHtml(popup, html) {
 }
 
 
-/** Открыть попап раздела ресурсной полоски программно (для «Назад» из графиков трендов) */
-export function openResourceSectionPopup(sectionKey) {
-    const popup = document.getElementById('resource-popup');
-    if (!popup || sectionKey == null) return false;
-    const container = document.querySelector(`.resource-container[data-resource-id="${sectionKey}"]`);
-    if (!container) return false;
+let _resPopupAnimToken = 0;
 
-    document.querySelectorAll('.resource-container').forEach(c => c.classList.remove('active'));
-    container.classList.add('active');
+function popupIsVisuallyOpen(popup) {
+    if (!popup) return false;
+    return popup.style.display === 'block' && popup.dataset.popupAnim !== 'leave';
+}
 
+function placeResourcePopup(popup, container) {
+    if (!popup || !container) return;
     const rect = container.getBoundingClientRect();
-    const offsetY = 1;
     popup.style.left = `${rect.left}px`;
-    popup.style.top = `${rect.bottom + offsetY}px`;
-    popup.style.opacity = '';
-    popup.style.display = 'block';
-    try { ensureResourcePopupScroll(); } catch (_) {}
+    popup.style.top = `${rect.bottom + 1}px`;
+}
 
+function fillResourcePopup(popup, container) {
+    if (!popup || !container) return;
     const resourceId = container.dataset.resourceId;
     const unitText = container.querySelector('.resource-unit')?.textContent || '';
     if (resourceId === 'Энергия') {
@@ -1132,7 +1130,73 @@ export function openResourceSectionPopup(sectionKey) {
     }
     try { refreshResourcePopupScroll(); } catch (_) {}
     try { bindChartsButtons(popup); } catch (_) {}
-    // синхронизировать activeContainer внутри init, если он уже инициализирован
+}
+
+function animateResourcePopupOpen(popup, container, asSwitch) {
+    if (!popup || !container) return;
+    _resPopupAnimToken += 1;
+    popup.dataset.popupAnim = asSwitch ? 'switch' : 'enter';
+    popup.classList.remove('is-leaving');
+    placeResourcePopup(popup, container);
+    popup.style.display = 'block';
+    try { ensureResourcePopupScroll(); } catch (_) {}
+    if (asSwitch) {
+        popup.classList.add('is-open', 'visible');
+        return;
+    }
+    popup.classList.remove('is-open', 'visible');
+    void popup.offsetWidth;
+    requestAnimationFrame(() => {
+        popup.classList.add('is-open', 'visible');
+        popup.dataset.popupAnim = 'open';
+    });
+}
+
+function animateResourcePopupClose(popup, onDone) {
+    if (!popup) {
+        onDone?.();
+        return;
+    }
+    if (popup.style.display !== 'block' || popup.dataset.popupAnim === 'leave') {
+        popup.style.display = 'none';
+        popup.classList.remove('is-open', 'visible', 'is-leaving');
+        popup.dataset.popupAnim = '';
+        onDone?.();
+        return;
+    }
+    const token = ++_resPopupAnimToken;
+    popup.dataset.popupAnim = 'leave';
+    popup.classList.remove('is-open', 'visible');
+    popup.classList.add('is-leaving');
+    const finish = () => {
+        if (token !== _resPopupAnimToken) return;
+        popup.style.display = 'none';
+        popup.classList.remove('is-leaving', 'is-open', 'visible');
+        popup.dataset.popupAnim = '';
+        onDone?.();
+    };
+    const onEnd = (e) => {
+        if (e.target !== popup) return;
+        if (e.propertyName !== 'opacity' && e.propertyName !== 'transform') return;
+        popup.removeEventListener('transitionend', onEnd);
+        finish();
+    };
+    popup.addEventListener('transitionend', onEnd);
+    setTimeout(finish, 380);
+}
+
+/** Открыть попап раздела ресурсной полоски программно (для «Назад» из графиков трендов) */
+export function openResourceSectionPopup(sectionKey) {
+    const popup = document.getElementById('resource-popup');
+    if (!popup || sectionKey == null) return false;
+    const container = document.querySelector(`.resource-container[data-resource-id="${sectionKey}"]`);
+    if (!container) return false;
+
+    const wasOpen = popupIsVisuallyOpen(popup);
+    document.querySelectorAll('.resource-container').forEach(c => c.classList.remove('active'));
+    container.classList.add('active');
+    animateResourcePopupOpen(popup, container, wasOpen);
+    fillResourcePopup(popup, container);
     try {
         if (typeof globalThis.__setResourcePopupActive === 'function') {
             globalThis.__setResourcePopupActive(container);
@@ -1150,48 +1214,18 @@ export function initResourcePopup() {
         container.addEventListener('click', (e) => {
             e.stopPropagation(); // Предотвращаем всплытие, чтобы не сработал document click
             if (activeContainer === container) {
-                // Если кликнули на уже активный контейнер, скрываем popup
                 container.classList.remove('active');
-                popup.style.display = 'none';
                 activeContainer = null;
+                animateResourcePopupClose(popup);
             } else {
-                // Снимаем active с других контейнеров
+                const wasOpen = popupIsVisuallyOpen(popup);
                 document.querySelectorAll('.resource-container').forEach(c => {
                     c.classList.remove('active');
                 });
-                // Активируем текущий
                 container.classList.add('active');
                 activeContainer = container;
-
-                // Получаем координаты и размеры контейнера
-                const rect = container.getBoundingClientRect();
-                const popupWidth = 307; // width в CSS (230 + 1/3)
-                const offsetY = 1; // Отступ под контейнером
-
-                // Позиционируем popup
-                popup.style.left = `${rect.left}px`;
-                popup.style.top = `${rect.bottom + offsetY}px`;
-                popup.style.opacity = '';
-                popup.style.display = 'block';
-                try { ensureResourcePopupScroll(); } catch (_) {}
-
-                const resourceId = container.dataset.resourceId;
-                const unitText = container.querySelector('.resource-unit')?.textContent || '';
-                if (resourceId === 'Энергия') {
-                    renderEnergyPopupContent(container, popup);
-                } else if (resourceId === 'Население') {
-                    renderPopulationPopupContent(container, popup);
-                } else if (resourceId === 'Технологии') {
-                    renderTechPopupContent(container, popup);
-                } else if (isStockBarSection(resourceId)) {
-                    const bodyData = globalThis.__currentBodyData || null;
-                    renderStockSectionPopup(resourceId, bodyData, popup);
-                } else {
-                    const label = container.dataset.resourceLabel || t('res.popup.value');
-                    const valueText = (container.querySelector('.resource-value')?.textContent || '0') + (unitText || '');
-                    renderGenericPopupContent(resourceId, label, valueText, popup);
-                }
-                try { refreshResourcePopupScroll(); } catch (_) {}
+                animateResourcePopupOpen(popup, container, wasOpen);
+                fillResourcePopup(popup, container);
             }
         });
     });
@@ -1201,8 +1235,8 @@ export function initResourcePopup() {
         if (!e.target.closest('.resource-container') && !e.target.closest('#resource-popup')) {
             if (activeContainer) {
                 activeContainer.classList.remove('active');
-                popup.style.display = 'none';
                 activeContainer = null;
+                animateResourcePopupClose(popup);
             }
         }
     });
