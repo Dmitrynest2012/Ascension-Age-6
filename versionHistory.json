@@ -1,6 +1,6 @@
 {
   "meta": {
-    "currentBuild": "0.1.9",
+    "currentBuild": "0.1.91",
     "previewAvatar": "assets/textures/npc/seleznev.png"
   },
   "typeImages": {
@@ -9,6 +9,22 @@
     "major": "assets/textures/icons/version_major.png"
   },
   "builds": [
+    {
+      "id": "b0191",
+      "build": "0.1.91",
+      "date": "2026-09-10",
+      "type": "patch",
+      "title": {
+        "ru": "Больше наук впереди",
+        "en": "More sciences ahead",
+        "de": "Mehr Wissenschaften voraus"
+      },
+      "description": {
+        "ru": "В окне «Наука» появилось много новых технологий.\n\nЭто подготовка к тому, что вскоре науки начнут сильнее влиять на саму игру: на стройку, добычу и жизнь колонии.",
+        "en": "The Science screen now has many new technologies.\n\nThis is the groundwork for sciences soon mattering more in play itself: building, extraction and life in the colony.",
+        "de": "Im Fenster „Wissenschaft“ gibt es viele neue Technologien.\n\nDas ist die Vorbereitung darauf, dass die Wissenschaften bald stärker ins Spiel eingreifen: Bau, Förderung und das Leben der Kolonie."
+      }
+    },
     {
       "id": "b019",
       "build": "0.1.9",
@@ -202,5 +218,5 @@
       }
     }
   ],
-  "currentBuild": "0.1.9"
+  "currentBuild": "0.1.91"
 }

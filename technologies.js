@@ -88,13 +88,17 @@ function ensureProgressStore() {
 
 export function ensureTechProgress(techId) {
     const store = ensureProgressStore();
+    const tech = (catalog?.technologies || []).find(x => x.id === techId);
+    const floor = Math.max(0, Number(tech?.level) || 0);
     if (!store[techId]) {
-        const tech = (catalog?.technologies || []).find(x => x.id === techId);
         store[techId] = {
-            level: Math.max(0, Number(tech?.level) || 0),
+            level: floor,
             invested: 0,
             researching: false
         };
+    } else if (floor && (Number(store[techId].level) || 0) < floor) {
+        /* Стартовый уровень из каталога (Выживание 3, База Космистов 1) — пол, не потолок. */
+        store[techId].level = floor;
     }
     return store[techId];
 }
@@ -333,6 +337,10 @@ export function applyTechProgressSnapshot(snap) {
                 researching: false
             };
         } else {
+            const floor = Math.max(0, Number(tech.level) || 0);
+            if (floor && (Number(store[tech.id].level) || 0) < floor) {
+                store[tech.id].level = floor;
+            }
             tech.level = store[tech.id].level;
         }
     }
@@ -390,7 +398,7 @@ export async function loadTechnologiesData() {
         console.warn('technologies.json load failed', e);
         catalog = { categories: [], groups: [], technologies: [], meta: {} };
     }
-    // seed progress from catalog defaults (не затирая уже загруженный сейв / researching)
+    // seed progress from catalog defaults (не затирая researching; уровень не ниже JSON-пола)
     for (const tech of (catalog.technologies || [])) {
         const p = ensureTechProgress(tech.id);
         tech.level = p.level;
